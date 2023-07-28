@@ -1,15 +1,19 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Select = () => {
   return (
     <div className='select-container'>
       <div className='select-container_in_box'>
         <div className='reader-box'>
-          <a className='reader-btn b'>파티장</a>
+          <Link to='/schebuleform'>
+            <a className='reader-btn b'>파티장</a>
+          </Link>
         </div>
         <div className='crew-box'>
-          <a className='crew-btn b'>파티원</a>
+          <Link to='/recommend'>
+            <a className='crew-btn b'>파티원</a>
+          </Link>
         </div>
       </div>
     </div>

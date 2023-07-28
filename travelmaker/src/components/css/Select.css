@@ -41,8 +41,9 @@
 .reader-box,
 .crew-box {
     position: relative;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
+
     margin: 20px;
     width: 450px;
     /* height: 450px; */
@@ -51,6 +52,10 @@
 }
 
 /* 버튼 관련 css */
+.reader-btn, .crew-btn {
+    left: 35%
+}
+
 .b {
     text-decoration: none;
     text-align: center;
