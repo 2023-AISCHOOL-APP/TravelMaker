@@ -51,7 +51,7 @@
 }
 
 /* 버튼 관련 css */
-.select_b {
+.b {
     text-decoration: none;
     text-align: center;
     color: white;
@@ -67,8 +67,8 @@
     border-radius: 14px;
 }
 
-.select_b:before,
-.select_b:after {
+.b:before,
+.b:after {
     display: inline-block;
     opacity: 0;
     -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
@@ -76,7 +76,7 @@
     transition: transform 0.3s, opacity 0.2s;
 }
 
-.select_b:before {
+.b:before {
     margin-right: 10px;
     content: '[';
     -webkit-transform: translateX(20px);
@@ -84,7 +84,7 @@
     transform: translateX(20px);
 }
 
-.select_b:after {
+.b:after {
     margin-left: 10px;
     content: ']';
     -webkit-transform: translateX(-20px) scale(1.3);
@@ -92,17 +92,17 @@
     transform: translateX(-20px) scale(1.3);
 }
 
-.select_b:hover:before,
-.select_b:hover:after,
-.select_b:focus:before,
-.select_b:focus:after {
+.b:hover:before,
+.b:hover:after,
+.b:focus:before,
+.b:focus:after {
     opacity: 1;
     -webkit-transform: translateX(0px) scale(1.3);
     -moz-transform: translateX(0px) scale(1.3);
     transform: translateX(0px) scale(1.3);
 }
 
-.select_b:hover {
+.b:hover {
     border: 1px solid white;
     box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
 }

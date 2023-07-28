@@ -7,7 +7,7 @@ const Main = () => {
       <div className='main-contant-box'>
           {/* 창 크기 작을 때 보이는 버튼 */}
         <Link to='/select'>
-          <a className='secret_btn main_b'>동행찾기</a>
+          <a className='secret_btn b'>동행찾기</a>
         </Link>
         <div>
           <h1 className='main-title'>제목</h1>
@@ -17,7 +17,7 @@ const Main = () => {
         </div>
         {/* 창 크기 클 때 보이는 버튼 */}
         <Link to='/select'>
-          <a className='main_btn main_b'>동행찾기</a>
+          <a className='main_btn b'>동행찾기</a>
         </Link>
       </div>
       <div className='main-img-box'>

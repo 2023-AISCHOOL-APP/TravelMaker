@@ -6,10 +6,10 @@ const Select = () => {
     <div className='select-container'>
       <div className='select-container_in_box'>
         <div className='reader-box'>
-          <a className='reader-btn select_b'>파티장</a>
+          <a className='reader-btn b'>파티장</a>
         </div>
         <div className='crew-box'>
-          <a className='crew-btn select_b'>파티원</a>
+          <a className='crew-btn b'>파티원</a>
         </div>
       </div>
     </div>

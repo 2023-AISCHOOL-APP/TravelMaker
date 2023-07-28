@@ -5,8 +5,7 @@
     }
 
     .secret_btn {
-        display: block;
-        margin-bottom: 20px;
+        display: inline-block;
     }
 
     .main_btn {
@@ -51,14 +50,14 @@
     }
 
     .main-title {
-        bottom: 40%;
+        bottom: 37%;
     }
     .main-text {
         bottom: 25%;
     }
 
     .main_btn {
-        bottom: 10%;
+        bottom: 8%;
     }
 }
 
@@ -87,7 +86,7 @@
     position: relative;
 }
 
-.main_b {
+.main_btn, .secret_btn {
     text-decoration: none;
     text-align: center;
     width: 130px;
