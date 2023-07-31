@@ -1,0 +1,111 @@
+@media screen and (width <= 767px) {
+    .info-box {
+        display: none;
+    }
+
+    .schedule-form {
+        width: 90vw;
+        display: flexbox;
+        flex-direction: column;
+    }
+
+    .schedule-list {
+        width: 75vw;
+        height: 40vh;
+    }
+
+}
+@media screen and (width >= 768px) {
+    .schedule-form {
+        width: 70vw;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .schedule-list {
+        width: 21vw;
+        height: 40vh;
+    }
+}
+
+.schedule-container {
+    width: 100%;
+    height: calc(100vh - 70px);
+    margin-top: 70px;
+}
+
+.nav-list {
+    border-bottom: 1px solid black;
+    padding: 0 3.90625vw;
+}
+
+.nav-box {
+    width: 100%;
+    margin-bottom: 0;
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: left;
+}
+
+.nav-box li {
+    list-style: none; /* li요소 점(marker) 없애기 */
+    margin-right: 2vw;
+    margin-left: 0.5vw;
+}
+
+.schedule-box {
+    display: flex;
+    height: 100vh;
+    margin-top: 10px;
+    border: 1px solid black;
+    margin: 10px 3.90625vw 0;
+}
+
+.info-box {
+    display: flexbox;
+    flex-direction: column;
+    justify-content: left;
+    border: 1px solid black;
+    margin: 10px;
+    width: 20vw;
+    height: 97vh;
+}
+
+.search-area {
+    margin: 10px;
+    width: 20.4vw;
+    height: 35px;
+}
+
+.search-box {
+    margin: 0;
+    width: 90%;
+    height: 90%;
+    border: 1px solid black;
+}
+
+.palce-info-area {
+    height: 90%;
+    overflow-y: scroll;
+}
+
+.place-info-box {
+    margin: 10px;
+    border: 1px solid black;
+    width: 17.5vw;
+    height: 200px
+}
+
+.schedule-form {
+    border: 1px solid black;
+    margin: 10px;
+    height: 97vh;
+    overflow-y: scroll;
+}
+
+.schedule-list {
+    font-size: 5rem;
+    margin-top: 15px;
+    margin-left: 15px;
+    border: 1px solid black;
+}

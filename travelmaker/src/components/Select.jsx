@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 const Select = () => {
   return (
     <div className='select-container'>
-      <div className='select-container_in_box'>
+      <div className='select-container-in-box'>
         <div className='reader-box'>
-          <Link to='/schebuleform'>
+          <Link to='/scheduleform'>
             <a className='reader-btn b'>파티장</a>
           </Link>
         </div>

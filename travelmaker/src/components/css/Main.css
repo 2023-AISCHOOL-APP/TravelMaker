@@ -1,15 +1,8 @@
 
-@media screen and (width <= 940px) {
+@media screen and (width <= 767px) {
+    
     .main-container {
         flex-direction: column-reverse;
-    }
-
-    .secret_btn {
-        display: inline-block;
-    }
-
-    .main_btn {
-        display: none;
     }
 
     .main-contant-box {
@@ -25,15 +18,7 @@
     }
   }
 
-@media screen and (width >= 859px) {
-
-    .secret_btn {
-        display: none;
-    }
-
-    .main_btn {
-        display: block;
-    }
+@media screen and (width >= 768px) {
 
     .main-contant-box {
         max-width: 400px;
@@ -41,8 +26,8 @@
     }
 
     .main-img-box {
-        max-width: 600px;
-        max-height: 600px;
+        max-width: 40vmax;
+        max-height: 60vmax;
     }
 
     .main-title, .main-text, .main_btn {
@@ -89,9 +74,9 @@
 .main_btn, .secret_btn {
     text-decoration: none;
     text-align: center;
-    width: 130px;
-    height: 30px;
-    font-size: 16pt;
+    width: 13vw;
+    height: 3vh;
+    font-size: 1.6rem;
     padding: 7px;
     color: white;
     background-color: black;

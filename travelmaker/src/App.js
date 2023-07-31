@@ -1,7 +1,9 @@
 // css 불러오기
 import './components/css/Header.css';
-import './components/css/Main.css'
-import './components/css/Select.css'
+import './components/css/Main.css';
+import './components/css/Select.css';
+import './components/css/Common.css';
+import './components/css/Schedule.css';
 
 // 컴포넌트 불러오기
 import Header from './components/Header';
