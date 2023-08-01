@@ -1,0 +1,77 @@
+@media screen and (width <= 767px) {
+    .my-schedule-form {
+        width: 80vw;
+        display: flexbox;
+        flex-direction: column;
+    }
+
+    .my-schedule-list {
+        width: 70vw;
+        height: 40vh;
+    }
+
+}
+@media screen and (width >= 768px) {
+    .my-schedule-application{
+        width: 90vw;
+    }
+
+    .my-schedule-form {
+        width: 90vw;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .my-schedule-list {
+        width: 20vw;
+        height: 40vh;
+    }
+}
+
+.my-schedule-container {
+    width: 100%;
+    height: calc(100vh - 70px);
+    margin-top: 70px;
+}
+
+.my-nav-list {
+    border-bottom: 1px solid black;
+    padding: 0 3.90625vw;
+}
+
+.my-schedule-box {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin-top: 10px;
+    border: 1px solid black;
+    margin: 10px 3.90625vw 0;
+    position: absolute;
+}
+
+.my-schedule-application {
+    border: 1px solid black;
+    margin: 10px;
+    height: 10vh;
+}
+
+.my-scheduele-select{
+    font-size: 3rem;
+    margin-top: 15px;
+    margin-left: 21px;
+    border: 1px solid black;
+}
+
+.my-schedule-form {
+    border: 1px solid black;
+    margin: 10px;
+    height: 97vh;
+    overflow-y: scroll;
+}
+
+.my-schedule-list {
+    font-size: 3rem;
+    margin-top: 15px;
+    margin-left: 21px;
+    border: 1px solid black;
+}
