@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Login from './Login';
-import { Link, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import {createUserWithEmailAndPassword, signOut} from "firebase/auth";
 import {auth} from "../firebase-config";
 // import styled from 'styled-components';
