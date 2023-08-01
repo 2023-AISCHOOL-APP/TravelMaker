@@ -70,7 +70,7 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, .3) inset;
   }
     
-  button{
+  .login_bt{
     margin: 10px;
     height: 30px;
     width:210px;

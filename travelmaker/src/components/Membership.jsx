@@ -28,15 +28,15 @@ const Membership = () => {
             {/* 성별 선택 */}
             <div className='gender_box'>
               <input id='male' type="radio" value='Male' name="gender" />
-              <label for='male'>남자</label>
+              <label for='male'>남성</label>
               <input id='female' type="radio" value='Female' name="gender" />
-              <label for='female'>여자</label>
+              <label for='female'>여성</label>
             </div>
 
           </div>
           <div className='membership_btn'>
 
-            <Link to='/preference'><button>다음</button></Link>
+            <Link to='/preference'><button className='Membership_bt'>다음</button></Link>
             <Routes>
               <Route path='/preference' element={<Preference />}></Route>
             </Routes>
