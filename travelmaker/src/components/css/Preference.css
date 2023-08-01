@@ -1,0 +1,70 @@
+@font-face {
+    font-family: 'WandohopeR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandohopeR.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.preference_bg {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.preference_bgvid{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -99;
+  }
+
+.preference_vid{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.preference_img{
+    position: absolute;
+    top: 100px;
+    width: 220px;   
+}
+
+
+.preference_box{
+    padding: 15px;
+    width: 500px;
+    height: 300px;
+    position: absolute;
+    top :180px; 
+    border: 1px solid rgba(179, 185, 221, 0.226);
+    background-color: rgba(184, 203, 219, 0.733);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, .4);
+}
+
+
+
+.preference_btn{
+    padding: 20px;
+    margin: 26px;
+    margin-top: 20px;
+    width: 380px;
+    height: 50px;  
+    background-color:#0a0a23;
+    color: #fff;
+    border:none;
+    border-radius:50px;
+}
+/* #back_btn{
+    
+
+} */

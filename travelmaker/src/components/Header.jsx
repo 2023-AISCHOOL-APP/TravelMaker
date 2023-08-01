@@ -1,6 +1,7 @@
 import React from 'react'
+import Login from './Login';
 import { FaUserCircle } from "react-icons/fa";
-import { Link } from 'react-router-dom'
+import { Link, Routes, Route } from 'react-router-dom'
 
 const Header = () => {
   return (
@@ -21,8 +22,10 @@ const Header = () => {
         <div className='icon-container'>
           <div>
             <a>
-              {/* 로그인 아이콘 https://react-icons.github.io/react-icons */}
-              <FaUserCircle className='user-icon' size='30'></FaUserCircle>
+              <Link to='/login'>
+                {/* 로그인 아이콘 https://react-icons.github.io/react-icons */}
+                <FaUserCircle className='user-icon' size='30'></FaUserCircle>
+              </Link>
             </a>
           </div>
         </div>
