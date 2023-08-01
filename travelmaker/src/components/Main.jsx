@@ -1,13 +1,15 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom';
 
-const Main = ({changeLogin, changeName}) => {
+const Main = ({changeLogin}) => {
   const isLogin = useLocation().state;
   const send = ()=>{
     {changeLogin(isLogin)}
   }
-
-  send();
+  if(isLogin){
+    send();
+  }
+  
 
 
   return (
