@@ -37,6 +37,7 @@ const Membership = () => {
 
   return (
     <div className='membership_bg'>
+      {/* 배경이 들어갈 자리 */}
       <div className='membership_bgvid'>
         <video className='membership_vid' autoPlay muted loop><source src='video/video2.mp4' /></video>
       </div>
@@ -48,7 +49,9 @@ const Membership = () => {
 
       <div className='membership_box'>
         <div>
+          {/* 회원가입 정보 입력 */}
           <div className='membership_input'>
+
             {/* 아이디 비밀번호 변수에 저장 */}
             <input placeholder='아이디' onChange={(e) => {setRegisterEmail(e.target.value)}}></input> 
             <input type='password' placeholder='비밀번호' onChange={(e) => {setRegisterPassword(e.target.value)}}></input>
@@ -56,18 +59,22 @@ const Membership = () => {
             <input placeholder='이름' onChange={(e) => {setRegisterName(e.target.value)}}></input>
             <input maxLength={8} placeholder='생년월일 8자리' onChange={(e) => {setRegisterBirth(e.target.value)}}></input>
 
+            {/* 성별 선택 */}
             <div className='gender_box'>
-              남<input className='gender' type="radio" name="gender" value="male" onChange={(e) => {setRegisterGender(e.target.value)}}/>
-              여<input className='gender' type="radio" name="gender" value="female" onChange={(e) => {setRegisterGender(e.target.value)}}/>
+              <input id='male' type="radio" name="gender" value="Male" onChange={(e) => {setRegisterGender(e.target.value)}}/>
+              <label for='male'>남자</label>
+              <input id='female' type="radio" name="gender" value="Female" onChange={(e) => {setRegisterGender(e.target.value)}}/>
+              <label for='female'>여자</label>
             </div>
 
           </div>
           <div className='membership_btn'>
             
-            {/* <Link to='/preference'><button onClick={next}>다음</button></Link> */}
+            {/* 다음 버튼 클릭하여 데이터 전송 및 설문조사 페이지 이동 */}
             <button onClick={next}>다음</button>
+
             <Routes>
-              <Route path='/preference' element={<Preference/>}></Route>
+              <Route path='/preference' element={<Preference />}></Route>
             </Routes>
           </div>
 

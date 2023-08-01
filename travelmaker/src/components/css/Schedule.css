@@ -2,110 +2,170 @@
     .info-box {
         display: none;
     }
-
+  
     .schedule-form {
         width: 90vw;
         display: flexbox;
         flex-direction: column;
     }
-
+  
     .schedule-list {
         width: 75vw;
         height: 40vh;
     }
+  
+    .nav-list {
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+      align-items: center;
+    }
+  
+    .date-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
 
-}
-@media screen and (width >= 768px) {
+    .date-box {
+        justify-content: center;
+    }
+
+    .date-select {
+        display: none;
+    }
+  }
+  @media screen and (width >= 768px) {
     .schedule-form {
         width: 70vw;
         display: flex;
         flex-wrap: wrap;
     }
-
+  
     .schedule-list {
         width: 21vw;
         height: 40vh;
     }
-}
+  
+    .nav-list {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+    }
+  
+    .date-container {
+      width: 100%;
+      display: flex;
+      justify-content: left;
+    }
 
-.schedule-container {
+    .date-box {
+        justify-content: left;
+    }
+  }
+  
+  .schedule-container {
     width: 100%;
     height: calc(100vh - 70px);
     margin-top: 70px;
-}
-
-.nav-list {
+  }
+  
+  .nav-list {
     border-bottom: 1px solid black;
     padding: 0 3.90625vw;
-}
-
-.nav-box {
+  }
+  
+  .nav-box {
     width: 100%;
-    margin-bottom: 0;
-    padding: 1.5rem 0;
     display: flex;
     justify-content: left;
-}
-
-.nav-box li {
+    align-items: center;
+  }
+  
+  .date-box {
+    width: 230px;
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+  }
+  
+  .date-box p {
+    font-size: 1.5rem;
+  }
+  
+  .nav-list li {
     list-style: none; /* li요소 점(marker) 없애기 */
-    margin-right: 2vw;
-    margin-left: 0.5vw;
-}
-
-.schedule-box {
+    /* margin-right: 2vw;
+    margin-left: 0.5vw; */
+    margin: 0 2vw;
+    width: 72px;
+    font-size: 1.5rem;
+  }
+  
+  .schedule-box {
     display: flex;
     height: 100vh;
     margin-top: 10px;
     border: 1px solid black;
     margin: 10px 3.90625vw 0;
-}
-
-.info-box {
+  }
+  
+  .info-box {
     display: flexbox;
     flex-direction: column;
     justify-content: left;
     border: 1px solid black;
     margin: 10px;
-    width: 20vw;
+    width: 20.4vw;
     height: 97vh;
-}
-
-.search-area {
+  }
+  
+  .search-area {
     margin: 10px;
     width: 20.4vw;
     height: 35px;
-}
-
-.search-box {
+  }
+  
+  .search-box {
     margin: 0;
-    width: 90%;
+    /* width: 90%; */
+    width: 18vw;
     height: 90%;
     border: 1px solid black;
-}
-
-.palce-info-area {
+    font-size: 1.35rem;
+  }
+  
+  .palce-info-area {
     height: 90%;
     overflow-y: scroll;
-}
-
-.place-info-box {
+  }
+  
+  .place-info-box {
     margin: 10px;
     border: 1px solid black;
     width: 17.5vw;
     height: 200px
-}
-
-.schedule-form {
+  }
+  
+  .schedule-form {
     border: 1px solid black;
     margin: 10px;
     height: 97vh;
     overflow-y: scroll;
-}
-
-.schedule-list {
+  }
+  
+  .schedule-list {
     font-size: 5rem;
     margin-top: 15px;
     margin-left: 15px;
     border: 1px solid black;
-}
+  }
+
+/* 달력 관련 커스텀 */
+  .example-custom-input {
+    background-color: #282c34;
+    color: white;
+    cursor: pointer;
+    width: 150px;
+    margin-bottom: 10px;
+  }
