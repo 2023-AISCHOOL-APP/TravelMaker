@@ -32,3 +32,18 @@
   padding: 5px;
   line-height: 1.44444;
 }
+
+.loginbox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logintext{
+  color: rgb(208, 208, 208);
+  margin-right: 5px;
+}
+
+a{
+  text-decoration: none;
+}

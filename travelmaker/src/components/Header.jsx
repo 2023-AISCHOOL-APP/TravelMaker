@@ -1,7 +1,7 @@
 import React from 'react'
 import Login from './Login';
 import { FaUserCircle } from "react-icons/fa";
-import { Link, Routes, Route } from 'react-router-dom'
+import { Link, Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 
 const Header = () => {
   return (
@@ -20,14 +20,15 @@ const Header = () => {
           </div>
         </div>
         <div className='icon-container'>
-          <div>
-            <a>
-              <Link to='/login'>
+          <a>
+            <Link to={'/login'}>
+              <div className='loginbox'>
+                <span className='logintext'>로그인</span>
                 {/* 로그인 아이콘 https://react-icons.github.io/react-icons */}
                 <FaUserCircle className='user-icon' size='30'></FaUserCircle>
-              </Link>
-            </a>
-          </div>
+              </div>
+            </Link>
+          </a>
         </div>
       </header>
     </div>

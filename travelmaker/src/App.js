@@ -10,6 +10,7 @@ import './components/css/Membership.css';
 
 
 // 컴포넌트 불러오기
+import Header2 from './components/Header2';
 import Header from './components/Header';
 import Main from './components/Main'
 import Select from './components/Select';
@@ -23,12 +24,17 @@ import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
+  const [isLogin, setIsLogin] = useState(false);
+  const changeLogin = (boolean)=>{
+    setIsLogin(boolean)
+  }
+
   return (
     <div className="App">
-      <Header></Header>
+      {isLogin ? <Header2 changeLogin={changeLogin}/> : <Header/>}
 
       <Routes>
-        <Route path='/' element={<Main />}></Route>
+        <Route path='/' element={<Main changeLogin={changeLogin}/>}></Route>
         <Route path='/select' element={<Select />}></Route>
         <Route path='/scheduleform' element={<ScheduleForm />}></Route>
         <Route path='/recommend' element={<Recommend />}></Route>

@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Login from './Login';
-import { Link, Routes, Route } from 'react-router-dom';
+import { Link, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import {createUserWithEmailAndPassword, signOut} from "firebase/auth";
+import {auth} from "../firebase-config";
 // import styled from 'styled-components';
 
 const Preference = () => {
+  const nav = useNavigate();
+  const registerData = useLocation().state; // Membership에서 받아온 유저정보
   const [surveyIndex, setSurveyIndex] = useState(0); // 설문조사 인덱스 저장
   const [answers, setAnswers] = useState([]); // 사용자의 답변을 저장
   const [count, setCount] = useState(0);
@@ -39,6 +43,23 @@ const Preference = () => {
   const gaugeStyle = {
     width: `${(count / surveys.length) * 100}%`,
   };
+
+  const signup = async ()=>{
+    
+    try{
+      const user = await createUserWithEmailAndPassword(
+      auth,
+      registerData.registerEmail,
+      registerData.registerPassword
+      );
+      signOut(auth);
+      alert('Travel Maker에 합류해 주셔서 감사합니다!')
+      nav('/login')
+    }catch(error){
+      alert('알수없는 오류입니다. 가입을 다시 진행해주세요..')
+      nav('/membership')
+    }
+  }
 
 //   const Container = styled.div`
 //     margin: 20px auto;
@@ -103,17 +124,16 @@ const Preference = () => {
             ))}
           </>
         ) : (
-          <div>
-            <p>회원가입이 완료되었습니다. 감사합니다!</p>
+          <div align='center'>
+            <h3>설문에 참여해주셔서 감사합니다!</h3>
+            <h3>가입완료 버튼을 눌러주세요!</h3>
             {/* <p>답변 내용:</p>
             <ul>
               {answers.map((answer, index) => (
                 <li key={index}>{answer}</li>
               ))}
             </ul> */}
-            <Link to='/login'>
-              <button className='preference_btn'>확인</button>
-            </Link>
+              <button className='preference_btn' onClick={signup}>가입완료</button>
             <Routes>
               <Route path='/login' element={<Login />} />
             </Routes>

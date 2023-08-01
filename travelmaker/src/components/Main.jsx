@@ -1,7 +1,15 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
-const Main = () => {
+const Main = ({changeLogin, changeName}) => {
+  const isLogin = useLocation().state;
+  const send = ()=>{
+    {changeLogin(isLogin)}
+  }
+
+  send();
+
+
   return (
     <div className='main-container'>
       <div className='main-contant-box'>
