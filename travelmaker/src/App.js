@@ -30,11 +30,16 @@ function App() {
     setIsLogin(boolean)
   }
 
+  const [userEmail, setUserEmail] = useState("")
+  const changeEmail = (txt)=>{
+    setUserEmail(txt)
+  }
+
   return (
     <div className="App">
-      <Header changeLogin={changeLogin} isLogin={isLogin}/>
+      <Header changeLogin={changeLogin} isLogin={isLogin} userEmail={userEmail}/>
       <Routes>
-        <Route path='/' element={isLogin ? <Main changeLogin={changeLogin} start={true}/> : <Main changeLogin={changeLogin} start={false}/>}></Route>
+        <Route path='/' element={isLogin ? <Main changeLogin={changeLogin} start={true} changeEmail={changeEmail}/> : <Main changeLogin={changeLogin} start={false} changeEmail={changeEmail}/>}></Route>
         <Route path='/select' element={<Select />}></Route>
         <Route path='/scheduleform' element={<ScheduleForm />}></Route>
         <Route path='/recommend' element={<Recommend />}></Route>

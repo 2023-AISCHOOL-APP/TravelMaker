@@ -1,16 +1,32 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Login from './Login';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import {createUserWithEmailAndPassword, signOut} from "firebase/auth";
 import {auth} from "../firebase-config";
+import { db } from '../firebase-config';
+import { setDoc, doc } from 'firebase/firestore'
 // import styled from 'styled-components';
 
 const Preference = () => {
   const nav = useNavigate();
   const registerData = useLocation().state; // Membership에서 받아온 유저정보
+  console.log(registerData);
   const [surveyIndex, setSurveyIndex] = useState(0); // 설문조사 인덱스 저장
   const [answers, setAnswers] = useState([]); // 사용자의 답변을 저장
   const [count, setCount] = useState(0);
+  
+  // 회원가입 정보 데이터베이스로 보내기
+  const createUser = async ()=>{
+    await setDoc(doc(db, "users", String(registerData.registerEmail)),
+                                      {nickname : registerData.registerNickname,
+                                       name: registerData.registerName,
+                                       birth: registerData.registerBirth,
+                                       email: registerData.registerEmail,
+                                       password: registerData.registerPassword,
+                                       gender: registerData.registerGender
+                                      })
+  }
+  
   const surveys = [
     {
       question: '첫 번째 질문: 정태녕을 좋아하나요?',
@@ -44,17 +60,18 @@ const Preference = () => {
     width: `${(count / surveys.length) * 100}%`,
   };
 
-  const signup = async ()=>{
-    
+  // 회원가입 완료 함수
+  const signup = async ()=>{ 
     try{
+      createUser(); // 유저정보 데이터베이스로 전송
       const user = await createUserWithEmailAndPassword(
       auth,
       registerData.registerEmail,
       registerData.registerPassword
       );
-      signOut(auth);
+      signOut(auth); // 회원가입시 자동으로 로그인되기 때문에 자동 로그아웃 시킴
       alert('Travel Maker에 합류해 주셔서 감사합니다!')
-      nav('/login')
+      nav('/login', {state: registerData.registerNickname})
     }catch(error){
       alert('알수없는 오류입니다. 가입을 다시 진행해주세요..')
       nav('/membership')

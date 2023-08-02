@@ -1,11 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaUserCircle } from "react-icons/fa";
 import { Link, useNavigate } from 'react-router-dom'
 import {signOut} from "firebase/auth";
 import {auth} from "../firebase-config";
+import { db } from '../firebase-config';
+import { collection, getDoc, doc } from 'firebase/firestore'
 
-const Header = ({changeLogin, isLogin}) => {
+const Header = ({changeLogin, isLogin, userEmail}) => {
   const nav = useNavigate();
+
+  // 데이터 베이스에서 데이터 불러오기
+  // const [users, setUsers] = useState([]);
+  if(isLogin){
+    const getUsers = async (uid)=>{
+      const userRef = doc(db, "users", String(uid));
+      const userSnap = await getDoc(userRef)
+      if(userSnap.exists()){
+        return userSnap.data();
+      }
+      return null;
+    };
+    getUsers(userEmail)
+  } 
 
   // App.js에 로그인 값을 false로 바꿔 보내는 함수
   const send = ()=>{

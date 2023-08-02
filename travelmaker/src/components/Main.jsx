@@ -1,21 +1,37 @@
 import React from 'react'
 import { Link, useLocation} from 'react-router-dom';
 
-const Main = ({changeLogin, start}) => {
-  // Login.jsx 에서 받아온 로그인 값 true
+const Main = ({changeLogin, start, changeEmail}) => {
+  
+  // Login.jsx에서 받아온 로그인 값 true
   const isLogin = useLocation().state; 
   
   // App.js로 보내는 로그인 값 true
-  const send = ()=>{
+  const sendLogin = ()=>{
     {changeLogin(isLogin)}
   }
-
+  
   // 로그인상태(로그인 값 = true)일때만 
-  // App.js로 true 값을 보내도록 조건문 설정
+  // App.js로 Login 값을 보내도록 조건문 설정
   if(isLogin){
-    send();
+    sendLogin();
   }
   
+  // Login.jsx에서 받아온 user email 값
+  const user = useLocation();
+  console.log(user);
+
+  if (isLogin) {
+
+    // App.js로 보내는 user email 값
+    const sendEmail = () => {
+      { changeEmail(user) }
+    }
+
+    // App.js로 Email값 전송
+    sendEmail();
+  }
+
   // 로그아웃 상태에서 동행찾기 누를시 노출되는 알람창
   const block = ()=>{
     alert('로그인 후 사용해주세요!')
