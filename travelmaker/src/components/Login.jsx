@@ -28,7 +28,7 @@ const Login = () => {
       );
       console.log(users);
       alert('Travel Maker에 오신걸 환영합니다!')
-      nav('/', {state: {login : true, user: loginEmail}}) // Main으로 이동 및 true(로그인상태) 값 전송
+      nav('/', {state: loginEmail}) // Main으로 이동 및 true(로그인상태) 값 전송
     }catch(error){
       alert('다시 시도해주세요!')
     }

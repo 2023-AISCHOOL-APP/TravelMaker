@@ -1,11 +1,28 @@
 import React from 'react'
+import { BiSolidUserCircle } from "react-icons/bi";
+import { Link } from 'react-router-dom';
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase-config";
 
-const SideContent = () => {
+const SideContent = ({userNickname, changeUserLogin}) => {
+  const send = ()=>{
+    {changeUserLogin(false)}
+  }
+
+  // 로그아웃 함수
+  const logout = async () => {
+    await signOut(auth);
+    send();
+    alert('로그아웃 되었습니다.')
+    window.location.replace('/')
+  }
+
   return (
     <div className='side-content-container'>
       <div className='side-id-box'>
-        <h2 className='side-id-text'>아이디</h2>
-        <p>로그아웃</p>
+        <BiSolidUserCircle className='logout-icon h-icon' size='40' color='black'></BiSolidUserCircle>
+        <h2 className='side-id-text'>{userNickname}</h2>
+        <Link onClick={logout}><p>로그아웃</p></Link>
       </div>
       <div className='side-list-box'>
         <div className='side-leader-box'>

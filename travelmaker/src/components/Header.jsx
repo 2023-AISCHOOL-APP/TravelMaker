@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import { BiUserCircle, BiSolidUserCircle, BiMenu } from "react-icons/bi";
-import { Link, useNavigate } from 'react-router-dom'
-import { signOut } from "firebase/auth";
-import { auth } from "../firebase-config";
+import React, { useState } from 'react'
+import { BiUserCircle } from "react-icons/bi";
+import { Link } from 'react-router-dom'
 import { db } from '../firebase-config';
-import { collection, getDoc, doc } from 'firebase/firestore'
+import { getDoc, doc } from 'firebase/firestore'
 
 import Sidebar from './Sidebar';
 import SideContent from './SideContent';
@@ -12,35 +10,37 @@ import SideContent from './SideContent';
 import './css/Sidebar.css'
 import './css/SideContent.css'
 
-const Header = ({changeLogin, isLogin, userEmail}) => {
-  const nav = useNavigate();
+const Header = ({changeLogin, isLogin}) => {
+  const [userLogin, setUserLogin] = useState("");
+  const changeUserLogin = (boolean)=>{
+    setUserLogin(boolean)
+  }
+
+// App.js에 로그인 값을 false로 바꿔 보내는 함수
+const send = () => {
+  { changeLogin(userLogin) }
+}
+
+if(userLogin===false){
+  send();
+}
 
   // 데이터 베이스에서 데이터 불러오기
-  // const [users, setUsers] = useState([]);
-  if(isLogin){
-    const getUsers = async (uid)=>{
-      const userRef = doc(db, "users", String(uid));
-      const userSnap = await getDoc(userRef)
-      if(userSnap.exists()){
-        return userSnap.data();
-      }
-      return null;
-    };
-    getUsers(userEmail)
-  } 
+  const [userNickname, setUserNickname] = useState([]);
 
-  // App.js에 로그인 값을 false로 바꿔 보내는 함수
-  const send = () => {
-    { changeLogin(false) }
-  }
+  const getUser = async () => {
+    const docRef = doc(db, "users", String(isLogin));
+    const docSnap = await getDoc(docRef);
+    console.log(isLogin);
+    if (docSnap.exists()) {
+      console.log("Document data:", docSnap.data().nickname);
+      setUserNickname(docSnap.data().nickname);
+    } else {
+      console.log("No such document!");
+    }
+  };
 
-  // 로그아웃 함수
-  const logout = async () => {
-    await signOut(auth);
-    send();
-    alert('로그아웃 되었습니다.')
-    nav('/')
-  }
+  getUser();
 
   return (
     <div>
@@ -60,16 +60,9 @@ const Header = ({changeLogin, isLogin, userEmail}) => {
         <div className='icon-container'>
           {isLogin ?
             // 로그인 상태일때 노출되는 아이콘
-            <Link>
-              <div className='loginbox' onClick={logout}>
-                {/* <span className='logintext'>로그아웃</span> */}
-                {/* 로그인 아이콘 https://react-icons.github.io/react-icons */}
-                <BiSolidUserCircle className='logout-icon h-icon' size='40' color='black'></BiSolidUserCircle>
-              </div>
               <Sidebar width={315}>
-                <SideContent/>
-              </Sidebar>
-            </Link> :
+                <SideContent userNickname={userNickname} changeUserLogin={changeUserLogin}/>
+              </Sidebar> :
             // 로그아웃 상태일때 노출되는 아이콘
             <Link to={'/login'}>
               <div className='loginbox'>

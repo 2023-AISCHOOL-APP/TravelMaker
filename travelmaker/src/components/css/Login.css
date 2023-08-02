@@ -18,7 +18,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
+    /* 화면에 스크롤 생겨서 100% -> 90% 수정 */
+    height: 90%; 
     width: 100%;
     z-index: -99;
   }
