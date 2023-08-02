@@ -9,7 +9,10 @@ const Myschedule = () => {
 
       <div className='my-schedule-box'>
         <div className='my-schedule-application'>
-          <div className='my-schedule-select'>내가 작성한 글, 신청한 사람 목록</div>
+          <div className='my-schedule-select'>
+            <div><button>내가 작성한 글</button></div>
+            <div><button>신청한 사람 목록</button></div>
+          </div>
         </div>
 
         <div className='my-schedule-form'>

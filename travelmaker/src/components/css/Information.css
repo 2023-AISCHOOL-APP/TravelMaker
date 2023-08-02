@@ -1,0 +1,85 @@
+@media screen and (width <= 767px) {
+    .information-form {
+        width: 80vw;
+        display: flexbox;
+        flex-direction: column;
+    }
+
+    .information-list {
+        width: 70vw;
+        height: 40vh;
+    }
+
+}
+@media screen and (width >= 768px) {
+    .information-application{
+        width: 90vw;
+    }
+
+    .information-form {
+        width: 90vw;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .information-list {
+        width: 20vw;
+        height: 40vh;
+    }
+}
+
+.information-container {
+    width: 100%;
+    height: calc(100vh - 70px);
+    margin-top: 70px;
+}
+
+.my-nav-list {
+    border-bottom: 1px solid black;
+    padding: 0 3.90625vw;
+}
+
+.information-box {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin-top: 10px;
+    border: 1px solid black;
+    margin: 10px 3.90625vw 0;
+    position: absolute;
+}
+
+.information-application {
+    border: 1px solid black;
+    margin: 10px;
+    height: 10vh;
+}
+
+.information-select-title{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.information-select{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: 1.8rem;
+    margin-top: 8px;
+    margin-left: 8px;
+}
+
+.information-form {
+    border: 1px solid black;
+    margin: 10px;
+    height: 97vh;
+    overflow-y: scroll;
+}
+
+.recommend-list {
+    /* font-size: 3rem; */
+    margin-top: 15px;
+    margin-left: 21px;
+    border: 1px solid black;
+}
