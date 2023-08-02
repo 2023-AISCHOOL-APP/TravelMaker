@@ -1,24 +1,36 @@
 .side-id-box {
-    width: 87%;
-  
-    border-bottom: 2px solid black;
-  
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  
-    position: relative;
-  }
-  
-  .side-id-text {
-    position: relative;
-    left: -30px;
-  
-    margin-bottom: 10px;
-  }
-  
-  .side-id-box p {
-    position: relative;
-    right: -25px;
-    top: 10px
-  }
+  width: 87%;
+
+  border-bottom: 2px solid black;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  position: relative;
+}
+
+.side-id-text {
+  position: relative;
+  left: -30px;
+
+  margin-bottom: 10px;
+}
+
+.side-id-box p {
+  position: relative;
+  right: -25px;
+  top: 10px
+}
+
+.side-leader-box, .side-crew-box {
+  width: 87%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  list-style: none;
+}
+
+.side-content-container li {
+  color: black;
+}
