@@ -9,8 +9,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
     width: 100%;
     height: 100vh;
+    z-index: 99999999999;
+    background-color: white;
 }
 
 .mebership_bgvid{
@@ -32,7 +35,6 @@
     position: absolute;
     top: 110px;
     width: 220px;
-    
 }
 
 

@@ -71,7 +71,7 @@ const Preference = () => {
       );
       signOut(auth); // 회원가입시 자동으로 로그인되기 때문에 자동 로그아웃 시킴
       alert('Travel Maker에 합류해 주셔서 감사합니다!')
-      nav('/login', {state: registerData.registerNickname})
+      nav('/login')
     }catch(error){
       alert('알수없는 오류입니다. 가입을 다시 진행해주세요..')
       nav('/membership')
@@ -118,7 +118,7 @@ const Preference = () => {
         </video>
       </div>
 
-      <img className='preference_img' src='img/TM.png'></img>
+      <img className='preference_img' src='images/logo99999.png'/>
 
       <div className='preference_box'>
         {/* 게이지 바 */}

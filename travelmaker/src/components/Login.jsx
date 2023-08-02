@@ -41,6 +41,10 @@ const Login = () => {
     }
   };
 
+  const toMain = ()=>{
+    nav('/')
+  }
+  
   return (
     <div className='login_bg'>
       {/* 배경이 들어갈 자리 */}
@@ -49,7 +53,7 @@ const Login = () => {
       </div>
 
       {/* <h1 className='title_name'>Travel Maker</h1> */}
-      <img className='logo_img' src='이미지 들어갈 부분' ></img>
+        <img className='logo_img' src='images/logo99999.png' onClick={toMain}/>
 
       <div className='login_box'>
         {/* 로그인 기본정보 입력 */}

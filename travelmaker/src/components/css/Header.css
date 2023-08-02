@@ -24,6 +24,7 @@
   width: 70%;
   justify-content: space-between;
   align-items: center;
+  z-index: 9999999999;
 }
 
 .icon-container {
@@ -33,6 +34,7 @@
   position: relative;
   height: 100%;
   width: 50%;
+  z-index: 9999999999;
 }
 
 .icon-container a {

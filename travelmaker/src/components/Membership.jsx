@@ -42,6 +42,10 @@ const Membership = () => {
     }
   }
 
+  const toMain = ()=>{
+    nav('/')
+  }
+
   return (
     <div className='membership_bg'>
       {/* 배경이 들어갈 자리 */}
@@ -51,7 +55,7 @@ const Membership = () => {
 
 
       {/* <div className='membership_logo' > */}
-      <img className='membership_img' src='img/TM.png'></img>
+      <img className='membership_img' src='images/logo99999.png' onClick={toMain}/>
       {/* </div> */}
 
       <div className='membership_box'>
