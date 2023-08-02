@@ -23,7 +23,8 @@ const ScheduleForm = () => {
         <div className='date-container'>
           <div className='date-box'>
             <p className='date-select'>출발일</p>
-            <DatePicker
+            <input type='date'></input>
+            {/* <DatePicker
               locale={ko}
               dateFormat="yyyy년 MM월 dd일"
 
@@ -36,11 +37,12 @@ const ScheduleForm = () => {
               endDate={endDate}
 
               customInput={<ExampleCustomInput />}
-            />
+            /> */}
           </div>
           <div className='date-box'>
             <p className='date-select'>도착일</p>
-            <DatePicker 
+            <input type='date'></input>
+            {/* <DatePicker 
               locale={ko}
               dateFormat="yyyy년 MM월 dd일"
 
@@ -53,7 +55,7 @@ const ScheduleForm = () => {
               endDate={endDate}
 
               customInput={<ExampleCustomInput />}
-            />
+            /> */}
           </div>
         </div>
       </nav>

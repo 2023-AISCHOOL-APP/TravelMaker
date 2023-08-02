@@ -28,13 +28,18 @@ const Login = () => {
       );
       console.log(users);
       alert('Travel Maker에 오신걸 환영합니다!')
-      nav('/', {state: true}) // Main으로 이동 및 true(로그인상태) 값 전송
+      nav('/', {state: {login : true, user: loginEmail}}) // Main으로 이동 및 true(로그인상태) 값 전송
     }catch(error){
       alert('다시 시도해주세요!')
     }
   }
 
-  
+  // 엔터키 입력시 로그인 실행
+  const handleKeyDown = (e)=>{
+    if(e.key === 'Enter'){
+      login();
+    }
+  };
 
   return (
     <div className='login_bg'>
@@ -49,7 +54,7 @@ const Login = () => {
       <div className='login_box'>
         {/* 로그인 기본정보 입력 */}
         <input className='input' placeholder='아이디' onChange={(e) => {setLoginEmail(e.target.value)}}></input>
-        <input type='password' className='input' placeholder='비밀번호' onChange={(e) => {setLoginPassword(e.target.value)}}></input>
+        <input type='password' className='input' placeholder='비밀번호' onChange={(e) => {setLoginPassword(e.target.value)}} onKeyDown={handleKeyDown}></input>
 
         {/* 버튼 클릭시 화면 이동 */}
         <hr />
