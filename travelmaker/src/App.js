@@ -9,7 +9,6 @@ import './components/css/Preference.css';
 import './components/css/Membership.css';
 import './components/css/Myschedule.css';
 
-
 // 컴포넌트 불러오기
 import Header from './components/Header';
 import Main from './components/Main'
