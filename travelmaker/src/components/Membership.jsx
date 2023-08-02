@@ -70,9 +70,9 @@ const Membership = () => {
             {/* 성별 선택 */}
             <div className='gender_box'>
               <input id='male' type="radio" name="gender" value="Male" onChange={(e) => {setRegisterGender(e.target.value)}}/>
-              <label for='male'>남자</label>
+              <label className='gender_select' for='male'>남자</label>
               <input id='female' type="radio" name="gender" value="Female" onChange={(e) => {setRegisterGender(e.target.value)}}/>
-              <label for='female'>여자</label>
+              <label className='gender_select' for='female'>여자</label>
             </div>
 
           </div>
