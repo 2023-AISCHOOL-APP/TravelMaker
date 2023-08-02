@@ -10,8 +10,20 @@ const Myschedule = () => {
       <div className='my-schedule-box'>
         <div className='my-schedule-application'>
           <div className='my-schedule-select'>
-            <div><button>내가 작성한 글</button></div>
-            <div><button>신청한 사람 목록</button></div>
+
+            {/* <input id='my_t' type='radio'>
+                <label for='my_t' className='my_text'>내가 작성한 글</label>
+              </input>
+              <input id ='my_s' type='radio'>
+                <label for ='my_s' className='my_text'>신청한 사람 몰록</label>
+              </input> */}
+            <div className='my_box'>
+              <input id='my_t' type="radio" name="my_sch" />
+              <label className='my_text' for='my_t' >내가 작성한 글</label>
+              <input id='my_s' type="radio" name="my_sch"  />
+              <label className='my_text' for='my_s'>신청한 사람 목록</label>
+            </div>
+
           </div>
         </div>
 
