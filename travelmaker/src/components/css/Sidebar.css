@@ -17,7 +17,7 @@
 
 .sidebar {
     background-color: #e3ecf1;
-    border-left: 3px solid #202020;
+    /* border-left: 1px solid #202020; */
     position: fixed;
     top: 0;
     bottom: 0;

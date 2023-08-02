@@ -79,8 +79,12 @@ const Membership = () => {
           <div>
             
             {/* 다음 버튼 클릭하여 데이터 전송 및 설문조사 페이지 이동 */}
-            <button className='Membership_bt' onClick={next}>다음</button>
-
+            <button className='membership_bt' onClick={next}>다음</button>
+            {/* 
+            <button className='membership_bt' onClick={next}>다음</button>
+            클래스 네임이 자꾸 사라짐 만약 버튼에 css적용이 안된다면 className 설정하세요
+            */}
+           
             <Routes>
               <Route path='/preference' element={<Preference />}></Route>
             </Routes>

@@ -27,12 +27,16 @@ const SideContent = ({userNickname, changeUserLogin}) => {
       <div className='side-list-box'>
         <div className='side-leader-box'>
           <h3>파티장</h3>
+          <Link to='/myschedule'>
             <li>내가 작성한 글</li>
+          </Link>
+          <Link to='/myschedule'>
             <li>신청한 사람</li>
+          </Link>
         </div>
         <div className='side-crew-box'>
           <h3>파티원</h3>
-            <li>신청목록</li>
+          <li>신청목록</li>
         </div>
       </div>
     </div>
