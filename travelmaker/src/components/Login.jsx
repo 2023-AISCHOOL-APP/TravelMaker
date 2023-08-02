@@ -55,7 +55,7 @@ const Login = () => {
         <hr />
         <button className='login_bt' onClick={login}>로그인</button>
 
-        <Link to='/membership'><button>회원가입</button></Link>
+        <Link to='/membership'><button className='login_bt'>회원가입</button></Link>
       </div>
     </div>
   )
