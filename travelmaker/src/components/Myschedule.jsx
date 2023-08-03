@@ -19,9 +19,9 @@ const Myschedule = () => {
               </input> */}
             <div className='my_box'>
               <input id='my_t' type="radio" name="my_sch" />
-              <label className='my_text' for='my_t' >내가 작성한 글</label>
+              <label className='my_text b' for='my_t' >내가 작성한 글</label>
               <input id='my_s' type="radio" name="my_sch"  />
-              <label className='my_text' for='my_s'>신청한 사람 목록</label>
+              <label className='my_text b' for='my_s'>신청한 사람 목록</label>
             </div>
 
           </div>
