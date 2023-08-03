@@ -93,7 +93,9 @@ return data;
         </div>
         <div className='side-crew-box'>
           <h3>파티원</h3>
-          <li>신청목록</li>
+          <Link to='/application'>
+            <li>신청목록</li>
+          </Link>
         </div>
       </div>
     </div>

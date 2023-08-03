@@ -60,8 +60,7 @@
     justify-content: left;
     align-items: center;
     font-size: 1.8rem;
-    margin-top: 8px;
-    margin-left: 8px;
+    margin-left: 10px;
 }
 
 .recommend-form {
@@ -78,10 +77,38 @@
     border: 1px solid black;
 }
 
-.recommend-select-all, .recommend-select-reco {
+.reommend-select-location, .recommend-select-day{
     width: 200px;
 }
 
-.reommend-select-location, .recommend-select-day{
+
+/* reaio 버튼 css 시작 */
+[type = 'radio'] {
+    display: none;
+}
+
+.my_txt{
+    position: relative;
+    color: #144272;
+    font-size: 1.8rem;
+    /* border: 0.01px solid #4777ad; */
+    /* border-radius: 20px; */
     width: 200px;
+    height: 40x;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    justify-content: center;
+}
+
+input[type='radio']:checked+label{
+    /* background-color: white; */
+    color: #ebeeed;
+    align-items: center;
+}
+/* reaio 버튼 css 끝 */
+
+.my_box{
+    display: flex;
 }
