@@ -10,6 +10,7 @@ import './components/css/Membership.css';
 import './components/css/Myschedule.css';
 import './components/css/Recommend.css';
 import './components/css/Information.css';
+import './components/css/Application.css';
 
 // 컴포넌트 불러오기
 import Header from './components/Header';
@@ -22,6 +23,7 @@ import Preference from './components/Preference';
 import Membership from './components/Membership';
 import Myschedule from './components/Myschedule';
 import Information from './components/Information';
+import Application from './components/Application'
 
 
 import { Routes, Route } from 'react-router-dom';
@@ -40,6 +42,7 @@ function App() {
         <Route path='/membership' element={<Membership />}></Route>
         <Route path='/myschedule' element={<Myschedule />}></Route>
         <Route path='/information' element={<Information />}></Route>
+        <Route path='/application' element={<Application />}></Route>
       </Routes>
     </div>
   );
