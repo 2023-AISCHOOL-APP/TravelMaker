@@ -44,12 +44,12 @@ const Main = ({changeLogin, start}) => {
         
           // 로그인 상태 : 동행찾기 접근 권한 부여
           <Link to='/select'>
-            <a className='main_btn b'>동행찾기</a>
+            <a className='main_btn click-b b'>동행찾기</a>
           </Link> :
 
           // 로그아웃 상태 : 동행찾기 접근 권한 없음 -> 로그인 화면으로 이동
           <Link to='/login' onClick={block}>
-            <a className='main_btn b'>동행찾기</a>
+            <a className='main_btn click-b b'>동행찾기</a>
           </Link>}
 
       </div>

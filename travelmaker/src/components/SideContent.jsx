@@ -20,9 +20,9 @@ const SideContent = ({userNickname, changeUserLogin}) => {
   return (
     <div className='side-content-container'>
       <div className='side-id-box'>
-        <BiSolidUserCircle className='logout-icon h-icon' size='40' color='black'></BiSolidUserCircle>
+        <BiSolidUserCircle className='logout-icon s-icon' size='40' color='black'></BiSolidUserCircle>
         <h2 className='side-id-text'>{userNickname}</h2>
-        <Link onClick={logout}><p>로그아웃</p></Link>
+        <Link onClick={logout}><p className='b'>로그아웃</p></Link>
       </div>
       <div className='side-list-box'>
         <div className='side-leader-box'>

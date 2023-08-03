@@ -6,8 +6,8 @@
 
 @media screen and (width > 767px) {
     .side-button {
-        /* left: -112px; */
-        left: -50px;
+        left: -112px;
+        /* left: -50px; */
     }
 }
 

@@ -12,15 +12,26 @@
 
 .side-id-text {
   position: relative;
-  left: -30px;
+  left: -35px;
 
   margin-bottom: 10px;
 }
 
+.logout-icon {
+  position: relative;
+
+  left: -10px;
+  top: 5px;
+}
+
 .side-id-box p {
   position: relative;
-  right: -25px;
-  top: 10px
+  right: -20px;
+  top: 14px;
+
+  color: black;
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
 .side-leader-box, .side-crew-box {

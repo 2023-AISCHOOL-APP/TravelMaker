@@ -71,7 +71,7 @@
     position: relative;
 }
 
-.main_btn, .secret_btn {
+.main_btn {
     text-decoration: none;
     text-align: center;
     width: 13vw;

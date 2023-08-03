@@ -7,12 +7,12 @@ const Select = () => {
       <div className='select-container-in-box'>
         <div className='reader-box'>
           <Link to='/scheduleform'>
-            <a className='reader-btn b'>파티장</a>
+            <a className='reader-btn click-b b'>파티장</a>
           </Link>
         </div>
         <div className='crew-box'>
           <Link to='/recommend'>
-            <a className='crew-btn b'>파티원</a>
+            <a className='crew-btn click-b b'>파티원</a>
           </Link>
         </div>
       </div>

@@ -1,8 +1,8 @@
-@media screen and (width <= 767px) {
+/* @media screen and (width <= 767px) {
   .logout-icon {
     display: none;
   }
-}
+} */
 
 .App-header {
   width: 100%;

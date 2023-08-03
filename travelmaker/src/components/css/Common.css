@@ -9,7 +9,7 @@ body {
   }
 
 /* 버튼 hover 효과 */
-.b {
+.click-b {
     text-decoration: none;
     text-align: center;
     color: white;
