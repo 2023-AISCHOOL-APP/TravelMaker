@@ -1,8 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { BiUserCircle } from "react-icons/bi";
 import { Link } from 'react-router-dom'
-import { db } from '../firebase-config';
-import { getDoc, doc } from 'firebase/firestore'
 
 import Sidebar from './Sidebar';
 import SideContent from './SideContent';
@@ -10,37 +8,9 @@ import SideContent from './SideContent';
 import './css/Sidebar.css'
 import './css/SideContent.css'
 
-const Header = ({changeLogin, isLogin}) => {
-  const [userLogin, setUserLogin] = useState("");
-  const changeUserLogin = (boolean)=>{
-    setUserLogin(boolean)
-  }
-
-// App.js에 로그인 값을 false로 바꿔 보내는 함수
-const send = () => {
-  { changeLogin(userLogin) }
-}
-
-if(userLogin===false){
-  send();
-}
-
-  // 데이터 베이스에서 데이터 불러오기
-  const [userNickname, setUserNickname] = useState([]);
-
-  const getUser = async () => {
-    const docRef = doc(db, "users", String(isLogin));
-    const docSnap = await getDoc(docRef);
-    console.log(isLogin);
-    if (docSnap.exists()) {
-      console.log("Document data:", docSnap.data().nickname);
-      setUserNickname(docSnap.data().nickname);
-    } else {
-      console.log("No such document!");
-    }
-  };
-
-  getUser();
+const Header = () => {
+  // 로그인한 유저 아이디
+  const userID = sessionStorage.getItem('userId')
 
   return (
     <div>
@@ -58,15 +28,14 @@ if(userLogin===false){
           </div>
         </div>
         <div className='icon-container'>
-          {isLogin ?
+          {userID ?
             // 로그인 상태일때 노출되는 아이콘
               <Sidebar width={315}>
-                <SideContent userNickname={userNickname} changeUserLogin={changeUserLogin}/>
+                <SideContent/>
               </Sidebar> :
             // 로그아웃 상태일때 노출되는 아이콘
-            <Link to={'/login'}>
+            <Link to='/login'>
               <div className='loginbox'>
-                {/* <span className='logintext'>로그인</span> */}
                 {/* 로그인 아이콘 https://react-icons.github.io/react-icons */}
                 <BiUserCircle className='login-icon h-icon' size='40' color='black'></BiUserCircle>
               </div>

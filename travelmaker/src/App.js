@@ -23,20 +23,15 @@ import Membership from './components/Membership';
 import Myschedule from './components/Myschedule';
 import Information from './components/Information';
 
-import React, { useState } from 'react';
+
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
-  const [isLogin, setIsLogin] = useState(false);
-  const changeLogin = (boolean)=>{
-    setIsLogin(boolean)
-  }
-
   return (
     <div className="App">
-      <Header changeLogin={changeLogin} isLogin={isLogin} />
+      <Header />
       <Routes>
-        <Route path='/' element={isLogin ? <Main changeLogin={changeLogin} start={true} /> : <Main changeLogin={changeLogin} start={false} />}></Route>
+        <Route path='/' element={<Main/>}></Route>
         <Route path='/select' element={<Select />}></Route>
         <Route path='/scheduleform' element={<ScheduleForm />}></Route>
         <Route path='/recommend' element={<Recommend />}></Route>
