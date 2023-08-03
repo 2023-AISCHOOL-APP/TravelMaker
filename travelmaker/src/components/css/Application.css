@@ -1,45 +1,45 @@
 @media screen and (width <= 767px) {
-    .my-schedule-form {
+    .app-form {
         width: 80vw;
         display: flexbox;
         flex-direction: column;
     }
 
-    .my-schedule-list {
+    .app-list {
         width: 70vw;
         height: 40vh;
     }
 
 }
 @media screen and (width >= 768px) {
-    .my-schedule-application{
+    .app-application{
         width: 90vw;
     }
 
-    .my-schedule-form {
+    .app-form {
         width: 90vw;
         display: flex;
         flex-wrap: wrap;
     }
 
-    .my-schedule-list {
+    .app-list {
         width: 20vw;
         height: 40vh;
     }
 }
 
-.my-schedule-container {
+.app-container {
     width: 100%;
     height: calc(100vh - 70px);
     margin-top: 70px;
 }
 
-.my-nav-list {
+.app-nav-list {
     border-bottom: 1px solid black;
     padding: 0 3.90625vw;
 }
 
-.my-schedule-box {
+.app-box {
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -49,7 +49,7 @@
     position: absolute;
 }
 
-.my-schedule-application {
+.app-application {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,7 +58,7 @@
     height: 10vh;
 }
 
-.my-scheduele-select{
+.app-scheduele-select{
 
     font-size: 3rem;
     margin-top: 15px;
@@ -66,14 +66,14 @@
     border: 1px solid black;
 }
 
-.my-schedule-form {
+.app-form {
     border: 1px solid black;
     margin: 10px;
     height: 97vh;
     overflow-y: scroll;
 }
 
-.my-schedule-list {
+.app-list {
     font-size: 3rem;
     margin-top: 15px;
     margin-left: 21px;
