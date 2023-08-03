@@ -95,6 +95,8 @@ const SideContent = () => {
     alert('로그아웃 되었습니다.')
     window.location.replace('/')
   }
+  const my = sessionStorage.setItem('select_my', true)
+  const app = sessionStorage.setItem('select_app', false)
 
   return (
     <div className='side-content-container'>
@@ -107,10 +109,10 @@ const SideContent = () => {
         <div className='side-leader-box'>
           <h3>파티장</h3>
           <Link to='/myschedule'>
-            <li className='b'>내가 작성한 글</li>
+            <li className='b' onClick={my}>내가 작성한 글</li>
           </Link>
           <Link to='/myschedule'>
-            <li className='b'>신청한 사람</li>
+            <li className='b' onClick={app}>신청한 사람</li>
           </Link>
         </div>
         <div className='side-crew-box'>
