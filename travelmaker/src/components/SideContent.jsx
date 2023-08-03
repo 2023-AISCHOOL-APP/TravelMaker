@@ -10,7 +10,7 @@ const SideContent = () => {
   // 로그인한 유저 아이디
   const userID = sessionStorage.getItem('userId')
 
-  // 데이터 베이스에서 유저 데이터 불러오기
+  // 데이터 베이스에서 유저 닉네임 데이터 불러오기
   const [userNickname, setUserNickname] = useState([]);
   const getUser = async () => {
     const docRef = doc(db, "users", String(userID));
@@ -27,7 +27,7 @@ const SideContent = () => {
 
   // 데이터 베이스에서 특정 유저 설문조사 데이터 불러오기
   const [userPre, setUserPre] = useState([]);
-  const getpre = async () => {
+  const getPre = async () => {
     const docRef = doc(db, "preference", String(userID));
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
@@ -37,34 +37,56 @@ const SideContent = () => {
       console.log("No such document!");
     }
   };
-  useEffect(()=>{
-    getUser();
-    getpre();
-    fetchUsers();
-  },[])
   
-  const fetchUsers = async () => {
-    // ... try, catch 생략
-    const usersCollectionRef = collection(db, 'preference'); // 참조
-    const userSnap = await getDocs(usersCollectionRef); // 데이터 스냅 받아오기 - 비동기처리
+  // 데이터 베이스에서 모든 유저 설문조사 데이터 불러오기
+  const [usersPre, setUsersPre] = useState({})
+  const getUsersPre = async () => {
+    const usersCollectionRef = collection(db, 'preference');
+    const userSnap = await getDocs(usersCollectionRef);
     const data = userSnap.docs.map(doc => ({
         ...doc.data(),
         id: doc.id
     }));
-    for(let i=0; i<data.length; i++){
-      for(let j=0; j<6; j++){
-        if(userPre[j] === data[i].preference[j]){
-          console.log(`${i}번 데이터 ${j+1}번 설문일치!`);
-        }else{
-          console.log(`${i}번 데이터 ${j+1}번 설문 불일치!`);
+    setUsersPre(data);
+  }
+
+  // 특정 유저 설문 데이터와 모든 유저 설문 데이터 비교
+  let dataNum = 0;
+  let match = 0;
+  let matchUsers = [];
+  const matchPre = ()=>{
+    for (let i = 0; i < usersPre.length; i++) {
+      for (let j = 0; j < 6; j++) {
+        dataNum = dataNum + 1;
+        if (userPre[j] === usersPre[i].preference[j]) {
+          console.log(`${i+1}번 데이터 ${j + 1}번 설문일치!`);
+          match++;
+        } else {
+          console.log(`${i+1}번 데이터 ${j + 1}번 설문 불일치!`);
+        }
+        // console.log(dataNum);
+        if(dataNum === 6){
+          dataNum = 0;
+          match = 0;
+        }
+        if(match === 4){
+          console.log(`${usersPre[i].id} 유저와 일치합니다!`)
+          matchUsers.push(usersPre[i].id)
         }
       }
     }
-return data;
-}
+    console.log(matchUsers);
+  }
 
+  useEffect(()=>{
+    getUser();
+    getPre();
+    getUsersPre();
+  },[])
 
-
+  useEffect(()=>{
+      matchPre();
+  },[usersPre])
 
   // 로그아웃 함수
   const logout = async () => {
@@ -93,9 +115,7 @@ return data;
         </div>
         <div className='side-crew-box'>
           <h3>파티원</h3>
-          <Link to='/application'>
-            <li>신청목록</li>
-          </Link>
+          <li>신청목록</li>
         </div>
       </div>
     </div>

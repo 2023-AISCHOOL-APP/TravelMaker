@@ -1,0 +1,113 @@
+@media screen and (width <= 767px) {
+    .detail-form {
+        width: 80vw;
+        display: flexbox;
+        flex-direction: column;
+    }
+
+    .detail-list {
+        width: 70vw;
+        height: 40vh;
+    }
+
+}
+@media screen and (width >= 768px) {
+    .detail-application{
+        width: 90vw;
+    }
+
+    .detail-form {
+        width: 90vw;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .detail-list {
+        width: 20vw;
+        height: 40vh;
+    }
+}
+
+.detail-container {
+    width: 100%;
+    height: calc(100vh - 70px);
+    margin-top: 70px;
+}
+
+.my-nav-list {
+    border-bottom: 1px solid black;
+    padding: 0 3.90625vw;
+}
+
+.detail-box {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin-top: 10px;
+    border: 1px solid black;
+    margin: 10px 3.90625vw 0;
+    position: absolute;
+}
+
+.detail-application {
+    border: 1px solid black;
+    margin: 10px;
+    height: 10vh;
+}
+
+.detail-select{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: 1.8rem;
+    margin-left: 10px;
+}
+
+.detail-form {
+    border: 1px solid black;
+    margin: 10px;
+    height: 97vh;
+    overflow-y: scroll;
+}
+
+.detail-list {
+    /* font-size: 3rem; */
+    margin-top: 15px;
+    margin-left: 21px;
+    border: 1px solid black;
+}
+
+.detail-select-location, .detail-select-day{
+    width: 200px;
+}
+
+/* radio 버튼 css 시작 */
+[type = 'radio'] {
+    display: none;
+}
+
+.my_text{
+    position: relative;
+    color: #144272;
+    font-size: 1.8rem;
+    /* border: 0.01px solid #4777ad;
+    border-radius: 20px; */
+    width: 200px;
+    height: 40x;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    justify-content: center;
+}
+
+input[type='radio']:checked+label{
+    /* background-color: #84add1; */
+    color: #d32de9;
+    align-items: center;
+}
+/* radio 버튼 css 끝 */
+
+.my_box{
+    display: flex;
+}
