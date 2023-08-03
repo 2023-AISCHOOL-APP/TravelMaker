@@ -1,16 +1,16 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { BiSolidUserCircle } from "react-icons/bi";
 import { Link } from 'react-router-dom';
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase-config";
 import { db } from '../firebase-config';
-import { getDoc, doc } from 'firebase/firestore'
+import { getDoc, doc, collection, getDocs } from 'firebase/firestore'
 
 const SideContent = () => {
   // 로그인한 유저 아이디
   const userID = sessionStorage.getItem('userId')
 
-  // 데이터 베이스에서 데이터 불러오기
+  // 데이터 베이스에서 유저 데이터 불러오기
   const [userNickname, setUserNickname] = useState([]);
   const getUser = async () => {
     const docRef = doc(db, "users", String(userID));
@@ -23,8 +23,48 @@ const SideContent = () => {
       console.log("No such document!");
     }
   };
+  
 
-  getUser();
+  // 데이터 베이스에서 특정 유저 설문조사 데이터 불러오기
+  const [userPre, setUserPre] = useState([]);
+  const getpre = async () => {
+    const docRef = doc(db, "preference", String(userID));
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      console.log("Document data:", docSnap.data().preference);
+      setUserPre(docSnap.data().preference);
+    } else {
+      console.log("No such document!");
+    }
+  };
+  useEffect(()=>{
+    getUser();
+    getpre();
+    fetchUsers();
+  },[])
+  
+  const fetchUsers = async () => {
+    // ... try, catch 생략
+    const usersCollectionRef = collection(db, 'preference'); // 참조
+    const userSnap = await getDocs(usersCollectionRef); // 데이터 스냅 받아오기 - 비동기처리
+    const data = userSnap.docs.map(doc => ({
+        ...doc.data(),
+        id: doc.id
+    }));
+    for(let i=0; i<data.length; i++){
+      for(let j=0; j<6; j++){
+        if(userPre[j] === data[i].preference[j]){
+          console.log(`${i}번 데이터 ${j+1}번 설문일치!`);
+        }else{
+          console.log(`${i}번 데이터 ${j+1}번 설문 불일치!`);
+        }
+      }
+    }
+return data;
+}
+
+
+
 
   // 로그아웃 함수
   const logout = async () => {

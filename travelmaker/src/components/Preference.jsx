@@ -26,6 +26,12 @@ const Preference = () => {
                                        gender: registerData.registerGender
                                       })
   }
+
+  // 회원가입 정보 데이터베이스로 보내기
+  const preData = async ()=>{
+    await setDoc(doc(db, "preference", String(registerData.registerEmail)),
+                    {preference: answers})
+  }
   
   const surveys = [
     {
@@ -74,6 +80,7 @@ const Preference = () => {
   const signup = async ()=>{ 
     try{
       createUser(); // 유저정보 데이터베이스로 전송
+      preData();
       const user = await createUserWithEmailAndPassword(
       auth,
       registerData.registerEmail,
@@ -88,6 +95,7 @@ const Preference = () => {
     }
   }
 
+  console.log(answers);
 //   const Container = styled.div`
 //     margin: 20px auto;
 //     background-color: #eee;
