@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { BiMenu } from "react-icons/bi";
+import { BiMenu, BiArrowFromLeft } from "react-icons/bi";
 
 const Sidebar = ({ width = 280, children }) => {
   const [isOpen, setOpen] = useState(false);
@@ -44,9 +44,11 @@ const Sidebar = ({ width = 280, children }) => {
           height: "100%",
           transform: `translatex(${-xPosition}px)`
         }}
-      >
-        <BiMenu onClick={() => toggleMenu()} className="side-button">
-        </BiMenu>
+      > 
+        {/* btnOn : true  / btnOff : false */}
+        {isOpen ? 
+        <BiMenu onClick={toggleMenu} className="side-button btnOn"/> :
+        <BiMenu onClick={toggleMenu} className="side-button btnOff"/>}
 
         {/* 사이드바 내부값이 구현되는 위치 */}
         <div className="side-content">{children}</div>
