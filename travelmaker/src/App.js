@@ -10,7 +10,7 @@ import './components/css/Membership.css';
 import './components/css/Myschedule.css';
 import './components/css/Information.css';
 import './components/css/Application.css';
-import './components/css/PartyMember.css'
+import './components/css/PartyMember.css';
 
 // 컴포넌트 불러오기
 import Header from './components/Header';

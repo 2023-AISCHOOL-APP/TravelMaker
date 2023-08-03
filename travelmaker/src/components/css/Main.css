@@ -83,3 +83,12 @@
     border: 1px solid black;
     border-radius: 10px;
 }
+
+/* 메인 페이지 폰트 사이즈 */
+.main-title {
+    font-size: 4.7rem;
+}
+
+.main-contant-box p {
+    font-size: 2rem;
+}

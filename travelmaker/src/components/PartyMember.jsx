@@ -1,8 +1,5 @@
 import React, { useState } from 'react'
 
-// import './css/AllSchedule.css';
-// import './css/Recommend.css';
-
 function PartyMember() {
   const [allOrRec, setAllOrRec] = useState(true);
   const all = () => {
@@ -21,9 +18,9 @@ function PartyMember() {
         <div className='detail-application'>
           <div className='detail-select'>
             <input id='my_t' type="radio" name="my_sch" onClick={all} />
-            <label className='my_text' for='my_t' >전체보기</label>
+            <label className='my_text b' for='my_t' >전체보기</label>
             <input id='my_s' type="radio" name="my_sch" onClick={rec} />
-            <label className='my_text' for='my_s'>추천</label>
+            <label className='my_text b' for='my_s'>추천보기</label>
           </div>
         </div>
 

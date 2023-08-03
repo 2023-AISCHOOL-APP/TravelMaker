@@ -20,7 +20,7 @@ const Main = () => {
     <div className='main-container'>
       <div className='main-contant-box'>
         <div>
-          <h1 className='main-title'>Travel Maker에 오신것을 환영합니다!</h1>
+          <h1 className='main-title'>Travel Mate</h1>
         </div>
         <div>
           <p className='main-text'>새로운 친구와 즐거운 여행을 만들어보세요!</p>
