@@ -10,9 +10,9 @@ const Recommend = () => {
         <div className='recommend-application'>
           <div className='recommend-select'>
             <input id='my_t' type="radio" name="my_sch" />
-            <label className='my_txt' for='my_t' >내가 작성한 글</label>
+            <label className='my_text' for='my_t' >전체보기</label>
             <input id='my_s' type="radio" name="my_sch" />
-            <label className='my_txt' for='my_s'>신청한 사람 목록</label>
+            <label className='my_text' for='my_s'>추천</label>
           </div>
         </div>
 

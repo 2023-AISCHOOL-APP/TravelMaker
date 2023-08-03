@@ -82,32 +82,7 @@
 }
 
 
-/* reaio 버튼 css 시작 */
-[type = 'radio'] {
-    display: none;
-}
 
-.my_txt{
-    position: relative;
-    color: #144272;
-    font-size: 1.8rem;
-    /* border: 0.01px solid #4777ad; */
-    /* border-radius: 20px; */
-    width: 200px;
-    height: 40x;
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
-    margin-right: 10px;
-    justify-content: center;
-}
-
-input[type='radio']:checked+label{
-    /* background-color: white; */
-    color: #ebeeed;
-    align-items: center;
-}
-/* reaio 버튼 css 끝 */
 
 .my_box{
     display: flex;

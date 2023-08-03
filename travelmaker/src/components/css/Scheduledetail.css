@@ -90,8 +90,8 @@
     position: relative;
     color: #144272;
     font-size: 1.8rem;
-    border: 0.01px solid #4777ad;
-    border-radius: 20px;
+    /* border: 0.01px solid #4777ad; */
+    /* border-radius: 20px; */
     width: 200px;
     height: 40x;
     display: flex;
