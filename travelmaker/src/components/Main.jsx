@@ -33,7 +33,7 @@ const Main = () => {
         </div> 
       </div>
       <div className='main-img-box'>
-        <img src='images/cars.png' className='main-img'></img>
+        <img src='images/bgimg.jpg' className='main-img'></img>
       </div>
     </div>
   )

@@ -22,7 +22,7 @@ const Header = () => {
                 <Link to='/'>
                   {/* 로고 이미지 변경 */}
                   {/* <img src='images/logo99999.png' height='50px' width='150px' /> */}
-                  <img src='images/Tlogo.png' height='50px'  />
+                  <img src='images/travel.png' height='50px'  />
                 </Link>
               </a>
             </h1>

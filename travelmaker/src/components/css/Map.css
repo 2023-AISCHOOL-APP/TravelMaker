@@ -1,8 +1,15 @@
   .map-img{
-    width: 100%;
-    height: 100%
+    /* width: 80%; */
+    height: 100%;
+    /* padding-left: 100px; */
   }
 
+  .map-img-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
 
   .map-container {
     width: 100%;
@@ -57,9 +64,89 @@
 
 
   .map-form {
+    /* display: flex; */
+    /* align-items: center; */
     border: 1px solid black;
     margin: 10px;
     height: 97vh;
     width: 100%;
   }
 
+.kg{
+  position: relative;
+  top: -560px;
+  left: 340px;
+  height: 100px;
+  width: 150px;
+  border-radius: 20px;
+}
+
+.kw{
+    position: relative;
+    top: -580px;
+    left: 370px;
+    height: 100px;
+    border-radius: 20px;
+}
+
+.cb{
+  position: relative;
+  top: -470px;
+  left: 0px;
+  height: 100px;
+  width: 90px;
+  border-radius: 20px;
+}
+
+.cn{
+  position: relative;
+  top: -430px;
+  left: 10px;
+  height: 100px;
+  border-radius: 20px;
+}
+
+.kb{
+  position: relative;
+  top: -420px;
+  left: 40px;
+  border-radius: 20px;
+}
+
+.kn{
+  position: relative;
+  top: -290px;
+  right: 150px;
+  border-radius: 20px;
+   border-radius: 20px;
+}
+
+.jb{
+  position: relative;
+  top: -340px;
+  right: 480px;
+   border-radius: 20px;
+}
+
+.jn{
+  position: relative;
+  top: -270px;
+  left: 310px;
+   border-radius: 20px;
+}
+
+.jj{
+  position:relative;
+  top: -120px;
+   border-radius: 20px;
+}
+
+/* 버튼 투명도 조절 */
+.map-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* height: 100%; */
+    opacity: 10;
+}

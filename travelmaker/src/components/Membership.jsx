@@ -68,7 +68,7 @@ const Membership = () => {
             <input placeholder='닉네임(2글자 이상 입력)' onChange={(e) => { setRegisterNickname(e.target.value) }}></input>
             <input placeholder='아이디(ex : test@test.com)' onChange={(e) => { setRegisterEmail(e.target.value) }}></input>
             <input type='password' placeholder='비밀번호(8자리 이상 입력)' onChange={(e) => { setRegisterPassword(e.target.value) }}></input>
-            <input type='password' placeholder='비밀번호확인' onChange={(e) => { setCheckPassword(e.target.value) }}></input>
+            <input type='password' placeholder='비밀번호 확인' onChange={(e) => { setCheckPassword(e.target.value) }}></input>
             <input placeholder='이름(ex : 홍길동)' onChange={(e) => { setRegisterName(e.target.value) }}></input>
             <input maxLength={8} placeholder='생년월일 8자리(ex : 20221213)' onChange={(e) => { setRegisterBirth(e.target.value) }}></input>
 

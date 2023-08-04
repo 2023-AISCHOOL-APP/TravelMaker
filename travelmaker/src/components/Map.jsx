@@ -19,8 +19,10 @@ const Map = () => {
                     </div>
                 </div>
                 <div className='map-form'>
-
-                    <div className='map-btn'> 
+                    <div className='map-img-box'>
+                        <img className='map-img' src='images/Map.png'></img>
+                    </div>
+                    <div className='map-btn'>
                         <button className='kg'>안녕하세요 경기 입니다</button>
                         <button className='kw'>안녕하세요 강원 입니다</button>
                         <button className='cn'>안녕하세요 충남 입니다</button>
@@ -31,7 +33,6 @@ const Map = () => {
                         <button className='jn'>안녕하세요 전남 입니다</button>
                         <button className='jj'>안녕하세요 제주 입니다</button>
                     </div>
-                    <img className='map-img' src='images/Map.png'></img>
 
                 </div>
             </div>
