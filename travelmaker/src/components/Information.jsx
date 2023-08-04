@@ -16,19 +16,19 @@ const Information = () => {
 
           <div className='information-application'>
             <div className='information-select'>
-              <div className='information-select-'>정태녕과 신나는 광주여행</div>
+              <div className='information-select-title'>정태녕과 신나는 광주여행</div>
             </div>
           </div>
 
           <div className='information-application'>
             <div className='information-select'>
-              <div className='information-select-'>정태녕</div>
+              <div className='information-select-writer'>정태녕</div>
             </div>
           </div>
           <div className='information-application'>
             <div className='information-select'>
-              <div className='information-select-'>광주</div>
-              <div className='information-select-'>여행 기간</div>
+              <div className='information-select-area'>광주</div>
+              <div className='information-select-term'>여행 기간</div>
             </div>
           </div>
   
