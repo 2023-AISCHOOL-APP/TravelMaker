@@ -11,7 +11,7 @@ const Select = () => {
           </Link>
         </div>
         <div className='crew-box'>
-          <Link to='/recommend'>
+          <Link to='/partymember'>
             <a className='crew-btn click-b b'>파티원</a>
           </Link>
         </div>

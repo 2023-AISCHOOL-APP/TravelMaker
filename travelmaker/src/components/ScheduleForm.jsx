@@ -5,6 +5,9 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { ko } from 'date-fns/esm/locale';
 
+// kanban 테스트
+import Kanbanborad from './Kanbanborad';
+
 const ScheduleForm = () => {
 
   const [startDate, setStartDate] = useState(new Date());
@@ -75,8 +78,9 @@ const ScheduleForm = () => {
           </div>
         </div>
         <div className='schedule-form'>
-          <div className='schedule-list'>day1</div>
-          <div className='schedule-list'>+</div>
+          {/* <div className='schedule-list'>day1</div>
+          <div className='schedule-list'>+</div> */}
+          <Kanbanborad/>
         </div>
       </div>
     </div>
