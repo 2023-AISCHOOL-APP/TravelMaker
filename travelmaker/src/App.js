@@ -27,6 +27,8 @@ import Application from './components/Application';
 import PartyMember from './components/PartyMember';
 import Map from './components/Map';
 
+import CsvUpload from './components/CsvUpload';
+
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -34,6 +36,7 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
+        <Route path='/csvupload' element={<CsvUpload/>}></Route>
         <Route path='/' element={<Main/>}></Route>
         <Route path='/select' element={<Select />}></Route>
         <Route path='/scheduleform' element={<ScheduleForm />}></Route>

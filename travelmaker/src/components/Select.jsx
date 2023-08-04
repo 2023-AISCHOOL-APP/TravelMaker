@@ -46,15 +46,18 @@ const Select = () => {
           console.log(`${i + 1}번 데이터 ${j + 1}번 설문 불일치!`);
         }
         if (dataNum === 6) {
+          if(match < 4){
+            console.log(`${usersPre[i].id} 유저와 일치하지않습니다!`)
+          }else if (match >= 4) {
+            console.log(`${usersPre[i].id} 유저와 일치합니다!`)
+            if (userID != usersPre[i].id) {
+              matchUsers.push(usersPre[i].id)
+            }
+          }
           dataNum = 0;
           match = 0;
         }
-        if (match === 4) {
-          console.log(`${usersPre[i].id} 유저와 일치합니다!`)
-          if (userID != usersPre[i].id) {
-            matchUsers.push(usersPre[i].id)
-          }
-        }
+        
       }
     }
   }
