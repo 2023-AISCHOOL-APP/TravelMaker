@@ -3,16 +3,16 @@ import React, { useEffect, useState } from 'react'
 
 const Myschedule = () => {
   const selectMy = sessionStorage.getItem('select_my')
-  const selectApp = sessionStorage.getItem('select_app')
   const [myOrApp, setMyOrApp] = useState(true);
 
   useEffect(()=>{
     if(selectMy != null){
-      setMyOrApp(true)
-    }else if(selectApp != null){
+      sessionStorage.removeItem('select_my')
+      setMyOrApp(true) 
+    }else{
       setMyOrApp(false)
     }
-  })
+  },[])
 
   const my = () => {
     setMyOrApp(true);

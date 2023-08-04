@@ -29,6 +29,8 @@ const Membership = () => {
       alert('비밀번호가 일치하지 않습니다!') // 비밀번호와 확인이 일치하지않음
     }else if((registerNickname*0 == 0) || (registerEmail*0 == 0) || (registerName*0 == 0)){
       alert('닉네임, 아이디, 이름은 문자로 입력해주세요!') // 아이디, 이름을 숫자로 입력
+    }else if(registerEmail.indexOf('@') === -1 || registerEmail.indexOf('.com') === -1){
+      alert('아이디를 e-mail형식으로 입력해주세요!')
     }else if(registerNickname.length < 2){
       alert('닉네임을 2글자 이상 입력해주세요!')
     }else if(registerPassword.length < 8){

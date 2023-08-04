@@ -1,13 +1,20 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+
 
 function PartyMember() {
-  const [allOrRec, setAllOrRec] = useState(true);
-  const all = () => {
-    setAllOrRec(true);
+  const matchNum = sessionStorage.getItem('matchNum')
+  let matchUsers = [];
+  for (let i = 0; i < matchNum; i++) {
+    matchUsers.push(sessionStorage.getItem(`matchUsers${i}`))
+    // sessionStorage.removeItem(`matchUsers${i}`)
   }
+  console.log(matchUsers);
+  
+  const [allOrRec, setAllOrRec] = useState(true); // 전체보기 혹은 추천보기
+  const all = () => { setAllOrRec(true); } // 전체보기
   const rec = () => {
     setAllOrRec(false);
-  }
+  } // 추천보기
 
   return (
     <div className='detail-container'>
@@ -32,7 +39,6 @@ function PartyMember() {
         </div>
         <div className='detail-form'>
           {allOrRec ?
-
             <div className='detail-list'>
               <div>전체일정</div>
               <div>작성자</div>
@@ -41,13 +47,16 @@ function PartyMember() {
               <div>내용</div>
             </div>
             :
-            <div className='detail-list'>
-              <div>추천일정</div>
-              <div>작성자</div>
-              <div>내용</div>
-              <div>내용</div>
-              <div>내용</div>
-            </div>
+            <>
+              {matchUsers.map((id) => {
+                return (<div className='detail-list'>
+                  <div>{id}</div>
+                  <div>내용</div>
+                  <div>내용</div>
+                  <div>내용</div>
+                </div>)
+              })}
+            </>
           }
         </div>
       </div>
