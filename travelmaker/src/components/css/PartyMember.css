@@ -7,7 +7,7 @@
 
     .detail-list {
         width: 70vw;
-        height: 40vh;
+        height: 200px;
     }
 
 }
@@ -23,8 +23,8 @@
     }
 
     .detail-list {
-        width: 20vw;
-        height: 40vh;
+        width: 19vw;
+        height: 200px;
     }
 }
 
