@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { db } from '../firebase-config';
 import { getDoc, doc, collection, getDocs, setDoc } from 'firebase/firestore'
 
 const Select = () => {
+  const nav = useNavigate();
   const userID = sessionStorage.getItem('userId'); // 로그인한 유저 아이디
   
   // 데이터 베이스에서 특정 유저 설문조사 데이터 불러오기
@@ -57,7 +58,6 @@ const Select = () => {
           dataNum = 0;
           match = 0;
         }
-        
       }
     }
   }
@@ -93,12 +93,23 @@ const Select = () => {
     getUsers();
   }, [matchUsers])
 
+    // 데이터 베이스에서 모든 유저 설문조사 데이터 불러오기
+    const getLocalData = async () => {
+      const usersCollectionRef = collection(db, '강원도');
+      const userSnap = await getDocs(usersCollectionRef);
+      const data = userSnap.docs.map(doc => ({
+        ...doc.data(),
+        id: doc.id
+      }));
+      nav('/scheduleform', {state: data})
+    }
+
   return (
     <div className='select-container'>
       <div className='select-container-in-box'>
         <div className='reader-box'>
-          <Link to='/scheduleform'>
-            <a className='reader-btn click-b b'>파티장</a>
+          <Link>
+            <a className='reader-btn click-b b' onClick={getLocalData}>파티장</a>
           </Link>
         </div>
         <div className='crew-box'>

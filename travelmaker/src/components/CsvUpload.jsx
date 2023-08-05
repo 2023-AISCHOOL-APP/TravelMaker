@@ -17,12 +17,21 @@ function CsvUpload() {
     });
   };
   console.log(locationdata[1]);
-  // 회원가입 정보 데이터베이스로 보내기
+  // 지역데이터 정보 데이터베이스로 보내기
   const sendData = async () => {
-    for(let i=1; i<locationdata.length-1; i++){
-      await setDoc(doc(db, "강원도", `횡성군${i-1}`),
-      { LocalData : locationdata[i] })
-    }
+    for (let i = 1; i < locationdata.length - 1; i++) {
+        await setDoc(doc(db, "강원도", `강릉시${i - 1}`),
+          {
+            num: locationdata[i][0],
+            title: locationdata[i][1],
+            addr1: locationdata[i][2],
+            mapx: locationdata[i][3],
+            mapy: locationdata[i][4],
+            image: locationdata[i][5],
+            overview: locationdata[i][6],
+            addr2: locationdata[i][7],
+          })
+      }
     window.location.replace('/csvupload')
   }
 

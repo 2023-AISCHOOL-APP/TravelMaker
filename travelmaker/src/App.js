@@ -26,6 +26,7 @@ import Information from './components/Information';
 import Application from './components/Application';
 import PartyMember from './components/PartyMember';
 import Map from './components/Map';
+import LocalDetail from './components/LocalDetail';
 
 import CsvUpload from './components/CsvUpload';
 
@@ -36,6 +37,7 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
+        <Route path='/localdetail' element={<LocalDetail/>}></Route>
         <Route path='/csvupload' element={<CsvUpload/>}></Route>
         <Route path='/' element={<Main/>}></Route>
         <Route path='/select' element={<Select />}></Route>

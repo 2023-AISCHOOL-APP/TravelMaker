@@ -1,4 +1,6 @@
-import { React, useState, forwardRef } from 'react'
+import { React, useState, forwardRef, useEffect } from 'react'
+import { db } from '../firebase-config';
+import { getDoc, doc, collection, getDocs, setDoc } from 'firebase/firestore'
 
 // 달력 라이브러리
 import DatePicker from "react-datepicker";
@@ -7,9 +9,12 @@ import { ko } from 'date-fns/esm/locale';
 
 // kanban 테스트
 import Kanbanborad from './Kanbanborad';
+import LocalData from './LocalData';
+import { useLocation } from 'react-router-dom';
 
 const ScheduleForm = () => {
-
+  const localArr = useLocation().state
+  console.log(localArr);
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
 
@@ -69,12 +74,7 @@ const ScheduleForm = () => {
           </div>
           {/* 창 크기 줄었을 때 안보임 */}
           <div className='palce-info-area'>
-            <div className='place-info-box'>place1</div>
-            <div className='place-info-box'>place2</div>
-            <div className='place-info-box'>place3</div>
-            <div className='place-info-box'>place4</div>
-            <div className='place-info-box'>place5</div>
-            <div className='place-info-box'>place6</div>
+          {localArr&&localArr.map(item=><LocalData local={item} key={item.num}/>)}
           </div>
         </div>
         <div className='schedule-form'>

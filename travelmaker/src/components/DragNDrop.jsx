@@ -70,13 +70,12 @@ function DragNDrop({ data }) {
     setList((prevList) => [
       ...prevList,
       {
-        title: `Group ${prevList.length + 1}`,
-        items: [],
+        title: `group ${prevList.length + 1}`,
+        items: ['1'],
       },
     ]);
     setGroupStates((prevStates) => [...prevStates, true]);
   };
-
   return (
 
     <div className='kanban-container'>

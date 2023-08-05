@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 
-
 function PartyMember() {
   const matchNum = sessionStorage.getItem('matchNum')
   let matchUsers = [];
