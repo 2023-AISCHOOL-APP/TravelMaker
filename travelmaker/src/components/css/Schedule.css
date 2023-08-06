@@ -141,8 +141,9 @@
 }
 
 .search-area {
+  display: flex;
   margin: 10px;
-  width: 20.4vw;
+  width: 18.8vw;
   height: 35px;
 }
 

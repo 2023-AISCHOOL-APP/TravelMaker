@@ -1,6 +1,4 @@
 import { React, useState, forwardRef, useEffect } from 'react'
-import { db } from '../firebase-config';
-import { getDoc, doc, collection, getDocs, setDoc } from 'firebase/firestore'
 
 // 달력 라이브러리
 import DatePicker from "react-datepicker";
@@ -9,12 +7,15 @@ import { ko } from 'date-fns/esm/locale';
 
 // kanban 테스트
 import Kanbanborad from './Kanbanborad';
+
+// 지역정보
 import LocalData from './LocalData';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { db } from '../firebase-config';
+import { getDoc, doc, collection, getDocs, setDoc } from 'firebase/firestore'
 
 const ScheduleForm = () => {
   const localArr = useLocation().state
-  console.log(localArr);
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
 
@@ -23,6 +24,44 @@ const ScheduleForm = () => {
       {value}
     </button>
   ));
+
+  // 데이터 베이스에서 모든 데이터 불러오기
+  const [local, setLocal] = useState({})
+  const getData = async () => {
+    const usersCollectionRef = collection(db, '강원도');
+    const userSnap = await getDocs(usersCollectionRef);
+    const data = userSnap.docs.map(doc => ({
+      ...doc.data(),
+      id: doc.id
+    }));
+    setLocal(data);
+  }
+  useEffect(()=>{
+    getData();
+  },[])
+  
+  // 검색어와 지역 데이터 비교
+  const [userInput, setUserInput] = useState("")
+  const [obList, setObList] = useState([]);
+
+  const searchData = () => {
+    setObList([]);
+    const addObject = (newList)=>{
+      setObList([...obList, newList])
+     }
+    for (let i = 0; i < localArr.length; i++) {
+      const localTitle = [];
+      localTitle.push(localArr[i].title);
+      const filterLocal = (query) => {
+        return localTitle.filter((el) =>
+        el.toString().toLowerCase().indexOf(query.toString().toLowerCase()) > -1)
+      }
+      if(filterLocal(userInput).length!=0){
+          addObject(localArr[i]);
+      }
+      }
+      console.log(obList);
+    }
 
   return (
     <div className='schedule-container'>
@@ -70,11 +109,12 @@ const ScheduleForm = () => {
       <div className='schedule-box'>
         <div className='info-box'>
           <div className='search-area'>
-            <input className='search-box' placeholder='검색어를 입력하세요.'></input>
+            <input className='search-box' placeholder='검색어를 입력하세요.' onChange={(e) => { setUserInput(e.target.value) }}></input>
+            <button onClick={searchData}>검색</button>
           </div>
           {/* 창 크기 줄었을 때 안보임 */}
           <div className='palce-info-area'>
-          {localArr&&localArr.map(item=><LocalData local={item} key={item.num}/>)}
+          {localArr&&localArr.map(item=><LocalData local={item} key={item.title}/>)}
           </div>
         </div>
         <div className='schedule-form'>
