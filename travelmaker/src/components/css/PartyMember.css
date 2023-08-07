@@ -44,13 +44,19 @@
     flex-direction: column;
     height: 100vh;
     margin-top: 10px;
-    border: 1px solid black;
+    border: 1px solid rgba(202, 111, 111, 0.151);
+    border-radius: 10px;
     margin: 10px 3.90625vw 0;
     position: absolute;
+    box-shadow: 0 0 10px rgba(27, 152, 190, 0.2);
+    /* background-color: #f0faff; */
+    background-color: #f5fafe;
+
 }
 
 .detail-application {
-    border: 1px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.164);
+    border-radius: 10px;
     margin: 10px;
     height: 10vh;
 }
@@ -64,17 +70,38 @@
 }
 
 .detail-form {
-    border: 1px solid black;
+    border: 1px solid rgba(21, 54, 236, 0.438);
+    border-radius: 10px;
     margin: 10px;
     height: 97vh;
     overflow-y: scroll;
+
 }
+
+.detail-form::-webkit-scrollbar{
+    width: 12px;
+}
+
+.detail-form::-webkit-scrollbar-thumb{
+    background: #4dc767;
+    border-radius: 6px;
+}
+.detail-form::-webkit-scrollbar-track{
+    border-radius: 6px;
+}
+
+
+
+
 
 .detail-list {
     /* font-size: 3rem; */
     margin-top: 15px;
     margin-left: 21px;
-    border: 1px solid black;
+    border: 1px solid  rgba(0, 0, 0, 0.103);
+    border-radius: 10px;
+    background-color: snow;
+    box-shadow: 0 0 10px rgba(26, 162, 204, 0.15);
 }
 
 .detail-select-location, .detail-select-day{
@@ -101,7 +128,7 @@
 
 input[type='radio']:checked+label{
     /* background-color: #84add1; */
-    color: #d32de9;
+    color: #25bd2d;
     align-items: center;
 }
 /* radio 버튼 css 끝 */
