@@ -129,6 +129,7 @@
   height: 100vh;
   margin-top: 10px;
   border: 1px solid black;
+  border-radius: 10px;
   margin: 10px 3.90625vw 0;
 }
 
@@ -137,6 +138,9 @@
   flex-direction: column;
   justify-content: left;
   border: 1px solid black;
+  border-radius: 10px;
+  margin-top: 10px;
+  background-color: aliceblue;
   margin: 10px;
   width: 20.4vw;
   height: 97vh;
@@ -147,7 +151,7 @@
   display: flex;
   margin: 10px;
   width: 18.8vw;
-  height: 35px;
+  height: 33px;
 }
 
 .search-box {
@@ -170,7 +174,7 @@
 }
 
 .place-info-area::-webkit-scrollbar-thumb{
-  background: #2da2c5;
+  background: #49505e;
   border-radius: 6px;
 }
 .place-info-area::-webkit-scrollbar-track{
@@ -188,6 +192,8 @@
 
 .schedule-form {
   border: 1px solid black;
+  border-radius: 10px;
+  margin-top: 10px;
   margin: 10px;
   height: 97vh;
   overflow-y: scroll;
@@ -199,7 +205,7 @@
 }
 
 .schedule-form::-webkit-scrollbar-thumb{
-  background: #2da2c5;
+  background: darkgray;
   border-radius: 6px;
 }
 .schedule-form::-webkit-scrollbar-track{
@@ -215,18 +221,19 @@
   border: 1px solid black;
 }
 
-/* 달력 관련 커스텀 */
-.example-custom-input {
-  background-color: #282c34;
-  color: white;
-  cursor: pointer;
-  width: 150px;
-}
-
 .date-create{
   height: 30px;
   border-radius: 10px;
   font-size: 15px;
   border-style: none;
   background-color: rgb(197, 196, 195);
+}
+
+.go-next {
+  height: 30px;
+  border-radius: 10px;
+  font-size: 15px;
+  border-style: none;
+  background-color: rgb(197, 196, 195);
+  margin-left: 20px;
 }
