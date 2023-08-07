@@ -86,6 +86,11 @@
 .my-sche-btn {
     width: 170px;
     font-size: 2rem;
+    color: #144272;
+}
+
+.btn-b {
+    width: 130px;
 }
 
 /* 신청받은 목록 CSS */

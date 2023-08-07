@@ -38,7 +38,7 @@ const Myschedule = () => {
               <input id='my_t' type="radio" name="my_sch" onClick={my} />
               <label className='my-sche-btn b' for='my_t' >내가 등록한 일정</label>
               <input id='my_s' type="radio" name="my_sch" onClick={app} />
-              <label className='my-sche-btn b' for='my_s'>신청자 목록</label>
+              <label className='my-sche-btn btn-b b' for='my_s'>신청자 목록</label>
             </div>
 
           </div>

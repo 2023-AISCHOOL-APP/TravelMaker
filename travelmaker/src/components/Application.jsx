@@ -18,9 +18,9 @@ const Application = () => {
                   </input> */}
             <div className='my_box'>
               <input id='my_t' type="radio" name="my_sch" />
-              <label className='my_text' for='my_t' >내가 신청한 여행</label>
+              <label className='my-app-text b' for='my_t' >내가 신청한 여행</label>
               <input id='my_s' type="radio" name="my_sch" />
-              <label className='my_text' for='my_s'>신청 수락된 여행</label>
+              <label className='my-app-text b' for='my_s'>신청 수락된 여행</label>
             </div>
 
           </div>
