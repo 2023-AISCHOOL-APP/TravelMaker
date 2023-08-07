@@ -15,7 +15,6 @@ const Main = () => {
       nav('/login')
     }
   }
-
   return (
     <div className='main-container'>
       <div className='main-contant-box'>
