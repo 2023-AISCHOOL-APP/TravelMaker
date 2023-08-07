@@ -34,11 +34,6 @@
     margin-top: 70px;
 }
 
-.my-nav-list {
-    border-bottom: 1px solid black;
-    padding: 0 3.90625vw;
-}
-
 .detail-box {
     display: flex;
     flex-direction: column;
@@ -51,23 +46,34 @@
     box-shadow: 0 0 10px rgba(27, 152, 190, 0.2);
     /* background-color: #f0faff; */
     background-color: #f5fafe;
-
 }
 
-.detail-application {
-    border: 1px solid rgba(0, 0, 0, 0.164);
-    border-radius: 10px;
-    margin: 10px;
-    height: 10vh;
+.recommend-menu, .detail-application {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.164);
+    height: 8vh;
 }
 
-.detail-select{
+.recommend-select, .detail-select{
     display: flex;
     justify-content: left;
     align-items: center;
     font-size: 1.8rem;
     margin-left: 10px;
 }
+
+.detail-select {
+    margin-left: 20px;
+}
+
+.detail-select li {
+    list-style: none;
+    /* li요소 점(marker) 없애기 */
+    width: 72px;
+    font-size: 1.5rem;
+  }
 
 .detail-form {
     border: 1px solid rgba(21, 54, 236, 0.438);
@@ -119,7 +125,7 @@
     position: relative;
     color: #144272;
     font-size: 1.8rem;
-    width: 200px;
+    width: 100px;
     height: 40x;
     display: flex;
     align-items: center;

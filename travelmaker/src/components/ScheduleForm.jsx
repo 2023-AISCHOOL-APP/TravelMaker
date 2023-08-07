@@ -1,11 +1,5 @@
 import { React, useState, forwardRef, useEffect } from 'react'
 
-// 달력 라이브러리
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import { ko } from 'date-fns/esm/locale';
-
-// kanban 테스트
 import Kanbanborad from './Kanbanborad';
 
 // 지역정보
@@ -16,14 +10,6 @@ import { getDoc, doc, collection, getDocs, setDoc } from 'firebase/firestore'
 
 const ScheduleForm = () => {
   const localArr = useLocation().state
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
-
-  const ExampleCustomInput = forwardRef(({ value, onClick }, ref) => (
-    <button className="example-custom-input" onClick={onClick} ref={ref}>
-      {value}
-    </button>
-  ));
 
   // 데이터 베이스에서 모든 데이터 불러오기
   const [local, setLocal] = useState({})
@@ -71,41 +57,14 @@ const ScheduleForm = () => {
           <div className='date-box'>
             <p className='date-select'>출발일</p>
             <input type='date'></input>
-            {/* <DatePicker
-              locale={ko}
-              dateFormat="yyyy년 MM월 dd일"
-
-              selected={startDate}
-              selectsStart
-              onChange={(date) => setStartDate(date)}
-
-              minDate={new Date()}
-              startDate={startDate}
-              endDate={endDate}
-
-              customInput={<ExampleCustomInput />}
-            /> */}
           </div>
           <div className='date-box'>
             <p className='date-select'>도착일</p>
             <input type='date'></input>
-            {/* <DatePicker 
-              locale={ko}
-              dateFormat="yyyy년 MM월 dd일"
-
-              selected={endDate}
-              selectsEnd
-              onChange={(date) => setEndDate(date)}
-
-              minDate={startDate}
-              startDate={startDate}
-              endDate={endDate}
-
-              customInput={<ExampleCustomInput />}
-            /> */}
           </div>
         </div>
       </nav>
+      
       <div className='schedule-box'>
         <div className='info-box'>
           <div className='search-area'>

@@ -8,7 +8,7 @@ function PartyMember() {
     // sessionStorage.removeItem(`matchUsers${i}`)
   }
   console.log(matchUsers);
-  
+
   const [allOrRec, setAllOrRec] = useState(true); // 전체보기 혹은 추천보기
   const all = () => { setAllOrRec(true); } // 전체보기
   const rec = () => {
@@ -17,12 +17,9 @@ function PartyMember() {
 
   return (
     <div className='detail-container'>
-      <nav className='detail-nav-list'>
-      </nav>
-
       <div className='detail-box'>
-        <div className='detail-application'>
-          <div className='detail-select'>
+        <div className='recommend-menu'>
+          <div className='recommend-select'>
             <input id='my_t' type="radio" name="my_sch" onClick={all} />
             <label className='my_text b' for='my_t' >전체보기</label>
             <input id='my_s' type="radio" name="my_sch" onClick={rec} />
@@ -32,8 +29,17 @@ function PartyMember() {
 
         <div className='detail-application'>
           <div className='detail-select'>
-            <div className='detail-select-location'>지역 선택</div>
-            <div className='detail-select-day'><input type='date'></input></div>
+            <li className='detail-select-location'>지역선택</li>
+            <div className='date-container'>
+              <div className="date-box">
+                <p className="date-select">출발일</p>
+                <input type='date'></input>
+              </div>
+              <div className="date-box">
+                <p className="date-select">도착일</p>
+                <input type='date'></input>
+              </div>
+            </div>
           </div>
         </div>
         <div className='detail-form'>
