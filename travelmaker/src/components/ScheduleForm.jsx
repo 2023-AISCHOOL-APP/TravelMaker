@@ -11,6 +11,9 @@ import { getDoc, doc, collection, getDocs, setDoc } from 'firebase/firestore'
 
 const ScheduleForm = () => {
   const localArr = useLocation().state
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+
   const [mapOpen, setMapOpen] = useState(false); // 맵 모달창 노출 여부 state
 
   // 모달창 노출
