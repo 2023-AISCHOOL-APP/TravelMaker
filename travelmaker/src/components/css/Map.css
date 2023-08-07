@@ -25,7 +25,7 @@
     margin: 10px 3.90625vw 0;
   }
   
-  .info-box {
+  .map-info-box {
     display: flexbox;
     flex-direction: column;
     justify-content: left;

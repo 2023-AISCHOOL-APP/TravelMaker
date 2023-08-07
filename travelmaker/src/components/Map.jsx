@@ -4,7 +4,7 @@ const Map = () => {
     return (
         <div className='map-container'>
             <div className='map-box'>
-                <div className='info-box'>
+                <div className='map-info-box'>
                     <div className='map-search-area'>
                         <input className='map-search-box' placeholder='검색어를 입력하세요.'></input>
                     </div>

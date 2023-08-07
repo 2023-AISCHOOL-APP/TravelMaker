@@ -70,16 +70,36 @@ function DragNDrop({ data }) {
     setList((prevList) => [
       ...prevList,
       {
-        title: `group ${prevList.length + 1}`,
+        title: `DAY ${prevList.length + 1}`,
         items: ['1'],
       },
     ]);
     setGroupStates((prevStates) => [...prevStates, true]);
   };
-  return (
 
+
+  const handleCloseItem = (groupIndex, itemIndex) => {
+    setList((prevList) => {
+      const newList = [...prevList];
+      newList[groupIndex].items.splice(itemIndex, 1);
+      return newList;
+    });
+  };
+
+  const handleAddItem = (groupIndex) => {
+    setList((prevList) => {
+      const newList = [...prevList];
+      newList[groupIndex].items.push(`New Item`);
+      return newList;
+    });
+  };
+
+
+  return (
     <div className='kanban-container'>
-      <div><button onClick={handleAddGroupClick}>추가</button></div>
+      <div className='kanban-add-btn b' onClick={handleAddGroupClick}>
+        추가
+      </div>
       <div className='drag-n-drop'>
         {list.map((grp, grpI) => (
           groupStates[grpI] &&
@@ -90,7 +110,7 @@ function DragNDrop({ data }) {
           >
             <div className='group-title-box'>
               <div className='group-title'>{grp.title}</div>
-              <button onClick={() => handleCloseGroup(grpI)}>X</button>
+              <button className='remove-grp-btn' onClick={() => handleCloseGroup(grpI)}>X</button>
             </div>
             {grp.items.map((item, itemI) => (
               <div
@@ -100,9 +120,14 @@ function DragNDrop({ data }) {
                 key={item}
                 className={dragging ? getStyles({ grpI, itemI }) : 'dnd-item'}
               >
-                {item}
+                <div className="dnd-item-icon">-</div>
+                <div className="dnd-item-text">
+                  {item}
+                </div>
+                <button className='remove-dnd-item' onClick={() => handleCloseItem(grpI, itemI)}>X</button>
               </div>
             ))}
+            <button className='add-dnd-item' onClick={() => handleAddItem(grpI)}>+</button>
           </div>
         ))}
       </div>
