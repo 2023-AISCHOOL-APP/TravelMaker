@@ -50,12 +50,12 @@
     font-size: 1.35rem;
   }
   
-  .palce-info-area {
+  .map-palce-info-area {
     height: 90%;
     overflow-y: scroll;
   }
   
-  .place-info-box {
+  .map-place-info-box {
     margin: 10px;
     border: 1px solid black;
     width: 17.5vw;

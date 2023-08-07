@@ -9,13 +9,13 @@ const Map = () => {
                         <input className='map-search-box' placeholder='검색어를 입력하세요.'></input>
                     </div>
                     {/* 창 크기 줄었을 때 안보임 */}
-                    <div className='palce-info-area'>
-                        <div className='place-info-box'>place1</div>
-                        <div className='place-info-box'>place2</div>
-                        <div className='place-info-box'>place3</div>
-                        <div className='place-info-box'>place4</div>
-                        <div className='place-info-box'>place5</div>
-                        <div className='place-info-box'>place6</div>
+                    <div className='map-palce-info-area'>
+                        <div className='map-place-info-box'>place1</div>
+                        <div className='map-place-info-box'>place2</div>
+                        <div className='map-place-info-box'>place3</div>
+                        <div className='map-place-info-box'>place4</div>
+                        <div className='map-place-info-box'>place5</div>
+                        <div className='map-place-info-box'>place6</div>
                     </div>
                 </div>
                 <div className='map-form'>
