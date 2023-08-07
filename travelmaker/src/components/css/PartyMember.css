@@ -45,7 +45,7 @@
     position: absolute;
     box-shadow: 0 0 10px rgba(27, 152, 190, 0.2);
     /* background-color: #f0faff; */
-    background-color: #f5fafe;
+    background-color: aliceblue;
 }
 
 .recommend-menu, .detail-application {
@@ -68,11 +68,13 @@
     margin-left: 20px;
 }
 
-.detail-select li {
-    list-style: none;
-    /* li요소 점(marker) 없애기 */
-    width: 72px;
+.member-local-select {
+    width: 100px;
     font-size: 1.5rem;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    /* margin-left: 10px; */
   }
 
 .detail-form {

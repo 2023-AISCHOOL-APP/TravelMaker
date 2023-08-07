@@ -64,19 +64,19 @@ const SideContent = () => {
             <li className='b' onClick={form} >일정 작성</li>
           </Link>
           <Link>
-            <li className='b' onClick={my}>내가 작성한 글</li>
+            <li className='b' onClick={my}>내가 등록한 일정</li>
           </Link>
           <Link>
-            <li className='b' onClick={app}>신청한 사람</li>
+            <li className='b' onClick={app}>신청자 목록</li>
           </Link>
         </div>
         <div className='side-crew-box'>
           <h3>파티원</h3>
           <Link to='/partymember'>
-            <li className='b'>일정 추가</li>
+            <li className='b'>일정 보기</li>
           </Link>
           <Link to='/application'>
-            <li className='b'>신청목록</li>
+            <li className='b'>신청 목록</li>
           </Link>
         </div>
       </div>

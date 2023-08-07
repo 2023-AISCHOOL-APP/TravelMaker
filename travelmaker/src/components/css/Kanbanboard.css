@@ -15,7 +15,7 @@
 }
 
 .kanban-board {
-  background-color: #282c34;
+  background-color: aliceblue;
   min-height: 100vh;
   display: flex;
   font-size: calc(10px + 2vmin);
@@ -42,8 +42,21 @@
   /* font-size: 2rem; */
   width: 90px;
   height: 30px;
-  background-color: #49505e;
-  border: 1px solid black;
+  background-color: #89B0CD;
+  border: 1px solid #89B0CD;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.kanban-reset-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* font-size: 2rem; */
+  width: 100px;
+  height: 30px;
+  background-color: #89B0CD;
+  border: 1px solid #89B0CD;
   border-radius: 10px;
   margin: 5px;
 }
@@ -51,6 +64,7 @@
 .kanban-add-date{
   margin-left: 25px;
   margin-right: 25px;
+  color: #49505e;
 }
 
 .drag-n-drop {
@@ -65,7 +79,7 @@
 }
 
 .dnd-group {
-  background-color: #49505e;
+  background-color: #89B0CD;
   border-radius: 5px;
   padding: .5rem;
 }

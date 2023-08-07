@@ -48,14 +48,14 @@
     margin: 10px 3.90625vw 0;
     position: absolute;
     border-radius: 10px;
-    background-color: #f5fafe;
+    background-color: aliceblue;
 
 }
 
 .app-application {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     border: 1px solid rgba(53, 168, 172, 0.788);
     margin: 10px;
     height: 10vh;
@@ -104,4 +104,11 @@
 
 .my_box{
     display: flex;
+    
+}
+
+.my-app-text {
+    width: 170px;
+    font-size: 2rem;
+    color: #144272;
 }
