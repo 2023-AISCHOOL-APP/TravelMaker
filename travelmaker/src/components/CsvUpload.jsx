@@ -5,80 +5,6 @@ import { db } from '../firebase-config';
 import { getDoc, doc, collection, getDocs, setDoc } from 'firebase/firestore'
 
 function CsvUpload() {
-// const [obList, setObList] = useState([{}]);
-let obList = [];
-const newList = [{test: 1},
-  {test: 2},
-  {test: 3},
-  {test: 4},
-  {test: 5},
-  {test: 6},
-  {test: 7},
-  {test: 8},
-  {test: 9},
-  {test: 10},]
-//  const addObject = (n)=>{
-//   setObList([...obList, n])
-//   obList.concat(n)
-//  }
-
-const addTest = ()=>{
-  for(let i=0; i<newList.length; i++){
-    if(newList[i].test%2 === 0){
-      // obList.concat(newList[i]);
-      // addObject(newList[i])
-      obList.push(newList[i])
-      console.log('짝수');
-    }
-  }
-  console.log(obList);
-}
-
- useEffect(()=>{
-  // addObject(newList)
-  addTest();
-},[])
-
-  // const plist = [{apple: 10, banana: 20 }];
-  // console.log(plist.push({test: 10}));
-  // const add = (key, value)=>{
-  //   plist[key] = value;
-  //   return plist
-  // }
-  // console.log(add('tomato', 100));
-
-  // 데이터 베이스에서 모든 데이터 불러오기
-  const [local, setLocal] = useState({})
-  const getData = async () => {
-    const usersCollectionRef = collection(db, '강원도');
-    const userSnap = await getDocs(usersCollectionRef);
-    const data = userSnap.docs.map(doc => ({
-      ...doc.data(),
-      id: doc.id
-    }));
-    setLocal(data);
-    const dataKeys = Object.keys(data[0])
-    console.log(dataKeys);
-  }
-  useEffect(()=>{
-    getData();
-  },[])
-  
-  // 검색어와 지역 데이터 비교
-  const [userInput, setUserInput] = useState("")
-  const searchData = () => {
-    for (let i = 0; i < local.length; i++) {
-      const localTitle = [];
-      localTitle.push(local[i].title);
-      const filterLocal = (query) => {
-        return localTitle.filter((el) =>
-        el.toString().toLowerCase().indexOf(query.toString().toLowerCase()) > -1)
-      }
-      if(filterLocal(userInput).length!=0){
-        console.log(localTitle);
-      }
-      }
-    }
 
     const [locationdata, setLocationdata] = useState({});
     const uploadFile = (files) => {
@@ -120,10 +46,6 @@ const addTest = ()=>{
       <br/>
         <div>
           <button onClick={sendData}>보내기</button>
-        </div>
-        <div>
-          <input type='text' onChange={(e) => { setUserInput(e.target.value) }}></input>
-          <button onClick={searchData}>검색</button>
         </div>
     </div>
   )

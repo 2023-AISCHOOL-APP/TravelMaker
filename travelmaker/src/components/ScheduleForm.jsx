@@ -42,8 +42,7 @@ const ScheduleForm = () => {
   const searchData = () => {
     obList=[];
     for (let i = 0; i < localArr.length; i++) {
-      const localTitle = [];
-      localTitle.push(localArr[i].title);
+      const localTitle = [localArr[i].title];
       const filterLocal = (query) => {
         return localTitle.filter((el) =>
         el.toString().toLowerCase().indexOf(query.toString().toLowerCase()) > -1)
