@@ -43,13 +43,12 @@
     position: relative;
     display: flex;
     justify-content: center;
-    margin: 20px;
+    margin: 30px;
     width: 450px;
     /* height: 450px; */
-    border: 1px solid rgba(202, 111, 111, 0.151);
-    border-radius: 20px;
-    background-color: snow;
-    box-shadow: 0 0 10px rgba(26, 162, 204, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.151);
+    border-radius: 50%;
+    background-color: aliceblue;
 }
 
 /* 버튼 관련 css */
@@ -58,11 +57,11 @@
 }
 
 .party-img{
-    /* width: 80%; */
-
     height: 85%;
 }
 
-.party-img:hover img{
-    transform: scale(1.4);
+.crew-box:hover, .reader-box:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 50px rgba(2, 2, 2, 0.15);
 }

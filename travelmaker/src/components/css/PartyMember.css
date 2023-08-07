@@ -45,7 +45,7 @@
     position: absolute;
     box-shadow: 0 0 10px rgba(27, 152, 190, 0.2);
     /* background-color: #f0faff; */
-    background-color: #f5fafe;
+    background-color: aliceblue;
 }
 
 .recommend-menu, .detail-application {
