@@ -1,6 +1,7 @@
 import { React, useState, forwardRef, useEffect } from 'react'
 
 import Kanbanborad from './Kanbanborad';
+import Map from './Map';
 
 // 지역정보
 import LocalData from './LocalData';
@@ -10,6 +11,12 @@ import { getDoc, doc, collection, getDocs, setDoc } from 'firebase/firestore'
 
 const ScheduleForm = () => {
   const localArr = useLocation().state
+  const [mapOpen, setMapOpen] = useState(false); // 맵 모달창 노출 여부 state
+
+  // 모달창 노출
+  const showMap = () => {
+    setMapOpen(true);
+  }
 
   // 데이터 베이스에서 모든 데이터 불러오기
   const [local, setLocal] = useState({})
@@ -52,7 +59,8 @@ const ScheduleForm = () => {
   return (
     <div className='schedule-container'>
       <nav className='nav-list'>
-        <li className="local-select">지역선택</li>
+        <div className="local-select b" onClick={showMap}>지역선택</div>
+        {mapOpen && <Map setMapOpen={setMapOpen} />}
         <div className='date-container'>
           <div className='date-box'>
             <p className='date-select'>출발일</p>

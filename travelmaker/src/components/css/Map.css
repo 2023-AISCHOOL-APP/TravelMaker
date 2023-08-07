@@ -1,152 +1,87 @@
-  .map-img{
-    /* width: 80%; */
-    height: 100%;
-    /* padding-left: 100px; */
-  }
-
-  .map-img-box{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
-
-  .map-container {
-    width: 100%;
-    height: calc(100vh - 70px);
-    margin-top: 70px;
-  }
-  
-  .map-box {
-    display: flex;
-    height: 100vh;
-    margin-top: 10px;
-    border: 1px solid black;
-    margin: 10px 3.90625vw 0;
-  }
-  
+@media screen and (width <=767px) {
   .map-info-box {
-    display: flexbox;
-    flex-direction: column;
-    justify-content: left;
-    border: 1px solid black;
-    margin: 10px;
+    display: none;
+    width: 17vw;
+  }
+}
+
+@media screen and (width >=767px) {
+  .map-info-box {
     width: 20.4vw;
-    height: 97vh;
   }
-  
-  .map-search-area {
-    margin: 10px;
-    width: 20.4vw;
-    height: 35px;
-  }
-  
-  .map-search-box {
-    margin: 0;
-    /* width: 90%; */
-    width: 18vw;
-    height: 90%;
-    border: 1px solid black;
-    font-size: 1.35rem;
-  }
-  
-  .map-palce-info-area {
-    height: 90%;
-    overflow-y: scroll;
-  }
-  
-  .map-place-info-box {
-    margin: 10px;
-    border: 1px solid black;
-    width: 17.5vw;
-    height: 200px
-  }
-
-
-  .map-form {
-    /* display: flex; */
-    /* align-items: center; */
-    border: 1px solid black;
-    margin: 10px;
-    height: 97vh;
-    width: 100%;
-  }
-
-.kg{
-  position: relative;
-  top: -560px;
-  left: 340px;
-  height: 100px;
-  width: 150px;
-  border-radius: 20px;
 }
 
-.kw{
-    position: relative;
-    top: -580px;
-    left: 370px;
-    height: 100px;
-    border-radius: 20px;
+.map-container {
+  width: 90%;
+  height: 90%;
+  z-index: 99999999;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 8px;
 }
 
-.cb{
-  position: relative;
-  top: -470px;
-  left: 0px;
-  height: 100px;
-  width: 90px;
-  border-radius: 20px;
+.close-map-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }
 
-.cn{
-  position: relative;
-  top: -430px;
-  left: 10px;
-  height: 100px;
-  border-radius: 20px;
+.map-box {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  /* margin-top: 10px; */
+  border: 1px solid black;
+  /* margin: 10px 3.90625vw 0; */
 }
 
-.kb{
-  position: relative;
-  top: -420px;
-  left: 40px;
-  border-radius: 20px;
+.map-info-box {
+  display: flexbox;
+  flex-direction: column;
+  justify-content: left;
+  border: 1px solid black;
+  margin: 10px;
+  height: 97%;
 }
 
-.kn{
-  position: relative;
-  top: -290px;
-  right: 150px;
-  border-radius: 20px;
-   border-radius: 20px;
+.map-search-area {
+  margin: 10px;
+  width: 20.4vw;
+  height: 35px;
 }
 
-.jb{
-  position: relative;
-  top: -340px;
-  right: 480px;
-   border-radius: 20px;
+.map-search-box {
+  margin: 0;
+  /* width: 90%; */
+  width: 18vw;
+  height: 90%;
+  border: 1px solid black;
+  font-size: 1.35rem;
 }
 
-.jn{
-  position: relative;
-  top: -270px;
-  left: 310px;
-   border-radius: 20px;
+.map-palce-info-area {
+  height: 90%;
+  overflow-y: scroll;
 }
 
-.jj{
-  position:relative;
-  top: -120px;
-   border-radius: 20px;
+.map-place-info-box {
+  margin: 10px;
+  border: 1px solid black;
+  width: 17.5vw;
+  height: 200px
 }
 
-/* 버튼 투명도 조절 */
-.map-btn{
+.map-form {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  /* height: 100%; */
-    opacity: 10;
+  border: 1px solid black;
+  margin: 10px 10px 10px 0;
+  height: 97%;
+  width: 73.5%;
 }

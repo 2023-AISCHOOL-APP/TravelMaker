@@ -17,23 +17,19 @@ const Header = () => {
       <header className="App-header">
         <div className='header-container'>
           <div className='nav-container'>
-            <h1 className='logo'>
-              <a className='logo-text'>
-                <Link to='/'>
-                  {/* 로고 이미지 변경 */}
-                  {/* <img src='images/logo99999.png' height='50px' width='150px' /> */}
-                  <img src='images/travel.png' height='75px'  />
-                </Link>
-              </a>
-            </h1>
+            <Link to='/'>
+              {/* 로고 이미지 변경 */}
+              {/* <img src='images/logo99999.png' height='50px' width='150px' /> */}
+              <img src='images/travel.png' height='75px' />
+            </Link>
           </div>
         </div>
         <div className='icon-container'>
           {userID ?
             // 로그인 상태일때 노출되는 아이콘
-              <Sidebar width={315}>
-                <SideContent/>
-              </Sidebar> :
+            <Sidebar width={315}>
+              <SideContent />
+            </Sidebar> :
             // 로그아웃 상태일때 노출되는 아이콘
             <Link to='/login'>
               <div className='loginbox'>
