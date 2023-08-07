@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import { BiSolidUserCircle } from "react-icons/bi";
 import { Link } from 'react-router-dom';
 import { signOut } from "firebase/auth";
@@ -24,10 +24,10 @@ const SideContent = () => {
       console.log("No such document!");
     }
   };
-  
-  useEffect(()=>{
+
+  useEffect(() => {
     getUser();
-  },[])
+  }, [])
 
   // 로그아웃 함수
   const logout = async () => {
@@ -39,11 +39,16 @@ const SideContent = () => {
     alert('로그아웃 되었습니다.')
     window.location.replace('/')
   }
-  const my = ()=>{
+
+  const form = () => {
+    window.location.replace('/scheduleform');
+  }
+
+  const my = () => {
     sessionStorage.setItem('select_my', 'my');
     window.location.replace('/myschedule');
   }
-  const app = ()=>{window.location.replace('/myschedule');}
+  const app = () => { window.location.replace('/myschedule'); }
 
   return (
     <div className='side-content-container'>
@@ -55,6 +60,9 @@ const SideContent = () => {
       <div className='side-list-box'>
         <div className='side-leader-box'>
           <h3>파티장</h3>
+          <Link to='/scheduleform'>
+            <li className='b' onClick={form} >일정 작성</li>
+          </Link>
           <Link>
             <li className='b' onClick={my}>내가 작성한 글</li>
           </Link>
@@ -64,6 +72,9 @@ const SideContent = () => {
         </div>
         <div className='side-crew-box'>
           <h3>파티원</h3>
+          <Link to='/partymember'>
+            <li className='b'>일정 추가</li>
+          </Link>
           <Link to='/application'>
             <li className='b'>신청목록</li>
           </Link>

@@ -113,7 +113,7 @@ const ScheduleForm = () => {
             <button onClick={searchData}>검색</button>
           </div>
           {/* 창 크기 줄었을 때 안보임 */}
-          <div className='palce-info-area'>
+          <div className='place-info-area'>
           {localArr&&localArr.map(item=><LocalData local={item} key={item.title}/>)}
           </div>
         </div>

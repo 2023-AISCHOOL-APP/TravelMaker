@@ -113,6 +113,7 @@ const Select = () => {
           </Link>
         </div>
         <div className='crew-box'>
+          <img src='images/bgimg.jpg' className='party-img'></img>
           <Link to='/partymember'>
             <a className='crew-btn click-b b'>파티원</a>
           </Link>
