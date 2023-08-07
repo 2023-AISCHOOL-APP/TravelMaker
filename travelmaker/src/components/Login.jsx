@@ -49,18 +49,19 @@ const Login = () => {
 
   return (
     <div className='login_bg'>
+        <div className='login-bg-box'></div>
       <img className='logo_img' src='images/logo99999.png' onClick={toMain} />
 
       <div className='login_box'>
         {/* 로그인 기본정보 입력 */}
-        <input type='text' className='input' placeholder='아이디' onChange={(e) => { setLoginEmail(e.target.value) }} onKeyDown={handleKeyDown}></input>
-        <input type='password' className='input' placeholder='비밀번호' onChange={(e) => { setLoginPassword(e.target.value) }} onKeyDown={handleKeyDown}></input>
+        <input type='text' className='id-input' placeholder='아이디' onChange={(e) => { setLoginEmail(e.target.value) }} onKeyDown={handleKeyDown}></input>
+        <input type='password' className='pw-input' placeholder='비밀번호' onChange={(e) => { setLoginPassword(e.target.value) }} onKeyDown={handleKeyDown}></input>
 
         {/* 버튼 클릭시 화면 이동 */}
         <hr />
-        <button className='login_bt' onClick={login}>로그인</button>
+        <button className='login_bt b' onClick={login}>로그인</button>
 
-        <Link to='/membership'><button className='login_bt'>회원가입</button></Link>
+        <Link to='/membership'><button className='login_bt b'>회원가입</button></Link>
       </div>
     </div>
   )
