@@ -24,9 +24,6 @@ const Myschedule = () => {
   console.log(myOrApp);
   return (
     <div className='my-schedule-container'>
-      <nav className='my-nav-list'>
-      </nav>
-
       <div className='my-schedule-box'>
         <div className='my-schedule-application'>
           <div className='my-schedule-select'>

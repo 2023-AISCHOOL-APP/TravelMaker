@@ -71,41 +71,14 @@ const ScheduleForm = () => {
           <div className='date-box'>
             <p className='date-select'>출발일</p>
             <input type='date'></input>
-            {/* <DatePicker
-              locale={ko}
-              dateFormat="yyyy년 MM월 dd일"
-
-              selected={startDate}
-              selectsStart
-              onChange={(date) => setStartDate(date)}
-
-              minDate={new Date()}
-              startDate={startDate}
-              endDate={endDate}
-
-              customInput={<ExampleCustomInput />}
-            /> */}
           </div>
           <div className='date-box'>
             <p className='date-select'>도착일</p>
             <input type='date'></input>
-            {/* <DatePicker 
-              locale={ko}
-              dateFormat="yyyy년 MM월 dd일"
-
-              selected={endDate}
-              selectsEnd
-              onChange={(date) => setEndDate(date)}
-
-              minDate={startDate}
-              startDate={startDate}
-              endDate={endDate}
-
-              customInput={<ExampleCustomInput />}
-            /> */}
           </div>
         </div>
       </nav>
+      
       <div className='schedule-box'>
         <div className='info-box'>
           <div className='search-area'>

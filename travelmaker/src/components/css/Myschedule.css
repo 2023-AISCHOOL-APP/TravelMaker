@@ -34,11 +34,6 @@
     margin-top: 70px;
 }
 
-.my-nav-list {
-    border-bottom: 1px solid black;
-    padding: 0 3.90625vw;
-}
-
 .my-schedule-box {
     display: flex;
     flex-direction: column;
