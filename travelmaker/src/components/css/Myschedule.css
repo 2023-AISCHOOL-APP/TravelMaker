@@ -34,54 +34,104 @@
     margin-top: 70px;
 }
 
-.my-nav-list {
-    border-bottom: 1px solid black;
-    padding: 0 3.90625vw;
+.my-schedule-list {
+    font-size: 3rem;
+    margin-top: 15px;
+    margin-left: 21px;
+    border: 2px solid rgba(27, 152, 190, 0.2);
+    border-radius: 15px;
+    background-color: snow;
+    box-shadow: 0 0 10px rgba(26, 162, 204, 0.15);
 }
+
+
+
+/* 내가 등록한 일정 CSS */
 
 .my-schedule-box {
     display: flex;
     flex-direction: column;
     height: 100vh;
     margin-top: 10px;
-    border: 1px solid black;
+    border: 1px solid rgba(202, 111, 111, 0.151);
+    border-radius: 10px;
     margin: 10px 3.90625vw 0;
     position: absolute;
+    box-shadow: 0 0 10px rgba(27, 152, 190, 0.2);
+    background-color: #f5fafe;
 }
 
-.my-schedule-application {
+.my-schedule-menu {
     display: flex;
     align-items: center;
-    justify-content: center;
-    border: 1px solid black;
+    justify-content: left;
+    border-bottom: 1px solid rgba(53, 168, 172, 0.788);
     margin: 10px;
-    height: 10vh;
+    height: 8vh;
 }
 
 .my-scheduele-select{
-
     font-size: 3rem;
     margin-top: 15px;
     margin-left: 21px;
     border: 1px solid black;
 }
 
+.my_box{
+    margin-left: 10px;
+    width: 100%;
+    display: flex;
+}
+
+.my-sche-btn {
+    width: 170px;
+    font-size: 2rem;
+}
+
+/* 신청받은 목록 CSS */
+
 .my-schedule-form {
-    border: 1px solid black;
+    border: 1px solid rgba(53, 168, 172, 0.788);
+    border-radius: 15px;
     margin: 10px;
     height: 97vh;
     overflow-y: scroll;
 }
 
-.my-schedule-list {
-    font-size: 3rem;
-    margin-top: 15px;
-    margin-left: 21px;
-    border: 1px solid black;
+.my-schedule-form::-webkit-scrollbar{
+    width: 12px;
+  }
+  
+  .my-schedule-form::-webkit-scrollbar-thumb{
+    background: #2da2c5;
+    border-radius: 6px;
+  }
+  .my-schedule-form::-webkit-scrollbar-track{
+    border-radius: 6px;
+  }
+
+
+.plan-title {
+    font-size: 3.5rem;
+    margin: 5px;
 }
 
+.plan-author {
+    font-size: 2.5rem;
+    margin: 5px;
+}
 
+.plan-content {
+    font-size: 2rem;
+    margin: 4px 5px;
+}
 
-.my_box{
-    display: flex;
+.apply-list {
+    font-size: 2.5rem;
+    margin: 5px;
+}
+
+.applicant {
+    font-size: 2.2rem;
+    margin: 4px 5px;
 }

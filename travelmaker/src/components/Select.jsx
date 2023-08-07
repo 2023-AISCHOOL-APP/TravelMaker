@@ -111,11 +111,13 @@ const Select = () => {
     <div className='select-container'>
       <div className='select-container-in-box'>
         <div className='reader-box'>
+        <img src='images/par.png' className='party-img'></img>
           <Link>
             <a className='reader-btn click-b b' onClick={getLocalData}>파티장</a>
           </Link>
         </div>
         <div className='crew-box'>
+          <img src='images/ty.png' className='party-img'></img>
           <Link to='/partymember'>
             <a className='crew-btn click-b b'>파티원</a>
           </Link>

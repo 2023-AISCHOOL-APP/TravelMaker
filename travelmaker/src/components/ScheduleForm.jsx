@@ -1,11 +1,5 @@
 import { React, useState, forwardRef, useEffect } from 'react'
 
-// 달력 라이브러리
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import { ko } from 'date-fns/esm/locale';
-
-// kanban 테스트
 import Kanbanborad from './Kanbanborad';
 
 // 지역정보
@@ -99,6 +93,7 @@ const ScheduleForm = () => {
           <button className='date-create b' onClick={setDateRan}>일정 생성</button>
         </div>
       </nav>
+      
       <div className='schedule-box'>
         <div className='info-box'>
           <div className='search-area'>
@@ -106,7 +101,7 @@ const ScheduleForm = () => {
             <button onClick={searchData}>검색</button>
           </div>
           {/* 창 크기 줄었을 때 안보임 */}
-          <div className='palce-info-area'>
+          <div className='place-info-area'>
             {search ? 
             <>
               {localArr&&localArr.map(item=><LocalData local={item} key={item.title}/>)}
