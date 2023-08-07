@@ -29,17 +29,28 @@
   width: 98%;
 }
 
+.kanban-add-box{
+  display: flex;
+  font-size: 2rem;
+  align-items: center;
+}
+
 .kanban-add-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;;
+  /* font-size: 2rem; */
   width: 90px;
   height: 30px;
   background-color: #49505e;
   border: 1px solid black;
   border-radius: 10px;
   margin: 5px;
+}
+
+.kanban-add-date{
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 .drag-n-drop {

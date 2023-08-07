@@ -40,7 +40,11 @@
     margin-left: 21px;
     border: 2px solid rgba(27, 152, 190, 0.2);
     border-radius: 15px;
+    background-color: snow;
+    box-shadow: 0 0 10px rgba(26, 162, 204, 0.15);
 }
+
+
 
 /* 내가 등록한 일정 CSS */
 
@@ -61,7 +65,7 @@
     display: flex;
     align-items: center;
     justify-content: left;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.164);
+    border-bottom: 1px solid rgba(53, 168, 172, 0.788);
     margin: 10px;
     height: 8vh;
 }
@@ -87,12 +91,25 @@
 /* 신청받은 목록 CSS */
 
 .my-schedule-form {
-    border: 1px solid gray;
+    border: 1px solid rgba(53, 168, 172, 0.788);
     border-radius: 15px;
     margin: 10px;
     height: 97vh;
     overflow-y: scroll;
 }
+
+.my-schedule-form::-webkit-scrollbar{
+    width: 12px;
+  }
+  
+  .my-schedule-form::-webkit-scrollbar-thumb{
+    background: #2da2c5;
+    border-radius: 6px;
+  }
+  .my-schedule-form::-webkit-scrollbar-track{
+    border-radius: 6px;
+  }
+
 
 .plan-title {
     font-size: 3.5rem;

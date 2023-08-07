@@ -5,15 +5,38 @@ import { db } from '../firebase-config';
 import { getDoc, doc, collection, getDocs, setDoc } from 'firebase/firestore'
 
 function CsvUpload() {
-const [obList, setObList] = useState([{apple: 10, banana: 20 }]);
-const newList = {test: 10}
- const addObject = ()=>{
-  setObList([...obList, newList])
- }
+// const [obList, setObList] = useState([{}]);
+let obList = [];
+const newList = [{test: 1},
+  {test: 2},
+  {test: 3},
+  {test: 4},
+  {test: 5},
+  {test: 6},
+  {test: 7},
+  {test: 8},
+  {test: 9},
+  {test: 10},]
+//  const addObject = (n)=>{
+//   setObList([...obList, n])
+//   obList.concat(n)
+//  }
+
+const addTest = ()=>{
+  for(let i=0; i<newList.length; i++){
+    if(newList[i].test%2 === 0){
+      // obList.concat(newList[i]);
+      // addObject(newList[i])
+      obList.push(newList[i])
+      console.log('짝수');
+    }
+  }
+  console.log(obList);
+}
 
  useEffect(()=>{
-  addObject()
-  console.log(obList);
+  // addObject(newList)
+  addTest();
 },[])
 
   // const plist = [{apple: 10, banana: 20 }];

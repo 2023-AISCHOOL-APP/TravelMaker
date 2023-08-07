@@ -25,6 +25,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-bottom: 10px;
   }
 
@@ -68,6 +69,7 @@
     width: 100%;
     display: flex;
     justify-content: left;
+    align-items: center;
   }
 
   .date-box {
@@ -140,6 +142,7 @@
   height: 97vh;
 }
 
+
 .search-area {
   display: flex;
   margin: 10px;
@@ -156,10 +159,25 @@
   font-size: 1.35rem;
 }
 
-.palce-info-area {
+.place-info-area {
   height: 90%;
   overflow-y: scroll;
 }
+
+/* 스크롤 디자인 삽입 시작 */
+.place-info-area::-webkit-scrollbar{
+  width: 12px;
+}
+
+.place-info-area::-webkit-scrollbar-thumb{
+  background: #2da2c5;
+  border-radius: 6px;
+}
+.place-info-area::-webkit-scrollbar-track{
+  border-radius: 6px;
+}
+/* 스크롤 디자인 삽입 끝 */
+
 
 .place-info-box {
   margin: 10px;
@@ -175,6 +193,21 @@
   overflow-y: scroll;
 }
 
+/* 스크롤 디자인 삽입 시작 */
+.schedule-form::-webkit-scrollbar{
+  width: 12px;
+}
+
+.schedule-form::-webkit-scrollbar-thumb{
+  background: #2da2c5;
+  border-radius: 6px;
+}
+.schedule-form::-webkit-scrollbar-track{
+  border-radius: 6px;
+}
+/* 스크롤 디자인 삽입 끝 */
+
+
 .schedule-list {
   font-size: 5rem;
   margin-top: 15px;
@@ -188,4 +221,12 @@
   color: white;
   cursor: pointer;
   width: 150px;
+}
+
+.date-create{
+  height: 30px;
+  border-radius: 10px;
+  font-size: 15px;
+  border-style: none;
+  background-color: rgb(197, 196, 195);
 }

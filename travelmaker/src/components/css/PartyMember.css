@@ -52,7 +52,7 @@
     width: 100%;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.164);
+    border-bottom: 1px solid rgba(53, 168, 172, 0.788);
     height: 8vh;
 }
 
@@ -76,7 +76,7 @@
   }
 
 .detail-form {
-    border: 1px solid rgba(21, 54, 236, 0.438);
+    border: 1px solid rgba(53, 168, 172, 0.788);
     border-radius: 10px;
     margin: 10px;
     height: 97vh;
@@ -84,17 +84,19 @@
 
 }
 
+/* 스크롤 디자인 삽입 시작 */
 .detail-form::-webkit-scrollbar{
     width: 12px;
 }
 
 .detail-form::-webkit-scrollbar-thumb{
-    background: #4dc767;
+    background: #2da2c5;
     border-radius: 6px;
 }
 .detail-form::-webkit-scrollbar-track{
     border-radius: 6px;
 }
+/* 스크롤 디자인 삽입 끝 */
 
 
 

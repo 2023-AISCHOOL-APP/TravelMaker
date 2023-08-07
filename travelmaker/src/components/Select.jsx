@@ -93,8 +93,11 @@ const Select = () => {
     getUsers();
   }, [matchUsers])
 
-    // 데이터 베이스에서 모든 유저 설문조사 데이터 불러오기
+    // 데이터 베이스에서 관광지 데이터 불러오기
     const getLocalData = async () => {
+      sessionStorage.setItem('dateRan', 0)
+      sessionStorage.setItem('startDate', '0000-00-00')
+      sessionStorage.setItem('endDate', '0000-00-00')
       const usersCollectionRef = collection(db, '강원도');
       const userSnap = await getDocs(usersCollectionRef);
       const data = userSnap.docs.map(doc => ({
@@ -108,11 +111,13 @@ const Select = () => {
     <div className='select-container'>
       <div className='select-container-in-box'>
         <div className='reader-box'>
+        <img src='images/par.png' className='party-img'></img>
           <Link>
             <a className='reader-btn click-b b' onClick={getLocalData}>파티장</a>
           </Link>
         </div>
         <div className='crew-box'>
+          <img src='images/ty.png' className='party-img'></img>
           <Link to='/partymember'>
             <a className='crew-btn click-b b'>파티원</a>
           </Link>

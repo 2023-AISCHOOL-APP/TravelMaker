@@ -41,17 +41,28 @@
 .reader-box,
 .crew-box {
     position: relative;
-    /* display: flex; */
+    display: flex;
     justify-content: center;
-
     margin: 20px;
     width: 450px;
     /* height: 450px; */
-    border: 1px solid black;
+    border: 1px solid rgba(202, 111, 111, 0.151);
     border-radius: 20px;
+    background-color: snow;
+    box-shadow: 0 0 10px rgba(26, 162, 204, 0.15);
 }
 
 /* 버튼 관련 css */
 .reader-btn, .crew-btn {
     left: 35%;
+}
+
+.party-img{
+    /* width: 80%; */
+
+    height: 85%;
+}
+
+.party-img:hover img{
+    transform: scale(1.4);
 }

@@ -47,15 +47,19 @@
     border: 1px solid black;
     margin: 10px 3.90625vw 0;
     position: absolute;
+    border-radius: 10px;
+    background-color: #f5fafe;
+
 }
 
 .app-application {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
+    border: 1px solid rgba(53, 168, 172, 0.788);
     margin: 10px;
     height: 10vh;
+    border-radius: 10px;
 }
 
 .app-scheduele-select{
@@ -67,17 +71,35 @@
 }
 
 .app-form {
-    border: 1px solid black;
+    border: 1px solid rgba(53, 168, 172, 0.788);
     margin: 10px;
     height: 97vh;
     overflow-y: scroll;
+    border-radius: 10px;
 }
+
+/* 스크롤 디자인 삽입 시작 */
+.app-form::-webkit-scrollbar{
+    width: 12px;
+  }
+  
+  .app-form::-webkit-scrollbar-thumb{
+    background: #2da2c5;
+    border-radius: 6px;
+  }
+  .app-form::-webkit-scrollbar-track{
+    border-radius: 6px;
+  }
+  /* 스크롤 디자인 삽입 끝 */
 
 .app-list {
     font-size: 3rem;
     margin-top: 15px;
     margin-left: 21px;
-    border: 1px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.103);
+    border-radius: 10px;
+    background-color: snow;
+    box-shadow: 0 0 10px rgba(26, 162, 204, 0.15);
 }
 
 .my_box{
