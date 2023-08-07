@@ -98,7 +98,7 @@ const Select = () => {
       sessionStorage.setItem('dateRan', 0)
       sessionStorage.setItem('startDate', '0000-00-00')
       sessionStorage.setItem('endDate', '0000-00-00')
-      const usersCollectionRef = collection(db, '강원도');
+      const usersCollectionRef = collection(db, '강원도강릉시');
       const userSnap = await getDocs(usersCollectionRef);
       const data = userSnap.docs.map(doc => ({
         ...doc.data(),

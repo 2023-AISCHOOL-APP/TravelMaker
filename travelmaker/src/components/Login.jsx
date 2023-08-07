@@ -50,9 +50,7 @@ const Login = () => {
   return (
     <div className='login_bg'>
       {/* 배경이 들어갈 자리 */}
-      <div className='login_bgvid'>
-        <video className='login_vid' autoPlay muted loop><source src='video/video1.mp4' /></video>
-      </div>
+      <div className='login_bgvid'></div>
 
       {/* <h1 className='title_name'>Travel Maker</h1> */}
         <img className='logo_img' src='images/logo99999.png' onClick={toMain}/>

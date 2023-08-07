@@ -10,7 +10,7 @@ function DragNDrop() {
   console.log(dateRan);
   const data = [];
   for (let i = 1; i < parseInt(dateRan) + 2; i++) {
-    data.push({ title: `DAY ${i}`, items: ['1', '2', '3'] })
+    data.push({ title: `DAY ${i}`, items: [] })
   }
 
   const [list, setList] = useState(data);
@@ -68,23 +68,25 @@ function DragNDrop() {
   //     dndContainer.remove();
   //   }
   // }
-
+  const [titleNum,setTitleNum] = useState(list.length);
   const handleCloseGroup = (index) => {
     setLastEndDate(lastEndDate - 1);
+    setTitleNum(titleNum-1);
     setGroupStates((prevStates) => {
       const newStates = [...prevStates];
       newStates[index] = false;
       return newStates;
     });
   };
-
+  
   const handleAddGroupClick = () => {
     setLastEndDate(lastEndDate + 1);
+    setTitleNum(titleNum+1)
     setList((prevList) => [
       ...prevList,
       {
-        title: `DAY ${prevList.length + 1}`,
-        items: ['1'],
+        title: `DAY ${titleNum+1}`,
+        items: [],
       },
     ]);
     setGroupStates((prevStates) => [...prevStates, true]);
@@ -99,15 +101,25 @@ function DragNDrop() {
     });
   };
 
+  const [newItem, setNewItem] = useState("");
   const handleAddItem = (groupIndex) => {
     setList((prevList) => {
       const newList = [...prevList];
-      newList[groupIndex].items.push(`New Item`);
+      newList[groupIndex].items.push(newItem);
       return newList;
     });
   };
 
+  const handleKeyDown = (e, grpI) => {
+    if (e.key === 'Enter') {
+      handleAddItem(grpI);
+    }
+  };
+
   const reset = ()=>{
+    sessionStorage.setItem('endDate', '0000-00-00')
+    sessionStorage.setItem('startDate', '0000-00-00')
+    sessionStorage.setItem('dateRan', 0)
     window.location.replace('/scheduleform')
   }
 
@@ -134,6 +146,8 @@ function DragNDrop() {
           >
             <div className='group-title-box'>
               <div className='group-title'>{grp.title}</div>
+              <input type="text"  onChange={(e) => { setNewItem(e.target.value) }} onKeyDown={(e)=> handleKeyDown(e, grpI)}/>
+              <button className='add-dnd-item' onClick={() => handleAddItem(grpI)}>+</button>
               <button className='remove-grp-btn' onClick={() => handleCloseGroup(grpI)}>X</button>
             </div>
             {grp.items.map((item, itemI) => (
@@ -151,7 +165,6 @@ function DragNDrop() {
                 <button className='remove-dnd-item' onClick={() => handleCloseItem(grpI, itemI)}>X</button>
               </div>
             ))}
-            <button className='add-dnd-item' onClick={() => handleAddItem(grpI)}>+</button>
           </div>
         ))}
       </div>
