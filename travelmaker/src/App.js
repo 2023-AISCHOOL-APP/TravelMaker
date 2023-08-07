@@ -25,7 +25,7 @@ import Myschedule from './components/Myschedule';
 import Information from './components/Information';
 import Application from './components/Application';
 import PartyMember from './components/PartyMember';
-import Map from './components/Map';
+// import Map from './components/Map';
 import LocalDetail from './components/LocalDetail';
 
 import CsvUpload from './components/CsvUpload';
@@ -49,7 +49,7 @@ function App() {
         <Route path='/information' element={<Information />}></Route>
         <Route path='/application' element={<Application />}></Route>
         <Route path='/partymember' element={<PartyMember />}></Route>
-        <Route path='/map' element={<Map />}></Route>
+        {/* <Route path='/map' element={<Map />}></Route> */}
         
       </Routes>
     </div>

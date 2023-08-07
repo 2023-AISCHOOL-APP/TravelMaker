@@ -1,6 +1,17 @@
 import React, { useState, useRef } from 'react'
 
-function DragNDrop({ data }) {
+function DragNDrop() {
+  // 날짜 개수에 맞게 일정 리스트 생성
+  const dateRan = sessionStorage.getItem('dateRan')
+  const startDate = sessionStorage.getItem('startDate')
+  const endDate = sessionStorage.getItem('endDate')
+  const splitEndDate = endDate.split('-')
+  const [lastEndDate, setLastEndDate] = useState(parseInt(splitEndDate[2]))
+  console.log(dateRan);
+  const data = [];
+  for (let i = 1; i < parseInt(dateRan) + 2; i++) {
+    data.push({ title: `DAY ${i}`, items: ['1', '2', '3'] })
+  }
 
   const [list, setList] = useState(data);
   const [dragging, setDragging] = useState(false);
@@ -59,6 +70,7 @@ function DragNDrop({ data }) {
   // }
 
   const handleCloseGroup = (index) => {
+    setLastEndDate(lastEndDate - 1);
     setGroupStates((prevStates) => {
       const newStates = [...prevStates];
       newStates[index] = false;
@@ -67,6 +79,7 @@ function DragNDrop({ data }) {
   };
 
   const handleAddGroupClick = () => {
+    setLastEndDate(lastEndDate + 1);
     setList((prevList) => [
       ...prevList,
       {
@@ -94,11 +107,22 @@ function DragNDrop({ data }) {
     });
   };
 
+  const reset = ()=>{
+    window.location.replace('/scheduleform')
+  }
 
   return (
     <div className='kanban-container'>
-      <div className='kanban-add-btn b' onClick={handleAddGroupClick}>
-        추가
+      <div className='kanban-add-box'>
+        <div className='kanban-add-btn b' onClick={handleAddGroupClick}>
+          Add
+        </div>
+        <div className='kanban-add-btn b' onClick={reset}>
+          Reset
+        </div>
+        <div className='kanban-add-date'>출발일 : {startDate}</div>
+
+        <div className='kanban-add-date'>도착일 : {splitEndDate[0]+'-'+splitEndDate[1]+'-'+lastEndDate}</div>
       </div>
       <div className='drag-n-drop'>
         {list.map((grp, grpI) => (

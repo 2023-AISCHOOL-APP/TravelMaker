@@ -25,6 +25,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-bottom: 10px;
   }
 
@@ -68,6 +69,7 @@
     width: 100%;
     display: flex;
     justify-content: left;
+    align-items: center;
   }
 
   .date-box {
@@ -113,13 +115,13 @@
   font-size: 1.5rem;
 }
 
-.nav-list li {
-  list-style: none;
-  /* li요소 점(marker) 없애기 */
-  /* margin-right: 2vw;
-    margin-left: 0.5vw; */
-  width: 72px;
+.local-select {
+  width: 100px;
   font-size: 1.5rem;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-left: 10px;
 }
 
 .schedule-box {
@@ -219,4 +221,12 @@
   color: white;
   cursor: pointer;
   width: 150px;
+}
+
+.date-create{
+  height: 30px;
+  border-radius: 10px;
+  font-size: 15px;
+  border-style: none;
+  background-color: rgb(197, 196, 195);
 }

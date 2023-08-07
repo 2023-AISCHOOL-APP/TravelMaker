@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 
 const LocalData = ({local}) => {
     const nav = useNavigate();
+    // console.log(local);
     const detail = ()=>{
         nav('/localdetail', {state: local})
     }

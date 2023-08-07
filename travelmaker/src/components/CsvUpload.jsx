@@ -5,57 +5,6 @@ import { db } from '../firebase-config';
 import { getDoc, doc, collection, getDocs, setDoc } from 'firebase/firestore'
 
 function CsvUpload() {
-const [obList, setObList] = useState([{apple: 10, banana: 20 }]);
-const newList = {test: 10}
- const addObject = ()=>{
-  setObList([...obList, newList])
- }
-
- useEffect(()=>{
-  addObject()
-  console.log(obList);
-},[])
-
-  // const plist = [{apple: 10, banana: 20 }];
-  // console.log(plist.push({test: 10}));
-  // const add = (key, value)=>{
-  //   plist[key] = value;
-  //   return plist
-  // }
-  // console.log(add('tomato', 100));
-
-  // 데이터 베이스에서 모든 데이터 불러오기
-  const [local, setLocal] = useState({})
-  const getData = async () => {
-    const usersCollectionRef = collection(db, '강원도');
-    const userSnap = await getDocs(usersCollectionRef);
-    const data = userSnap.docs.map(doc => ({
-      ...doc.data(),
-      id: doc.id
-    }));
-    setLocal(data);
-    const dataKeys = Object.keys(data[0])
-    console.log(dataKeys);
-  }
-  useEffect(()=>{
-    getData();
-  },[])
-  
-  // 검색어와 지역 데이터 비교
-  const [userInput, setUserInput] = useState("")
-  const searchData = () => {
-    for (let i = 0; i < local.length; i++) {
-      const localTitle = [];
-      localTitle.push(local[i].title);
-      const filterLocal = (query) => {
-        return localTitle.filter((el) =>
-        el.toString().toLowerCase().indexOf(query.toString().toLowerCase()) > -1)
-      }
-      if(filterLocal(userInput).length!=0){
-        console.log(localTitle);
-      }
-      }
-    }
 
     const [locationdata, setLocationdata] = useState({});
     const uploadFile = (files) => {
@@ -97,10 +46,6 @@ const newList = {test: 10}
       <br/>
         <div>
           <button onClick={sendData}>보내기</button>
-        </div>
-        <div>
-          <input type='text' onChange={(e) => { setUserInput(e.target.value) }}></input>
-          <button onClick={searchData}>검색</button>
         </div>
     </div>
   )
