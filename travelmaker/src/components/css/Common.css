@@ -17,7 +17,7 @@ body {
     height: 100%;
     -webkit-text-size-adjust: 100%;
     font-size: 1.6rem; /* 1.6rem = 16px */
-    background-color: #B1D8EB;
+    background-color: #b1d8eb;
   }
 
 /* 버튼 hover 효과 */
@@ -76,7 +76,7 @@ body {
     /* border: 1px solid white; */
     box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
 }
-
+/* 버튼 hover 효과 끝 */
 
 /* radio 버튼 css 시작 */
 [type = 'radio'] {
