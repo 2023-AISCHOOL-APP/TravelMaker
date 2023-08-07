@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from 'react'
+import Map from './Map';
+
 
 function PartyMember() {
+  const [mapOpen, setMapOpen] = useState(false); // 맵 모달창 노출 여부 state
+
+  // 모달창 노출
+  const showMap = () => {
+    setMapOpen(true);
+  }
   const matchNum = sessionStorage.getItem('matchNum')
   let matchUsers = [];
   for (let i = 0; i < matchNum; i++) {
@@ -29,7 +37,8 @@ function PartyMember() {
 
         <div className='detail-application'>
           <div className='detail-select'>
-            <li className='detail-select-location'>지역선택</li>
+            <div className="member-local-select b" onClick={showMap}>지역선택</div>
+            {mapOpen && <Map setMapOpen={setMapOpen} />}
             <div className='date-container'>
               <div className="date-box">
                 <p className="date-select">출발일</p>

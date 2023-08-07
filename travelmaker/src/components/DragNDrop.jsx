@@ -117,7 +117,7 @@ function DragNDrop() {
         <div className='kanban-add-btn b' onClick={handleAddGroupClick}>
           Add
         </div>
-        <div className='kanban-add-btn b' onClick={reset}>
+        <div className='kanban-reset-btn b' onClick={reset}>
           Reset
         </div>
         <div className='kanban-add-date'>출발일 : {startDate}</div>

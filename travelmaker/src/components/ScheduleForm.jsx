@@ -2,6 +2,7 @@ import { React, useState, forwardRef, useEffect } from 'react'
 
 import Kanbanborad from './Kanbanborad';
 import Map from './Map';
+import Registration from './Registration';
 
 // 지역정보
 import LocalData from './LocalData';
@@ -13,6 +14,11 @@ const ScheduleForm = () => {
   const localArr = useLocation().state
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
+
+  const [regiWrite, setRegiWrite] = useState(false);
+  const goToRegiWrite = () => {
+    setRegiWrite(true)
+  }
 
   const [mapOpen, setMapOpen] = useState(false); // 맵 모달창 노출 여부 state
 
@@ -93,6 +99,7 @@ const ScheduleForm = () => {
             <input type='date' onChange={(e) => { setEndDate(e.target.value) }}></input>
           </div>
           <button className='date-create b' onClick={setDateRan}>일정 생성</button>
+          <button className='go-next b' onClick={goToRegiWrite}>다음</button>
         </div>
       </nav>
       
@@ -116,7 +123,7 @@ const ScheduleForm = () => {
         <div className='schedule-form'>
           {/* <div className='schedule-list'>day1</div>
           <div className='schedule-list'>+</div> */}
-          <Kanbanborad/>
+          {regiWrite ? <Registration/> : <Kanbanborad/>}
         </div>
       </div>
     </div>
