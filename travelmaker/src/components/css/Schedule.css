@@ -191,6 +191,21 @@
   overflow-y: scroll;
 }
 
+/* 스크롤 디자인 삽입 시작 */
+.schedule-form::-webkit-scrollbar{
+  width: 12px;
+}
+
+.schedule-form::-webkit-scrollbar-thumb{
+  background: #2da2c5;
+  border-radius: 6px;
+}
+.schedule-form::-webkit-scrollbar-track{
+  border-radius: 6px;
+}
+/* 스크롤 디자인 삽입 끝 */
+
+
 .schedule-list {
   font-size: 5rem;
   margin-top: 15px;
