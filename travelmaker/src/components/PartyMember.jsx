@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import Map from './Map';
 
 
@@ -53,23 +54,30 @@ function PartyMember() {
         </div>
         <div className='detail-form'>
           {allOrRec ?
-            <div className='detail-list'>
-              <div>전체일정</div>
-              <div>작성자</div>
-              <div>내용</div>
-              <div>내용</div>
-              <div>내용</div>
-            </div>
+            <Link to='/partydetail'>
+              <div className='detail-list'>
+                <div>전체일정</div>
+                <div>작성자</div>
+                <div>내용</div>
+                <div>내용</div>
+                <div>내용</div>
+              </div>
+            </Link>
             :
             <>
+
               {matchUsers.map((id) => {
-                return (<div className='detail-list'>
-                  <div>{id}</div>
-                  <div>내용</div>
-                  <div>내용</div>
-                  <div>내용</div>
-                </div>)
+                return (
+                  <Link to='/partydetail'>
+                    <div className='detail-list'>
+                      <div>{id}</div>
+                      <div>내용</div>
+                      <div>내용</div>
+                      <div>내용</div>
+                    </div>
+                  </Link>)
               })}
+
             </>
           }
         </div>

@@ -205,7 +205,7 @@
 }
 
 .schedule-form::-webkit-scrollbar-thumb{
-  background: darkgray;
+  background: #49505e;
   border-radius: 6px;
 }
 .schedule-form::-webkit-scrollbar-track{

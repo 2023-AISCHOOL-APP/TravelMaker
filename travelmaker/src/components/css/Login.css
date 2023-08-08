@@ -1,3 +1,13 @@
+@media screen and (width <= 767px) {
+
+
+}
+@media screen and (width >= 768px) {
+
+
+}
+
+
 .login_bg {
   display: flex;
   justify-content: center;
@@ -24,12 +34,10 @@
 }
 
 .login_box {
-  width: 380px;
-  height: 280px;
+  width: 400px;
+  height: 300px;
   position: absolute;
-  top: 250px;
-  border: 1px solid rgba(179, 185, 221, 0.226);
-  /* background-color: rgba(184, 203, 219, 0.733); */
+  top: 255px;
   background-color: aliceblue;
   display: flex;
   flex-direction: column;
@@ -41,10 +49,10 @@
 
 .id-input,
 .pw-input {
-  margin: 12px;
+  margin: 16px;
   font-size: 15px;
-  height: 30px;
-  width: 200px;
+  height: 5vh;
+  width: 14vw;
 }
 
 .login_bt {
@@ -53,7 +61,7 @@
   width: 12vw;
   height: 6vh;
   font-size: 1.6rem;
-  margin: 15px;
+  margin: 10px;
   color: white;
   background-color: black;
   border: 1px solid black;
@@ -61,8 +69,6 @@
 
 }
 
-
-
 hr {
-  width: 100%
+  width: 100%;
 }

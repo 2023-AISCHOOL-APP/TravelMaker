@@ -1,0 +1,62 @@
+.partydetail-container {
+    width: 100%;
+    height: calc(100vh - 70px);
+    margin-top: 70px;
+}
+
+.partydetail-box {
+    display: flex;
+    height: 100%;
+    border: 1px solid rgba(202, 111, 111, 0.151);
+    border-radius: 10px;
+    margin: 10px 3.90625vw 0;
+    box-shadow: 0 0 10px rgba(27, 152, 190, 0.2);
+    background-color: aliceblue;
+}
+.partydetail-title{
+    
+    width: 47vw;
+    height: 10vh;
+    margin: 40px;
+    background-color: rgba(0, 128, 0, 0.637);
+    border-radius: 10px;
+}
+
+
+.partydetail-leader{
+    
+    width: 47vw;
+    height: 10vh;
+    margin-left: 40px;
+    background-color: rgba(0, 128, 0, 0.637);
+    border-radius: 10px;
+}
+
+.partydetail-short{
+    
+    border-radius: 10px;
+    width: 47vw;
+    height: 10vh;
+    margin-left: 40px;
+    margin-top: 20px;
+    background-color: rgba(0, 128, 0, 0.637);
+}
+
+.partydetail-detail{
+    
+    width: 47vw;
+    height: 33vh;
+    margin-left: 40px;
+    margin-top: 30px;
+    background-color: rgba(0, 128, 0, 0.637);
+    border-radius: 10px;
+}
+
+.partydetail-schedule{
+    
+    border-radius: 10px;
+    margin: 40px;
+    height: 84%;
+    width: 35vw;
+    background-color: rgba(67, 101, 163, 0.637);
+}
