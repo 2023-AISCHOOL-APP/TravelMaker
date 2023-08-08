@@ -9,7 +9,6 @@ import LocalData from './LocalData';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { db } from '../firebase-config';
 import { getDoc, doc, collection, getDocs, setDoc } from 'firebase/firestore'
-import LocalDetail from './LocalDetail';
 
 const ScheduleForm = () => {
   const localArr = useLocation().state // 지역정보 받아오기
