@@ -17,7 +17,9 @@
     
     width: 47vw;
     height: 10vh;
-    margin: 40px;
+    margin-top: 40px;
+    margin-left: 40px;
+    margin-bottom: 10px;
     background-color: rgba(0, 128, 0, 0.637);
     border-radius: 10px;
 }
@@ -26,7 +28,7 @@
 .partydetail-leader{
     
     width: 47vw;
-    height: 10vh;
+    height: 8vh;
     margin-left: 40px;
     background-color: rgba(0, 128, 0, 0.637);
     border-radius: 10px;
@@ -36,16 +38,16 @@
     
     border-radius: 10px;
     width: 47vw;
-    height: 10vh;
+    height: 8vh;
     margin-left: 40px;
-    margin-top: 20px;
+    margin-top: 15px;
     background-color: rgba(0, 128, 0, 0.637);
 }
 
 .partydetail-detail{
     
     width: 47vw;
-    height: 33vh;
+    height:42vh;
     margin-left: 40px;
     margin-top: 30px;
     background-color: rgba(0, 128, 0, 0.637);
