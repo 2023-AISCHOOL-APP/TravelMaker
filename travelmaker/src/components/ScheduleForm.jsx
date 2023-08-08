@@ -17,6 +17,7 @@ const ScheduleForm = () => {
   const [startDate, setStartDate] = useState(""); // 출발일
   const [endDate, setEndDate] = useState(""); // 도착일
 console.log(localArr);
+console.log("dkssud");
   const [regiWrite, setRegiWrite] = useState(false);
   const goToRegiWrite = () => {
     setRegiWrite(true)
@@ -29,7 +30,7 @@ console.log(localArr);
     setMapOpen(true);
   }
 
-  // 데이터 베이스에서 모든 데이터 불러오기
+  // 데이터 베이스에서 모든 관광지 데이터 불러오기
   const [local, setLocal] = useState({})
   const getData = async () => {
     const usersCollectionRef = collection(db, '강원도');

@@ -1,5 +1,7 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { BiXCircle, BiPlusCircle } from "react-icons/bi";
+import { db } from '../firebase-config';
+import { getDoc, doc, collection, getDocs, setDoc } from 'firebase/firestore'
 
 function DragNDrop() {
   // 날짜 개수에 맞게 일정 리스트 생성
@@ -8,7 +10,6 @@ function DragNDrop() {
   const endDate = sessionStorage.getItem('endDate')
   const splitEndDate = endDate.split('-')
   const [lastEndDate, setLastEndDate] = useState(parseInt(splitEndDate[2]))
-  console.log(dateRan);
   const data = [];
   for (let i = 1; i < parseInt(dateRan) + 2; i++) {
     data.push({ title: `DAY ${i}`, items: [] })
@@ -103,15 +104,18 @@ function DragNDrop() {
   };
 
   const [newItem, setNewItem] = useState("");
+  const [planList, setPlanList] = useState([{items:'start'}]);
+
   const handleAddItem = (groupIndex) => {
     setBlank('');
     setList((prevList) => {
       const newList = [...prevList];
       newList[groupIndex].items.push(newItem);
+      setPlanList(newList)
       return newList;
     });
   };
-
+  console.log(planList[0].items);
   const [blank, setBlank] = useState()
   const handleKeyDown = (e, grpI) => {
     if (e.key === 'Enter') {
@@ -127,6 +131,25 @@ function DragNDrop() {
     sessionStorage.setItem('dateRan', 0)
     window.location.replace('/scheduleform')
   }
+
+  // 지역데이터 정보 데이터베이스로 보내기
+  const userNick = sessionStorage.getItem('nick')
+  const sendData = async () => {
+    // try {
+    for (let i = 0; i < planList.length; i++) {
+      await setDoc(doc(db, '게시판', `Day${i+1}-${userNick}`),
+        planList[i]
+        )
+    }
+    // } catch (error) {
+    //   console.log("빡치네");
+    // }
+
+  }
+
+  useEffect(()=>{
+    sendData();
+  },[planList])
 
   return (
     <div className='kanban-container'>

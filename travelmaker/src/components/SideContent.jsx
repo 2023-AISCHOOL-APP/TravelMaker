@@ -20,6 +20,7 @@ const SideContent = () => {
     if (docSnap.exists()) {
       console.log("Document data:", docSnap.data().nickname);
       setUserNickname(docSnap.data().nickname);
+      sessionStorage.setItem('nick', docSnap.data().nickname)
     } else {
       console.log("No such document!");
     }
@@ -36,6 +37,7 @@ const SideContent = () => {
       sessionStorage.removeItem(`matchUsers${i}`)
     }
     sessionStorage.removeItem('userId')
+    sessionStorage.removeItem('nick')
     alert('로그아웃 되었습니다.')
     window.location.replace('/')
   }
