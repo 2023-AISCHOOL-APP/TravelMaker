@@ -75,7 +75,7 @@
 
 .map-select-location {
   margin-left: 10px;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
 }
 
 .map-select-box {
@@ -84,11 +84,20 @@
   align-items: center;
   width: 100px;
   height: 30px;
-  margin-left: 20px;
+  margin-left: 5px;
   font-size: 1.5rem;
   background-color: aqua;
   border: 1px solid aliceblue;
   border-radius: 20px;
+}
+
+.get-local-btn {
+  margin-left: 35px;
+  color: gray;
+}
+
+.get-local-btn:hover {
+  color: black;
 }
 
 .map-palce-select-area {
@@ -99,20 +108,40 @@
 .map-place-info-box {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
+  justify-content: center;
   margin: 10px;
   background-color: aliceblue;
   border: 1px solid aliceblue;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   border-radius: 10px;
-  width: 17vw;
-  height: 100px
+  width: 17.2vw;
+  height: 140px
+}
+
+.map-place-title {
+  margin: 5px;
 }
 
 .map-place{
+  margin: 5px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 5px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 6px;
+}
+
+.map-place-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 20px;
+  font-size: 1.4rem;
+}
+
+.map-place-name:hover {
+  background-color: black;
+  color: aliceblue;
 }
 
 a, a:link, :visited{
