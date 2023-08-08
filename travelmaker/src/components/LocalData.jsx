@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import LocalDetail from './LocalDetail';
+// CSS는 Schedule.css에 있음
 
 const LocalData = ({local}) => {
 
@@ -15,7 +16,7 @@ const LocalData = ({local}) => {
     <div className='place-info-box'>
       {detailOpen && <LocalDetail setDetailOpen={setDetailOpen} local={local}/>}
         <p onClick={showMap}>{local.title}</p>
-        <img src={local.image} width='100%' onClick={showMap}></img>
+        <img src={local.image} onClick={showMap}></img>
     </div>
   )
 }

@@ -116,7 +116,6 @@
 
 .group-title {
   text-align: left;
-  margin-bottom: .5rem;
   font-size: 1.5rem;
 }
 
@@ -126,11 +125,23 @@
 
 .group-title-box {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 5px;  
+  justify-content: center;
+}
+
+.kanban-add-input {
+  width: 190px;
 }
 
 .add-dnd-item{
-  margin-left: -10px;
+  margin-left: -5px;
+}
+
+.dndHover:hover {
+  color: #282c34;
+}
+
+.remove-dnd-item:hover {
+  color: #89B0CD;
 }
