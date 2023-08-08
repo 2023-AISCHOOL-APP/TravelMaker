@@ -1,4 +1,5 @@
 import { React, useState, forwardRef, useEffect } from 'react'
+import { BiSearch } from "react-icons/bi";
 
 import Kanbanborad from './Kanbanborad';
 import Map from './Map';
@@ -115,10 +116,17 @@ console.log(localArr);
       
       <div className='schedule-box'>
         <div className='info-box'>
-          <div>선택지역 : {localName}</div>
+          <div className="sch-local-box">
+            <div className='sch-local-select'>선택 지역</div>
+            <div className='sch-local-name-box'>
+              <span className="sch-local-name">{localName}</span>
+            </div>
+          </div>
           <div className='search-area'>
             <input className='search-box' placeholder='검색어를 입력하세요.' value={userInput} onChange={(e) => { setUserInput(e.target.value) }} onKeyDown={handleKeyDown}></input>
-            <button onClick={searchData}>검색</button>
+            <div className='search-icon-box'>
+              <BiSearch className='search-icon' size='25' onClick={searchData}>검색</BiSearch>
+            </div>
           </div>
           {/* 창 크기 줄었을 때 안보임 */}
           <div className='place-info-area'>
