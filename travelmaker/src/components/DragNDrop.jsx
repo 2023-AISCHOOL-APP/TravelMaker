@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react'
+import { BiXCircle, BiPlusCircle } from "react-icons/bi";
 
 function DragNDrop() {
   // 날짜 개수에 맞게 일정 리스트 생성
@@ -103,6 +104,7 @@ function DragNDrop() {
 
   const [newItem, setNewItem] = useState("");
   const handleAddItem = (groupIndex) => {
+    setBlank('');
     setList((prevList) => {
       const newList = [...prevList];
       newList[groupIndex].items.push(newItem);
@@ -110,9 +112,12 @@ function DragNDrop() {
     });
   };
 
+  const [blank, setBlank] = useState()
   const handleKeyDown = (e, grpI) => {
     if (e.key === 'Enter') {
       handleAddItem(grpI);
+    }else{
+      setBlank();
     }
   };
 
@@ -146,9 +151,9 @@ function DragNDrop() {
           >
             <div className='group-title-box'>
               <div className='group-title'>{grp.title}</div>
-              <input type="text"  onChange={(e) => { setNewItem(e.target.value) }} onKeyDown={(e)=> handleKeyDown(e, grpI)}/>
-              <button className='add-dnd-item' onClick={() => handleAddItem(grpI)}>+</button>
-              <button className='remove-grp-btn' onClick={() => handleCloseGroup(grpI)}>X</button>
+              <input className='kanban-add-input' type="text" value={blank}  onChange={(e) => { setNewItem(e.target.value) }} onKeyDown={(e)=> handleKeyDown(e, grpI)}/>
+              <BiPlusCircle className='add-dnd-item dndHover' size='25' onClick={() => handleAddItem(grpI)}>+</BiPlusCircle>
+              <BiXCircle className='remove-grp-btn dndHover' size='25' onClick={() => handleCloseGroup(grpI)}>X</BiXCircle>
             </div>
             {grp.items.map((item, itemI) => (
               <div
@@ -162,7 +167,7 @@ function DragNDrop() {
                 <div className="dnd-item-text">
                   {item}
                 </div>
-                <button className='remove-dnd-item' onClick={() => handleCloseItem(grpI, itemI)}>X</button>
+                <BiXCircle size='25' className='remove-dnd-item' onClick={() => handleCloseItem(grpI, itemI)}>X</BiXCircle>
               </div>
             ))}
           </div>
