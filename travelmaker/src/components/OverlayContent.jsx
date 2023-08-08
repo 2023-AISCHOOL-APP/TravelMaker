@@ -1,21 +1,22 @@
 import React from 'react'
 
-const OverlayContent = () => {
+const OverlayContent = ({localData}) => {
+  console.log(localData);
   return (
     <div className="ol-wrap">
       <div className="ol-info">
         <div className="ol-title">
-          서울 시청
+          {localData[0]}
           <div className="ol-close" onclick="closeOverlay()" title="닫기"></div>
         </div>
         <div className="ol-body">
           <div className="ol-img">
-            <img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/thumnail.png" width="73" height="70" />
+            <img src={localData[2]} width="73" height="70" />
           </div>
           <div className="ol-desc">
-            <div className="ol-ellipsis">서울특별시 중구 세종대로 110</div>
-            <div className="ol-jibun ellipsis">(우) 04524 (지번) 태평로1가 31</div>
-            <div className='ol-content'>내용</div>
+            <div className='ol-content'>주소</div>
+            <div className="ol-ellipsis">{localData[1]}</div>
+            {/* <div className="ol-jibun ellipsis">(우) 04524 (지번) 태평로1가 31</div> */}
           </div>
         </div>
       </div>

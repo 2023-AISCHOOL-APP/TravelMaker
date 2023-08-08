@@ -1,4 +1,4 @@
-  .detail-container {
+  .local-detail-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,13 +17,13 @@
     border-radius: 8px;
   }
   
-  .close-detail-btn {
+  .close-local-detail-btn {
     position: absolute;
     right: 10px;
     top: 10px;
   }
 
-  .detail-form {
+  .local-detail-form {
     display: flex;
     flex-direction: column;
     align-items: center;

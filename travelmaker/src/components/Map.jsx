@@ -46,8 +46,8 @@ const Map = ({ setMapOpen, id, title, content, writer }) => {
   useEffect(() => {
     const container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
     const options = { //지도를 생성할 때 필요한 기본 옵션
-      center: new kakao.maps.LatLng(37.5667, 126.9784), //지도의 중심좌표 : 서울시청으로 설정함
-      level: 3 //지도의 레벨(확대, 축소 정도)
+      center: new kakao.maps.LatLng(mapxy[0], mapxy[1]), //지도의 중심좌표 : 서울시청으로 설정함
+      level: 13 //지도의 레벨(확대, 축소 정도)
     };
     const map = new kakao.maps.Map(container, options) //지도 생성
 
@@ -62,7 +62,7 @@ const Map = ({ setMapOpen, id, title, content, writer }) => {
     map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
     // 마커 표시
-    var markerPosition = new kakao.maps.LatLng(37.5667, 126.9784);
+    var markerPosition = new kakao.maps.LatLng(mapxy[0], mapxy[1]);
     var marker = new kakao.maps.Marker({
       position: markerPosition,
       clickable: true
@@ -73,7 +73,7 @@ const Map = ({ setMapOpen, id, title, content, writer }) => {
 
     // Overlay에 표시할 컨텐츠
     const overlayContent = document.createElement('div');
-    const overlayComponent = <OverlayContent />;
+    const overlayComponent = <OverlayContent localData={localData}/>;
     ReactDOM.render(overlayComponent, overlayContent);
 
     var iwRemoveable = true;
@@ -117,6 +117,8 @@ const Map = ({ setMapOpen, id, title, content, writer }) => {
     ]
 
   const [localName, setLocalName] = useState("강원도강릉시") // 지역
+  const [mapxy, setMapxy] = useState([37.7921, 128.89662])
+  const [localData, setLocalData] = useState(["강릉 3.1운동 기념공원", "강원특별자치도 강릉시 저동", "http://tong.visitkorea.or.kr/cms/resource/65/2900665_image2_1.JPG"])
 
   // 데이터 베이스에서 관광지 데이터 불러오기
   const getLocalData = async () => {
@@ -129,8 +131,17 @@ const Map = ({ setMapOpen, id, title, content, writer }) => {
       ...doc.data(),
       id: doc.id
     }));
+    setMapxy([data[0].mapy, data[0].mapx])
+    setLocalData([data[0].title, data[0].addr1, data[0].image])
     sessionStorage.setItem('localName', localName)
     nav('/scheduleform', { state: data })
+  }
+
+  useEffect(()=>{
+    getLocalData();
+  },[localName])
+
+  const sendLocalData = ()=>{  
     closeMap();
   }
 
@@ -144,7 +155,7 @@ const Map = ({ setMapOpen, id, title, content, writer }) => {
             <div className='map-select-box'>
               <span className="map-place-text">{localName}</span>
             </div>
-            <BiChevronRightSquare className='get-local-btn' size='30' onClick={getLocalData}>선택</BiChevronRightSquare>
+            <BiChevronRightSquare className='get-local-btn' size='30' onClick={sendLocalData}>선택</BiChevronRightSquare>
           </div>
           {/* 창 크기 줄었을 때 안보임 */}
           <div className='map-palce-select-area'>

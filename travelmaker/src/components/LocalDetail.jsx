@@ -33,9 +33,9 @@ function LocalDetail({setDetailOpen, local}) {
   });
 
   return (
-    <div className='detail-container' ref={mapRef}>
-      <button className='close-detail-btn' onClick={closeMap}>X</button>
-      <div className='detail-form'>
+    <div className='local-detail-container' ref={mapRef}>
+      <button className='close-local-detail-btn' onClick={closeMap}>X</button>
+      <div className='local-detail-form'>
           <p>장소명 : {local.title}</p>
           <img src={local.image} height='200px' />
           <p>주소 : {local.addr1}</p>
