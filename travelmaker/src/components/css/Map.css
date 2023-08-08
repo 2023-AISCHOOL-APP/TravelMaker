@@ -51,9 +51,16 @@
 }
 
 .map-search-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 10px;
   width: 20.4vw;
   height: 35px;
+}
+
+.map-search-name{
+  width: 100px;
 }
 
 .map-search-box {
@@ -84,4 +91,23 @@
   margin: 10px 10px 10px 0;
   height: 97%;
   width: 73.5%;
+}
+
+.map-place{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.map-place-name{
+  margin-left: 2px;
+  margin-right: 8px;
+}
+
+a, a:link, :visited{
+  text-decoration: none;
+  color: black;
+}
+
+a:active{
+  color: skyblue;
 }
