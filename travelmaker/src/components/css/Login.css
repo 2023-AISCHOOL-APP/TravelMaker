@@ -51,15 +51,16 @@
 .pw-input {
   margin: 16px;
   font-size: 15px;
-  height: 5vh;
-  width: 14vw;
+  height: 30px;
+  width: 200px;
+  border-radius: 10px;
 }
 
 .login_bt {
   text-decoration: none;
   text-align: center;
-  width: 12vw;
-  height: 6vh;
+  width: 170px;
+  height: 40px;
   font-size: 1.6rem;
   margin: 10px;
   color: white;

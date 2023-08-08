@@ -47,6 +47,11 @@ const Login = () => {
     nav('/')
   }
 
+  // 회원가입 페이지로 이동
+  const toMembership = ()=>{
+    nav('/membership');
+  }
+
   return (
     <div className='login_bg'>
         <div className='login-bg-box'></div>
@@ -61,7 +66,7 @@ const Login = () => {
         <hr />
         <button className='login_bt b' onClick={login}>로그인</button>
 
-        <Link to='/membership'><button className='login_bt b'>회원가입</button></Link>
+        <button className='login_bt b' onClick={toMembership}>회원가입</button>
       </div>
     </div>
   )
