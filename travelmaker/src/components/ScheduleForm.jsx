@@ -11,9 +11,9 @@ import { db } from '../firebase-config';
 import { getDoc, doc, collection, getDocs, setDoc } from 'firebase/firestore'
 
 const ScheduleForm = () => {
-  const localArr = useLocation().state
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
+  const localArr = useLocation().state // 지역정보 받아오기
+  const [startDate, setStartDate] = useState(""); // 출발일
+  const [endDate, setEndDate] = useState(""); // 도착일
 
   const [regiWrite, setRegiWrite] = useState(false);
   const goToRegiWrite = () => {
@@ -71,9 +71,18 @@ const ScheduleForm = () => {
       } else {
         setSearch(true);
         console.log('T');
+        alert("검색결과가 없습니다.")
       }
       console.log(obList);
     }
+
+  // 엔터키 입력시 검색실행
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      searchData();
+      setUserInput("");
+    }
+  };
 
     // 날짜 길이 설정
     const setDateRan = ()=>{
@@ -106,7 +115,8 @@ const ScheduleForm = () => {
       <div className='schedule-box'>
         <div className='info-box'>
           <div className='search-area'>
-            <input className='search-box' placeholder='검색어를 입력하세요.' onChange={(e) => { setUserInput(e.target.value) }}></input>
+            <div></div>
+            <input className='search-box' placeholder='검색어를 입력하세요.' value={userInput} onChange={(e) => { setUserInput(e.target.value) }} onKeyDown={handleKeyDown}></input>
             <button onClick={searchData}>검색</button>
           </div>
           {/* 창 크기 줄었을 때 안보임 */}

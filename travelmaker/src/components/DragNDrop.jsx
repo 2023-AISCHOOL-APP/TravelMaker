@@ -103,6 +103,7 @@ function DragNDrop() {
 
   const [newItem, setNewItem] = useState("");
   const handleAddItem = (groupIndex) => {
+    setBlank('');
     setList((prevList) => {
       const newList = [...prevList];
       newList[groupIndex].items.push(newItem);
@@ -110,9 +111,12 @@ function DragNDrop() {
     });
   };
 
+  const [blank, setBlank] = useState()
   const handleKeyDown = (e, grpI) => {
     if (e.key === 'Enter') {
       handleAddItem(grpI);
+    }else{
+      setBlank();
     }
   };
 
@@ -146,7 +150,7 @@ function DragNDrop() {
           >
             <div className='group-title-box'>
               <div className='group-title'>{grp.title}</div>
-              <input type="text"  onChange={(e) => { setNewItem(e.target.value) }} onKeyDown={(e)=> handleKeyDown(e, grpI)}/>
+              <input className='kanban-add-input' type="text" value={blank}  onChange={(e) => { setNewItem(e.target.value) }} onKeyDown={(e)=> handleKeyDown(e, grpI)}/>
               <button className='add-dnd-item' onClick={() => handleAddItem(grpI)}>+</button>
               <button className='remove-grp-btn' onClick={() => handleCloseGroup(grpI)}>X</button>
             </div>

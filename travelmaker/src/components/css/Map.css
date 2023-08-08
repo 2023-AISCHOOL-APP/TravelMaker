@@ -85,32 +85,43 @@
   width: 100px;
   height: 30px;
   margin-left: 20px;
-  /* margin-bottom: 10px; */
-  font-size: 2.1rem;
+  font-size: 1.5rem;
   background-color: aqua;
   border: 1px solid aliceblue;
   border-radius: 20px;
 }
 
-.map-place-info-area {
-  height: 90%;
+.map-palce-select-area {
+  height: 92%;
   overflow-y: scroll;
 }
 
 .map-place-info-box {
   display: flex;
+  flex-direction: column;
   align-items: center;
   margin: 10px;
   background-color: aliceblue;
   border: 1px solid aliceblue;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   border-radius: 10px;
-  width: 17.5vw;
-  height: 30px
+  width: 17vw;
+  height: 100px
 }
 
-.map-place-text {
-  margin-left: 10px;
+.map-place{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 5px;
+}
+
+a, a:link, :visited{
+  text-decoration: none;
+  color: black;
+}
+
+a:active{
+  color: skyblue;
 }
 
 #map {
