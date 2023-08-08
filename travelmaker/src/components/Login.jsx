@@ -50,7 +50,7 @@ const Login = () => {
   return (
     <div className='login_bg'>
         <div className='login-bg-box'></div>
-      <img className='logo_img' src='images/logo99999.png' onClick={toMain} />
+      <img className='logo_img' src='images/travel.png' onClick={toMain} />
 
       <div className='login_box'>
         {/* 로그인 기본정보 입력 */}

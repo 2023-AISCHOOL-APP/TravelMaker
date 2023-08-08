@@ -12,6 +12,8 @@ import './components/css/Information.css';
 import './components/css/Application.css';
 import './components/css/PartyMember.css';
 import './components/css/Map.css';
+import './components/css/Registration.css';
+import './components/css/PartyDetail.css'
 
 // 컴포넌트 불러오기
 import Header from './components/Header';
@@ -27,6 +29,8 @@ import Application from './components/Application';
 import PartyMember from './components/PartyMember';
 // import Map from './components/Map';
 import LocalDetail from './components/LocalDetail';
+import Registration from './components/Registration';
+import PartyDetail from './components/PartyDetail';
 
 import CsvUpload from './components/CsvUpload';
 
@@ -49,6 +53,8 @@ function App() {
         <Route path='/information' element={<Information />}></Route>
         <Route path='/application' element={<Application />}></Route>
         <Route path='/partymember' element={<PartyMember />}></Route>
+        <Route path='/registration' element={<Registration />}></Route>
+        <Route path='/partydetail' element={<PartyDetail />}></Route>
         {/* <Route path='/map' element={<Map />}></Route> */}
         
       </Routes>
