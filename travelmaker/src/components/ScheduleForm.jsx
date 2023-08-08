@@ -9,12 +9,14 @@ import LocalData from './LocalData';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { db } from '../firebase-config';
 import { getDoc, doc, collection, getDocs, setDoc } from 'firebase/firestore'
+import LocalDetail from './LocalDetail';
 
 const ScheduleForm = () => {
   const localArr = useLocation().state // 지역정보 받아오기
+  const localName = sessionStorage.getItem('localName')// 지역이름 받아오기
   const [startDate, setStartDate] = useState(""); // 출발일
   const [endDate, setEndDate] = useState(""); // 도착일
-
+console.log(localArr);
   const [regiWrite, setRegiWrite] = useState(false);
   const goToRegiWrite = () => {
     setRegiWrite(true)
@@ -114,8 +116,8 @@ const ScheduleForm = () => {
       
       <div className='schedule-box'>
         <div className='info-box'>
+          <div>선택지역 : {localName}</div>
           <div className='search-area'>
-            <div></div>
             <input className='search-box' placeholder='검색어를 입력하세요.' value={userInput} onChange={(e) => { setUserInput(e.target.value) }} onKeyDown={handleKeyDown}></input>
             <button onClick={searchData}>검색</button>
           </div>

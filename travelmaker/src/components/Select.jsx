@@ -94,16 +94,18 @@ const Select = () => {
   }, [matchUsers])
 
     // 데이터 베이스에서 관광지 데이터 불러오기
+    const localName = '강원도강릉시';
     const getLocalData = async () => {
       sessionStorage.setItem('dateRan', 0)
       sessionStorage.setItem('startDate', '0000-00-00')
       sessionStorage.setItem('endDate', '0000-00-00')
-      const usersCollectionRef = collection(db, '강원도강릉시');
+      const usersCollectionRef = collection(db, localName);
       const userSnap = await getDocs(usersCollectionRef);
       const data = userSnap.docs.map(doc => ({
         ...doc.data(),
         id: doc.id
       }));
+      sessionStorage.setItem('localName', localName)
       nav('/scheduleform', {state: data})
     }
 
@@ -117,7 +119,7 @@ const Select = () => {
           </div>
         </Link>
         <Link to='/partymember'>
-          <div className='crew-box'>
+          <div className='crew-box' onClick={sessionStorage.setItem('localName', '강원도강릉시')}>
             <img src='images/ty.png' className='party-img'></img>
             <a className='crew-btn click-b'>파티원</a>
           </div>

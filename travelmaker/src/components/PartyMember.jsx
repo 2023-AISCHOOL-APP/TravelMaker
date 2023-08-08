@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from 'react'
-import Map from './Map';
+import MapParty from './MapParty';
 
 
 function PartyMember() {
+  const localName = sessionStorage.getItem('localName')
   const [mapOpen, setMapOpen] = useState(false); // 맵 모달창 노출 여부 state
 
-  // 모달창 노출
+  // 지역선택 모달창 노출
   const showMap = () => {
     setMapOpen(true);
   }
+
   const matchNum = sessionStorage.getItem('matchNum')
   let matchUsers = [];
   for (let i = 0; i < matchNum; i++) {
     matchUsers.push(sessionStorage.getItem(`matchUsers${i}`))
-    // sessionStorage.removeItem(`matchUsers${i}`)
   }
   console.log(matchUsers);
 
@@ -38,7 +39,7 @@ function PartyMember() {
         <div className='detail-application'>
           <div className='detail-select'>
             <div className="member-local-select b" onClick={showMap}>지역선택</div>
-            {mapOpen && <Map setMapOpen={setMapOpen} />}
+            {mapOpen && <MapParty setMapOpen={setMapOpen} />}
             <div className='date-container'>
               <div className="date-box">
                 <p className="date-select">출발일</p>
@@ -51,6 +52,7 @@ function PartyMember() {
             </div>
           </div>
         </div>
+        <div>선택한 지역 : {localName}</div>
         <div className='detail-form'>
           {allOrRec ?
             <div className='detail-list'>

@@ -1,10 +1,8 @@
 import { React, useRef, useEffect, useState } from 'react'
 import './css/Map.css'
 import { Link, useNavigate } from 'react-router-dom';
-import { db } from '../firebase-config';
-import { getDoc, doc, collection, getDocs, setDoc } from 'firebase/firestore'
 
-const Map = ({ setMapOpen, id, title, content, writer }) => {
+const MapParty = ({ setMapOpen, id, title, content, writer }) => {
   const nav = useNavigate();
 
 
@@ -48,21 +46,15 @@ const Map = ({ setMapOpen, id, title, content, writer }) => {
     {first : '충북', title : '충청북도', local : ['괴산군', '단양군', '보은군', '영동군', '옥천군', '음성군', '제천시', '증평군', '진천군', '청주시']}
     ]
 
-  const [localName, setLocalName] = useState("강원도강릉시") // 지역
+  const [localName, setLocalName] = useState("") // 지역
 
   // 데이터 베이스에서 관광지 데이터 불러오기
   const getLocalData = async () => {
     sessionStorage.setItem('dateRan', 0)
     sessionStorage.setItem('startDate', '0000-00-00')
     sessionStorage.setItem('endDate', '0000-00-00')
-    const usersCollectionRef = collection(db, localName);
-    const userSnap = await getDocs(usersCollectionRef);
-    const data = userSnap.docs.map(doc => ({
-      ...doc.data(),
-      id: doc.id
-    }));
     sessionStorage.setItem('localName', localName)
-    nav('/scheduleform', { state: data })
+    nav('/partymember')
     closeMap();
   }
 
@@ -105,4 +97,4 @@ const Map = ({ setMapOpen, id, title, content, writer }) => {
   )
 }
 
-export default Map
+export default MapParty
