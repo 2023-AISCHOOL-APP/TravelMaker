@@ -13,9 +13,9 @@ const Registration = () => {
   // textarea 자동으로 줄 늘어나게 하는 함수 (끝)
   return (
     <div className='registration-container'>
-      <div>
+      {/* <div>
         <button className='registration-button b'>등록하기</button>
-      </div>
+      </div> */}
       <div className='registration-box'>
 
         <div className='registration-input-box'>
@@ -35,13 +35,16 @@ const Registration = () => {
 
           <div>여행 기간 : </div>
 
-          <textarea maxLength={800} rows={1} className='registration-detail' placeholder='ex)  ' onChange={handleResizeHeiht} ref={textarea}></textarea>
+          <textarea maxLength={800} rows="12" className='registration-detail' placeholder='ex)  ' onChange={handleResizeHeiht} ref={textarea}></textarea>
           {/* <input maxLength={800} rows={1} className='registration-detail' placeholder='ex)  ' onChange={handleResizeHeiht} ref={textarea}></input> */}
 
         </div>
         {/* <div>
           <button className='registration-button b'>등록하기</button>
         </div> */}
+      </div>
+      <div>
+        <button className='registration-button b'>등록하기</button>
       </div>
 
     </div>
