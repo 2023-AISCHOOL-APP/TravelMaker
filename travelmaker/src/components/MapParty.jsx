@@ -44,7 +44,7 @@ const MapParty = ({ setMapOpen, id, title, content, writer }) => {
   // ----------- 모달 END ----------------
 
   useEffect(() => {
-    const container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+    const container = document.getElementById('map-p'); //지도를 담을 영역의 DOM 레퍼런스
     const options = { //지도를 생성할 때 필요한 기본 옵션
       center: new kakao.maps.LatLng(mapxy[0], mapxy[1]), //지도의 중심좌표 : 서울시청으로 설정함
       level: 13 //지도의 레벨(확대, 축소 정도)
@@ -145,7 +145,7 @@ const MapParty = ({ setMapOpen, id, title, content, writer }) => {
   }
 
   return (
-    <div className='map-container' ref={mapRef}>
+    <div className='map-p-container' ref={mapRef}>
       <BiXCircle className='close-map-btn' size='30' onClick={closeMap}>X</BiXCircle>
       <div className='map-box'>
         <div className='map-info-box'>
@@ -177,7 +177,7 @@ const MapParty = ({ setMapOpen, id, title, content, writer }) => {
               })}
           </div>
         </div>
-        <div id='map'></div>
+        <div id='map-p'></div>
       </div>
     </div>
   )

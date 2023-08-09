@@ -12,12 +12,27 @@
 }
 
 .map-container {
-  width: 90%;
-  height: 90%;
+  width: 90vw;
+  height: 90vh;
   z-index: 99999999;
 
   position: absolute;
   top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.map-p-container {
+  width: 90vw;
+  height: 90vh;
+  z-index: 99999999;
+
+  position: absolute;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
 
@@ -154,6 +169,15 @@ a:active{
 }
 
 #map {
+  display: flex;
+  align-items: center;
+  border: 1px solid aliceblue;
+  margin: 10px 10px 10px 0;
+  height: 97%;
+  width: 72.5%;
+}
+
+#map-p {
   display: flex;
   align-items: center;
   border: 1px solid aliceblue;

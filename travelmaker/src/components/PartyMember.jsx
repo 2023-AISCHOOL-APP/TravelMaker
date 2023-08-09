@@ -53,16 +53,36 @@ function PartyMember() {
             </div>
           </div>
         </div>
-        <div>선택한 지역 : {localName}</div>
+        <div className="pm-local-box">
+          <div className='pm-local-select'>선택 지역 |</div>
+          <div className="pm-local-name-box">
+            <span className="pm-local-name">{localName}</span>
+          </div>
+        </div>
         <div className='detail-form'>
           {allOrRec ?
-            <Link to='/partydetail'>
+            <Link to='/partydetail' className='detail-list-box'>
               <div className='detail-list'>
-                <div>전체일정</div>
-                <div>작성자</div>
-                <div>내용</div>
-                <div>내용</div>
-                <div>내용</div>
+                <div className='detail-list-title'>제목</div>
+                <div className="de-li-info-box">
+                  <div className='detail-list-author'>파티장 | 정태녕</div>
+                  <div className='detail-list-date-box'>
+                    <div className="detail-list-date-text">여행기간 |</div>
+                    <div className="detail-list-date">0000-00-00 ~ 0000-00-00</div>
+                  </div>
+                </div>
+                <div className="detail-list-category">
+                  <div className='list-category-icon'>🚗차</div>
+                  <div className='list-category-icon'>🚌버스</div>
+                  <div className='list-category-icon'>👟뚜벅</div>
+                  <div className='list-category-icon'>🏖️휴양</div>
+                  <div className='list-category-icon'>🏃외부</div>
+                  <div className='list-category-icon'>🏛️관광</div>
+                  <div className='list-category-icon'>🚶‍♂️걷기</div>
+                </div>
+                <div className='detail-list-content'>
+                  <div>내용</div>
+                </div>
               </div>
             </Link>
             :
