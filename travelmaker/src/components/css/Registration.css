@@ -57,3 +57,17 @@
     color: white;
     border-radius: 10px;
 }
+
+.registration-plan-box{
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    /* border: solid 1px black; */
+}
+
+.registration-plan{
+    border: solid 1px black;
+    width: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
