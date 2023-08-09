@@ -166,7 +166,7 @@ const Membership = () => {
           <div className='membership_input'>
 
             {/* 아이디 비밀번호 변수에 저장 */}
-            <input placeholder='닉네임(2글자 이상 입력)' onChange={(e) => { setRegisterNickname(e.target.value) }}></input>
+            <input className='member-input' placeholder='닉네임(2글자 이상 입력)' onChange={(e) => { setRegisterNickname(e.target.value) }}></input>
             <div className='guideText'>{nick}</div>
             <input placeholder='아이디(ex : test@test.com)' onChange={(e) => { setRegisterEmail(e.target.value) }}></input>
             <div className='guideText'>{id}</div>
