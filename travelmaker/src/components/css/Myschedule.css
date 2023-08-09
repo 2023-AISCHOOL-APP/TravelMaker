@@ -1,4 +1,4 @@
-@media screen and (width <= 767px) {
+@media screen and (width <=767px) {
     .my-schedule-form {
         width: 80vw;
         display: flexbox;
@@ -11,13 +11,14 @@
     }
 
 }
-@media screen and (width >= 768px) {
-    .my-schedule-application{
+
+@media screen and (width >=768px) {
+    .my-schedule-application {
         width: 90vw;
     }
 
     .my-schedule-form {
-        width: 90vw;
+        width: 89.5vw;
         display: flex;
         flex-wrap: wrap;
     }
@@ -51,12 +52,11 @@
 .my-schedule-box {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 87vh;
     margin-top: 10px;
     border: 1px solid rgba(202, 111, 111, 0.151);
     border-radius: 10px;
-    margin: 10px 3.90625vw 0;
-    position: absolute;
+    margin: 80px 3.90625vw 0;
     box-shadow: 0 0 10px rgba(27, 152, 190, 0.2);
     background-color: aliceblue;
 }
@@ -70,14 +70,14 @@
     height: 8vh;
 }
 
-.my-scheduele-select{
+.my-scheduele-select {
     font-size: 3rem;
     margin-top: 15px;
     margin-left: 21px;
     border: 1px solid black;
 }
 
-.my_box{
+.my_box {
     margin-left: 10px;
     width: 100%;
     display: flex;
@@ -93,27 +93,61 @@
     width: 130px;
 }
 
-/* 신청받은 목록 CSS */
+/* 신청자 목록 CSS */
 
 .my-schedule-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     border: 1px solid rgba(53, 168, 172, 0.788);
-    border-radius: 15px;
+    border-radius: 10px;
     margin: 10px;
     height: 97vh;
     overflow-y: scroll;
 }
 
-.my-schedule-form::-webkit-scrollbar{
+.my-sche-list-box {
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 88%;
+}
+
+.my-sche-list {
+    border: 1px solid rgba(0, 0, 0, 0.103);
+    border-radius: 10px;
+    background-color: snow;
+    box-shadow: 0 0 10px rgba(26, 162, 204, 0.15);
+    height: 250px;
+}
+
+.my-sche-list:hover {
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+.my-sche-list-content {
+    border: 1px solid aliceblue;
+    background-color: aliceblue;
+    border-radius: 15px;
+    margin: 27px 4px 0;
+    height: 115px;
+}
+
+.my-sche-list-content-text {
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.my-schedule-form::-webkit-scrollbar {
     width: 12px;
-  }
-  
-  .my-schedule-form::-webkit-scrollbar-thumb{
+}
+
+.my-schedule-form::-webkit-scrollbar-thumb {
     background: #2da2c5;
     border-radius: 6px;
-  }
-  .my-schedule-form::-webkit-scrollbar-track{
+}
+
+.my-schedule-form::-webkit-scrollbar-track {
     border-radius: 6px;
-  }
+}
 
 
 .plan-title {
@@ -132,11 +166,25 @@
 }
 
 .apply-list {
-    font-size: 2.5rem;
-    margin: 5px;
+    font-size: 1.8rem;
+    margin: 10px 10px 2px;
+}
+
+.apllicant-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    background-color: aliceblue;
+    border-radius: 20px;
+    width: 97%;
+    height: 71%;
+    margin-left: 5px;
 }
 
 .applicant {
-    font-size: 2.2rem;
-    margin: 4px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    margin: 5px 10px;
 }

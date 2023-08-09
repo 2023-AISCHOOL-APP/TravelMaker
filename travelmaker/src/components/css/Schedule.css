@@ -52,6 +52,7 @@
     width: 70vw;
     display: flex;
     flex-wrap: wrap;
+    background-color: aliceblue;
   }
 
   .schedule-list {
@@ -105,13 +106,13 @@
 }
 
 .date-box {
-  width: 230px;
+  width: 175px;
   display: flex;
   align-items: center;
 }
 
 .date-box p {
-  width: 7rem;
+  width: 5rem;
   font-size: 1.5rem;
 }
 
@@ -282,9 +283,13 @@
   margin: 10px;
   border: 1px solid aliceblue;
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   width: 17.5vw;
   height: 200px
+}
+
+.localDHover:hover {
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
 .place-info-box p {
