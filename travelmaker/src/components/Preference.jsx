@@ -136,7 +136,7 @@ const Preference = () => {
         </video>
       </div>
 
-      <img className='preference_img' src='images/logo99999.png'/>
+      <img className='preference_img' src='images/travel.png'/>
 
       <div className='preference_box'>
         {/* 게이지 바 */}
@@ -152,7 +152,7 @@ const Preference = () => {
             {surveys[surveyIndex].options.map((option, index) => (
               <div key={index} className='preference_btnhov'>
                 {/* 선택지 버튼을 클릭하면 handleAnswer가 실행 */}
-                <button key={index} className='preference_btn' onClick={() => handleAnswer(option)}>
+                <button key={index} className='preference_btn b' onClick={() => handleAnswer(option)}>
                   {option}
                 </button>
               </div>

@@ -49,20 +49,20 @@
 
 .id-input,
 .pw-input {
-  margin: 16px;
-  font-size: 15px;
-  height: 30px;
-  width: 200px;
+  margin-top: 16.5px;
+  font-size: 17px;
+  height: 40px;
+  width: 230px;
   border-radius: 10px;
 }
 
 .login_bt {
   text-decoration: none;
   text-align: center;
-  width: 170px;
+  width: 230px;
   height: 40px;
-  font-size: 1.6rem;
-  margin: 10px;
+  font-size: 17px;
+  margin: 12px;
   color: white;
   background-color: black;
   border: 1px solid black;
