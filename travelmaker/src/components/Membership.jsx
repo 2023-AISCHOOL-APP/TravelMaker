@@ -146,14 +146,9 @@ const Membership = () => {
   }
   return (
     <div className='membership_bg'>
-      {/* 배경이 들어갈 자리 */}
-      <div className='membership_bgvid'>
-        <video className='membership_vid' autoPlay muted loop><source src='video/video2.mp4' /></video>
-      </div>
-
-
+    
       {/* <div className='membership_logo' > */}
-      <img className='membership_img' src='images/logo99999.png' onClick={toMain} />
+      <img className='membership_img' src='images/travel.png' onClick={toMain} />
       {/* </div> */}
 
       <div className='membership_box'>
@@ -162,25 +157,25 @@ const Membership = () => {
           <div className='membership_input'>
 
             {/* 아이디 비밀번호 변수에 저장 */}
-            <input placeholder='닉네임(2글자 이상 입력)' onChange={(e) => { setRegisterNickname(e.target.value) }} onKeyDown={pwdHandle}></input>
+            <input className='login-input-text' placeholder='닉네임(2글자 이상 입력)' onChange={(e) => { setRegisterNickname(e.target.value) }} onKeyDown={pwdHandle}></input>
             <div className='guideText'>{nick}</div>
-            <input placeholder='아이디(ex : test@test.com)' onChange={(e) => { setRegisterEmail(e.target.value) }} onKeyDown={pwdHandle}></input>
+            <input className='login-input-text' placeholder='아이디(ex : test@test.com)' onChange={(e) => { setRegisterEmail(e.target.value) }} onKeyDown={pwdHandle}></input>
             <div className='guideText'>{id}</div>
-            <input type='password' placeholder='비밀번호(8자리 이상 입력)' onChange={(e) => { setRegisterPassword(e.target.value) }} onKeyDown={pwdHandle}></input>
-            <input type='password' placeholder='비밀번호 확인' onChange={(e) => { setCheckPassword(e.target.value) }} onKeyDown={pwdHandle}></input>
+            <input className='login-input-text' type='password' placeholder='비밀번호(8자리 이상 입력)' onChange={(e) => { setRegisterPassword(e.target.value) }} onKeyDown={pwdHandle}></input>
+            <input className='login-input-text' type='password' placeholder='비밀번호 확인' onChange={(e) => { setCheckPassword(e.target.value) }} onKeyDown={pwdHandle}></input>
             <div className='guideText'>{pwd}</div>
-            <input placeholder='이름(ex : 홍길동)' onChange={(e) => { setRegisterName(e.target.value) }} onKeyDown={pwdHandle}></input>
+            <input className='login-input-text' placeholder='이름(ex : 홍길동)' onChange={(e) => { setRegisterName(e.target.value) }} onKeyDown={pwdHandle}></input>
             <div className='guideText'>{name}</div>
-            <input maxLength={8} placeholder='생년월일 8자리(ex : 20221213)' onChange={(e) => { setRegisterBirth(e.target.value) }} onKeyDown={pwdHandle}></input>
+            <input className='login-input-text' maxLength={8} placeholder='생년월일 8자리(ex : 20221213)' onChange={(e) => { setRegisterBirth(e.target.value) }} onKeyDown={pwdHandle}></input>
             <div className='guideText'>{birth}</div>
             <br/>
 
             {/* 성별 선택 */}
             <div className='gender_box'>
               <input id='male' type="radio" name="gender" value="Male" onChange={(e) => { setRegisterGender(e.target.value) }} onKeyDown={pwdHandle}/>
-              <label className='gender_select' for='male'>남자</label>
+              <label className='gender_select b' for='male'>남자</label>
               <input id='female' type="radio" name="gender" value="Female" onChange={(e) => { setRegisterGender(e.target.value) }} onKeyDown={pwdHandle}/>
-              <label className='gender_select' for='female'>여자</label>
+              <label className='gender_select b' for='female'>여자</label>
             </div>
             <div className='guideText'>{gen}</div>
           </div>

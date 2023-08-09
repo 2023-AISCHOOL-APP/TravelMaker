@@ -2,7 +2,7 @@ import { React, useRef, useEffect, useState } from 'react'
 import './css/LocalDetail.css'
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 
-function LocalDetail({setDetailOpen, local}) {
+function LocalDetail({ setDetailOpen, local }) {
 
   // 모달 끄기 
   const closeMap = () => {
@@ -36,10 +36,15 @@ function LocalDetail({setDetailOpen, local}) {
     <div className='local-detail-container' ref={mapRef}>
       <button className='close-local-detail-btn' onClick={closeMap}>X</button>
       <div className='local-detail-form'>
-          <p>장소명 : {local.title}</p>
+        <div className='local-detail-img'>
           <img src={local.image} height='200px' />
-          <p>주소 : {local.addr1}</p>
-          <p>상세설명 : {local.overview}</p>
+        </div>
+        <div className='local-detail-info'>
+          <p className='local-detail-info-text'>장소명 : {local.title}</p>
+          <p className='local-detail-info-text'>주소 : {local.addr1}</p>
+          <p className='local-detail-info-text'>상세설명 : {local.overview}</p>
+
+        </div>
       </div>
     </div>
   )

@@ -1,9 +1,9 @@
-@font-face {
+/* @font-face {
     font-family: 'WandohopeR';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandohopeR.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-}
+} */
 
 .membership_bg {
     display: flex;
@@ -13,22 +13,7 @@
     width: 100%;
     height: 100vh;
     z-index: 99999999999;
-    background-color: white;
-}
-
-.mebership_bgvid{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: -99;
-  }
-
-.membership_vid{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+    background-color: #b1d8eb;
 }
 
 .membership_img{
@@ -40,25 +25,23 @@
 
 .membership_box{
     padding: 15px;
-    width: 300px;
-    height: 470px;
+    width: 400px;
+    height: 480px;
     position: absolute;
     top :180px; 
     border: 1px solid rgba(179, 185, 221, 0.226);
-    background-color: rgba(184, 203, 219, 0.733);
+    background-color: aliceblue;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 10px;
-    box-shadow: 0 0 25px rgba(0, 0, 0, .4);
+    box-shadow: 0 0 10px rgba(27, 152, 190, 0.2);
 }
 
 .membership_input {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-left: 11px;
+    align-items: center;    
 }
 
 .gender {
@@ -74,48 +57,46 @@
 }
 
 /* 라벨의 스타일 적용 시작 */
-[type ='radio'] {
+/* [type ='radio'] {
     display: none;
-}
+} */
 
 .gender_select{
     position: relative;
-    color: #144272;
-    font-size: 20px;
-    border: 0.01px solid #4777ad;
-    border-radius: 20px;
-    width: 60px;
+    font-size: 19px;
+    width: 80px;
+    height: 15px;
     display: flex;
     align-items: center;
-    margin-left: 15px;
+    margin-left: 16px;
     margin-right: 20px;
+    margin-bottom: 15px ;
     justify-content: center;
 }
-input[type='radio']:checked+label{
-    /* background-color: #84add1; */
+/* input[type='radio']:checked+label{
     color: #ebeeed;
     align-items: center;
-}
+} */
 /* 라벨 스타일 적용 끝 */
 
-input{
-    margin-top: 30px;
+.login-input-text{
     margin: 10px;
-    font-size: 12px;
-    height: 25px;
-    width: 200px;
+    font-size: 15px;
+    height: 30px;
+    width: 210px;
+    border-radius: 10px;
 }
 
 .membership_bt{
-    margin: 20px;
-    height: 30px;
+    margin: 10px;
+    height: 40px;
     width:210px;
     border-radius: 10px;
-    border: none;
-    font-size: 15px;
+    font-size: 18px;
     color: whitesmoke;
-    background-color: rgba(108, 137, 214, 0.801);
-    box-shadow: 0 0 15px rgba(0, 0, 0, .3);
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 10px;
 }
 
 .guideText{
@@ -123,4 +104,5 @@ input{
     height: 5px;
     font-size: 12px;
     text-align: center;
+    
 }
