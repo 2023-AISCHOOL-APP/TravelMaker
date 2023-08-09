@@ -104,18 +104,18 @@ function DragNDrop() {
   };
 
   const [newItem, setNewItem] = useState("");
-  const [planList, setPlanList] = useState([{items:'start'}]);
+  const [planeList, setPlaneList] = useState([{items:'start'}]);
 
   const handleAddItem = (groupIndex) => {
     setBlank('');
     setList((prevList) => {
       const newList = [...prevList];
       newList[groupIndex].items.push(newItem);
-      setPlanList(newList)
+      setPlaneList(newList)
       return newList;
     });
   };
-  console.log(planList[0].items);
+  console.log(planeList[0].items);
   const [blank, setBlank] = useState()
   const handleKeyDown = (e, grpI) => {
     if (e.key === 'Enter') {
@@ -136,9 +136,9 @@ function DragNDrop() {
   const userNick = sessionStorage.getItem('nick')
   const sendData = async () => {
     // try {
-    for (let i = 0; i < planList.length; i++) {
+    for (let i = 0; i < planeList.length; i++) {
       await setDoc(doc(db, '게시판', `Day${i+1}-${userNick}`),
-        planList[i]
+        planeList[i]
         )
     }
     // } catch (error) {
@@ -149,7 +149,7 @@ function DragNDrop() {
 
   useEffect(()=>{
     sendData();
-  },[planList])
+  },[planeList])
 
   return (
     <div className='kanban-container'>

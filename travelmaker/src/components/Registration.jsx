@@ -1,11 +1,35 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import { db } from '../firebase-config';
+import { getDoc, doc, collection, getDocs, setDoc } from 'firebase/firestore'
+
 
 const Registration = () => {
   const dayNum = parseInt(sessionStorage.getItem('dateRan'))+1
   const startDate = sessionStorage.getItem('startDate')
   const endDate = sessionStorage.getItem('endDate')
   const localName = sessionStorage.getItem('localName')
+  const userNick = sessionStorage.getItem('nick')
   console.log(dayNum, startDate, endDate, localName);
+
+  // 데이터 베이스에서 캄방보드 데이터 불러오기
+  const [userplanes, setUserPlanes] = useState([{}]);
+  const getUser = async () => {
+    for (let i = 1; i < dayNum + 1; i++) {
+      const docRef = doc(db, "게시판", `Day${i}-${userNick}`);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        console.log("Document data:", docSnap.data());
+        setUserPlanes([...userplanes, docSnap.data()]);
+      } else {
+        console.log("No such document!");
+      }
+    }
+  };
+
+  useEffect(()=>{
+    getUser();
+  },[])
+
   // textarea 자동으로 줄 늘어나게 하는 함수 (시작)
   const textarea = useRef();
 
