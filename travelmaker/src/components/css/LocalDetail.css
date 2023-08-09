@@ -33,6 +33,21 @@
     height: 93%;
     width: 90%;
   }
+/* 스크롤 디자인 삽입 시작 */
+.local-detail-form::-webkit-scrollbar{
+  width: 12px;
+}
+
+.local-detail-form::-webkit-scrollbar-thumb{
+  background: #49505e;
+  border-radius: 6px;
+}
+.local-detail-form::-webkit-scrollbar-track{
+  border-radius: 6px;
+}
+/* 스크롤 디자인 삽입 끝 */
+
+
 
   .local-detail-img{
     margin-top: 180px;
@@ -40,10 +55,21 @@
     margin-right: 10px;
     height: 680px;
     width: 5000px;
+
   }
 
-  .local-detail-info p{
-    font-size: 20px;
-    margin: 10px;
+  .local-detail-info-title{
+    font-size: 3rem;
+    margin-top: 5px;
+    margin-bottom: -10px;
+  }
+
+  .local-detail-info-adrr{
+    font-size: 1.7rem;
+  }
+
   
+  .local-detail-info-content p{
+    font-size: 2rem;
+    margin: 15px;
   }
