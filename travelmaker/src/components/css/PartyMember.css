@@ -245,7 +245,3 @@ input[type='radio']:checked+label {
 }
 
 /* radio 버튼 css 끝 */
-
-.my_box {
-    display: flex;
-}

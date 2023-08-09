@@ -102,13 +102,14 @@
     box-shadow: 0 0 10px rgba(26, 162, 204, 0.15);
 }
 
-.my_box{
-    display: flex;
-    
+.my-app-text-a {
+    width: 170px;
+    font-size: 2rem;
+    color: #144272;
 }
 
-.my-app-text {
-    width: 170px;
+.my-app-text-b {
+    width: 130px;
     font-size: 2rem;
     color: #144272;
 }

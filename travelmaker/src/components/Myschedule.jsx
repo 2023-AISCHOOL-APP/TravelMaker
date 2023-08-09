@@ -91,8 +91,7 @@ const Myschedule = () => {
                 <div className='applicant'>정태녕</div>
                 <div className='applicant'>김도운</div>
               </div>
-            </div>
-            
+            </div>    
           </div>}
       </div>
     </div>
