@@ -87,7 +87,7 @@ const Preference = () => {
       registerData.registerPassword
       );
       signOut(auth); // 회원가입시 자동으로 로그인되기 때문에 자동 로그아웃 시킴
-      alert('Travel Maker에 합류해 주셔서 감사합니다!')
+      alert('Travel Mate에 합류해 주셔서 감사합니다!')
       nav('/login')
     }catch(error){
       alert('알수없는 오류입니다. 가입을 다시 진행해주세요..')
