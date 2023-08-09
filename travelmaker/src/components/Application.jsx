@@ -33,6 +33,7 @@ const Application = () => {
             <div>이름</div>
             <div>이름</div>
             <div>이름</div>
+            <button className='app-list-btn'>리뷰쓰기</button>
           </div>
           <div className='app-list'>
             <div>일정 제목</div>
