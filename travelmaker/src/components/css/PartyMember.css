@@ -186,27 +186,33 @@
 }
 
 .detail-list-category {
-    margin: 5px;
-    display: grid;
+    margin: 0 5px;
+    /* display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    gap: 3px;
+    gap: 3px; */
+    display: flex;
+    flex-wrap: wrap;
     font-size: 1.2rem;
+    height: 20px;
+    width: 310px;
 }
 
 .list-category-icon {
+    width: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 1px solid black;
     border-radius: 20px;
+    margin: 2px 5px;
 }
 
 .detail-list-content {
     border: 1px solid aliceblue;
     background-color: aliceblue;
     border-radius: 15px;
-    margin: 4px 4px 0;
-    height: 65px;
+    margin: 20px 4px 0;
+    height: 70px;
 }
 
 .detail-list-content div {

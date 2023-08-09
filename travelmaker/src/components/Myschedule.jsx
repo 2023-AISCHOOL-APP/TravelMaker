@@ -28,13 +28,6 @@ const Myschedule = () => {
       <div className='my-schedule-box'>
         <div className='my-schedule-menu'>
           <div className='my-schedule-select'>
-
-            {/* <input id='my_t' type='radio'>
-                <label for='my_t' className='my_text'>내가 작성한 글</label>
-              </input>
-              <input id ='my_s' type='radio'>
-                <label for ='my_s' className='my_text'>신청한 사람 몰록</label>
-              </input> */}
             <div className='my_box'>
               <input id='my_t' type="radio" name="my_sch" onClick={my} />
               <label className='my-sche-btn b' for='my_t' >내가 등록한 일정</label>
