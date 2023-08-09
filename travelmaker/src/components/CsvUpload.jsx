@@ -8,6 +8,8 @@ function CsvUpload() {
 
     const [locationdata, setLocationdata] = useState({});
     const [localName, setLocalName] = useState("");
+
+
     const uploadFile = (files) => {
       setLocalName((files[0].name).split('.')[0]);
       // Using papaparse to parse the CSV file
@@ -19,6 +21,9 @@ function CsvUpload() {
         }
       });
     };
+
+
+    
     console.log('전송 완료!');
     // 지역데이터 정보 데이터베이스로 보내기
   const sendData = async () => {

@@ -102,19 +102,18 @@
     box-shadow: 0 0 10px rgba(26, 162, 204, 0.15);
 }
 
-.my_box{
-    display: flex;
-    
-}
-
-.my-app-text {
+.my-app-text-a {
     width: 170px;
     font-size: 2rem;
     color: #144272;
 }
 
-.app-list-btn{
-    margin-top: 50px;
-    margin-left: 110px;
+.my-app-text-b {
+    width: 130px;
     font-size: 2rem;
+    color: #144272;
+}
+
+.app-review{
+
 }

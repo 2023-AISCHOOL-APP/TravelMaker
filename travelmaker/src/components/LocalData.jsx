@@ -13,7 +13,7 @@ const LocalData = ({local}) => {
     }
 
   return (
-    <div className='place-info-box'>
+    <div className='place-info-box localDHover'>
       {detailOpen && <LocalDetail setDetailOpen={setDetailOpen} local={local}/>}
         <p onClick={showMap}>{local.title}</p>
         <img src={local.image} onClick={showMap}></img>
