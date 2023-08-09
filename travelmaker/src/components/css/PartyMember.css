@@ -1,4 +1,4 @@
-@media screen and (width <= 767px) {
+@media screen and (width <=767px) {
     .detail-form {
         width: 80vw;
         display: flexbox;
@@ -11,8 +11,9 @@
     }
 
 }
-@media screen and (width >= 767px) {
-    .detail-application{
+
+@media screen and (width >=767px) {
+    .detail-application {
         width: 90vw;
     }
 
@@ -30,7 +31,7 @@
 
 .detail-container {
     width: 100%;
-    height: calc(100vh - 70px);
+    height: calc(98vh - 70px);
     margin-top: 70px;
 }
 
@@ -47,7 +48,8 @@
     background-color: aliceblue;
 }
 
-.recommend-menu, .detail-application {
+.recommend-menu,
+.detail-application {
     width: 100%;
     display: flex;
     align-items: center;
@@ -55,7 +57,8 @@
     height: 8vh;
 }
 
-.recommend-select, .detail-select{
+.recommend-select,
+.detail-select {
     display: flex;
     justify-content: left;
     align-items: center;
@@ -68,40 +71,39 @@
 }
 
 .member-local-select {
-    width: 100px;
+    width: 106px;
     font-size: 1.5rem;
     display: flex;
     justify-content: left;
     align-items: center;
-    /* margin-left: 10px; */
-  }
+}
 
 .pm-local-box {
     display: flex;
     justify-content: left;
     align-items: center;
     margin-top: 10px;
-    margin-left: 10px;
+    margin-left: 30px;
     width: 100%;
 }
 
 .pm-local-select {
     margin-left: 10px;
-  font-size: 1.5rem;
+    font-size: 1.5rem;
 }
 
 .pm-local-name {
     display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 90px;
-  height: 30px;
-  margin-left: 5px;
-  font-size: 1.5rem;
-  /* background-color: #89B0CD; */
-  background-color: aqua;
-  border: 1px solid aliceblue;
-  border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 30px;
+    margin-left: 5px;
+    font-size: 1.5rem;
+    /* background-color: #89B0CD; */
+    background-color: aqua;
+    border: 1px solid aliceblue;
+    border-radius: 20px;
 }
 
 .detail-form {
@@ -117,17 +119,19 @@
 }
 
 /* 스크롤 디자인 삽입 시작 */
-.detail-form::-webkit-scrollbar{
+.detail-form::-webkit-scrollbar {
     width: 12px;
 }
 
-.detail-form::-webkit-scrollbar-thumb{
+.detail-form::-webkit-scrollbar-thumb {
     background: #2da2c5;
     border-radius: 6px;
 }
-.detail-form::-webkit-scrollbar-track{
+
+.detail-form::-webkit-scrollbar-track {
     border-radius: 6px;
 }
+
 /* 스크롤 디자인 삽입 끝 */
 
 
@@ -135,10 +139,15 @@
 .detail-list-box {
     margin-top: 10px;
     margin-left: 10px;
+    height: 43%;
+}
+
+.detail-list:hover {
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
 .detail-list {
-    border: 1px solid  rgba(0, 0, 0, 0.103);
+    border: 1px solid rgba(0, 0, 0, 0.103);
     border-radius: 10px;
     background-color: snow;
     box-shadow: 0 0 10px rgba(26, 162, 204, 0.15);
@@ -155,12 +164,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    margin: 4px 4px 0;
+    margin: 0 4px 0;
     border: 1px solid aliceblue;
     background-color: aliceblue;
     border-radius: 15px;
-    font-size: 1.2rem;
-    height: 35px;
+    font-size: 1.4rem;
+    height: 40px;
 }
 
 .detail-list-author {
@@ -179,7 +188,7 @@
 .detail-list-category {
     margin: 5px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 3px;
     font-size: 1.2rem;
 }
@@ -203,18 +212,20 @@
 .detail-list-content div {
     margin: 5px;
 }
+
 /* 리스트 CSS - END*/
 
-.detail-select-location, .detail-select-day{
+.detail-select-location,
+.detail-select-day {
     width: 200px;
 }
 
 /* radio 버튼 css 시작 */
-[type = 'radio'] {
+[type='radio'] {
     display: none;
 }
 
-.my_text{
+.my_text {
     position: relative;
     color: #144272;
     font-size: 1.8rem;
@@ -227,13 +238,14 @@
     justify-content: center;
 }
 
-input[type='radio']:checked+label{
+input[type='radio']:checked+label {
     /* background-color: #84add1; */
     color: #25bd2d;
     align-items: center;
 }
+
 /* radio 버튼 css 끝 */
 
-.my_box{
+.my_box {
     display: flex;
 }
