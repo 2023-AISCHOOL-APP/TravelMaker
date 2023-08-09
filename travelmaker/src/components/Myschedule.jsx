@@ -11,6 +11,7 @@ const Myschedule = () => {
       setMyOrApp(true)
     } else {
       setMyOrApp(false)
+      sessionStorage.setItem('select_my', 'my')
     }
   }, [])
 
@@ -19,6 +20,7 @@ const Myschedule = () => {
   }
   const app = () => {
     setMyOrApp(false);
+    sessionStorage.setItem('select_my', 'my')
   }
 
   console.log(myOrApp);
@@ -34,12 +36,12 @@ const Myschedule = () => {
               <input id ='my_s' type='radio'>
                 <label for ='my_s' className='my_text'>신청한 사람 몰록</label>
               </input> */}
-            <div className='my_box'>
-              <input id='my_t' type="radio" name="my_sch" onClick={my} />
-              <label className='my-sche-btn b' for='my_t' >내가 등록한 일정</label>
-              <input id='my_s' type="radio" name="my_sch" onClick={app} />
-              <label className='my-sche-btn btn-b b' for='my_s'>신청자 목록</label>
-            </div>
+              <div className='my_box'>
+                <input id='my_t' type="radio" name="my_sch" onClick={my} />
+                <label className='my-sche-btn b' for='my_t'>내가 등록한 일정</label>
+                <input id='my_s' type="radio" name="my_sch" onClick={app} />
+                <label className='my-sche-btn btn-b b' for='my_s'>신청자 목록</label>
+              </div>            
 
           </div>
         </div>

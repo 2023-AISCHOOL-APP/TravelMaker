@@ -134,10 +134,11 @@ function DragNDrop() {
 
   // 지역데이터 정보 데이터베이스로 보내기
   const userNick = sessionStorage.getItem('nick')
+  const localName = sessionStorage.getItem('localName')
   const sendData = async () => {
     // try {
     for (let i = 0; i < planeList.length; i++) {
-      await setDoc(doc(db, '일별데이터', `Day${i+1}-${userNick}`),
+      await setDoc(doc(db, '일별데이터', `Day${i+1}-${userNick}-${localName}`),
         planeList[i]
         )
     }

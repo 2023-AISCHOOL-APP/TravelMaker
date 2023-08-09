@@ -50,7 +50,9 @@ const SideContent = () => {
     sessionStorage.setItem('select_my', 'my');
     window.location.replace('/myschedule');
   }
-  const app = () => { window.location.replace('/myschedule'); }
+  const app = () => { 
+    window.location.replace('/myschedule');
+  }
 
   return (
     <div className='side-content-container'>
