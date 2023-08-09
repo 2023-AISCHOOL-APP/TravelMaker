@@ -131,7 +131,8 @@
 
 .kanban-add-input {
   width: 190px;
-  margin: 0 10px;
+  height: 25px;
+  margin: 10px;
 }
 
 .add-dnd-item{

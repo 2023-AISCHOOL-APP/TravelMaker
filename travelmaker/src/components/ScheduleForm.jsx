@@ -111,7 +111,7 @@ console.log("dkssud");
             <input type='date' onChange={(e) => { setEndDate(e.target.value) }}></input>
           </div>
           <button className='date-create b' onClick={setDateRan}>일정 생성</button>
-          <button className='go-next b' onClick={goToRegiWrite}>다음</button>
+          <button className='go-next b' onClick={goToRegiWrite}>다음</button>          
         </div>
       </nav>
       
