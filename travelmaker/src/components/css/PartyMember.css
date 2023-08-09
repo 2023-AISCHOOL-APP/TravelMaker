@@ -11,19 +11,19 @@
     }
 
 }
-@media screen and (width >= 768px) {
+@media screen and (width >= 767px) {
     .detail-application{
         width: 90vw;
     }
 
     .detail-form {
-        width: 90vw;
+        width: 89vw;
         display: flex;
         flex-wrap: wrap;
     }
 
     .detail-list {
-        width: 19vw;
+        width: 20.9vw;
         height: 200px;
     }
 }
@@ -36,15 +36,14 @@
 
 .detail-box {
     display: flex;
+    align-items: center;
     flex-direction: column;
-    height: 100vh;
-    margin-top: 10px;
+    height: 87vh;
     border: 1px solid rgba(202, 111, 111, 0.151);
     border-radius: 10px;
-    margin: 10px 3.90625vw 0;
-    position: absolute;
+    margin: 80px 3.90625vw 0;
+    /* position: absolute; */
     box-shadow: 0 0 10px rgba(27, 152, 190, 0.2);
-    /* background-color: #f0faff; */
     background-color: aliceblue;
 }
 
@@ -77,13 +76,47 @@
     /* margin-left: 10px; */
   }
 
+.pm-local-box {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 100%;
+}
+
+.pm-local-select {
+    margin-left: 10px;
+  font-size: 1.5rem;
+}
+
+.pm-local-name {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 30px;
+  margin-left: 5px;
+  font-size: 1.5rem;
+  /* background-color: #89B0CD; */
+  background-color: aqua;
+  border: 1px solid aliceblue;
+  border-radius: 20px;
+}
+
 .detail-form {
     border: 1px solid rgba(53, 168, 172, 0.788);
     border-radius: 10px;
     margin: 10px;
     height: 97vh;
     overflow-y: scroll;
+}
 
+.detail-list-box {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 15px;
 }
 
 /* 스크롤 디자인 삽입 시작 */
@@ -100,18 +133,72 @@
 }
 /* 스크롤 디자인 삽입 끝 */
 
-
-
-
-
 .detail-list {
     /* font-size: 3rem; */
-    margin-top: 15px;
-    margin-left: 21px;
     border: 1px solid  rgba(0, 0, 0, 0.103);
     border-radius: 10px;
     background-color: snow;
     box-shadow: 0 0 10px rgba(26, 162, 204, 0.15);
+}
+
+.detail-list-title {
+    margin-top: 5px;
+    margin-left: 10px;
+    font-size: 2.5rem;
+}
+
+.de-li-info-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 4px 4px 0;
+    border: 1px solid aliceblue;
+    background-color: aliceblue;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    height: 35px;
+}
+
+.detail-list-author {
+    margin-left: 10px;
+}
+
+.detail-list-date-box {
+    margin-left: 10px;
+    display: flex;
+}
+
+.detail-list-date-text {
+    margin-right: 5px;
+}
+
+.detail-list-category {
+    margin: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 3px;
+    font-size: 1.2rem;
+}
+
+.list-category-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.detail-list-content {
+    border: 1px solid aliceblue;
+    background-color: aliceblue;
+    border-radius: 15px;
+    margin: 4px 4px 0;
+    height: 65px;
+}
+
+.detail-list-content div {
+    margin: 5px;
 }
 
 .detail-select-location, .detail-select-day{
