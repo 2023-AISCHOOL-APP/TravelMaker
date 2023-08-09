@@ -90,12 +90,28 @@ function PartyMember() {
 
               {matchUsers.map((id) => {
                 return (
-                  <Link to='/partydetail'>
+                  <Link to='/partydetail' className='detail-list-box'>
                     <div className='detail-list'>
-                      <div>{id}</div>
-                      <div>내용</div>
-                      <div>내용</div>
-                      <div>내용</div>
+                      <div className='detail-list-title'>제목</div>
+                      <div className="de-li-info-box">
+                        <div className='detail-list-author'>파티장 | {id}</div>
+                        <div className='detail-list-date-box'>
+                          <div className="detail-list-date-text">여행기간 |</div>
+                          <div className="detail-list-date">0000-00-00 ~ 0000-00-00</div>
+                        </div>
+                      </div>
+                      <div className="detail-list-category">
+                        <div className='list-category-icon'>🚗차</div>
+                        <div className='list-category-icon'>🚌버스</div>
+                        <div className='list-category-icon'>👟뚜벅</div>
+                        <div className='list-category-icon'>🏖️휴양</div>
+                        <div className='list-category-icon'>🏃외부</div>
+                        <div className='list-category-icon'>🏛️관광</div>
+                        <div className='list-category-icon'>🚶‍♂️걷기</div>
+                      </div>
+                      <div className='detail-list-content'>
+                        <div>내용</div>
+                      </div>
                     </div>
                   </Link>)
               })}

@@ -23,7 +23,7 @@
     }
 
     .detail-list {
-        width: 20.9vw;
+        width: 20.3vw;
         height: 200px;
     }
 }
@@ -110,13 +110,10 @@
     margin: 10px;
     height: 97vh;
     overflow-y: scroll;
-}
 
-.detail-list-box {
-    margin: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 15px;
+    gap: 2px;
 }
 
 /* 스크롤 디자인 삽입 시작 */
@@ -133,8 +130,14 @@
 }
 /* 스크롤 디자인 삽입 끝 */
 
+
+/* 리스트 CSS */
+.detail-list-box {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
 .detail-list {
-    /* font-size: 3rem; */
     border: 1px solid  rgba(0, 0, 0, 0.103);
     border-radius: 10px;
     background-color: snow;
@@ -200,6 +203,7 @@
 .detail-list-content div {
     margin: 5px;
 }
+/* 리스트 CSS - END*/
 
 .detail-select-location, .detail-select-day{
     width: 200px;
