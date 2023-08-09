@@ -12,11 +12,11 @@ const Registration = () => {
   // console.log(dayNum, startDate, endDate, localName);
 
   // 데이터 베이스에서 캄방보드 데이터 불러오기
-  const [userPlanes, setUserPlanes] = useState([]);
+  const [userPlanes, setUserPlanes] = useState([{title:'Day1', items:['일정없음']}]);
   const getUser = async () => {
     let Planes = [];
     for (let i = 1; i < dayNum + 1; i++) {
-      const docRef = doc(db, "게시판", `Day${i}-${userNick}`);
+      const docRef = doc(db, "일별데이터", `Day${i}-${userNick}`);
       const docSnap = await getDoc(docRef);
       if (docSnap.exists()) {
         // console.log("Document data:", docSnap.data());
@@ -32,7 +32,7 @@ const Registration = () => {
   useEffect(()=>{
     getUser();
   },[])
-  console.log(userPlanes[0]);
+  console.log(userPlanes);
 
   // textarea 자동으로 줄 늘어나게 하는 함수 (시작)
   const textarea = useRef();
@@ -64,7 +64,7 @@ const Registration = () => {
 
           </div>
 
-          <div>여행 기간 : {startDate} ~ {endDate} ({dayNum-1}박 {dayNum}일)</div>
+          <div>여행 기간 : {startDate} ~ {endDate} ({dayNum - 1}박 {dayNum}일)</div>
           <div className='registration-plan-box'>
             {userPlanes.map((id) => {
               return (

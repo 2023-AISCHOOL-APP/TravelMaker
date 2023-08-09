@@ -104,7 +104,7 @@ function DragNDrop() {
   };
 
   const [newItem, setNewItem] = useState("");
-  const [planeList, setPlaneList] = useState([{items:'start'}]);
+  const [planeList, setPlaneList] = useState([{title:'Day1', items:['일정없음']}]);
 
   const handleAddItem = (groupIndex) => {
     setBlank('');
@@ -137,7 +137,7 @@ function DragNDrop() {
   const sendData = async () => {
     // try {
     for (let i = 0; i < planeList.length; i++) {
-      await setDoc(doc(db, '게시판', `Day${i+1}-${userNick}`),
+      await setDoc(doc(db, '일별데이터', `Day${i+1}-${userNick}`),
         planeList[i]
         )
     }
