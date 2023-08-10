@@ -1,74 +1,143 @@
 .registration-container{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    flex-direction: column;
     width: 100%;
-    /* height: 100%; */
-    background-color: aliceblue;
+    height: 100%;
+    background-color: white;
 }
 
 .registration-box{
-    width: 80%;
-    height: 80%;
-    /* border: 1px solid black; */
-
-}
-
-
-.registration-title{
-    width: 80%;
-    height: 10vh;
-    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 98%;
+    margin-left: 10px;
     border-radius: 10px;
-    border: none;
-
+    background-color: aliceblue;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
-.registration-title:focus{
+.registration-input-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.regi-box-title {
+    font-size: 3rem;
+    margin: 5px 0;
+}
+
+.regi-info-box {
+    background-color: rgb(240, 240, 240);
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.regi-select {
+    border-radius: 10px;
+    padding: 2px;
+}
+
+.cate-hashtag-box {
+    /* border: 1px solid black; */
+    margin: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    max-width: 385px;
+    max-height: 60px;
+}
+
+.hashtag-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    border: 1px solid black;
+    border-radius: 50px;
+    margin: 0 3px 3px;
+    width: 56.5px;
+    max-height: 40px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.regi-title-in {
+    background-color: rgb(240, 240, 240);
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.regi-title-in:focus {
     outline: none;
 }
 
-.registration-detail{
-    width: 80%;
-    height: 31vh;
-    font-size: 14px;
-    resize: none;
+.registration-detail {
+    background-color: rgb(240, 240, 240);
     border-radius: 10px;
-    /* border: none; */
+    border: none;
+    padding: 10px;
+    resize: none;
+    max-height: 160px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .registration-detail:focus{
     outline: none;
 }
 
-.registration-input-box{
+.regi-btn-box {
+    display: flex;
+    flex-direction: row;
+}
+
+.registration-button, .regi-clear-button {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-}
-
-
-.registration-button{
-    margin-top: 50px;
-    width: 150px;
-    height: 50px;
-    background-color: black;
+    margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 50px;
+    width: 180px;
+    height: 30px;
     color: white;
-    border-radius: 10px;
+    background-color: black;
+    margin: 10px;
 }
 
 .registration-plan-box{
+    width: 45%;
+    height: 98%;
     display: flex;
-    justify-content: center;
-    width: 500px;
-    /* border: solid 1px black; */
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    overflow-y: scroll;
+    border-radius: 10px;
+    background-color: aliceblue;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .registration-plan{
-    border: solid 1px black;
-    width: 100px;
-    margin-left: 10px;
-    margin-right: 10px;
+    width: 70%;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px 20px 0;
+    background-color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.regi-plan-title {
+    border-bottom: 1px solid black;
+    margin-bottom: 3px;
+}
+
+.regi-plan-list {
+    margin: 20px 0 10px;
 }

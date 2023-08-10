@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { db } from '../firebase-config';
 import { getDoc, doc, collection, getDocs, setDoc } from 'firebase/firestore'
 import { useNavigate } from 'react-router-dom';
+import { BiXCircle } from 'react-icons/bi';
 
 const PartyDetail = ({schData, setDetailSchOpen}) => {
   const nick = sessionStorage.getItem('nick')
@@ -98,16 +99,16 @@ const PartyDetail = ({schData, setDetailSchOpen}) => {
     alert("동행이 완료되었습니다~  (알람만 뜨는 상태)")
   }
     return (
-
-      <div className='partydetail-container' ref={detailSchRef}>
-        <div>
-          <button className='partydetail-close-btn' onClick={closeDetailSch}>x</button>
-        </div>
-        <div className='partydetail-contents-box'>
-          {/* 타이틀 들어가는 칸 */}
-          <div className='partydetail-title'>
-            <div className="partydetail-text">{schData.title}</div>
-          </div>
+        
+            <div className='partydetail-container' ref={detailSchRef}>
+                <div>
+                    <BiXCircle className='partydetail-close-btn' size='30' onClick={closeDetailSch}>X</BiXCircle>
+                </div>
+                <div className='partydetail-contents-box'>
+                    {/* 타이틀 들어가는 칸 */}
+                    <div className='partydetail-title'>
+                        <div className="partydetail-text">{schData.title}</div>
+                    </div>
 
           {/* 파티장 정보 들어갈 칸 */}
           <div className='partydetail-leader'>
@@ -134,10 +135,10 @@ const PartyDetail = ({schData, setDetailSchOpen}) => {
           {finishBtn ?
             <>
               {appBtn ?
-                <button onClick={applicationMate}>동행신청</button> :
+                <button className='partydetail-appl-btn b' onClick={applicationMate}>동행신청</button> :
                 <div>
                   <div>신청이 완료된 동행입니다.</div>
-                  <button onClick={finishedMate}>동행완료</button>
+                  <button className='partydetail-appl-btn b' onClick={finishedMate}>동행완료</button>
                 </div>}
             </>
             : <div></div>}
