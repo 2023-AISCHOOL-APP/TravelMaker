@@ -256,7 +256,7 @@
 
 .date-create{
   height: 30px;
-  border-radius: 10px;
+  border-radius: 50px;
   font-size: 15px;
   border-style: none;
   background-color: black;
@@ -265,7 +265,7 @@
 
 .go-next {
   height: 30px;
-  border-radius: 10px;
+  border-radius: 50px;
   font-size: 15px;
   border-style: none;
   background-color: black;

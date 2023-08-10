@@ -3,7 +3,7 @@
         flex-direction: column;
     }
 
-    .reader-box,
+    .leader-box,
     .crew-box {
         /* height: 250px; */
         height: 37vh;
@@ -13,7 +13,7 @@
 
 @media screen and (width >= 768px) {
 
-    .reader-box,
+    .leader-box,
     .crew-box {
         height: 450px;
         transition-duration: 0.3s;
@@ -38,7 +38,7 @@
     align-items: center;
 }
 
-.reader-box,
+.leader-box,
 .crew-box {
     position: relative;
     display: flex;
@@ -49,19 +49,31 @@
     border: 1px solid rgba(255, 255, 255, 0.151);
     border-radius: 50%;
     background-color: aliceblue;
+    animation: fadein 1s ease-in-out;
+}
+@keyframes fadein {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
 }
 
-/* 버튼 관련 css */
-.reader-btn, .crew-btn {
-    left: 35%;
-}
-
-.party-img{
-    height: 85%;
-}
-
-.crew-box:hover, .reader-box:hover{
+.leader-box:hover, .crew-box:hover {
     transform: scale(1.1);
     transition: transform 0.3s ease;
     box-shadow: 0 0 50px rgba(2, 2, 2, 0.15);
+}
+
+.leader-img, .crew-img{
+    height: 85%;
+    transition: all 0.2s linear;
+}
+
+.leader-box:hover>.leader-img, .crew-box:hover>.crew-img {
+    transform: scale(1.2);
 }

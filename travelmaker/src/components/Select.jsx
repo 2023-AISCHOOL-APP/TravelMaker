@@ -113,14 +113,14 @@ const Select = () => {
     <div className='select-container'>
       <div className='select-container-in-box'>
         <Link>
-          <div className='reader-box' onClick={getLocalData}>
-            <img src='images/par.png' className='party-img'></img>
-            <a className='reader-btn click-b'>파티장</a>
+          <div className='leader-box' onClick={getLocalData}>
+            <img src='images/par.png' className='leader-img'></img>
+            <a className='leader-btn click-b'>파티장</a>
           </div>
         </Link>
         <Link to='/partymember'>
           <div className='crew-box' onClick={sessionStorage.setItem('localName', '강원도강릉시')}>
-            <img src='images/ty.png' className='party-img'></img>
+            <img src='images/ty.png' className='crew-img'></img>
             <a className='crew-btn click-b'>파티원</a>
           </div>
         </Link>

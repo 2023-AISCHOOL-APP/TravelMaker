@@ -7,16 +7,23 @@ const Main = () => {
   const nav = useNavigate();
 
   // 로그인 상태에 따라 접근권한 부여
-  const search = ()=>{
-    if(userID != null){
+  const search = () => {
+    if (userID != null) {
       nav('/select')
-    }else{
+    } else {
       alert('로그인 후 사용해주세요!')
       nav('/login')
     }
   }
   return (
-    <div className='main-container'>
+    <div className='main-container'
+      // style={{
+      //   backgroundImage: 'url(/images/bgimg.jpg)',
+      //   backgroundPosition: 'center',
+      //   backgroundRepeat: 'no-repeat',
+      //   backgroundSize: '100% 100%',
+      // }}
+      >
       <div className='main-contant-box'>
         <div>
           <h1 className='main-title'>Travel Mate</h1>
@@ -29,7 +36,7 @@ const Main = () => {
           <Link>
             <a className='main_btn click-b b' >동행찾기</a>
           </Link>
-        </div> 
+        </div>
       </div>
       <div className='main-img-box'>
         <img src='images/bgimg.jpg' className='main-img'></img>
