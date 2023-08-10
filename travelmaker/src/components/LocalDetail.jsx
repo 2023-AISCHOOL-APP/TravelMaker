@@ -41,11 +41,11 @@ function LocalDetail({ setDetailOpen, local }) {
           <img src={local.image} height='200px' />
         </div>
         <div className='local-detail-info'>
-          <p className='local-detail-info-title'>{local.title}</p>
-          <p className='local-detail-info-adrr'>주소 | {local.addr1}</p>
+          <span className='local-detail-info-title'>{local.title}</span>
+          <span className='local-detail-info-adrr'>주소 | {local.addr1}</span>
           <span className='explain-title'>상세설명</span>
           <div className='local-detail-info-content'>
-            <p className='explain-text'>{local.overview}</p>
+            <span className='explain-text'>{local.overview}</span>
           </div>
 
         </div>

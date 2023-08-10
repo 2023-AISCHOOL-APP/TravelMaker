@@ -55,7 +55,13 @@
 
   /* 스크롤 디자인 삽입 끝 */
 
-
+  .local-detail-info {
+    height: 499px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 8px;
+  }
 
   .local-detail-img {
     margin-top: 180px;
@@ -68,8 +74,6 @@
 
   .local-detail-info-title {
     font-size: 3rem;
-    margin-top: 5px;
-    margin-bottom: -10px;
   }
 
   .local-detail-info-adrr {
@@ -85,9 +89,9 @@
     border-radius: 10px;
     height: 376px;
     overflow-y: scroll;
+    padding: 10px;
   }
 
   .explain-text {
     font-size: 2rem;
-    margin-bottom: 0;
   }
