@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
 import { useRef } from 'react';
+import { BiXCircle } from 'react-icons/bi';
 
 const PartyDetail = ({schData, setDetailSchOpen}) => {
   const nick = sessionStorage.getItem('nick')
@@ -45,7 +46,7 @@ const PartyDetail = ({schData, setDetailSchOpen}) => {
         
             <div className='partydetail-container' ref={detailSchRef}>
                 <div>
-                    <button className='partydetail-close-btn' onClick={closeDetailSch}>x</button>
+                    <BiXCircle className='partydetail-close-btn' size='30' onClick={closeDetailSch}>X</BiXCircle>
                 </div>
                 <div className='partydetail-contents-box'>
                     {/* 타이틀 들어가는 칸 */}
@@ -74,8 +75,8 @@ const PartyDetail = ({schData, setDetailSchOpen}) => {
                 <div className='partydetail-schedule'>
                     <div className="partydetail-text">안녕하세요 일정표 입니다.</div>
                 </div>
-                <div className='partydetail-appl-btn'>
-                    {appBtn ? <button>동행신청</button> : <div></div> }
+                <div >
+                    {appBtn ? <button className='partydetail-appl-btn b'  >동행신청</button> : <div></div> }
                 </div>
             </div>
     )
