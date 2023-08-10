@@ -142,6 +142,7 @@ const MapParty = ({ setMapOpen, id, title, content, writer }) => {
 
   const sendLocalData = ()=>{  
     closeMap();
+    window.location.replace('/partymember')
   }
 
   return (
