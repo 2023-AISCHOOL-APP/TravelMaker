@@ -47,7 +47,7 @@ const Review = ({ setReviewOpen }) => {
         <div className='review-title'>Review</div>
       </div>
       <div className='review-contents'>
-        <textarea className='review-contens-textarea' rows={1} onChange={handleReviewHeiht} ref={textarea} >
+        <textarea className='review-contens-textarea'  rows={1} onChange={handleReviewHeiht} ref={textarea} >
           
         </textarea>
       </div>
