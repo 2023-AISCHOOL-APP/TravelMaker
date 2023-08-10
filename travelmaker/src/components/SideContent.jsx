@@ -60,26 +60,33 @@ const SideContent = () => {
   }
   //-------------------------------------------------------------
 
-  const my = ()=>{
-    sessionStorage.setItem('select_my','my')
+  const my = () => {
+    sessionStorage.setItem('select_my', 'my')
     window.location.replace('/myschedule')
   }
 
-  const app = ()=>{
+  const app = () => {
     sessionStorage.removeItem('select_my')
     window.location.replace('/myschedule')
   }
 
   return (
     <div className='side-content-container'>
-      <div className='side-id-box'>
-        <BiSolidUserCircle className='logout-icon s-icon' size='40' color='black'></BiSolidUserCircle>
-        <h2 className='side-id-text'>{userNickname}</h2>
-        <Link><p className='b' onClick={logout}>로그아웃</p></Link>
+      <div className='side-header'>
+        <div className='side-id-box'>
+          <BiSolidUserCircle className='logout-icon s-icon' size='40' color='black'></BiSolidUserCircle>
+          <span className='side-id-text'>{userNickname}</span>
+          <span className='logout-text b' onClick={logout}>로그아웃</span>
+        </div>
+        <div className='temp-box'>
+          <span className='temp-text'>동행 온도 |</span>
+          <div className='temp-icon'>🌡️</div>
+          <div className="temp-num">36.5℃</div>
+        </div>
       </div>
       <div className='side-list-box'>
         <div className='side-leader-box'>
-          <h3>파티장</h3>
+          <h3>- 파티장</h3>
           <Link to='/scheduleform'>
             <li className='b' onClick={getLocalData}>일정 작성</li>
           </Link>
@@ -91,7 +98,7 @@ const SideContent = () => {
           </Link>
         </div>
         <div className='side-crew-box'>
-          <h3>파티원</h3>
+          <h3>- 파티원</h3>
           <Link to='/partymember'>
             <li className='b'>일정 보기</li>
           </Link>

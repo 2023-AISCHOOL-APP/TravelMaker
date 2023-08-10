@@ -1,15 +1,8 @@
-/* @media screen and (width <= 767px) {
-  .logout-icon {
-    display: none;
-  }
-} */
-
 .App-header {
   width: 100%;
   height: 70px;
   box-sizing: border-box;
   padding: 0vw 3.90625vw;
-  /* background-color: rgb(222, 244, 255); */
   position: fixed;
   top: 0;
   display: flex;

@@ -1,36 +1,44 @@
+.side-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .side-id-box {
-  width: 87%;
-
+  width: 98%;
   border-bottom: 2px solid black;
-
   display: flex;
   align-items: center;
-  justify-content: space-around;
-
-  position: relative;
+  justify-content: flex-start;
+  padding: 5px;
 }
 
 .side-id-text {
-  position: relative;
-  left: -35px;
-
-  margin-bottom: 10px;
+  font-size: 2.5rem;
+  margin-left: 10px;
 }
 
-.logout-icon {
-  position: relative;
-  left: -10px;
-  top: 5px;
+.temp-box {
+  width: 98%;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  margin-top: 10px;
 }
 
-.side-id-box p {
-  position: relative;
-  right: -20px;
-  top: 14px;
+.temp-icon {
+  margin-left: 5px;
+}
 
+.logout-text {
   color: black;
   font-size: 1.3rem;
   font-weight: bold;
+  margin-top: 10px;
+  margin-left: 120px;
 }
 
 .side-leader-box, .side-crew-box {
