@@ -17,7 +17,6 @@ const ScheduleForm = () => {
   const [startDate, setStartDate] = useState(""); // 출발일
   const [endDate, setEndDate] = useState(""); // 도착일
 console.log(localArr);
-console.log("dkssud");
   const [regiWrite, setRegiWrite] = useState(false);
   const goToRegiWrite = () => {
     setRegiWrite(true)
@@ -29,21 +28,6 @@ console.log("dkssud");
   const showMap = () => {
     setMapOpen(true);
   }
-
-  // 데이터 베이스에서 모든 관광지 데이터 불러오기
-  const [local, setLocal] = useState({})
-  const getData = async () => {
-    const usersCollectionRef = collection(db, '강원도');
-    const userSnap = await getDocs(usersCollectionRef);
-    const data = userSnap.docs.map(doc => ({
-      ...doc.data(),
-      id: doc.id
-    }));
-    setLocal(data);
-  }
-  useEffect(()=>{
-    getData();
-  },[])
   
   // 검색어와 지역 데이터 비교
   const [userInput, setUserInput] = useState("")
