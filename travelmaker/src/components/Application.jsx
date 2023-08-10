@@ -75,57 +75,19 @@ const Application = () => {
             </Link>
           </div> :
           <div className='my-schedule-form'>
-            {/* <Link to='/partydetail' className='my-sche-list-box'> */}
-            <div className='my-sche-list'>
+            <div className='done-trip-list'>
               <div className='detail-list-title'>제목</div>
               <div className="de-li-info-box">
                 <div className='detail-list-author'>파티장 | 안녕</div>
+                <div className='detail-list-location'>여행지역 | 광주</div>
                 <div className='detail-list-date-box'>
                   <div className="detail-list-date-text">여행기간 |</div>
                   <div className="detail-list-date">0000-00-00 ~ 0000-00-00</div>
                 </div>
               </div>
-              <div className="detail-list-category">
-                <div className='list-category-icon'>🚗차</div>
-                <div className='list-category-icon'>🚌버스</div>
-                <div className='list-category-icon'>👟뚜벅</div>
-                <div className='list-category-icon'>🏖️휴양</div>
-                <div className='list-category-icon'>🏃외부</div>
-                <div className='list-category-icon'>🏛️관광</div>
-                <div className='list-category-icon'>🚶‍♂️걷기</div>
-              </div>
-              <div className='my-sche-list-content'>
-                <div className='my-sche-list-content-text'>내용</div>
-              </div>
               <button className='app-review' onClick={showReview}>리뷰쓰기</button>
               {reviewOpen && <Review setReviewOpen={setReviewOpen} />}
             </div>
-            {/* </Link> */}
-            {/* <Link to='/partydetail' className='my-sche-list-box'>
-              <div className='my-sche-list'>
-                <div className='detail-list-title'>제목</div>
-                <div className="de-li-info-box">
-                  <div className='detail-list-author'>파티장 | 김도운</div>
-                  <div className='detail-list-date-box'>
-                    <div className="detail-list-date-text">여행기간 |</div>
-                    <div className="detail-list-date">0000-00-00 ~ 0000-00-00</div>
-                  </div>
-                </div>
-                <div className="detail-list-category">
-                  <div className='list-category-icon'>🚌버스</div>
-                  <div className='list-category-icon'>👟뚜벅</div>
-                  <div className='list-category-icon'>🏃외부</div>
-                  <div className='list-category-icon'>🏛️관광</div>
-                  <div className='list-category-icon'>🚶‍♂️걷기</div>
-                  <div className='list-category-icon'>🚶‍♂️걷기</div>
-                  <div className='list-category-icon'>🚶‍♂️걷기</div>
-                  <div className='list-category-icon'>🚶‍♂️걷기</div>
-                </div>
-                <div className='my-sche-list-content'>
-                  <div className='my-sche-list-content-text'>내용</div>
-                </div>
-              </div>
-            </Link> */}
           </div>
         }
       </div>

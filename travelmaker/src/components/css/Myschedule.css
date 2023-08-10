@@ -107,40 +107,6 @@
     overflow-y: scroll;
 }
 
-.my-sche-list-box {
-    padding: 10px;
-    margin-top: 10px;
-    margin-left: 10px;
-    height: 48%;
-}
-
-.my-sche-list {
-    border: 1px solid rgba(0, 0, 0, 0.103);
-    border-radius: 10px;
-    background-color: snow;
-    box-shadow: 0 0 10px rgba(26, 162, 204, 0.15);
-    height: 90%;
-    padding: 10px;
-}
-
-.my-sche-list:hover {
-    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-}
-
-.my-sche-list-content {
-    border: 1px solid aliceblue;
-    background-color: red;
-    border-radius: 15px;
-    margin: 27px 4px 0;
-    height: 47%;
-}
-
-.my-sche-list-content-text {
-    margin-top: 5px;
-    margin-left: 5px;
-    height: 20%;
-}
-
 .my-schedule-form::-webkit-scrollbar {
     width: 12px;
 }
