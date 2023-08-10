@@ -86,19 +86,26 @@ const Registration = () => {
         <div className='registration-input-box'>
           <h3>TravelMate 초대장</h3>
           <input maxLength={40} className='registration-title' placeholder='ex) TravelMaker가 즐거운 여행할 TravelMate를 모집합니다~' onChange={(e) => { setRegiTitle(e.target.value) }}></input><br />
-          <div>떠나는 지역 : {localName}</div>
+          <div>지역 | {localName}</div>
           <div>
-            <a>함께하는 친구들 : </a>
+            <a>모집인원 | </a>
             <select className='registration-select' onChange={(e) => { setRegiMembers(e.target.value) }}>
-              <option value="1~3명">1~3명</option>
-              <option value="4~6명">4~6명</option>
-              <option value="7~9명">7~9명</option>
-              <option value="10명 이상">10명 이상</option>
+              <option value="-">-</option>
+              <option value="1명">1명</option>
+              <option value="2명">2명</option>
+              <option value="3명">3명</option>
+              <option value="4명">4명</option>
+              <option value="5명">5명</option>
+              <option value="6명">6명</option>
+              <option value="7명">7명</option>
+              <option value="8명">8명</option>
+              <option value="9명">9명</option>
+              <option value="10명">10명</option>
             </select>
 
           </div>
 
-          <div>여행 기간 : {startDate} ~ {endDate} ({dayNum - 1}박 {dayNum}일)</div>
+          <div>여행 기간 | {startDate} ~ {endDate} ({dayNum - 1}박 {dayNum}일)</div>
           <div className='registration-plan-box'>
             {userPlanes.map((id) => {
               return (
