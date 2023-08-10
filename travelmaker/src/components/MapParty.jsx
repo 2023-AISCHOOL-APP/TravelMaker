@@ -116,24 +116,33 @@ const MapParty = ({ setMapOpen, id, title, content, writer }) => {
     {first : '충북', title : '충청북도', local : ['괴산군', '단양군', '보은군', '영동군', '옥천군', '음성군', '제천시', '진천군', '청주시']}
     ]
 
-  const [localName, setLocalName] = useState("강원도강릉시") // 지역
+  const [localName, setLocalName] = useState("전체") // 지역
   const [mapxy, setMapxy] = useState([37.7921, 128.89662])
-  const [localData, setLocalData] = useState(["강릉 3.1운동 기념공원", "강원특별자치도 강릉시 저동", "http://tong.visitkorea.or.kr/cms/resource/65/2900665_image2_1.JPG"])
+  const [localData, setLocalData] = useState(['가회동성당', '서울특별시 종로구 북촌로 57', 'http://tong.visitkorea.or.kr/cms/resource/61/2780561_image2_1.png'])
 
   // 데이터 베이스에서 관광지 데이터 불러오기
   const getLocalData = async () => {
-    sessionStorage.setItem('dateRan', 0)
-    sessionStorage.setItem('startDate', '0000-00-00')
-    sessionStorage.setItem('endDate', '0000-00-00')
-    const usersCollectionRef = collection(db, localName);
-    const userSnap = await getDocs(usersCollectionRef);
-    const data = userSnap.docs.map(doc => ({
-      ...doc.data(),
-      id: doc.id
-    }));
-    setMapxy([data[0].mapy, data[0].mapx])
-    setLocalData([data[0].title, data[0].addr1, data[0].image])
-    sessionStorage.setItem('localName', localName)
+    if(localName === "전체"){
+      sessionStorage.setItem('dateRan', 0)
+      sessionStorage.setItem('startDate', '0000-00-00')
+      sessionStorage.setItem('endDate', '0000-00-00')
+      setMapxy([37.58208588, 126.9846617])
+      setLocalData(['가회동성당', '서울특별시 종로구 북촌로 57', 'http://tong.visitkorea.or.kr/cms/resource/61/2780561_image2_1.png'])
+      sessionStorage.setItem('localName', localName)
+    }else{
+      sessionStorage.setItem('dateRan', 0)
+      sessionStorage.setItem('startDate', '0000-00-00')
+      sessionStorage.setItem('endDate', '0000-00-00')
+      const usersCollectionRef = collection(db, localName);
+      const userSnap = await getDocs(usersCollectionRef);
+      const data = userSnap.docs.map(doc => ({
+        ...doc.data(),
+        id: doc.id
+      }));
+      setMapxy([data[0].mapy, data[0].mapx])
+      setLocalData([data[0].title, data[0].addr1, data[0].image])
+      sessionStorage.setItem('localName', localName)
+    }
   }
 
   useEffect(()=>{
@@ -155,6 +164,7 @@ const MapParty = ({ setMapOpen, id, title, content, writer }) => {
             <div className='map-select-box'>
               <span className="map-place-text">{localName}</span>
             </div>
+              <button className="map-all-btn" onClick={() =>{setLocalName("전체")}}>전체</button>
             <BiChevronRightSquare className='get-local-btn' size='30' onClick={sendLocalData}>선택</BiChevronRightSquare>
           </div>
           {/* 창 크기 줄었을 때 안보임 */}

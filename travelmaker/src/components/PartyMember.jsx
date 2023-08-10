@@ -7,6 +7,7 @@ import MyscheduleForm from './MyscheduleForm';
 
 
 function PartyMember() {
+  const nick = sessionStorage.getItem('nick')
   const localName = sessionStorage.getItem('localName')
   const [mapOpen, setMapOpen] = useState(false); // 맵 모달창 노출 여부 state
 
@@ -19,11 +20,18 @@ function PartyMember() {
       ...doc.data(),
       id: doc.id
     }));
-    // setScheduleData(data);
     let dataList = [];
-    for(let i=0; i<data.length; i++){
-      if(data[i].localName === localName){
-        dataList.push(data[i])
+    if (localName === "전체") {
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].userNick != nick) {
+          dataList.push(data[i])
+        }
+      }
+    } else {
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].localName === localName && data[i].userNick != nick) {
+          dataList.push(data[i])
+        }
       }
     }
     setScheduleData(dataList)

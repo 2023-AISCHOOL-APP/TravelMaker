@@ -145,12 +145,15 @@ const Registration = () => {
       </div>
       <div className='registration-plan-box'>
         {userPlanes.map((id) => {
+              let num = 0;
           return (
             <div className='registration-plan'>
               <div className='regi-plan-title'>{id.title}</div>
               {id.items.map((pw) => {
+                    num++
                 return (
                   <div className='regi-plan-list'>
+                        <div>{num}</div>
                     <div>{pw}</div>
                   </div>)
               })}
