@@ -1,6 +1,7 @@
 import { React, useRef, useEffect, useState } from 'react'
 import './css/LocalDetail.css'
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { BiXCircle } from "react-icons/bi";
 
 function LocalDetail({ setDetailOpen, local }) {
 
@@ -34,7 +35,7 @@ function LocalDetail({ setDetailOpen, local }) {
 
   return (
     <div className='local-detail-container' ref={mapRef}>
-      <button className='close-local-detail-btn' onClick={closeMap}>X</button>
+      <BiXCircle className='close-local-detail-btn' size='30' onClick={closeMap}>X</BiXCircle>
       <div className='local-detail-form'>
         <div className='local-detail-img'>
           <img src={local.image} height='200px' />
@@ -42,9 +43,9 @@ function LocalDetail({ setDetailOpen, local }) {
         <div className='local-detail-info'>
           <p className='local-detail-info-title'>{local.title}</p>
           <p className='local-detail-info-adrr'>주소 | {local.addr1}</p>
+          <span className='explain-title'>상세설명</span>
           <div className='local-detail-info-content'>
-            <p>상세설명</p>
-            <p>{local.overview}</p>
+            <p className='explain-text'>{local.overview}</p>
           </div>
 
         </div>
