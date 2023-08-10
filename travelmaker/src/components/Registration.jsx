@@ -78,42 +78,69 @@ const Registration = () => {
     nav('/myschedule')
   }
 
+  const handleClearForm = () => {
+    setRegiTitle(""); // regi-title-in 초기화
+    setRegiDetail(""); // registration-detail 초기화
+    // 나머지 상태값 초기화도 필요한 경우에 추가
+  };
+
   return (
     <div className='registration-container'>
       <div className='registration-box'>
         <div className='registration-input-box'>
-          <h3>TravelMate 초대장</h3>
-          <input maxLength={40} className='registration-title' placeholder='ex) TravelMaker가 즐거운 여행할 TravelMate를 모집합니다~' onChange={(e) => { setRegiTitle(e.target.value) }}></input><br />
-          <div>지역 | {localName}</div>
-          <div>
-            <a>모집인원 | </a>
-            <select className='registration-select' onChange={(e) => { setRegiMembers(e.target.value) }}>
-              <option value="-">-</option>
-              <option value="1명">1명</option>
-              <option value="2명">2명</option>
-              <option value="3명">3명</option>
-              <option value="4명">4명</option>
-              <option value="5명">5명</option>
-              <option value="6명">6명</option>
-              <option value="7명">7명</option>
-              <option value="8명">8명</option>
-              <option value="9명">9명</option>
-              <option value="10명">10명</option>
-            </select>
+          <span className='regi-box-title'>정태녕님의 <br /> 여행을 소개해주세요!</span>
+          <div className="regi-info-box">
+            <div>지역 | {localName}</div>
+            <div>여행 기간 | {startDate} ~ {endDate} ({dayNum - 1}박 {dayNum}일)</div>
+            <div>
+              <span>모집인원 | </span>
+              <select className='regi-select' onChange={(e) => { setRegiMembers(e.target.value) }}>
+                <option value="-">-</option>
+                <option value="1명">1명</option>
+                <option value="2명">2명</option>
+                <option value="3명">3명</option>
+                <option value="4명">4명</option>
+                <option value="5명">5명</option>
+                <option value="6명">6명</option>
+                <option value="7명">7명</option>
+                <option value="8명">8명</option>
+                <option value="9명">9명</option>
+                <option value="10명">10명</option>
+              </select>
+            </div>
           </div>
-
-          <div>여행 기간 | {startDate} ~ {endDate} ({dayNum - 1}박 {dayNum}일)</div>
+          <div className="cate-hashtag-box">
+            <div className='hashtag-icon'>🚗차</div>
+            <div className='hashtag-icon'>🚌버스</div>
+            <div className='hashtag-icon'>👟뚜벅</div>
+            <div className='hashtag-icon'>🏖️휴양</div>
+            <div className='hashtag-icon'>🏃외부</div>
+            <div className='hashtag-icon'>🏛️관광</div>
+            <div className='hashtag-icon'>🚶‍♂️걷기</div>
+            <div className='hashtag-icon'>🚶‍♂️걷기</div>
+            <div className='hashtag-icon'>🚶‍♂️걷기</div>
+          </div>
+          <input
+            maxLength={40}
+            className='regi-title-in'
+            placeholder='ex) 12월 4박 5일 서울여행할 동행 구해요~'
+            value={regiTitle}
+            onChange={(e) => { setRegiTitle(e.target.value) }}>
+          </input>
           <textarea
             maxLength={800}
             rows="12"
+            cols='12'
             className='registration-detail'
-            placeholder='ex)  '
+            value={regiDetail}
+            placeholder='ex)&#13; &#13;1. 어떤 여행 스타일을 좋아하나요?&#13; &#13;2. 어떤 동행을 찾고 있나요?'
             ref={textarea}
             onChange={(e) => { setRegiDetail(e.target.value); handleResizeHeiht() }}>
           </textarea>
         </div>
-        <div>
-          <button className='registration-button b' onClick={sendFormData}>등록하기</button>
+        <div className='regi-btn-box'>
+          <div className='regi-clear-button b' onClick={handleClearForm}>초기화</div>
+          <div className='registration-button b' onClick={sendFormData}>등록하기</div>
         </div>
       </div>
       <div className='registration-plan-box'>

@@ -99,7 +99,7 @@
   border: 1px solid aliceblue;
   color: black;
   border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .get-local-btn {
@@ -147,6 +147,8 @@
   border: 1px solid black;
   border-radius: 20px;
   font-size: 1.4rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
 }
 
 .map-place-name:hover {
@@ -171,6 +173,8 @@ a:active{
   height: 97%;
   width: 72.5%;
   border-radius: 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
 }
 
 #map-p {
@@ -181,4 +185,6 @@ a:active{
   height: 97%;
   width: 72.5%;
   border-radius: 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
 }
