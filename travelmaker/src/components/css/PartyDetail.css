@@ -88,10 +88,16 @@
 }
 
 .partydetail-close-btn{
-    position: relative;
-    top: 13px;
+    /* position: relative; */
+    position: absolute;
+    top: 11px;
     left:965px;
-    /* margin-top: ; */
+    color: gray;
+
+}
+
+.partydetail-close-btn:hover {
+    color: black;
 }
 
 .partydetail-text{
@@ -103,7 +109,14 @@
 
 .partydetail-appl-btn{
     position: absolute;
-    top: 520px;
+    top: 485px;
     right: 440px;
     width: 100px;
+    height: 40px;
+    font-size: 15px;
+    margin: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: black;
+    color: aliceblue;
 }
