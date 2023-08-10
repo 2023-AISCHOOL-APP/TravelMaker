@@ -75,7 +75,7 @@ const Registration = () => {
       alert("등록이 완료되었습니다~!")
       nav('/myschedule')
   }
-
+  
   return (
     <div className='registration-container'>
       {/* <div>
@@ -101,12 +101,15 @@ const Registration = () => {
           <div>여행 기간 : {startDate} ~ {endDate} ({dayNum - 1}박 {dayNum}일)</div>
           <div className='registration-plan-box'>
             {userPlanes.map((id) => {
+              let num = 0;
               return (
                 <div className='registration-plan'>
                   <div>{id.title}</div>
                   {id.items.map((pw) => {
+                    num++
                     return (
                       <div className=''>
+                        <div>{num}</div>
                         <div>{pw}</div>
                       </div>)
                   })}

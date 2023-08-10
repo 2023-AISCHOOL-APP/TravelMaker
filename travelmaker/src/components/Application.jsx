@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { db } from '../firebase-config';
+import { getDoc, doc, collection, getDocs, setDoc } from 'firebase/firestore'
 import Review from './Review';
+import MyscheduleForm from './MyscheduleForm'
+import { useEffect } from 'react';
 
 const Application = () => {
+  const nick = sessionStorage.getItem('nick')
   const [applyOrDone, setAppOrDone] = useState(true);
 
   const goToApply = () => {
@@ -21,6 +26,33 @@ const Application = () => {
     setReviewOpen(true);
   }
   // 리뷰 모달 끝
+
+  // 게시판 정보 받아오기
+  
+  const [scheduleData, setScheduleData] = useState([{}])
+  const getSchData = async (e) => {
+    const usersCollectionRef = collection(db, '게시판');
+    const userSnap = await getDocs(usersCollectionRef);
+    const data = userSnap.docs.map(doc => ({
+      ...doc.data(),
+      id: doc.id
+    }));
+    let dataList = [];
+    for (let i = 0; i < data.length; i++) {
+      const selected = Object.keys(data[i]).filter((key) => {
+        return data[i][key] === nick;
+      });
+      if (selected.length != 0 && data[i].userNick != nick) {
+        dataList.push(data[i])
+      }
+    }
+    console.log(dataList);
+    setScheduleData(dataList)
+  }
+
+  useEffect(()=>{
+    getSchData();
+  },[])
 
   return (
     <div className='app-container'>
@@ -45,29 +77,7 @@ const Application = () => {
         </div>
         {applyOrDone ?
           <div className='my-schedule-form'>
-            <Link to='/partydetail' className='detail-list-box'>
-              <div className='detail-list'>
-                <div className='detail-list-title'>태녕이와 함께하는 행복하고 즐거운 여행</div>
-                <div className="de-li-info-box">
-                  <div className='detail-list-author'>파티장 | 정태녕</div>
-                  <div className='detail-list-location'>여행지역 | 광주</div>
-                  <div className='detail-list-date-box'>
-                    <div className="detail-list-date-text">여행기간 |</div>
-                    <div className="detail-list-date">0000-00-00 ~ 0000-00-00</div>
-                  </div>
-                </div>
-                <div className="detail-list-category">
-                  {/* 최대 10개까지 */}
-                  <div className='list-category-icon'>🚗차</div>
-                  <div className='list-category-icon'>🚌버스</div>
-                  <div className='list-category-icon'>👟뚜벅</div>
-                  <div className='list-category-icon'>🏖️휴양</div>
-                  <div className='list-category-icon'>🏃외부</div>
-                  <div className='list-category-icon'>🏛️관광</div>
-                  <div className='list-category-icon'>🚶‍♂️걷기</div>
-                </div>
-              </div>
-            </Link>
+            {scheduleData.map(item => <MyscheduleForm schData={item} key={item.title} />)}
           </div> :
           <div className='my-schedule-form'>
             <div className='done-trip-list'>
