@@ -16,28 +16,31 @@ const Main = () => {
     }
   }
   return (
-    <div className='main-container'>
-  
-
-        <div className='main-contant-box'>
-          <div>
-            <h1 className='main-title'>Travel Mate</h1>
-          </div>
-          <div>
-            <p className='main-text'>새로운 친구와 즐거운 여행을 만들어보세요!</p>
-          </div>
-          {/* 로그인 상태에 따라 동행찾기 접근 권한 설정 */}
-          <div onClick={search}>
-            <Link>
-              <a className='main_btn click-b b' >동행찾기</a>
-            </Link>
-          </div>
+    <div className='main-container'
+      // style={{
+      //   backgroundImage: 'url(/images/bgimg.jpg)',
+      //   backgroundPosition: 'center',
+      //   backgroundRepeat: 'no-repeat',
+      //   backgroundSize: '100% 100%',
+      // }}
+      >
+      <div className='main-contant-box'>
+        <div>
+          <h1 className='main-title'>Travel Mate</h1>
         </div>
-
-        <div className='main-img-box'>
-          <img src='images/bgimg.jpg' className='main-img'></img>
+        <div>
+          <p className='main-text'>새로운 친구와 즐거운 여행을 만들어보세요!</p>
         </div>
-
+        {/* 로그인 상태에 따라 동행찾기 접근 권한 설정 */}
+        <div onClick={search}>
+          <Link>
+            <a className='main_btn click-b b' >동행찾기</a>
+          </Link>
+        </div>
+      </div>
+      <div className='main-img-box'>
+        <img src='images/bgimg.jpg' className='main-img'></img>
+      </div>
     </div>
   )
 }
