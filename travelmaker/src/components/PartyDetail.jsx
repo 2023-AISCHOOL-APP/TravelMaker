@@ -131,7 +131,7 @@ const PartyDetail = ({schData, setDetailSchOpen}) => {
         <div className='partydetail-schedule'>
           <div className="partydetail-text">안녕하세요 일정표 입니다.</div>
         </div>
-        <div className='partydetail-appl-btn'>
+        <div>
           {finishBtn ?
             <>
               {appBtn ?
