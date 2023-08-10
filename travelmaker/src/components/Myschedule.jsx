@@ -48,8 +48,6 @@ const Myschedule = () => {
     console.log(schData);
   },[scheduleData])
 
-  // useEffect(()=>{console.log(schData);},[schData])
-  
   return (
     <div className='my-schedule-container'>
       <div className='my-schedule-box'>
@@ -71,8 +69,8 @@ const Myschedule = () => {
         </div> :
           <div className='my-schedule-form'>
             <div className='my-schedule-list'>
-              <div className='detail-list-title'>제목</div>
-              <div className='apply-list'>신청한 사람</div>
+              <div className='detail-list-title'>태녕이와 함께하는 행복하고 즐거운 여행</div>
+              <div className='apply-list'>신청한 사람 ▼</div>
               <div className="apllicant-box">
                 {/* 이름 15명 까지만 */}
                 <div className='applicant'>김도운</div>
@@ -84,7 +82,7 @@ const Myschedule = () => {
             </div>
             <div className='my-schedule-list'>
               <div className='detail-list-title'>제목</div>
-              <div className='apply-list'>신청한 사람</div>
+              <div className='apply-list'>신청한 사람 ▼</div>
               <div className="apllicant-box">
                 <div className='applicant'>정태녕</div>
                 <div className='applicant'>김도운</div>

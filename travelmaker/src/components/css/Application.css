@@ -1,52 +1,22 @@
-@media screen and (width <= 767px) {
-    .app-form {
-        width: 80vw;
-        display: flexbox;
-        flex-direction: column;
-    }
-
-    .app-list {
-        width: 70vw;
-        height: 40vh;
-    }
-
-}
 @media screen and (width >= 768px) {
     .app-application{
         width: 90vw;
-    }
-
-    .app-form {
-        width: 90vw;
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .app-list {
-        width: 20vw;
-        height: 40vh;
     }
 }
 
 .app-container {
     width: 100%;
-    height: calc(100vh - 70px);
+    height: calc(98vh - 70px);
     margin-top: 70px;
-}
-
-.app-nav-list {
-    border-bottom: 1px solid black;
-    padding: 0 3.90625vw;
 }
 
 .app-box {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 87vh;
     margin-top: 10px;
-    border: 1px solid black;
-    margin: 10px 3.90625vw 0;
-    position: absolute;
+    /* border: 1px solid black; */
+    margin: 80px 3.90625vw 0;
     border-radius: 10px;
     background-color: aliceblue;
 
@@ -56,26 +26,16 @@
     display: flex;
     align-items: center;
     justify-content: left;
-    border: 1px solid rgba(53, 168, 172, 0.788);
+    border-bottom: 1px solid rgba(53, 168, 172, 0.788);
     margin: 10px;
     height: 10vh;
-    border-radius: 10px;
 }
 
 .app-scheduele-select{
-
     font-size: 3rem;
     margin-top: 15px;
     margin-left: 21px;
     border: 1px solid black;
-}
-
-.app-form {
-    border: 1px solid rgba(53, 168, 172, 0.788);
-    margin: 10px;
-    height: 97vh;
-    overflow-y: scroll;
-    border-radius: 10px;
 }
 
 /* 스크롤 디자인 삽입 시작 */
@@ -92,15 +52,6 @@
   }
   /* 스크롤 디자인 삽입 끝 */
 
-.app-list {
-    font-size: 3rem;
-    margin-top: 15px;
-    margin-left: 21px;
-    border: 1px solid rgba(0, 0, 0, 0.103);
-    border-radius: 10px;
-    background-color: snow;
-    box-shadow: 0 0 10px rgba(26, 162, 204, 0.15);
-}
 
 .my-app-text-a {
     width: 170px;

@@ -68,22 +68,27 @@ const SideContent = () => {
       ...doc.data(),
       id: doc.id
     }));
-    sessionStorage.removeItem('select_my');
-    window.location.replace('/myschedule')
-    nav('/myschedule', { state: data })
+
   }
 
   // 게시판 정보 불러서 내가 등록한 일정으로 이동
-  const toMy = async () => {
+  const getSchData = async (e) => {
     const usersCollectionRef = collection(db, '게시판');
     const userSnap = await getDocs(usersCollectionRef);
     const data = userSnap.docs.map(doc => ({
       ...doc.data(),
       id: doc.id
     }));
-    sessionStorage.setItem('select_my', 'my');
-    window.location.replace('/myschedule')
-    nav('/myschedule', { state: data })
+
+    if (e === "내가 등록한 일정") {
+      sessionStorage.setItem('select_my', 'my');
+      window.location.replace('/myschedule')
+      nav('/myschedule', { state: data })
+    } else if (e === "신청자 목록") {
+      sessionStorage.removeItem('select_my');
+      window.location.replace('/myschedule')
+      nav('/myschedule', { state: data })
+    }
   }
 
   return (
@@ -97,13 +102,16 @@ const SideContent = () => {
         <div className='side-leader-box'>
           <h3>파티장</h3>
           <Link to='/scheduleform'>
-            <li className='b' onClick={getLocalData} >일정 작성</li>
+            {/* <li className='b' onClick={getLocalData}>일정 작성</li> */}
+            <input type='button' className='side-contents-list b' onClick={getLocalData} value="일정 작성"></input>
           </Link>
           <Link>
-            <li className='b' onClick={toMy}>내가 등록한 일정</li>
+            {/* <li className='b' value="내가 등록한 일정" onClick={(e)=>{getSchData(e.target.value)}}>내가 등록한 일정</li> */}
+            <input type='button' className='side-contents-list b' onClick={(e)=>{getSchData(e.target.value)}} value="내가 등록한 일정"></input>
           </Link>
           <Link>
-            <li className='b' onClick={toApp}>신청자 목록</li>
+            {/* <li className='b' onClick={toApp}>신청자 목록</li> */}
+            <input type='button' className='side-contents-list b' onClick={(e)=>{getSchData(e.target.value)}} value="신청자 목록"></input>
           </Link>
         </div>
         <div className='side-crew-box'>

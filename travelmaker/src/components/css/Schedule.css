@@ -94,7 +94,7 @@
 }
 
 .nav-list {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(53, 168, 172, 0.788);
   padding: 0 3.90625vw;
 }
 
@@ -129,7 +129,6 @@
   display: flex;
   height: 80vh;
   margin-top: 10px;
-  border: 1px solid black;
   border-radius: 10px;
   margin: 10px 3.90625vw 0;
 }
@@ -139,7 +138,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: left;
-  border: 1px solid black;
   border-radius: 10px;
   margin-top: 10px;
   background-color: aliceblue;
@@ -169,7 +167,6 @@
   height: 30px;
   margin-left: 5px;
   font-size: 1.5rem;
-  /* background-color: #89B0CD; */
   background-color: aqua;
   border: 1px solid aliceblue;
   border-radius: 20px;
@@ -184,7 +181,6 @@
 
 .search-box {
   margin: 0;
-  /* width: 90%; */
   width: 18vw;
   height: 90%;
   border: 1px solid black;
@@ -229,7 +225,6 @@
 /* 스크롤 디자인 삽입 끝 */
 
 .schedule-form {
-  border: 1px solid black;
   border-radius: 10px;
   margin-top: 10px;
   margin: 10px;
