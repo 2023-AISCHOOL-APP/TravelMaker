@@ -88,8 +88,22 @@
     background-color: aliceblue;
     border-radius: 10px;
     height: 376px;
+    width: 500px;
     overflow-y: scroll;
     padding: 10px;
+  }
+
+  .local-detail-info-content::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  .local-detail-info-content::-webkit-scrollbar-thumb {
+    background: #49505e;
+    border-radius: 6px;
+  }
+
+  .local-detail-info-content::-webkit-scrollbar-track {
+    border-radius: 6px;
   }
 
   .explain-text {
