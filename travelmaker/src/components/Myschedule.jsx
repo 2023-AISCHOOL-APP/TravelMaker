@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import MyscheduleForm from './MyscheduleForm';
 
 
 const Myschedule = () => {
+  const scheduleData = useLocation().state;
+  const nick = sessionStorage.getItem('nick');
   const selectMy = sessionStorage.getItem('select_my')
   const [myOrApp, setMyOrApp] = useState(true);
+  
 
   useEffect(() => {
     if (selectMy != null) {
-      sessionStorage.removeItem('select_my')
       setMyOrApp(true)
     } else {
       setMyOrApp(false)
@@ -24,7 +27,29 @@ const Myschedule = () => {
     sessionStorage.setItem('select_my', 'my')
   }
 
-  console.log(myOrApp);
+  const [schData, setSchData] = useState([]);
+  const searchSchedule = ()=>{
+    let dataList = [];
+    try{
+    for(let i=0; i<scheduleData.length; i++){
+      if(scheduleData[i].userNick === nick){
+        dataList.push(scheduleData[i])
+      }
+    }
+    setSchData(dataList);
+    // console.log(dataList)
+    }catch{
+      console.log("이상무!");
+    }
+  }
+
+  useEffect(()=>{
+    searchSchedule();
+    console.log(schData);
+  },[scheduleData])
+
+  // useEffect(()=>{console.log(schData);},[schData])
+  
   return (
     <div className='my-schedule-container'>
       <div className='my-schedule-box'>
@@ -40,31 +65,9 @@ const Myschedule = () => {
           </div>
         </div>
         {/* 클래스명에 detail 붙은 디자인은 PartyMember.css에 있음 */}
-        {myOrApp ? <div className='my-schedule-form'>
-          <Link to='/partydetail' className='my-sche-list-box'>
-            <div className='my-sche-list'>
-              <div className='detail-list-title'>제목</div>
-              <div className="de-li-info-box">
-                <div className='detail-list-author'>파티장 | 정태녕</div>
-                <div className='detail-list-date-box'>
-                  <div className="detail-list-date-text">여행기간 |</div>
-                  <div className="detail-list-date">0000-00-00 ~ 0000-00-00</div>
-                </div>
-              </div>
-              <div className="detail-list-category">
-                <div className='list-category-icon'>🚗차</div>
-                <div className='list-category-icon'>🚌버스</div>
-                <div className='list-category-icon'>👟뚜벅</div>
-                <div className='list-category-icon'>🏖️휴양</div>
-                <div className='list-category-icon'>🏃외부</div>
-                <div className='list-category-icon'>🏛️관광</div>
-                <div className='list-category-icon'>🚶‍♂️걷기</div>
-              </div>
-              <div className='my-sche-list-content'>
-                <div className='my-sche-list-content-text'>내용</div>
-              </div>
-            </div>
-          </Link>
+        {myOrApp&&myOrApp ? 
+        <div className='my-schedule-form'>
+        {schData.map(item=><MyscheduleForm schData={item} key={item.title}/>)}
         </div> :
           <div className='my-schedule-form'>
             <div className='my-schedule-list'>
