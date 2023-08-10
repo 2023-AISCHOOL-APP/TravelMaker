@@ -1,6 +1,5 @@
+@media screen and (width <=767px) {
 
-@media screen and (width <= 767px) {
-    
     .main-container {
         flex-direction: column-reverse;
     }
@@ -16,9 +15,9 @@
         max-height: 400px;
         margin-top: 50px;
     }
-  }
+}
 
-@media screen and (width >= 768px) {
+@media screen and (width >=768px) {
 
     .main-contant-box {
         max-width: 400px;
@@ -30,13 +29,16 @@
         max-height: 60vmax;
     }
 
-    .main-title, .main-text, .main_btn {
+    .main-title,
+    .main-text,
+    .main_btn {
         position: absolute;
     }
 
     .main-title {
         bottom: 37%;
     }
+
     .main-text {
         bottom: 25%;
     }
@@ -47,8 +49,9 @@
 }
 
 .main-container {
-    height: 100vh;
-
+    width: 100%;
+    height: calc(100vh - 70px);
+    margin-top: 70px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -67,16 +70,41 @@
 
 .main-img {
     position: relative;
-    /* padding-top: 90px; */
     width: 100%;
     object-fit: cover;
     border-radius: 10px;
+    animation: sidein 1s ease-in-out;
+}
+
+@keyframes sidein {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
 }
 
 .main-contant-box {
     width: 60vw;
     height: 40vh;
     position: relative;
+    animation: fadein 1s ease-in-out;
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
 }
 
 .main_btn {

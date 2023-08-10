@@ -41,12 +41,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* font-size: 2rem; */
   width: 90px;
   height: 30px;
   background-color: #89B0CD;
   border: 1px solid #89B0CD;
-  border-radius: 10px;
+  border-radius: 50px;
   margin: 5px;
 }
 
@@ -54,12 +53,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* font-size: 2rem; */
   width: 100px;
   height: 30px;
   background-color: #89B0CD;
   border: 1px solid #89B0CD;
-  border-radius: 10px;
+  border-radius: 50px;
   margin: 5px;
 }
 

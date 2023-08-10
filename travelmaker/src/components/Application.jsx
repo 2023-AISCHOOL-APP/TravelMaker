@@ -85,7 +85,7 @@ const Application = () => {
                   <div className="detail-list-date">0000-00-00 ~ 0000-00-00</div>
                 </div>
               </div>
-              <button className='app-review' onClick={showReview}>리뷰쓰기</button>
+              <div className='write-review-btn b' onClick={showReview}>리뷰쓰기</div>
               {reviewOpen && <Review setReviewOpen={setReviewOpen} />}
             </div>
           </div>
