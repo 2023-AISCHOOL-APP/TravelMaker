@@ -4,11 +4,6 @@ import Review from './Review';
 
 const Application = () => {
   const [applyOrDone, setAppOrDone] = useState(true);
-  const nav = useNavigate();
-
-  const clickReview = () => {
-    nav('/review')
-  }
 
   const goToApply = () => {
     setAppOrDone(true)

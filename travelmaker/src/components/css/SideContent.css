@@ -44,3 +44,8 @@
 .side-content-container li {
   color: black;
 }
+
+.side-contents-list{
+  border-style: none;
+  background-color: none;
+}
