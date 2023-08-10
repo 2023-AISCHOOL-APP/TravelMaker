@@ -65,6 +65,26 @@
     color: #144272;
 }
 
+.done-trip-list {
+    border: 1px solid rgba(0, 0, 0, 0.103);
+    border-radius: 10px;
+    background-color: snow;
+    box-shadow: 0 0 10px rgba(26, 162, 204, 0.15);
+    width: 19vw;
+    height: 195px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.done-trip-list-content {
+    border: 1px solid aliceblue;
+    background-color: red;
+    border-radius: 15px;
+    margin: 27px 4px 0;
+    height: 47%;
+}
+
 .app-review{
 
 }
