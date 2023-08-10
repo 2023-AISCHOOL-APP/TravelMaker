@@ -101,3 +101,9 @@
     padding-left: 10px;
 }
 
+.partydetail-appl-btn{
+    position: absolute;
+    top: 520px;
+    right: 440px;
+    width: 100px;
+}

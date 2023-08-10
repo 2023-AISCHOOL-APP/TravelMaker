@@ -3,7 +3,16 @@ import { useEffect, useState } from 'react';
 import { useRef } from 'react';
 
 const PartyDetail = ({schData, setDetailSchOpen}) => {
+  const nick = sessionStorage.getItem('nick')
 
+  const [appBtn, setAppBtn] = useState(true)
+  useEffect(()=>{
+    if(schData.userNick === nick){
+      setAppBtn(false)
+    }else{
+      setAppBtn(true)
+    }
+  },[])
     // 모달 끄기 
   const closeDetailSch = () => {
     setDetailSchOpen(false);
@@ -33,10 +42,11 @@ const PartyDetail = ({schData, setDetailSchOpen}) => {
   });
 
     return (
-        <div className='partydetail-container' ref={detailSchRef}>
-            <div>
-            <button className='partydetail-close-btn' onClick={closeDetailSch}>x</button>
-            </div>
+        
+            <div className='partydetail-container' ref={detailSchRef}>
+                <div>
+                    <button className='partydetail-close-btn' onClick={closeDetailSch}>x</button>
+                </div>
                 <div className='partydetail-contents-box'>
                     {/* 타이틀 들어가는 칸 */}
                     <div className='partydetail-title'>
@@ -50,7 +60,7 @@ const PartyDetail = ({schData, setDetailSchOpen}) => {
 
                     <div className='partydetail-short'>
                         <div className="partydetail-text">지역명 | {schData.localName}</div>
-                        <div className="partydetail-text">여행기간 | {schData.startDate} ~ {schData.endDate} ({schData.dayRange}박 {schData.dayRange+1}일)</div>
+                        <div className="partydetail-text">여행기간 | {schData.startDate} ~ {schData.endDate} ({schData.dayRange}박 {schData.dayRange + 1}일)</div>
                         <div className="partydetail-text">동행자 | {schData.members}</div>
                     </div>
 
@@ -59,12 +69,15 @@ const PartyDetail = ({schData, setDetailSchOpen}) => {
                         <div className="partydetail-text">{schData.detail}</div>
                     </div>
                 </div>
-                
+
                 {/* 일정 들어갈 칸 */}
                 <div className='partydetail-schedule'>
                     <div className="partydetail-text">안녕하세요 일정표 입니다.</div>
                 </div>
-        </div>
+                <div className='partydetail-appl-btn'>
+                    {appBtn ? <button>동행신청</button> : <div></div> }
+                </div>
+            </div>
     )
 }
 

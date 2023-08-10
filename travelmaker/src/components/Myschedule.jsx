@@ -1,14 +1,31 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import MyscheduleForm from './MyscheduleForm';
+import { db } from '../firebase-config';
+import { getDoc, doc, collection, getDocs } from 'firebase/firestore'
+
 
 
 const Myschedule = () => {
-  const scheduleData = useLocation().state;
   const nick = sessionStorage.getItem('nick');
   const selectMy = sessionStorage.getItem('select_my')
   const [myOrApp, setMyOrApp] = useState(true);
   
+  // 게시판 정보 받아오기
+  const [scheduleData, setScheduleData] = useState({})
+  const getSchData = async (e) => {
+    const usersCollectionRef = collection(db, '게시판');
+    const userSnap = await getDocs(usersCollectionRef);
+    const data = userSnap.docs.map(doc => ({
+      ...doc.data(),
+      id: doc.id
+    }));
+    setScheduleData(data);
+  }
+
+  useEffect(()=>{
+    getSchData();
+  },[])
 
   useEffect(() => {
     if (selectMy != null) {

@@ -1,11 +1,71 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { db } from '../firebase-config';
+import { getDoc, doc, collection, getDocs } from 'firebase/firestore'
 import MapParty from './MapParty';
+import MyscheduleForm from './MyscheduleForm';
 
 
 function PartyMember() {
   const localName = sessionStorage.getItem('localName')
   const [mapOpen, setMapOpen] = useState(false); // 맵 모달창 노출 여부 state
+
+  // 게시판 정보 받아오기
+  const [scheduleData, setScheduleData] = useState([{}])
+  const getSchData = async (e) => {
+    const usersCollectionRef = collection(db, '게시판');
+    const userSnap = await getDocs(usersCollectionRef);
+    const data = userSnap.docs.map(doc => ({
+      ...doc.data(),
+      id: doc.id
+    }));
+    // setScheduleData(data);
+    let dataList = [];
+    for(let i=0; i<data.length; i++){
+      if(data[i].localName === localName){
+        dataList.push(data[i])
+      }
+    }
+    setScheduleData(dataList)
+  }
+
+  useEffect(() => {
+    getSchData();
+  }, [])
+
+  // const [allSchData, setAllSchData] = useState([{}])
+  // const getAllSchData = ()=>{
+
+  // }
+
+  // useEffect(()=>{
+  //   getAllSchData();
+  // },[scheduleData])
+
+
+  // 추천보기 데이터 골라내기
+  const [schData, setSchData] = useState([]);
+  const searchSchedule = ()=>{
+    let dataList = [];
+    try{
+    for(let i=0; i<scheduleData.length; i++){
+      for(let j=0; j<matchUsers.length; j++){
+        if(scheduleData[i].userNick === matchUsers[j]){
+          dataList.push(scheduleData[i])
+        }
+      }
+    }
+    setSchData(dataList);
+    console.log(dataList)
+    }catch{
+      console.log("이상무!");
+    }
+  }
+
+  useEffect(()=>{
+    searchSchedule();
+    console.log(schData);
+  },[scheduleData])
 
   // 지역선택 모달창 노출
   const showMap = () => {
@@ -60,59 +120,11 @@ function PartyMember() {
           </div>
         </div>
         <div className='detail-form'>
-          {allOrRec ?
-            <Link to='/partydetail' className='detail-list-box'>
-              <div className='detail-list'>
-                <div className='detail-list-title'>태녕이와 함께하는 행복하고 즐거운 여행</div>
-                <div className="de-li-info-box">
-                  <div className='detail-list-author'>파티장 | 정태녕</div>
-                  <div className='detail-list-location'>여행지역 | 광주</div>
-                  <div className='detail-list-date-box'>
-                    <div className="detail-list-date-text">여행기간 |</div>
-                    <div className="detail-list-date">0000-00-00 ~ 0000-00-00</div>
-                  </div>
-                </div>
-                <div className="detail-list-category">
-                  {/* 최대 10개까지 */}
-                  <div className='list-category-icon'>🚗차</div>
-                  <div className='list-category-icon'>🚌버스</div>
-                  <div className='list-category-icon'>👟뚜벅</div>
-                  <div className='list-category-icon'>🏖️휴양</div>
-                  <div className='list-category-icon'>🏃외부</div>
-                  <div className='list-category-icon'>🏛️관광</div>
-                  <div className='list-category-icon'>🚶‍♂️걷기</div>
-                </div>
-              </div>
-            </Link>
-            :
+          {allOrRec && allOrRec ?<>
+            {scheduleData.map(item=><MyscheduleForm schData={item} key={item.title}/>)}
+            </>:
             <>
-
-              {matchUsers.map((id) => {
-                return (
-                  <Link to='/partydetail' className='detail-list-box'>
-                    <div className='detail-list'>
-                      <div className='detail-list-title'>제목</div>
-                      <div className="de-li-info-box">
-                        <div className='detail-list-author'>파티장 | {id}</div>
-                        <div className='detail-list-location'>여행지역 | 광주</div>
-                        <div className='detail-list-date-box'>
-                          <div className="detail-list-date-text">여행기간 |</div>
-                          <div className="detail-list-date">0000-00-00 ~ 0000-00-00</div>
-                        </div>
-                      </div>
-                      <div className="detail-list-category">
-                        <div className='list-category-icon'>🚗차</div>
-                        <div className='list-category-icon'>🚌버스</div>
-                        <div className='list-category-icon'>👟뚜벅</div>
-                        <div className='list-category-icon'>🏖️휴양</div>
-                        <div className='list-category-icon'>🏃외부</div>
-                        <div className='list-category-icon'>🏛️관광</div>
-                        <div className='list-category-icon'>🚶‍♂️걷기</div>
-                      </div>
-                    </div>
-                  </Link>)
-              })}
-
+             {schData.map(item=><MyscheduleForm schData={item} key={item.title}/>)}
             </>
           }
         </div>
