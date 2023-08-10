@@ -151,7 +151,7 @@ const Map = ({ setMapOpen, id, title, content, writer }) => {
       <div className='map-box'>
         <div className='map-info-box'>
           <div className='map-select-area'>
-            <div className="map-select-location">선택 지역</div>
+            <div className="map-select-location">선택 지역 |</div>
             <div className='map-select-box'>
               <span className="map-place-text">{localName}</span>
             </div>

@@ -102,7 +102,7 @@ console.log(localArr);
       <div className='schedule-box'>
         <div className='info-box'>
           <div className="sch-local-box">
-            <div className='sch-local-select'>선택 지역</div>
+            <div className='sch-local-select'>선택 지역 |</div>
             <div className='sch-local-name-box'>
               <span className="sch-local-name">{localName}</span>
             </div>
