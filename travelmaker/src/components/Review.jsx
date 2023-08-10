@@ -1,6 +1,6 @@
 import { React, useRef, useEffect } from 'react'
 
-const Review = ({setReviewOpen}) => {
+const Review = ({ setReviewOpen }) => {
 
   // 모달 끄기
   const closeReview = () => {
@@ -19,7 +19,9 @@ const Review = ({setReviewOpen}) => {
   return (
     <div className='review-container' >
       <button className='review-container-exit b' onClick={closeReview}>X</button>
-      <div className='review-title'>Review</div>
+      <div className='review-title-box'>
+        <div className='review-title'>Review</div>
+      </div>
       <div className='review-contents'>
         <textarea className='review-contens-textarea' rows={1} onChange={handleReviewHeiht} ref={textarea} ></textarea>
 
