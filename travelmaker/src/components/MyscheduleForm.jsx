@@ -20,8 +20,11 @@ const MyscheduleForm = ({schData}) => {
         <div className='detail-list'>
           <div className='detail-list-title'>{schData.title}</div>
           <div className="de-li-info-box">
-            <div className='detail-list-author'>파티장 | {schData.userNick}</div>
-            <div className='detail-list-location'>여행지역 | {schData.localName}</div>
+            <div className='detail-list-author'>파티장 | {schData.userNick} 🌡️36.5℃</div>
+            <div className='in-list-info-box'>
+              <div className='detail-list-location'>여행지역 | {schData.localName}</div>
+              <div className='detail-list-num'>모집인원 | {schData.members}</div>
+            </div>
             <div className='detail-list-date-box'>
               <div className="detail-list-date-text">여행기간 |</div>
               <div className="detail-list-date">{schData.startDate} ~ {schData.endDate}</div>
@@ -35,7 +38,10 @@ const MyscheduleForm = ({schData}) => {
             <div className='list-category-icon'>🏖️휴양</div>
             <div className='list-category-icon'>🏃외부</div>
             <div className='list-category-icon'>🏛️관광</div>
-            <div className='list-category-icon'>🚶‍♂️걷기</div>
+            <div className='list-category-icon'>🛍️쇼핑</div>
+            <div className='list-category-icon'>📷사진</div>
+            <div className='list-category-icon'>🍚맛집</div>
+            <div className='list-category-icon'>☕카페</div>
           </div>
         </div>
       </Link>
