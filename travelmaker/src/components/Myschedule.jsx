@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import MyscheduleForm from './MyscheduleForm';
 import { db } from '../firebase-config';
 import { getDoc, doc, collection, getDocs } from 'firebase/firestore'
@@ -7,6 +7,7 @@ import { getDoc, doc, collection, getDocs } from 'firebase/firestore'
 
 
 const Myschedule = () => {
+  const nav = useNavigate();
   const nick = sessionStorage.getItem('nick');
   const selectMy = sessionStorage.getItem('select_my')
   const [myOrApp, setMyOrApp] = useState(true);
@@ -65,6 +66,22 @@ const Myschedule = () => {
     console.log(schData);
   },[scheduleData])
 
+  // 데이터 베이스에서 관광지 데이터 불러오면서 일정 작성페이지로 이동
+  const localName = '강원도강릉시';
+  const getLocalData = async () => {
+    sessionStorage.setItem('dateRan', 0)
+    sessionStorage.setItem('startDate', '0000-00-00')
+    sessionStorage.setItem('endDate', '0000-00-00')
+    const usersCollectionRef = collection(db, localName);
+    const userSnap = await getDocs(usersCollectionRef);
+    const data = userSnap.docs.map(doc => ({
+      ...doc.data(),
+      id: doc.id
+    }));
+    sessionStorage.setItem('localName', localName)
+    nav('/scheduleform', { state: data })
+  }
+
   return (
     <div className='my-schedule-container'>
       <div className='my-schedule-box'>
@@ -82,8 +99,15 @@ const Myschedule = () => {
         {/* 클래스명에 detail 붙은 디자인은 PartyMember.css에 있음 */}
         {myOrApp&&myOrApp ? 
         <div className='my-schedule-form'>
-        {schData.map(item=><MyscheduleForm schData={item} key={item.title}/>)}
-        </div> :
+            {schData.length != 0 ?
+              <>
+                {schData.map(item => <MyscheduleForm schData={item} key={item.title} />)}
+              </> :
+              <div className='my-schedule-none-box'>
+                <div className='my-schedule-none-text'>등록된 일정이 없습니다!</div>
+                <button className='my-schedule-none-btn b' onClick={getLocalData}>일정등록</button>
+              </div>}
+          </div> :
           <div className='my-schedule-form'>
             <div className='my-schedule-list'>
               <div className='detail-list-title'>태녕이와 함께하는 행복하고 즐거운 여행</div>

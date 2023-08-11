@@ -3,7 +3,7 @@ import { BiXCircle, BiPlusCircle } from "react-icons/bi";
 import { db } from '../firebase-config';
 import { getDoc, doc, collection, getDocs, setDoc } from 'firebase/firestore'
 
-function DragNDrop() {
+function DragNDrop({setPlane}) {
   // 날짜 개수에 맞게 일정 리스트 생성
   const dateRan = sessionStorage.getItem('dateRan')
   const startDate = sessionStorage.getItem('startDate')
@@ -112,6 +112,7 @@ function DragNDrop() {
       const newList = [...prevList];
       newList[groupIndex].items.push(newItem);
       setPlaneList(newList)
+      setPlane(newList)
       return newList;
     });
   };
@@ -131,26 +132,6 @@ function DragNDrop() {
     sessionStorage.setItem('dateRan', 0)
     window.location.replace('/scheduleform')
   }
-
-  // 지역데이터 정보 데이터베이스로 보내기
-  const userNick = sessionStorage.getItem('nick')
-  const localName = sessionStorage.getItem('localName')
-  const sendData = async () => {
-    // try {
-    for (let i = 0; i < planeList.length; i++) {
-      await setDoc(doc(db, '일별데이터', `Day${i+1}-${userNick}-${localName}`),
-        planeList[i]
-        )
-    }
-    // } catch (error) {
-    //   console.log("빡치네");
-    // }
-
-  }
-
-  useEffect(()=>{
-    sendData();
-  },[planeList])
 
   return (
     <div className='kanban-container'>

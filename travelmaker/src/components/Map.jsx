@@ -73,7 +73,7 @@ const Map = ({ setMapOpen, id, title, content, writer }) => {
 
     // Overlay에 표시할 컨텐츠
     const overlayContent = document.createElement('div');
-    const overlayComponent = <OverlayContent localData={localData}/>;
+    const overlayComponent = <OverlayContent localData={localData} />;
     ReactDOM.render(overlayComponent, overlayContent);
 
     var iwRemoveable = true;
@@ -105,16 +105,16 @@ const Map = ({ setMapOpen, id, title, content, writer }) => {
   })
 
   const mapList = [
-    {first : '', title : '광역시 및 특별시', local : ['광주', '대구', '대전', '부산', '서울', '세종', '울산', '인천', '제주']},
-    {first : '강원도', title : '강원도', local : ['강릉시', '속초시', '원주시', '춘천시', '동해시', '홍천군', '태백시', '평창군', '정선군']},
-    {first : '경기도', title : '경기도', local : ['수원시', '성남시', '용인시', '부천시', '화성시', '안양시', '파주시', '광명시', '고양시']},
-    {first : '경남', title : '경상남도', local : ['김해시', '거제시', '남해군', '밀양시', '사천시', '진주시', '창원시', '통영시', '하동군']},
-    {first : '경북', title : '경상북도', local : ['경산시', '경주시', '구미시', '김천시', '문경시', '상주시', '안동시', '영주시', '포항시']},
-    {first : '전남', title : '전라남도', local : ['곡성군', '광양시', '나주시', '담양군', '목포시', '무안군', '보성군', '순천시', '여수시']},
-    {first : '전북', title : '전라북도', local : ['군산시', '김제시', '남원시', '무주군', '순창군', '완주군', '익산시', '임실군', '전주시']},
-    {first : '충남', title : '충청남도', local : ['천안시', '아산시', '논산시', '보령시', '공주시', '서산시', '태안군', '금산군', '부여군']},
-    {first : '충북', title : '충청북도', local : ['괴산군', '단양군', '보은군', '영동군', '옥천군', '음성군', '제천시', '진천군', '청주시']}
-    ]
+    { first: '', title: '광역시 및 특별시', local: ['광주', '대구', '대전', '부산', '서울', '세종', '울산', '인천', '제주'] },
+    { first: '강원도', title: '강원도', local: ['강릉시', '속초시', '원주시', '춘천시', '동해시', '홍천군', '태백시', '평창군', '정선군'] },
+    { first: '경기도', title: '경기도', local: ['수원시', '성남시', '용인시', '부천시', '화성시', '안양시', '파주시', '광명시', '고양시'] },
+    { first: '경남', title: '경상남도', local: ['김해시', '거제시', '남해군', '밀양시', '사천시', '진주시', '창원시', '통영시', '하동군'] },
+    { first: '경북', title: '경상북도', local: ['경산시', '경주시', '구미시', '김천시', '문경시', '상주시', '안동시', '영주시', '포항시'] },
+    { first: '전남', title: '전라남도', local: ['곡성군', '광양시', '나주시', '담양군', '목포시', '무안군', '보성군', '순천시', '여수시'] },
+    { first: '전북', title: '전라북도', local: ['군산시', '김제시', '남원시', '무주군', '순창군', '완주군', '익산시', '임실군', '전주시'] },
+    { first: '충남', title: '충청남도', local: ['천안시', '아산시', '논산시', '보령시', '공주시', '서산시', '태안군', '금산군', '부여군'] },
+    { first: '충북', title: '충청북도', local: ['괴산군', '단양군', '보은군', '영동군', '옥천군', '음성군', '제천시', '진천군', '청주시'] }
+  ]
 
   const [localName, setLocalName] = useState("강원도강릉시") // 지역
   const [mapxy, setMapxy] = useState([37.7921, 128.89662])
@@ -137,11 +137,11 @@ const Map = ({ setMapOpen, id, title, content, writer }) => {
     nav('/scheduleform', { state: data })
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     getLocalData();
-  },[localName])
+  }, [localName])
 
-  const sendLocalData = ()=>{  
+  const sendLocalData = () => {
     closeMap();
   }
 
@@ -159,23 +159,24 @@ const Map = ({ setMapOpen, id, title, content, writer }) => {
           </div>
           {/* 창 크기 줄었을 때 안보임 */}
           <div className='map-palce-select-area'>
-              {mapList.map((id) => {
-                return (
+            <button className="map-all-btn" onClick={() => { setLocalName("전체") }}>전체</button>
+            {mapList.map((id) => {
+              return (
                 <div className='map-place-info-box'>
                   <div className='map-place-title'>{id.title}</div>
                   <div className='map-place'>
-                    <Link><div className='map-place-name' onClick={() =>{setLocalName(id.first+id.local[0])}}>{id.local[0]}</div></Link>
-                    <Link><div className='map-place-name' onClick={() =>{setLocalName(id.first+id.local[1])}}>{id.local[1]}</div></Link>
-                    <Link><div className='map-place-name' onClick={() =>{setLocalName(id.first+id.local[2])}}>{id.local[2]}</div></Link>
-                    <Link><div className='map-place-name' onClick={() =>{setLocalName(id.first+id.local[3])}}>{id.local[3]}</div></Link>
-                    <Link><div className='map-place-name' onClick={() =>{setLocalName(id.first+id.local[4])}}>{id.local[4]}</div></Link>
-                    <Link><div className='map-place-name' onClick={() =>{setLocalName(id.first+id.local[5])}}>{id.local[5]}</div></Link>
-                    <Link><div className='map-place-name' onClick={() =>{setLocalName(id.first+id.local[6])}}>{id.local[6]}</div></Link>
-                    <Link><div className='map-place-name' onClick={() =>{setLocalName(id.first+id.local[7])}}>{id.local[7]}</div></Link>
-                    <Link><div className='map-place-name' onClick={() =>{setLocalName(id.first+id.local[8])}}>{id.local[8]}</div></Link>
+                    <Link><div className='map-place-name' onClick={() => { setLocalName(id.first + id.local[0]) }}>{id.local[0]}</div></Link>
+                    <Link><div className='map-place-name' onClick={() => { setLocalName(id.first + id.local[1]) }}>{id.local[1]}</div></Link>
+                    <Link><div className='map-place-name' onClick={() => { setLocalName(id.first + id.local[2]) }}>{id.local[2]}</div></Link>
+                    <Link><div className='map-place-name' onClick={() => { setLocalName(id.first + id.local[3]) }}>{id.local[3]}</div></Link>
+                    <Link><div className='map-place-name' onClick={() => { setLocalName(id.first + id.local[4]) }}>{id.local[4]}</div></Link>
+                    <Link><div className='map-place-name' onClick={() => { setLocalName(id.first + id.local[5]) }}>{id.local[5]}</div></Link>
+                    <Link><div className='map-place-name' onClick={() => { setLocalName(id.first + id.local[6]) }}>{id.local[6]}</div></Link>
+                    <Link><div className='map-place-name' onClick={() => { setLocalName(id.first + id.local[7]) }}>{id.local[7]}</div></Link>
+                    <Link><div className='map-place-name' onClick={() => { setLocalName(id.first + id.local[8]) }}>{id.local[8]}</div></Link>
                   </div>
                 </div>)
-              })}
+            })}
           </div>
         </div>
         <div id='map'></div>

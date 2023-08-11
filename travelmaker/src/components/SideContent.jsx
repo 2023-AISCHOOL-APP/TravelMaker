@@ -39,6 +39,7 @@ const SideContent = () => {
     }
     sessionStorage.removeItem('userId')
     sessionStorage.removeItem('nick')
+    sessionStorage.removeItem('localName')
     alert('로그아웃 되었습니다.')
     window.location.replace('/')
   }
@@ -99,8 +100,8 @@ const SideContent = () => {
         </div>
         <div className='side-crew-box'>
           <h3>- 파티원</h3>
-          <Link to='/partymember'>
-            <li className='b'>일정 보기</li>
+          <Link>
+            <li className='b' onClick={()=>{sessionStorage.setItem('localName', '전체'); window.location.replace('/partymember')}}>일정 보기</li>
           </Link>
           <Link to='/application'>
             <li className='b'>신청 목록</li>

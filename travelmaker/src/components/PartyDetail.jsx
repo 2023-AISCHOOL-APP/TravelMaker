@@ -69,9 +69,28 @@ const PartyDetail = ({ schData, setDetailSchOpen }) => {
     }
   };
 
-  useEffect(() => {
-    getSchData()
-  }, [])
+  useEffect(()=>{
+    getSchData();
+    getplane();
+  },[])
+  
+  // 일정 데이터 가져오기
+  const [planeList, setPlaneList] = useState([{title:'', items:[""]}])
+  const getplane = async () => {
+    let dataList = [];
+    for (let i = 1; i < schData.dayRange + 2; i++) {
+      const docRef = doc(db, "일별데이터", `Day${i}-${schData.userNick}-${schData.localName}`);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        console.log("Document data:", docSnap.data());
+        dataList.push(docSnap.data())
+      } else {
+        console.log("No such document!");
+      }
+    }
+    setPlaneList(dataList);
+  };
+
 
   // 신청자 닉네임 DB로 보내기
   const applicationMate = async () => {
@@ -110,11 +129,29 @@ const PartyDetail = ({ schData, setDetailSchOpen }) => {
           <div className="partydetail-text">{schData.title}</div>
         </div>
 
-        {/* 파티장 정보 들어갈 칸 */}
-        <div className='partydetail-leader'>
-          <div className="partydetail-text">파티장 | {schData.userNick}</div>
+        <div className='partydetail-leader-box'>
+          {/* 파티장 정보 들어갈 칸 */}
+          <div className='partydetail-leader'>
+            <div className="partydetail-text">파티장 | {schData.userNick}</div>
+          </div>
+          <div className="partydetail-temp">
+            <span className='partydetail-temp-text'>동행 온도 |</span>
+            <div className='partydetail-temp-icon'>🌡️</div>
+            <div className="partydetail-temp-num">36.5℃</div>
+          </div>
+          {/* 카테고리 들어갈 칸 */}
+          <div className="partydetail-category">
+            <div className='pdetail-cate-icon'>🚗차</div>
+            <div className='pdetail-cate-icon'>🚌버스</div>
+            <div className='pdetail-cate-icon'>👟뚜벅</div>
+            <div className='pdetail-cate-icon'>🏖️휴양</div>
+            <div className='pdetail-cate-icon'>🏃외부</div>
+            <div className='pdetail-cate-icon'>🏛️관광</div>
+            <div className='pdetail-cate-icon'>🚶‍♂️걷기</div>
+          </div>
         </div>
 
+        {/* 일정 정보 들어갈 칸 */}
         <div className='partydetail-short'>
           <div className="partydetail-text">지역명 | {schData.localName}</div>
           <div className="partydetail-text">여행기간 | {schData.startDate} ~ {schData.endDate} ({schData.dayRange}박 {schData.dayRange + 1}일)</div>
@@ -129,7 +166,22 @@ const PartyDetail = ({ schData, setDetailSchOpen }) => {
 
       {/* 일정 들어갈 칸 */}
       <div className='partydetail-schedule'>
-        <div className="partydetail-text">안녕하세요 일정표 입니다.</div>
+        <div className="partydetail-text">일정표</div>
+          {planeList.map((id) => {
+              let num = 0;
+          return (
+            <div className='partydetail-plan-box'>
+              <div className='partydetail-plan-title'>{id.title}</div>
+              {id.items.map((pw) => {
+                    num++
+                return (
+                  <div className='partydetail-plan-list'>
+                        <div>{num}</div>
+                    <div>{pw}</div>
+                  </div>)
+              })}
+            </div>)
+        })}
       </div>
       <div>
         {finishBtn ?

@@ -88,7 +88,7 @@ const Registration = () => {
     <div className='registration-container'>
       <div className='registration-box'>
         <div className='registration-input-box'>
-          <span className='regi-box-title'>정태녕님의 <br /> 여행을 소개해주세요!</span>
+          <span className='regi-box-title'>{userNick}님의 <br /> 여행을 소개해주세요!</span>
           <div className="regi-info-box">
             <div>지역 | {localName}</div>
             <div>여행 기간 | {startDate} ~ {endDate} ({dayNum - 1}박 {dayNum}일)</div>
@@ -145,16 +145,47 @@ const Registration = () => {
       </div>
       <div className='registration-plan-box'>
         {userPlanes.map((id) => {
-              let num = 0;
+          let num = 0;
           return (
             <div className='registration-plan'>
               <div className='regi-plan-title'>{id.title}</div>
-              {id.items.map((pw) => {
-                    num++
+              {id.items.map((pw, num) => {
+                let backgroundColor = '';
+                let borderColor = '';
+
+                switch (num + 1) {
+                  case 1:
+                    backgroundColor = 'lightblue';
+                    borderColor = 'lightblue';
+                    break;
+                  case 2:
+                    backgroundColor = 'lightgreen';
+                    borderColor = 'lightgreen';
+                    break;
+                  case 3:
+                    backgroundColor = 'lightseagreen';
+                    borderColor = 'lightseagreen';
+                    break;
+                  case 4:
+                    backgroundColor = 'lightpink';
+                    borderColor = 'lightpink';
+                    break;
+                  case 5:
+                    backgroundColor = 'lightcoral';
+                    borderColor = 'lightcoral';
+                    break;
+                  default:
+                    backgroundColor = 'white';
+                    borderColor = 'white';
+                    break;
+                }
+
                 return (
                   <div className='regi-plan-list'>
-                        <div>{num}</div>
-                    <div>{pw}</div>
+                    <div className="regi-plan-list-num-box" style={{ backgroundColor: backgroundColor, borderColor: borderColor }}>
+                      <div className='regi-plan-list-num'>{num+1}</div>
+                    </div>
+                    <div className='regi-plan-list-test'>{pw}</div>
                   </div>)
               })}
             </div>)
