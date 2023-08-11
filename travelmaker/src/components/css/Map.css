@@ -121,8 +121,10 @@
 
 
 .get-local-btn {
-  margin-left: 30px;
+  /* margin-left: 30px; */
   color: gray;
+  position: absolute;
+  left: 260px;
 }
 
 .get-local-btn:hover {

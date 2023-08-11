@@ -37,8 +37,11 @@
   color: black;
   font-size: 1.3rem;
   font-weight: bold;
-  margin-top: 10px;
-  margin-left: 80px;
+  /* margin-top: 10px;
+  margin-left: 80px; */
+  position: absolute;
+  top: 25px;
+  left: 220px;
 }
 
 .side-leader-box, .side-crew-box {

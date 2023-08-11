@@ -110,11 +110,29 @@ const PartyDetail = ({ schData, setDetailSchOpen }) => {
           <div className="partydetail-text">{schData.title}</div>
         </div>
 
-        {/* 파티장 정보 들어갈 칸 */}
-        <div className='partydetail-leader'>
-          <div className="partydetail-text">파티장 | {schData.userNick}</div>
+        <div className='partydetail-leader-box'>
+          {/* 파티장 정보 들어갈 칸 */}
+          <div className='partydetail-leader'>
+            <div className="partydetail-text">파티장 | {schData.userNick}</div>
+          </div>
+          <div className="partydetail-temp">
+            <span className='partydetail-temp-text'>동행 온도 |</span>
+            <div className='partydetail-temp-icon'>🌡️</div>
+            <div className="partydetail-temp-num">36.5℃</div>
+          </div>
+          {/* 카테고리 들어갈 칸 */}
+          <div className="partydetail-category">
+            <div className='pdetail-cate-icon'>🚗차</div>
+            <div className='pdetail-cate-icon'>🚌버스</div>
+            <div className='pdetail-cate-icon'>👟뚜벅</div>
+            <div className='pdetail-cate-icon'>🏖️휴양</div>
+            <div className='pdetail-cate-icon'>🏃외부</div>
+            <div className='pdetail-cate-icon'>🏛️관광</div>
+            <div className='pdetail-cate-icon'>🚶‍♂️걷기</div>
+          </div>
         </div>
 
+        {/* 일정 정보 들어갈 칸 */}
         <div className='partydetail-short'>
           <div className="partydetail-text">지역명 | {schData.localName}</div>
           <div className="partydetail-text">여행기간 | {schData.startDate} ~ {schData.endDate} ({schData.dayRange}박 {schData.dayRange + 1}일)</div>

@@ -38,21 +38,31 @@
     font-size: 25px;
     background-color: snow;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(27, 152, 190, 0.2);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
+.partydetail-leader-box {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+
+    margin-top: 10px;
+    margin-left: 40px;
+}
 
 .partydetail-leader{
     
-    width: 30%;
-    height: 6vh;
+    width: 28%;
+    height: 7vh;
     display: flex;
+    justify-content: space-between;
+    flex-direction: row;
     align-items: center;
-    margin-top: 10px;
-    margin-left: 40px;
     background-color: snow;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(27, 152, 190, 0.2);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .partydetail-short{
@@ -63,7 +73,43 @@
     margin-left: 40px;
     margin-top: 10px;
     background-color: snow;
-    box-shadow: 0 0 10px rgba(27, 152, 190, 0.2);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.partydetail-temp {
+    width: 28%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7vh;
+    margin-left: 10px;
+    border-radius: 10px;
+    background-color: snow;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.partydetail-category {
+    font-size: 1.1rem;
+    width: 42%;
+    height: 7vh;
+    margin-left: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    background-color: snow;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.pdetail-cate-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 17px;
+    border: 1px solid black;
+    border-radius: 50px;
+    margin: 2px;
+
 }
 
 .partydetail-detail{
@@ -74,7 +120,7 @@
     margin-top: 10px;
     background-color: snow;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(27, 152, 190, 0.2);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .partydetail-schedule{
@@ -84,7 +130,7 @@
     height: 80.5%;
     width: 35vw;
     background-color: snow;
-    box-shadow: 0 0 10px rgba(27, 152, 190, 0.2);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .partydetail-close-btn{
@@ -109,12 +155,12 @@
 
 .partydetail-appl-btn{
     position: absolute;
-    top: 485px;
-    right: 435px;
-    width: 100px;
+    bottom: 11px;
+    right: 37px;
+    width: 125px;
     height: 40px;
     font-size: 15px;
-    margin: 20px;
+    /* margin: 20px; */
     border: none;
     border-radius: 50px;
     background-color: black;
@@ -123,9 +169,10 @@
 
 .partydetail-apll-completed{
     position: absolute;
-    top: 485px;
-    right: 420px;
-    width: 160px;
+    bottom: 1%;
+    right: 50%;
+    width: 210px;
     height: 40px;
-    font-size: 14px;
+    font-size: 2rem;
+    transform: translate(50%, -1%);
 }
