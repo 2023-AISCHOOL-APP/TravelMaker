@@ -88,7 +88,7 @@ const Registration = () => {
     <div className='registration-container'>
       <div className='registration-box'>
         <div className='registration-input-box'>
-          <span className='regi-box-title'>정태녕님의 <br /> 여행을 소개해주세요!</span>
+          <span className='regi-box-title'>{userNick}님의 <br /> 여행을 소개해주세요!</span>
           <div className="regi-info-box">
             <div>지역 | {localName}</div>
             <div>여행 기간 | {startDate} ~ {endDate} ({dayNum - 1}박 {dayNum}일)</div>

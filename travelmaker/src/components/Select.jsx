@@ -93,7 +93,7 @@ const Select = () => {
     getUsers();
   }, [matchUsers])
 
-    // 데이터 베이스에서 관광지 데이터 불러오기
+    // 데이터 베이스에서 관광지 데이터 불러오면서 일정 작성페이지로 이동
     const localName = '강원도강릉시';
     const getLocalData = async () => {
       sessionStorage.setItem('dateRan', 0)
@@ -119,7 +119,7 @@ const Select = () => {
           </div>
         </Link>
         <Link to='/partymember'>
-          <div className='crew-box' onClick={sessionStorage.setItem('localName', '강원도강릉시')}>
+          <div className='crew-box' onClick={()=>{sessionStorage.setItem('localName', '전체')}}>
             <img src='images/ty.png' className='crew-img'></img>
             <a className='crew-btn click-b'>파티원</a>
           </div>
