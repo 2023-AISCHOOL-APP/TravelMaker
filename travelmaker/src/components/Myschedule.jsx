@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import MyscheduleForm from './MyscheduleForm';
 import { db } from '../firebase-config';
 import { getDoc, doc, collection, getDocs } from 'firebase/firestore'
+import PartyMemberList from './PartyMemberList';
 
 
 
@@ -109,26 +110,7 @@ const Myschedule = () => {
               </div>}
           </div> :
           <div className='my-schedule-form'>
-            <div className='my-schedule-list'>
-              <div className='detail-list-title'>태녕이와 함께하는 행복하고 즐거운 여행</div>
-              <div className='apply-list'>신청한 사람 ▼</div>
-              <div className="apllicant-box">
-                {/* 이름 15명 까지만 */}
-                <div className='applicant'>김도운</div>
-                <div className='applicant'>국지호</div>
-                <div className='applicant'>임영찬</div>
-                <div className='applicant'>이강휘</div>
-                <div className='applicant'>김원영</div>
-              </div>
-            </div>
-            <div className='my-schedule-list'>
-              <div className='detail-list-title'>제목</div>
-              <div className='apply-list'>신청한 사람 ▼</div>
-              <div className="apllicant-box">
-                <div className='applicant'>정태녕</div>
-                <div className='applicant'>김도운</div>
-              </div>
-            </div>    
+            {schData.map(item => <PartyMemberList schData={item} key={item.title} />)}
           </div>}
       </div>
     </div>

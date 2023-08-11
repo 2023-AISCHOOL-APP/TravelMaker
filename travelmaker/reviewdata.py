@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify,render_template
+from flask_cors import CORS
 import pickle
 import numpy as np
 import firebase_admin
@@ -20,7 +21,8 @@ db = firestore.client()
 
 
 app = Flask(__name__)
-
+app.config['DEBUG'] = True
+CORS(app)
 
 # 형태소 분석기 초기화
 okt = Okt()
@@ -54,11 +56,9 @@ def review():
     data = request.json
     input_value = data['input']
     username = data['userdata']
-    
     # 입력받은 리뷰 전처리
     new_chat = input_value
     cleaned_review = review_cleaning_edit(new_chat)
-  
 
     # 단어사전 로드
     # 파일경로 확인 필요(상대경로 or 절대경로)
@@ -147,4 +147,4 @@ def review():
     return "result"
 
 if __name__ == '__main__':
-    app.run(port=5000, debug=True)
+    app.run(host= '0.0.0.0', port='5000', debug=True)
