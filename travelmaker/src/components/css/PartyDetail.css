@@ -31,11 +31,11 @@
 }
 
 .partydetail-title{
-    
     width: 95%;
     height: 10vh;
     margin-top: 40px;
     margin-left: 40px;
+    font-size: 25px;
     background-color: snow;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(27, 152, 190, 0.2);
@@ -69,7 +69,7 @@
 .partydetail-detail{
     
     width: 95%;
-    height:42.5%;
+    height:39%;
     margin-left: 40px;
     margin-top: 10px;
     background-color: snow;
@@ -81,7 +81,7 @@
     
     border-radius: 10px;
     margin: 40px;
-    height: 84%;
+    height: 80.5%;
     width: 35vw;
     background-color: snow;
     box-shadow: 0 0 10px rgba(27, 152, 190, 0.2);
@@ -90,8 +90,8 @@
 .partydetail-close-btn{
     /* position: relative; */
     position: absolute;
-    top: 11px;
-    left:965px;
+    top: 9px;
+    left:960px;
     color: gray;
 
 }
@@ -110,7 +110,7 @@
 .partydetail-appl-btn{
     position: absolute;
     top: 485px;
-    right: 440px;
+    right: 435px;
     width: 100px;
     height: 40px;
     font-size: 15px;
@@ -119,4 +119,13 @@
     border-radius: 50px;
     background-color: black;
     color: aliceblue;
+}
+
+.partydetail-apll-completed{
+    position: absolute;
+    top: 485px;
+    right: 420px;
+    width: 160px;
+    height: 40px;
+    font-size: 14px;
 }

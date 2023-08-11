@@ -41,8 +41,8 @@
 
 .close-map-btn {
   position: absolute;
-  right: 5px;
-  top: 10px;
+  right: 7px;
+  top: 7px;
   color: gray;
 }
 
@@ -91,7 +91,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
+  width: 90px;
   height: 30px;
   margin-left: 5px;
   font-size: 1.5rem;
@@ -103,8 +103,22 @@
 }
 
 .map-all-btn{
-  margin-left: 30px;
+  margin-left: 12px;
+  font-size: 1.4rem;
+  width: 75px;
+  height: 20px;
+  background-color: aliceblue;
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
+
+.map-all-btn:hover {
+  background-color: black;
+  color: aliceblue;
+}
+
+
 
 .get-local-btn {
   margin-left: 30px;

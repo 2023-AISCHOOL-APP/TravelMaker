@@ -6,7 +6,7 @@ import { getDoc, doc, collection, getDocs, setDoc } from 'firebase/firestore'
 import { useNavigate } from 'react-router-dom';
 import { BiXCircle } from 'react-icons/bi';
 
-const PartyDetail = ({schData, setDetailSchOpen}) => {
+const PartyDetail = ({ schData, setDetailSchOpen }) => {
   const nick = sessionStorage.getItem('nick')
   const nav = useNavigate();
 
@@ -16,19 +16,19 @@ const PartyDetail = ({schData, setDetailSchOpen}) => {
   const selected = Object.keys(schData).filter((key) => {
     return schData[key] === nick;
   });
-  useEffect(()=>{
-    if(schData.userNick === nick){
+  useEffect(() => {
+    if (schData.userNick === nick) {
       setFinishBtn(false)
-    }else{
+    } else {
       setFinishBtn(true)
     }
-    if(selected.length != 0 && schData.userNick != nick){
+    if (selected.length != 0 && schData.userNick != nick) {
       setAppBtn(false)
-    }else{
+    } else {
       setAppBtn(true)
     }
-  },[])
-    // 모달 끄기 
+  }, [])
+  // 모달 끄기 
   const closeDetailSch = () => {
     setDetailSchOpen(false);
   };
@@ -106,49 +106,49 @@ const PartyDetail = ({schData, setDetailSchOpen}) => {
       )
       alert("동행신청이 완료되었습니다~!")
       nav('/application')
-    }else if(scheduleData.userNick === nick){
+    } else if (scheduleData.userNick === nick) {
       alert("본인이 게시한 글에는 신청할 수 없습니다!")
-    }else{
+    } else {
       alert("이미 신청한 일정입니다!")
     }
   }
 
   // 동행 완료 함수
-  const finishedMate = ()=>{
+  const finishedMate = () => {
     alert("동행이 완료되었습니다~  (알람만 뜨는 상태)")
   }
-    return (
-        
-            <div className='partydetail-container' ref={detailSchRef}>
-                <div>
-                    <BiXCircle className='partydetail-close-btn' size='30' onClick={closeDetailSch}>X</BiXCircle>
-                </div>
-                <div className='partydetail-contents-box'>
-                    {/* 타이틀 들어가는 칸 */}
-                    <div className='partydetail-title'>
-                        <div className="partydetail-text">{schData.title}</div>
-                    </div>
+  return (
 
-          {/* 파티장 정보 들어갈 칸 */}
-          <div className='partydetail-leader'>
-            <div className="partydetail-text">파티장 | {schData.userNick}</div>
-          </div>
-
-          <div className='partydetail-short'>
-            <div className="partydetail-text">지역명 | {schData.localName}</div>
-            <div className="partydetail-text">여행기간 | {schData.startDate} ~ {schData.endDate} ({schData.dayRange}박 {schData.dayRange + 1}일)</div>
-            <div className="partydetail-text">동행자 | {schData.members}</div>
-          </div>
-
-          {/* 세부 내용 들어갈 칸 */}
-          <div className='partydetail-detail'>
-            <div className="partydetail-text">{schData.detail}</div>
-          </div>
+    <div className='partydetail-container' ref={detailSchRef}>
+      <div>
+        <BiXCircle className='partydetail-close-btn' size='30' onClick={closeDetailSch}>X</BiXCircle>
+      </div>
+      <div className='partydetail-contents-box'>
+        {/* 타이틀 들어가는 칸 */}
+        <div className='partydetail-title'>
+          <div className="partydetail-text">{schData.title}</div>
         </div>
 
-        {/* 일정 들어갈 칸 */}
-        <div className='partydetail-schedule'>
-          <div className="partydetail-text">일정표</div>
+        {/* 파티장 정보 들어갈 칸 */}
+        <div className='partydetail-leader'>
+          <div className="partydetail-text">파티장 | {schData.userNick}</div>
+        </div>
+
+        <div className='partydetail-short'>
+          <div className="partydetail-text">지역명 | {schData.localName}</div>
+          <div className="partydetail-text">여행기간 | {schData.startDate} ~ {schData.endDate} ({schData.dayRange}박 {schData.dayRange + 1}일)</div>
+          <div className="partydetail-text">동행자 | {schData.members}</div>
+        </div>
+
+        {/* 세부 내용 들어갈 칸 */}
+        <div className='partydetail-detail'>
+          <div className="partydetail-text">{schData.detail}</div>
+        </div>
+      </div>
+
+      {/* 일정 들어갈 칸 */}
+      <div className='partydetail-schedule'>
+        <div className="partydetail-text">일정표</div>
           {planeList.map((id) => {
               let num = 0;
           return (
@@ -164,21 +164,22 @@ const PartyDetail = ({schData, setDetailSchOpen}) => {
               })}
             </div>)
         })}
-        </div>
-        <div>
-          {finishBtn ?
-            <>
-              {appBtn ?
-                <button className='partydetail-appl-btn b' onClick={applicationMate}>동행신청</button> :
-                <div>
-                  <div>신청이 완료된 동행입니다.</div>
-                  <button className='partydetail-appl-btn b' onClick={finishedMate}>동행완료</button>
-                </div>}
-            </>
-            : <div></div>}
-                </div>
-            </div>
-    )
+      </div>
+      <div>
+        {finishBtn ?
+          <>
+            {appBtn ?
+              <button className='partydetail-appl-btn b' onClick={applicationMate}>동행신청</button> :
+              <div>
+                <div className='partydetail-apll-completed'>신청이 완료된 동행입니다.</div>
+                <button className='partydetail-appl-btn b' onClick={finishedMate}>동행완료</button>
+              </div>
+            }
+          </>
+          : <div></div>}
+      </div>
+    </div>
+  )
 }
 
 
