@@ -28,8 +28,8 @@
 
 .logo_img {
   position: absolute;
-  top: 150px;
-  width: 300px;
+  top: 140px;
+  width: 350px;
   z-index: 999999999999;
 }
 
@@ -47,22 +47,30 @@
   z-index: 999999999999;
 }
 
-.id-input,
-.pw-input {
-  margin-top: 40px;
+.id-input{
+  margin-top: 35px;
   font-size: 17px;
   height: 40px;
   width: 230px;
   border-radius: 10px;
+}
+.pw-input {
+  margin-top: 15px;
+  margin-bottom: 25px;
+  font-size: 17px;
+  height: 40px;
+  width: 230px;
+  border-radius: 10px;
+
 }
 
 .login_bt {
   text-decoration: none;
   text-align: center;
   width: 230px;
-  height: 40px;
+  height: 45px;
   font-size: 17px;
-  margin: 12px;
+  margin-top: 20px;
   color: white;
   background-color: black;
   border: 1px solid black;
@@ -71,5 +79,6 @@
 }
 
 hr {
-  width: 100%;
+  width: 90%;
+  border: 0.1px solid rgba(0, 0, 0, 0.15);
 }

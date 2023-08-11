@@ -161,32 +161,43 @@ const Membership = () => {
           <div className='membership_input'>
 
             {/* 아이디 비밀번호 변수에 저장 */}
-            <input className='login-input-text' placeholder='닉네임(2글자 이상 입력)' onChange={(e) => { setRegisterNickname(e.target.value) }}></input>
+            <input className='login-input-text' maxLength={6} placeholder='닉네임(2~6글자 입력)' onChange={(e) => { setRegisterNickname(e.target.value) }}></input>
             <div className='guideText'>{nick}</div>
             <input className='login-input-text' placeholder='아이디(ex : test@test.com)' onChange={(e) => { setRegisterEmail(e.target.value) }}></input>
             <div className='guideText'>{id}</div>
             <input className='login-input-text' type='password' placeholder='비밀번호(8자리 이상 입력)' onChange={(e) => { setRegisterPassword(e.target.value) }}></input>
             <input className='login-input-text' type='password' placeholder='비밀번호 확인' onChange={(e) => { setCheckPassword(e.target.value) }}></input>
             <div className='guideText'>{pwd}</div>
-            <input className='login-input-text' placeholder='이름(ex : 홍길동)' onChange={(e) => { setRegisterName(e.target.value) }}></input>
+            {/* <input className='login-input-text-name' placeholder='이름(ex : 홍길동)' onChange={(e) => { setRegisterName(e.target.value) }}></input>
+            <div className='guideText'>{name}</div> */}
+           {/* 젠더박스 위치 변경 */}
+            <div className='gender_box'>
+            <input className='login-input-text-name' placeholder='이름(ex : 홍길동)' onChange={(e) => { setRegisterName(e.target.value) }}></input>
+              <input id='male' type="radio" name="gender" value="Male" onChange={(e) => { setRegisterGender(e.target.value) }}/>
+              <label className='gender_select a' for='male'>남</label>
+              <input id='female' type="radio" name="gender" value="Female" onChange={(e) => { setRegisterGender(e.target.value) }}/>
+              <label className='gender_select a' for='female'>여</label>
+            </div>
+            {/* 젠더박스 위치 변경 */}
+            {/* <div className='guideText'>{gen}</div> */}
             <div className='guideText'>{name}</div>
             <input className='login-input-text' maxLength={8} placeholder='생년월일 8자리(ex : 20221213)' onChange={(e) => { setRegisterBirth(e.target.value) }}></input>
             <div className='guideText'>{birth}</div>
             <br/>
 
             {/* 성별 선택 */}
-            <div className='gender_box'>
+            {/* <div className='gender_box'>
               <input id='male' type="radio" name="gender" value="Male" onChange={(e) => { setRegisterGender(e.target.value) }}/>
               <label className='gender_select b' for='male'>남자</label>
               <input id='female' type="radio" name="gender" value="Female" onChange={(e) => { setRegisterGender(e.target.value) }}/>
               <label className='gender_select b' for='female'>여자</label>
             </div>
-            <div className='guideText'>{gen}</div>
+            <div className='guideText'>{gen}</div> */}
           </div>
           <div>
 
             {/* 다음 버튼 클릭하여 데이터 전송 및 설문조사 페이지 이동 */}
-            <button className='membership_bt' onClick={next} disabled={nextBtn}>다음</button>
+            <button className='membership_bt b' onClick={next} disabled={nextBtn}>다음</button>
             <div className='guideText'>{check}</div>
             
             {/* 

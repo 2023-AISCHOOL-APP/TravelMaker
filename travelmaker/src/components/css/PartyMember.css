@@ -227,10 +227,6 @@
 }
 
 /* radio 버튼 css 시작 */
-[type='radio'] {
-    display: none;
-}
-
 .my_text {
     position: relative;
     color: #144272;
@@ -244,10 +240,5 @@
     justify-content: center;
 }
 
-input[type='radio']:checked+label {
-    /* background-color: #84add1; */
-    color: #25bd2d;
-    align-items: center;
-}
 
 /* radio 버튼 css 끝 */
