@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { React, useRef, useEffect } from 'react'
 import { BiXCircle } from "react-icons/bi";
 
-const Review = ({ setReviewOpen }) => {
+const Review = ({ setReviewOpen, schData, leaderEmail }) => {
 
   // 모달 끄기
   const closeReview = () => {
@@ -44,47 +44,24 @@ const Review = ({ setReviewOpen }) => {
 
   // 리뷰와 동행자정보(email)을 flask로 전달
   const [inputValue, setInputValue] = useState('');
-
-  // const handleSubmit = async () => {
-  //   try {
-  //     const response = await fetch('/reviewData', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       // "파티장이메일" << 이부분 수정 해야함
-  //       body: JSON.stringify({ input: inputValue, userdata : "admin@travel.com" }),
-  //     });
-  //     alert("동행해 주셔서 감사합니다!")
-  //     closeReview();
-  //   } catch (error) {
-  //     console.error('Error:', error);
-  //   }
-  // };
-
+  const Email = leaderEmail[0];
   const handleSubmit = async () => {
     try {
-      const partyLeaderEmail = "admin@travel.com"; // 파티장 이메일 값을 설정
-  
       const response = await fetch('http://192.168.70.71:5000/reviewData', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ input: inputValue, userdata: partyLeaderEmail }),
+        // "파티장이메일" << 이부분 수정 해야함
+        body: JSON.stringify({ input: inputValue, userdata : Email }),
       });
-  
-      if (response.ok) {
-        alert("동행해 주셔서 감사합니다!");
-        closeReview();
-      } else {
-        // Handle non-OK response here
-        console.error('Request failed with status:', response.status);
-      }
+      alert("동행해 주셔서 감사합니다!")
+      closeReview();
     } catch (error) {
       console.error('Error:', error);
     }
   };
+
 
 
   return (
@@ -94,7 +71,7 @@ const Review = ({ setReviewOpen }) => {
         <div className='review-title'>Review</div>
       </div>
       <div className='review-contents'>
-        <textarea className='review-contens-textarea' placeholder='관리자님에 대한 &#13;솔직한 의견을 남겨주세요!'  
+        <textarea className='review-contens-textarea' placeholder={schData.userNick+"님에 대한 \n솔직한 후기를 남겨주세요!"} 
         rows={1} 
         onChange={handleReviewHeiht} 
         ref={textarea} 

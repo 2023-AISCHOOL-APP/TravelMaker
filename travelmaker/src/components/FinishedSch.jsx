@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react';
+import { db } from '../firebase-config';
+import { getDoc, doc, collection, getDocs, setDoc } from 'firebase/firestore'
 import Review from './Review';
 
 function FinishedSch({schData}) {
@@ -11,6 +13,29 @@ function FinishedSch({schData}) {
       setReviewOpen(true);
     }
     // 리뷰 모달 끝
+
+  // 파티장 이메일 정보 받아오기
+  const [leaderEmail, setLeaderEmail] = useState([])
+  const getLeaderData = async (e) => {
+    const usersCollectionRef = collection(db, 'users');
+    const userSnap = await getDocs(usersCollectionRef);
+    const data = userSnap.docs.map(doc => ({
+      ...doc.data(),
+      id: doc.id
+    }));
+    let DataList = [];
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].nickname === schData.userNick) {
+        DataList.push(data[i].email)
+      }
+    }
+    setLeaderEmail(DataList)
+  }
+
+  useEffect(() => {
+    getLeaderData();
+  }, [])
+
   return (
     <div className='done-trip-list'>
       <div className='detail-list-title'>{schData.title}</div>
@@ -23,7 +48,7 @@ function FinishedSch({schData}) {
         </div>
       </div>
       <div className='write-review-btn b' onClick={showReview}>리뷰쓰기</div>
-      {reviewOpen && <Review setReviewOpen={setReviewOpen} />}
+      {reviewOpen && <Review setReviewOpen={setReviewOpen} schData={schData} leaderEmail={leaderEmail}/>}
     </div>
   )
 }

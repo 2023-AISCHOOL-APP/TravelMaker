@@ -7,7 +7,6 @@ const Tag = () => {
   const [tags, setTags] = useState([]);
 
   const addTag = (e) => {
-    // keycode 13 : 엔터, 8 : 백스페이스
     if (e.key === 'Enter' && tagValue && tags.length < 10) {
       setTags([...tags, tagValue]);
       setTagValue('');
