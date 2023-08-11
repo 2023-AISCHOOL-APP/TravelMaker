@@ -136,6 +136,21 @@
     overflow-y: scroll;
 }
 
+.partydetail-schedule::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  .partydetail-schedule::-webkit-scrollbar-thumb {
+    background: #2da2c5;
+    border-radius: 6px;
+  }
+  
+  .partydetail-schedule::-webkit-scrollbar-track {
+    border-radius: 6px;
+  }
+
+
+
 .partydetail-close-btn{
     /* position: relative; */
     position: absolute;

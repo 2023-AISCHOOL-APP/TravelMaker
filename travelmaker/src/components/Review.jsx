@@ -45,22 +45,48 @@ const Review = ({ setReviewOpen }) => {
   // 리뷰와 동행자정보(email)을 flask로 전달
   const [inputValue, setInputValue] = useState('');
 
+  // const handleSubmit = async () => {
+  //   try {
+  //     const response = await fetch('/reviewData', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       // "파티장이메일" << 이부분 수정 해야함
+  //       body: JSON.stringify({ input: inputValue, userdata : "admin@travel.com" }),
+  //     });
+  //     alert("동행해 주셔서 감사합니다!")
+  //     closeReview();
+  //   } catch (error) {
+  //     console.error('Error:', error);
+  //   }
+  // };
+
   const handleSubmit = async () => {
     try {
-      const response = await fetch('/reviewData', {
+      const partyLeaderEmail = "admin@travel.com"; // 파티장 이메일 값을 설정
+  
+      const response = await fetch('http://192.168.70.71:5000/reviewData', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        // "파티장이메일" << 이부분 수정 해야함
-        body: JSON.stringify({ input: inputValue, userdata : "admin@travel.com" }),
+        body: JSON.stringify({ input: inputValue, userdata: partyLeaderEmail }),
       });
-      alert("동행해 주셔서 감사합니다!")
-      closeReview();
+  
+      if (response.ok) {
+        alert("동행해 주셔서 감사합니다!");
+        closeReview();
+      } else {
+        // Handle non-OK response here
+        console.error('Request failed with status:', response.status);
+      }
     } catch (error) {
       console.error('Error:', error);
     }
   };
+
+
   return (
     <div className='review-container' ref={mapRef}>
       <BiXCircle className='review-container-exit' size='30' onClick={closeReview}>X</BiXCircle>
