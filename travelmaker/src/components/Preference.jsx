@@ -152,7 +152,7 @@ const Preference = () => {
             {surveys[surveyIndex].options.map((option, index) => (
               <div key={index} className='preference_btnhov'>
                 {/* 선택지 버튼을 클릭하면 handleAnswer가 실행 */}
-                <button key={index} className='preference_btn b' onClick={() => handleAnswer(option)}>
+                <button key={index} className='preference_btn a' onClick={() => handleAnswer(option)}>
                   {option}
                 </button>
               </div>
@@ -168,7 +168,7 @@ const Preference = () => {
                 <li key={index}>{answer}</li>
               ))}
             </ul> */}
-              <button className='preference_btn' onClick={signup}>가입완료</button>
+              <button className='preference_btn a' onClick={signup}>가입완료</button>
             <Routes>
               <Route path='/login' element={<Login />} />
             </Routes>

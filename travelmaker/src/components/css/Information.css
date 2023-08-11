@@ -77,6 +77,19 @@
     overflow-y: scroll;
 }
 
+.information-form::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  .information-form::-webkit-scrollbar-thumb {
+    background: #2da2c5;
+    border-radius: 6px;
+  }
+  
+  .information-form::-webkit-scrollbar-track {
+    border-radius: 6px;
+  }
+
 .recommend-list {
     /* font-size: 3rem; */
     margin-top: 15px;

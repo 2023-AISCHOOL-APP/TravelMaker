@@ -34,7 +34,7 @@ body {
     bottom: 20px;
     padding: 10px;
     border: 1px solid black;
-    border-radius: 14px;
+    border-radius: 50px;
 }
 
 .b:before,
@@ -100,7 +100,7 @@ body {
 
 
 input[type='radio']:checked+label {
-    color: #25bd2d;
+    color: #00C9C8;
     align-items: center;
 }
 /* radio 버튼 css 끝 */
