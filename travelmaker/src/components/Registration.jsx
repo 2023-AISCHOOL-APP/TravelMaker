@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { db } from '../firebase-config';
 import { getDoc, doc, collection, getDocs, setDoc } from 'firebase/firestore'
 import { useNavigate } from 'react-router-dom';
+import Tag from './Tag'
 
 
 const Registration = () => {
@@ -110,15 +111,7 @@ const Registration = () => {
             </div>
           </div>
           <div className="cate-hashtag-box">
-            <div className='hashtag-icon'>🚗차</div>
-            <div className='hashtag-icon'>🚌버스</div>
-            <div className='hashtag-icon'>👟뚜벅</div>
-            <div className='hashtag-icon'>🏖️휴양</div>
-            <div className='hashtag-icon'>🏃외부</div>
-            <div className='hashtag-icon'>🏛️관광</div>
-            <div className='hashtag-icon'>🚶‍♂️걷기</div>
-            <div className='hashtag-icon'>🚶‍♂️걷기</div>
-            <div className='hashtag-icon'>🚶‍♂️걷기</div>
+            <Tag />
           </div>
           <input
             maxLength={40}
