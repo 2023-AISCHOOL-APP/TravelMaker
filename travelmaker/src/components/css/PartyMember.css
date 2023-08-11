@@ -253,3 +253,14 @@
 
 
 /* radio 버튼 css 끝 */
+
+.partymember-none-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40px;
+    margin-bottom: 80px;
+    width: 85vw;
+    font-size: 25px;
+}

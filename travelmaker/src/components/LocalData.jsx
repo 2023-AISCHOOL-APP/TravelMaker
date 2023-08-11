@@ -9,7 +9,11 @@ const LocalData = ({local}) => {
 
     // 모달창 노출
     const showMap = () => {
-      setDetailOpen(true);
+      if(local.title === '지역을 선택해 주세요!'){
+        setDetailOpen(false);
+      }else{
+        setDetailOpen(true);
+      }
     }
 
   return (

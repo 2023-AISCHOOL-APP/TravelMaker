@@ -21,12 +21,17 @@ console.log(localArr);
   const [regiWrite, setRegiWrite] = useState(false);
   const [plane, setPlane] = useState([{}])
   const goToRegiWrite = async () => {
+    console.log(plane[0].title);
+    if (plane[0].title != undefined) {
       for (let i = 0; i < plane.length; i++) {
-        await setDoc(doc(db, '일별데이터', `Day${i+1}-${userNick}-${localName}`),
-        plane[i]
-          )
+        await setDoc(doc(db, '일별데이터', `Day${i + 1}-${userNick}-${localName}`),
+          plane[i]
+        )
       }
-    setRegiWrite(true)
+      setRegiWrite(true)
+    } else {
+      alert("일정을 생성 해주세요!")
+    }
   }
 
   const [mapOpen, setMapOpen] = useState(false); // 맵 모달창 노출 여부 state
@@ -93,7 +98,7 @@ console.log(localArr);
     <div className='schedule-container'>
       <nav className='nav-list'>
         <div className="local-select b" onClick={showMap}>지역선택</div>
-        {mapOpen && <Map setMapOpen={setMapOpen} />}
+        {mapOpen && <Map setMapOpen={setMapOpen} setSearch={setSearch}/>}
         <div className='date-container'>
           <div className='date-box'>
             <p className='date-select'>출발일</p>

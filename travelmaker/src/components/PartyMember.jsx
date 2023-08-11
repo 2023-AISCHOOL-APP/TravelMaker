@@ -41,16 +41,6 @@ function PartyMember() {
     getSchData();
   }, [])
 
-  // const [allSchData, setAllSchData] = useState([{}])
-  // const getAllSchData = ()=>{
-
-  // }
-
-  // useEffect(()=>{
-  //   getAllSchData();
-  // },[scheduleData])
-
-
   // 추천보기 데이터 골라내기
   const [schData, setSchData] = useState([]);
   const searchSchedule = ()=>{
@@ -128,11 +118,17 @@ function PartyMember() {
           </div>
         </div>
         <div className='detail-form'>
-          {allOrRec && allOrRec ?<>
-            {scheduleData.map(item=><MyscheduleForm schData={item} key={item.title}/>)}
-            </>:
+          {allOrRec && allOrRec ? <>
+            {scheduleData.map(item => <MyscheduleForm schData={item} key={item.title} />)}
+          </> :
             <>
-             {schData.map(item=><MyscheduleForm schData={item} key={item.title}/>)}
+              {schData.length != 0 ?
+                <>
+                  {schData.map(item => <MyscheduleForm schData={item} key={item.title} />)}
+                </> :
+                <div className='partymember-none-text'>
+                  <div>추천 멤버가 없습니다 ㅜㅜ</div>
+                </div>}
             </>
           }
         </div>
