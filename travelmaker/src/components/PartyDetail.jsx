@@ -70,8 +70,27 @@ const PartyDetail = ({schData, setDetailSchOpen}) => {
   };
 
   useEffect(()=>{
-    getSchData()
+    getSchData();
+    getplane();
   },[])
+  
+  // 일정 데이터 가져오기
+  const [planeList, setPlaneList] = useState([{title:'', items:[""]}])
+  const getplane = async () => {
+    let dataList = [];
+    for (let i = 1; i < schData.dayRange + 2; i++) {
+      const docRef = doc(db, "일별데이터", `Day${i}-${schData.userNick}-${schData.localName}`);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        console.log("Document data:", docSnap.data());
+        dataList.push(docSnap.data())
+      } else {
+        console.log("No such document!");
+      }
+    }
+    setPlaneList(dataList);
+  };
+
 
   // 신청자 닉네임 DB로 보내기
   const applicationMate = async () => {
@@ -129,7 +148,22 @@ const PartyDetail = ({schData, setDetailSchOpen}) => {
 
         {/* 일정 들어갈 칸 */}
         <div className='partydetail-schedule'>
-          <div className="partydetail-text">안녕하세요 일정표 입니다.</div>
+          <div className="partydetail-text">일정표</div>
+          {planeList.map((id) => {
+              let num = 0;
+          return (
+            <div className='partydetail-plan-box'>
+              <div className='partydetail-plan-title'>{id.title}</div>
+              {id.items.map((pw) => {
+                    num++
+                return (
+                  <div className='partydetail-plan-list'>
+                        <div>{num}</div>
+                    <div>{pw}</div>
+                  </div>)
+              })}
+            </div>)
+        })}
         </div>
         <div>
           {finishBtn ?

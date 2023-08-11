@@ -143,3 +143,24 @@
     font-size: 1.5rem;
     margin: 5px 10px;
 }
+
+.my-schedule-none-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40px;
+    margin-right: 0px;
+    width: 85vw;
+    font-size: 25px;
+}
+
+.my-schedule-none-btn{
+    margin-top: 20px;
+    background-color: black;
+    color: white;
+    height: 40px;
+    width: 100px;
+    border-radius: 20px;
+}
+

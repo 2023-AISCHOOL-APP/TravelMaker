@@ -13,12 +13,19 @@ import { getDoc, doc, collection, getDocs, setDoc } from 'firebase/firestore'
 
 const ScheduleForm = () => {
   const localArr = useLocation().state // 지역정보 받아오기
+  const userNick = sessionStorage.getItem('nick')
   const localName = sessionStorage.getItem('localName')// 지역이름 받아오기
   const [startDate, setStartDate] = useState(""); // 출발일
   const [endDate, setEndDate] = useState(""); // 도착일
 console.log(localArr);
   const [regiWrite, setRegiWrite] = useState(false);
-  const goToRegiWrite = () => {
+  const [plane, setPlane] = useState([{}])
+  const goToRegiWrite = async () => {
+      for (let i = 0; i < plane.length; i++) {
+        await setDoc(doc(db, '일별데이터', `Day${i+1}-${userNick}-${localName}`),
+        plane[i]
+          )
+      }
     setRegiWrite(true)
   }
 
@@ -80,6 +87,8 @@ console.log(localArr);
       window.location.replace('/scheduleform')
     }
     
+
+
   return (
     <div className='schedule-container'>
       <nav className='nav-list'>
@@ -127,7 +136,7 @@ console.log(localArr);
         <div className='schedule-form'>
           {/* <div className='schedule-list'>day1</div>
           <div className='schedule-list'>+</div> */}
-          {regiWrite ? <Registration/> : <Kanbanborad/>}
+          {regiWrite ? <Registration/> : <Kanbanborad setPlane={setPlane}/>}
         </div>
       </div>
     </div>
