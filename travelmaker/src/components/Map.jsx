@@ -10,13 +10,14 @@ import { db } from '../firebase-config';
 import { getDoc, doc, collection, getDocs, setDoc } from 'firebase/firestore'
 
 const { kakao } = window;
-const Map = ({ setMapOpen, id, title, content, writer }) => {
+const Map = ({ setMapOpen, id, title, content, writer, setSearch }) => {
   const nav = useNavigate();
 
 
   // 모달 끄기 
   const closeMap = () => {
     setMapOpen(false);
+    setSearch(true);
   };
 
   // 모달 외부 클릭 시 끄기
@@ -116,9 +117,9 @@ const Map = ({ setMapOpen, id, title, content, writer }) => {
     { first: '충북', title: '충청북도', local: ['괴산군', '단양군', '보은군', '영동군', '옥천군', '음성군', '제천시', '진천군', '청주시'] }
   ]
 
-  const [localName, setLocalName] = useState("강원도강릉시") // 지역
-  const [mapxy, setMapxy] = useState([37.7921, 128.89662])
-  const [localData, setLocalData] = useState(["강릉 3.1운동 기념공원", "강원특별자치도 강릉시 저동", "http://tong.visitkorea.or.kr/cms/resource/65/2900665_image2_1.JPG"])
+  const [localName, setLocalName] = useState(" ") // 지역
+  const [mapxy, setMapxy] = useState([37.58208588, 126.9846617])
+  const [localData, setLocalData] = useState(["", "", ""])
 
   // 데이터 베이스에서 관광지 데이터 불러오기
   const getLocalData = async () => {
@@ -159,7 +160,6 @@ const Map = ({ setMapOpen, id, title, content, writer }) => {
           </div>
           {/* 창 크기 줄었을 때 안보임 */}
           <div className='map-palce-select-area'>
-            <button className="map-all-btn" onClick={() => { setLocalName("전체") }}>전체</button>
             {mapList.map((id) => {
               return (
                 <div className='map-place-info-box'>

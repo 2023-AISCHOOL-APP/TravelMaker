@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import { useRef } from 'react';
 import { db } from '../firebase-config';
-import { getDoc, doc, collection, getDocs, setDoc } from 'firebase/firestore'
+import { getDoc, doc, collection, getDocs, setDoc, updateDoc, deleteField } from 'firebase/firestore'
 import { useNavigate } from 'react-router-dom';
 import { BiXCircle } from 'react-icons/bi';
 
@@ -14,7 +14,7 @@ const PartyDetail = ({ schData, setDetailSchOpen }) => {
 
   const [appBtn, setAppBtn] = useState(true)
   const selected = Object.keys(schData).filter((key) => {
-    return schData[key] === nick;
+    return schData[key] === '신청완료';
   });
   useEffect(() => {
     if (schData.userNick === nick) {
@@ -22,9 +22,10 @@ const PartyDetail = ({ schData, setDetailSchOpen }) => {
     } else {
       setFinishBtn(true)
     }
-    if (selected.length != 0 && schData.userNick != nick) {
+    if (selected.indexOf(nick) != -1 && schData.userNick != nick) {
       setAppBtn(false)
     } else {
+      console.log(selected);
       setAppBtn(true)
     }
   }, [])
@@ -97,10 +98,10 @@ const PartyDetail = ({ schData, setDetailSchOpen }) => {
     const dataLength = Object.keys(scheduleData).length; // 데이터 길이
     // 중복신청 판별 함수
     const selected = Object.keys(scheduleData).filter((key) => {
-      return scheduleData[key] === nick;
+      return scheduleData[key] === '신청완료';
     });
-    if (selected.length === 0) {
-      scheduleData[`신청자${dataLength - 7}`] = nick
+    if (selected.indexOf(nick) === -1) {
+      scheduleData[`${nick}`] = '신청완료'
       await setDoc(doc(db, '게시판', `${scheduleData.userNick}-${scheduleData.localName}`),
         scheduleData
       )
@@ -114,9 +115,14 @@ const PartyDetail = ({ schData, setDetailSchOpen }) => {
   }
 
   // 동행 완료 함수
-  const finishedMate = () => {
-    alert("동행이 완료되었습니다~  (알람만 뜨는 상태)")
+  const finishedMate = async () => {
+    await updateDoc(doc(db, '게시판', `${scheduleData.userNick}-${scheduleData.localName}`),
+    {[nick]: '동행완료'}
+    )
+    window.location.replace('/application')
+    alert("동행이 완료되었습니다~")
   }
+
   return (
 
     <div className='partydetail-container' ref={detailSchRef}>
@@ -187,7 +193,8 @@ const PartyDetail = ({ schData, setDetailSchOpen }) => {
         {finishBtn ?
           <>
             {appBtn ?
-              <button className='partydetail-appl-btn b' onClick={applicationMate}>동행신청</button> :
+              <button className='partydetail-appl-btn b' onClick={applicationMate}>동행신청</button>
+              :
               <div>
                 <div className='partydetail-apll-completed'>신청이 완료된 동행입니다.</div>
                 <button className='partydetail-appl-btn b' onClick={finishedMate}>동행완료</button>

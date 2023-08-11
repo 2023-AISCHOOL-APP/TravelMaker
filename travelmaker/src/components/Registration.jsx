@@ -59,7 +59,8 @@ const Registration = () => {
     localName: localName,
     startDate: startDate,
     endDate: endDate,
-    dayRange: dayNum
+    dayRange: dayNum,
+    state: '진행중'
   }
 
   useEffect(() => {

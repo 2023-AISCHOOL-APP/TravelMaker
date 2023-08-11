@@ -104,19 +104,16 @@ function DragNDrop({setPlane}) {
   };
 
   const [newItem, setNewItem] = useState("");
-  const [planeList, setPlaneList] = useState([{title:'Day1', items:['일정없음']}]);
 
   const handleAddItem = (groupIndex) => {
     setBlank('');
     setList((prevList) => {
       const newList = [...prevList];
       newList[groupIndex].items.push(newItem);
-      setPlaneList(newList)
       setPlane(newList)
       return newList;
     });
   };
-  console.log(planeList[0].items);
   const [blank, setBlank] = useState()
   const handleKeyDown = (e, grpI) => {
     if (e.key === 'Enter') {
