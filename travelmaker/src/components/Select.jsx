@@ -93,8 +93,8 @@ const Select = () => {
     getUsers();
   }, [matchUsers])
 
-    // 데이터 베이스에서 관광지 데이터 불러오면서 일정 작성페이지로 이동
-    const localName = '강원도강릉시';
+    // 데이터 베이스에서 관광지 데이터 불러오면서 일정 작성페이지로
+    const localName = ' ';
     const getLocalData = async () => {
       sessionStorage.setItem('dateRan', 0)
       sessionStorage.setItem('startDate', '0000-00-00')

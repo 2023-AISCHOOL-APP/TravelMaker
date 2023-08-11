@@ -47,25 +47,13 @@ function CsvUpload() {
 
   }
 
-  useEffect(()=>{let test = {test1 : 1, test2 : 2, test3 : 3}
-  const name = "jinsu";
-  test.test4 = 4;
+  useEffect(()=>{
+    let test = [1,2,3,4,5,6]
+    console.log(test.indexOf(6))
+  },[])
 
-  test.test5 = 5;
 
-  delete test.test1
 
-  test[name] = 6
-
-  const selected = Object.keys(test).filter((key) => {
-    return test[key] === 10;
-  });
-
-  if(selected.length === 0){
-    console.log("good");
-  }
-  
-  console.log(test);},[])
 
   return (
     <div align='center'>
