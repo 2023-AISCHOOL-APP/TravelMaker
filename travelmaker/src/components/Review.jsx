@@ -34,11 +34,32 @@ const Review = ({ setReviewOpen }) => {
   // text area 기능 적용 시작
   const textarea = useRef();
 
-  const handleReviewHeiht = () => {
+  const handleReviewHeiht = (e) => {
     textarea.current.style.height = 'auto';
     textarea.current.style.height = textarea.current.scrollHeight + 'px';
+    setInputValue(e.target.value);
   };
   // text area 기능 적용 끝
+
+  // 리뷰와 동행자정보(email)을 flask로 전달
+  const [inputValue, setInputValue] = useState('');
+
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch('/reviewData', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        // "파티장이메일" << 이부분 수정 해야함
+        body: JSON.stringify({ input: inputValue, userdata : "파티장이메일" }),
+      });
+  
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+  
 
   return (
     <div className='review-container' ref={mapRef}>
@@ -47,11 +68,14 @@ const Review = ({ setReviewOpen }) => {
         <div className='review-title'>Review</div>
       </div>
       <div className='review-contents'>
-        <textarea className='review-contens-textarea'  rows={1} onChange={handleReviewHeiht} ref={textarea} >
-          
+        <textarea className='review-contens-textarea'  
+        rows={1} 
+        onChange={handleReviewHeiht} 
+        ref={textarea} 
+        value={inputValue}>          
         </textarea>
       </div>
-      <button className='review-btn b'>등록하기</button>
+      <button className='review-btn b' onClick={handleSubmit}>등록하기</button>
     </div>
   )
 }
