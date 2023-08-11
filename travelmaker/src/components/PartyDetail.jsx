@@ -70,13 +70,13 @@ const PartyDetail = ({ schData, setDetailSchOpen }) => {
     }
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     getSchData();
     getplane();
-  },[])
-  
+  }, [])
+
   // 일정 데이터 가져오기
-  const [planeList, setPlaneList] = useState([{title:'', items:[""]}])
+  const [planeList, setPlaneList] = useState([{ title: '', items: [""] }])
   const getplane = async () => {
     let dataList = [];
     for (let i = 1; i < schData.dayRange + 2; i++) {
@@ -161,7 +161,7 @@ const PartyDetail = ({ schData, setDetailSchOpen }) => {
         <div className='partydetail-short'>
           <div className="partydetail-text">지역명 | {schData.localName}</div>
           <div className="partydetail-text">여행기간 | {schData.startDate} ~ {schData.endDate} ({schData.dayRange}박 {schData.dayRange + 1}일)</div>
-          <div className="partydetail-text">동행자 | {schData.members}</div>
+          <div className="partydetail-text">모집인원 | {schData.members}</div>
         </div>
 
         {/* 세부 내용 들어갈 칸 */}
@@ -172,18 +172,48 @@ const PartyDetail = ({ schData, setDetailSchOpen }) => {
 
       {/* 일정 들어갈 칸 */}
       <div className='partydetail-schedule'>
-        <div className="partydetail-text">일정표</div>
-          {planeList.map((id) => {
-              let num = 0;
+        {/* <div className="partydetail-text">일정표</div> */}
+        {planeList.map((id) => {
           return (
-            <div className='partydetail-plan-box'>
-              <div className='partydetail-plan-title'>{id.title}</div>
-              {id.items.map((pw) => {
-                    num++
+            <div className='registration-plan'>
+              <div className='regi-plan-title'>{id.title}</div>
+              {id.items.map((pw, num) => {
+                let backgroundColor = '';
+                let borderColor = '';
+
+                switch (num + 1) {
+                  case 1:
+                    backgroundColor = 'lightblue';
+                    borderColor = 'lightblue';
+                    break;
+                  case 2:
+                    backgroundColor = 'lightgreen';
+                    borderColor = 'lightgreen';
+                    break;
+                  case 3:
+                    backgroundColor = 'lightseagreen';
+                    borderColor = 'lightseagreen';
+                    break;
+                  case 4:
+                    backgroundColor = 'lightpink';
+                    borderColor = 'lightpink';
+                    break;
+                  case 5:
+                    backgroundColor = 'lightcoral';
+                    borderColor = 'lightcoral';
+                    break;
+                  default:
+                    backgroundColor = 'white';
+                    borderColor = 'white';
+                    break;
+                }
+
                 return (
-                  <div className='partydetail-plan-list'>
-                        <div>{num}</div>
-                    <div>{pw}</div>
+                  <div className='regi-plan-list'>
+                    <div className="regi-plan-list-num-box" style={{ backgroundColor: backgroundColor, borderColor: borderColor }}>
+                      <div className='regi-plan-list-num'>{num + 1}</div>
+                    </div>
+                    <div className='regi-plan-list-test'>{pw}</div>
                   </div>)
               })}
             </div>)

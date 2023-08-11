@@ -97,7 +97,7 @@
     justify-content: center;
     align-items: center;
     width: 90px;
-    height: 30px;
+    height: 25px;
     margin-left: 5px;
     font-size: 1.5rem;
     /* background-color: #89B0CD; */
@@ -171,8 +171,19 @@
     height: 60px;
 }
 
-.detail-list-author, .detail-list-location {
+.in-list-info-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.detail-list-author,
+.detail-list-location {
     margin-left: 10px;
+}
+
+.detail-list-num {
+    margin-left: 23px;
 }
 
 .detail-list-date-box {
@@ -227,10 +238,6 @@
 }
 
 /* radio 버튼 css 시작 */
-[type='radio'] {
-    display: none;
-}
-
 .my_text {
     position: relative;
     color: #144272;
@@ -244,11 +251,6 @@
     justify-content: center;
 }
 
-input[type='radio']:checked+label {
-    /* background-color: #84add1; */
-    color: #25bd2d;
-    align-items: center;
-}
 
 /* radio 버튼 css 끝 */
 

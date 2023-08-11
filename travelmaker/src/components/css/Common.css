@@ -98,9 +98,9 @@ body {
     justify-content: center;
 }
 
-input[type='radio']:checked+label{
-    /* background-color: #84add1; */
-    color: #d32de9;
+
+input[type='radio']:checked+label {
+    color: #25bd2d;
     align-items: center;
 }
 /* radio 버튼 css 끝 */

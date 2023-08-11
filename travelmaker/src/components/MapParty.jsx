@@ -160,7 +160,7 @@ const MapParty = ({ setMapOpen, id, title, content, writer }) => {
       <div className='map-box'>
         <div className='map-info-box'>
           <div className='map-select-area'>
-            <div className="map-select-location">선택 지역</div>
+            <div className="map-select-location">선택 지역 |</div>
             <div className='map-select-box'>
               <span className="map-place-text">{localName}</span>
             </div>
@@ -168,7 +168,7 @@ const MapParty = ({ setMapOpen, id, title, content, writer }) => {
           </div>
           {/* 창 크기 줄었을 때 안보임 */}
           <div className='map-palce-select-area'>
-            <button className="map-all-btn" onClick={() => { setLocalName("전체") }}>전체</button>
+            <div className="map-all-btn" onClick={() => { setLocalName("전체보기") }}>전체보기</div>
             {mapList.map((id) => {
               return (
                 <div className='map-place-info-box'>
