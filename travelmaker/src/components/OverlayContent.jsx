@@ -1,6 +1,6 @@
 import React from 'react'
 
-const OverlayContent = ({localData}) => {
+const OverlayContent = ({ localData }) => {
   console.log(localData);
   return (
     <div className="ol-wrap">
