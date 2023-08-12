@@ -160,15 +160,16 @@ const Preference = () => {
           </>
         ) : (
           <div align='center'>
-            <h3>설문에 참여해주셔서 감사합니다!</h3>
-            <h3>가입완료 버튼을 눌러주세요!</h3>
+            <span className='signup-message'>설문에 참여해주셔서 감사합니다!</span>
+            <br/>
+            <span className='signup-message'>가입완료 버튼을 눌러주세요!</span>
             {/* <p>답변 내용:</p>
             <ul>
               {answers.map((answer, index) => (
                 <li key={index}>{answer}</li>
               ))}
             </ul> */}
-              <button className='preference_btn a' onClick={signup}>가입완료</button>
+              <button className='signup-complete-btn a' onClick={signup}>가입완료</button>
             <Routes>
               <Route path='/login' element={<Login />} />
             </Routes>

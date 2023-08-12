@@ -67,10 +67,26 @@
     border-radius:50px;
     font-size: 20px;
 }
-/* #back_btn{
-    
 
-} */
+.preference_box div {
+    margin-top: 70px;
+}
+
+.signup-message {
+    font-size: 3rem;
+}
+
+.signup-complete-btn {
+    padding: 20px;
+    margin: 46px 26px 26px;
+    width: 640px;
+    height: 70px;  
+    background-color:#0a0a23;
+    color: #fff;
+    border:none;
+    border-radius:50px;
+    font-size: 20px;
+}
 
 .survey_question{
     font-size: 25px;
