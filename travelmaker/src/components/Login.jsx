@@ -64,7 +64,7 @@ const Login = () => {
 
         {/* 버튼 클릭시 화면 이동 */}
         <hr />
-        <button className='login_bt b' onClick={login}>로그인인</button>
+        <button className='login_bt b' onClick={login}>로그인</button>
 
         <button className='login_bt b' onClick={toMembership}>회원가입</button>
       </div>
