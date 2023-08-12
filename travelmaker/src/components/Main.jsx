@@ -34,7 +34,8 @@ const Main = () => {
         {/* 로그인 상태에 따라 동행찾기 접근 권한 설정 */}
         <div onClick={search}>
           <Link>
-            <a className='main_btn click-b b' >동행찾기</a>
+            {/* <a className='main_btn click-b b' >동행찾기</a> */}
+            <button class="main_btn" role="button">동행찾기</button>
           </Link>
         </div>
       </div>

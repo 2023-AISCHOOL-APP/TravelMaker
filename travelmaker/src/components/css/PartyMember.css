@@ -150,12 +150,16 @@
     background-color: snow;
     box-shadow: 0 0 10px rgba(26, 162, 204, 0.15);
     padding: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .detail-list-title {
     margin: 5px 10px 0;
-    font-size: 2.3rem;
+    font-size: 2rem;
     height: 60px;
+    /* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
 }
 
 .de-li-info-box {
@@ -169,6 +173,7 @@
     border-radius: 15px;
     font-size: 1.4rem;
     height: 60px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .in-list-info-box {

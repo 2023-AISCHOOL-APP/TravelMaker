@@ -28,6 +28,7 @@
 .regi-box-title {
     font-size: 3rem;
     margin: 5px 0;
+    cursor: default;
 }
 
 .regi-info-box {
@@ -35,11 +36,13 @@
     border-radius: 10px;
     padding: 5px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    cursor: default;
 }
 
 .regi-select {
     border-radius: 10px;
     padding: 2px;
+    cursor: pointer;
 }
 
 .cate-hashtag-box {
@@ -61,9 +64,10 @@
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
-.regi-title-in:focus {
+.regi-title-in:focus-within {
     outline: none;
-}
+    border: 0.1px solid black;
+  }
 
 .registration-detail {
     background-color: rgb(240, 240, 240);
@@ -75,9 +79,10 @@
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
-.registration-detail:focus{
+.registration-detail:focus-within {
     outline: none;
-}
+    border: 1px solid black;
+  }
 
 .regi-btn-box {
     display: flex;
@@ -96,6 +101,7 @@
     color: white;
     background-color: black;
     margin: 10px;
+    cursor: pointer;
 }
 
 .registration-plan-box{
@@ -109,6 +115,7 @@
     border-radius: 10px;
     background-color: aliceblue;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    cursor: default;
 }
 
 .registration-plan-box::-webkit-scrollbar {

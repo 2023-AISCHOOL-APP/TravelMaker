@@ -114,6 +114,11 @@
 .date-box p {
   width: 5rem;
   font-size: 1.5rem;
+  cursor: default;
+}
+
+.date-box input{
+  cursor: pointer;
 }
 
 .local-select {
@@ -123,6 +128,7 @@
   justify-content: left;
   align-items: center;
   margin-left: 10px;
+  cursor: pointer;
 }
 
 .schedule-box {
@@ -158,6 +164,7 @@
 .sch-local-select {
   margin-left: 10px;
   font-size: 1.5rem;
+  cursor: default;
 }
 
 .sch-local-name {
@@ -201,6 +208,7 @@
   border: 2px solid gray;
   border-radius: 100%;
   color: gray;
+  cursor: pointer;
 }
 
 .search-icon-box:hover {
@@ -267,6 +275,7 @@
   background-color: black;
   color: aliceblue;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  cursor: pointer;
 }
 
 .go-next {
@@ -278,6 +287,7 @@
   color: aliceblue;
   margin-left: 20px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  cursor: pointer;
 }
 
 /* LocalDate CSS */
@@ -293,16 +303,13 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .localDHover:hover {
   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
-
-.place-info-box p {
   
-}
-
 .place-info-box img {
   border-radius: 10px;
   width: 90%;

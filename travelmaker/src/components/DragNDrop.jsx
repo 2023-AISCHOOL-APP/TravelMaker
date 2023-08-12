@@ -153,9 +153,9 @@ function DragNDrop({setPlane}) {
           >
             <div className='group-title-box'>
               <div className='group-title'>{grp.title}</div>
-              <input className='kanban-add-input' type="text" value={blank}  onChange={(e) => { setNewItem(e.target.value) }} onKeyDown={(e)=> handleKeyDown(e, grpI)}/>
+              <input className='kanban-add-input' type="text" placeholder='일정을 입력하세요.' value={blank}  onChange={(e) => { setNewItem(e.target.value) }} onKeyDown={(e)=> handleKeyDown(e, grpI)}/>
               <BiPlusCircle className='add-dnd-item dndHover' size='25' onClick={() => handleAddItem(grpI)}>+</BiPlusCircle>
-              <BiXCircle className='remove-grp-btn dndHover' size='25' onClick={() => handleCloseGroup(grpI)}>X</BiXCircle>
+              <BiXCircle className='remove-grp-btn dndHover' size='26' onClick={() => handleCloseGroup(grpI)}>X</BiXCircle>
             </div>
             {grp.items.map((item, itemI) => (
               <div
