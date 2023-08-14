@@ -68,7 +68,11 @@
     font-size: 20px;
 }
 
-.preference_box div {
+.preference_btnhov {
+    margin-top: 10px;
+}
+
+.signup-messge-box {
     margin-top: 70px;
 }
 

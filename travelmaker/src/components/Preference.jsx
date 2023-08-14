@@ -159,7 +159,7 @@ const Preference = () => {
             ))}
           </>
         ) : (
-          <div align='center'>
+          <div className='signup-messge-box' align='center'>
             <span className='signup-message'>설문에 참여해주셔서 감사합니다!</span>
             <br/>
             <span className='signup-message'>가입완료 버튼을 눌러주세요!</span>
