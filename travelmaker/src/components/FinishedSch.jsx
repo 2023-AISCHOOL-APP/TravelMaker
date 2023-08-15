@@ -5,6 +5,7 @@ import { getDoc, doc, collection, getDocs, setDoc } from 'firebase/firestore'
 import Review from './Review';
 
 function FinishedSch({schData}) {
+  const nick = sessionStorage.getItem('nick');
     // 리뷰 모달 띄우기
     const [reviewOpen, setReviewOpen] = useState(false); // 맵 모달창 노출 여부 state
 
@@ -32,9 +33,17 @@ function FinishedSch({schData}) {
     setLeaderEmail(DataList)
   }
 
+  const [selectedReviewed,setSelectedReviewed] = useState([])
+
   useEffect(() => {
     getLeaderData();
+    if(schData.reviewedList != undefined){
+      setSelectedReviewed(schData.reviewedList);
+    }else{
+      setSelectedReviewed([]);
+    }
   }, [])
+
 
   return (
     <div className='done-trip-list'>
@@ -47,7 +56,11 @@ function FinishedSch({schData}) {
           <div className="detail-list-date">{schData.startDate} ~ {schData.endDate}</div>
         </div>
       </div>
+      {selectedReviewed.indexOf(nick) != -1 ?
+      <div className='write-review-btn'>리뷰작성이 완료된 일정</div>
+      :
       <div className='write-review-btn b' onClick={showReview}>리뷰쓰기</div>
+      }
       {reviewOpen && <Review setReviewOpen={setReviewOpen} schData={schData} leaderEmail={leaderEmail}/>}
     </div>
   )

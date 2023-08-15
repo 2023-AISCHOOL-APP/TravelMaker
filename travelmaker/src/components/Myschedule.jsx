@@ -46,6 +46,7 @@ const Myschedule = () => {
     sessionStorage.setItem('select_my', 'my')
   }
 
+  // 게시판 정보중에서 내가 등록한 글만 골라오기
   const [schData, setSchData] = useState([]);
   const searchSchedule = ()=>{
     let dataList = [];

@@ -51,6 +51,7 @@ const Registration = () => {
   const [regiTitle, setRegiTitle] = useState("");
   const [regiDetail, setRegiDetail] = useState("");
   const [regiMembers, setRegiMembers] = useState("");
+  const [tageData, setTagData] = useState([]);
   const formData =
   {
     title: regiTitle,
@@ -61,7 +62,12 @@ const Registration = () => {
     startDate: startDate,
     endDate: endDate,
     dayRange: dayNum,
-    state: '진행중'
+    tags: tageData,
+    state: '등록완료',
+    applicantList: [],
+    matchedList: [],
+    finishedList: [],
+    reviewedList: []
   }
 
   useEffect(() => {
@@ -86,6 +92,7 @@ const Registration = () => {
     // 나머지 상태값 초기화도 필요한 경우에 추가
   };
 
+  
   return (
     <div className='registration-container'>
       <div className='registration-box'>
@@ -97,22 +104,22 @@ const Registration = () => {
             <div>
               <span>모집인원 | </span>
               <select className='regi-select' onChange={(e) => { setRegiMembers(e.target.value) }}>
-                <option value="-">-</option>
-                <option value="1명">1명</option>
-                <option value="2명">2명</option>
-                <option value="3명">3명</option>
-                <option value="4명">4명</option>
-                <option value="5명">5명</option>
-                <option value="6명">6명</option>
-                <option value="7명">7명</option>
-                <option value="8명">8명</option>
-                <option value="9명">9명</option>
-                <option value="10명">10명</option>
+                <option value={0}>-</option>
+                <option value={1}>1명</option>
+                <option value={2}>2명</option>
+                <option value={3}>3명</option>
+                <option value={4}>4명</option>
+                <option value={5}>5명</option>
+                <option value={6}>6명</option>
+                <option value={7}>7명</option>
+                <option value={8}>8명</option>
+                <option value={9}>9명</option>
+                <option value={10}>10명</option>
               </select>
             </div>
           </div>
           <div className="cate-hashtag-box">
-            <Tag />
+            <Tag setTagData={setTagData}/>
           </div>
           <input
             maxLength={40}

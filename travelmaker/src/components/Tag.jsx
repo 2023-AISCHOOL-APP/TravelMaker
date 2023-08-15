@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import './css/Tag.css'
+import { useEffect } from 'react';
 
-const Tag = () => {
+const Tag = ({setTagData}) => {
 
   const [tagValue, setTagValue] = useState('');
   const [tags, setTags] = useState([]);
@@ -10,6 +11,7 @@ const Tag = () => {
     if (e.key === 'Enter' && tagValue && tags.length < 10) {
       setTags([...tags, tagValue]);
       setTagValue('');
+      
     } else if (e.key === 'Backspace' && tagValue === '') {
       if (tags.length > 0) {
         const updatedTags = [...tags];
@@ -17,7 +19,13 @@ const Tag = () => {
         setTags(updatedTags);
       }
     }
+    
   };
+
+  useEffect(()=>{
+    setTagData(tags)
+  },[tags])
+
 
   const deleteTag = () => {
     if (tags.length > 0) {

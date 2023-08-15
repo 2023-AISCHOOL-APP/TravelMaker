@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { React, useRef, useEffect } from 'react'
 import { BiXCircle } from "react-icons/bi";
+import { db } from '../firebase-config';
+import { getDoc, doc, collection, getDocs, setDoc, updateDoc, deleteField } from 'firebase/firestore'
 
 const Review = ({ setReviewOpen, schData, leaderEmail }) => {
+  const nick = sessionStorage.getItem('nick')
 
   // 모달 끄기
   const closeReview = () => {
@@ -47,20 +50,37 @@ const Review = ({ setReviewOpen, schData, leaderEmail }) => {
   const Email = leaderEmail[0];
   const handleSubmit = async () => {
     try {
-      const response = await fetch('http://192.168.70.71:5000/reviewData', {
+      const response = await fetch('http://192.168.1.4:5000/reviewData', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
 
-        body: JSON.stringify({ input: inputValue, userdata : Email }),
+        body: JSON.stringify({ input: inputValue, userdata: Email }),
       });
-      alert("동행해 주셔서 감사합니다!")
-      closeReview();
+      finishedReview();
     } catch (error) {
       console.error('Error:', error);
     }
   };
+
+  // 리뷰작성 완료 함수
+  const finishedReview = async () => {
+    const reviewedList = [...schData.reviewedList, nick]
+    if(reviewedList.length == schData.members){
+      await updateDoc(doc(db, '게시판', `${schData.userNick}-${schData.localName}`),
+      {state: '리뷰완료',
+      reviewedList: reviewedList}
+      )
+    }else{
+      await updateDoc(doc(db, '게시판', `${schData.userNick}-${schData.localName}`),
+      {reviewedList: reviewedList}
+      )
+    }
+    window.location.replace('/application')
+    alert("리뷰작성이 완료되었습니다~")
+    closeReview();
+  }
   return (
     <div className='review-container' ref={mapRef}>
       <BiXCircle className='review-container-exit' size='30' onClick={closeReview}>X</BiXCircle>

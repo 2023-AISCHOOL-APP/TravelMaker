@@ -6,29 +6,10 @@ import { getDoc, doc, collection, getDocs, setDoc, updateDoc, deleteField } from
 import { useNavigate } from 'react-router-dom';
 import { BiXCircle } from 'react-icons/bi';
 
-const PartyDetail = ({ schData, setDetailSchOpen }) => {
+const PartyDetail = ({ schData, setDetailSchOpen, userScore, tagsList }) => {
   const nick = sessionStorage.getItem('nick')
   const nav = useNavigate();
 
-  const [finishBtn, setFinishBtn] = useState(true)
-
-  const [appBtn, setAppBtn] = useState(true)
-  const selected = Object.keys(schData).filter((key) => {
-    return schData[key] === '신청완료';
-  });
-  useEffect(() => {
-    if (schData.userNick === nick) {
-      setFinishBtn(false)
-    } else {
-      setFinishBtn(true)
-    }
-    if (selected.indexOf(nick) != -1 && schData.userNick != nick) {
-      setAppBtn(false)
-    } else {
-      console.log(selected);
-      setAppBtn(true)
-    }
-  }, [])
   // 모달 끄기 
   const closeDetailSch = () => {
     setDetailSchOpen(false);
@@ -57,21 +38,7 @@ const PartyDetail = ({ schData, setDetailSchOpen }) => {
     };
   });
 
-  // 신청자 닉네임 받아오기
-  const [scheduleData, setScheduleData] = useState([{}])
-  const getSchData = async () => {
-    const docRef = doc(db, "게시판", `${schData.userNick}-${schData.localName}`);
-    const docSnap = await getDoc(docRef);
-    if (docSnap.exists()) {
-      console.log("Document data:", docSnap.data());
-      setScheduleData(docSnap.data());
-    } else {
-      console.log("No such document!");
-    }
-  };
-
   useEffect(() => {
-    getSchData();
     getplane();
   }, [])
 
@@ -94,31 +61,27 @@ const PartyDetail = ({ schData, setDetailSchOpen }) => {
 
 
   // 신청자 닉네임 DB로 보내기
-  const applicationMate = async () => {
-    const dataLength = Object.keys(scheduleData).length; // 데이터 길이
-    // 중복신청 판별 함수
-    const selected = Object.keys(scheduleData).filter((key) => {
-      return scheduleData[key] === '신청완료';
-    });
-    if (selected.indexOf(nick) === -1) {
-      scheduleData[`${nick}`] = '신청완료'
-      await setDoc(doc(db, '게시판', `${scheduleData.userNick}-${scheduleData.localName}`),
-        scheduleData
-      )
-      alert("동행신청이 완료되었습니다~!")
-      nav('/application')
-    } else if (scheduleData.userNick === nick) {
-      alert("본인이 게시한 글에는 신청할 수 없습니다!")
-    } else {
-      alert("이미 신청한 일정입니다!")
-    }
+  const getApplicant = async () => {
+    await updateDoc(doc(db, '게시판', `${schData.userNick}-${schData.localName}`),
+    {applicantList: [...schData.applicantList, nick]}
+    )
+    window.location.replace('/application')
+    alert("동행 신청이 완료되었습니다~")
   }
 
   // 동행 완료 함수
   const finishedMate = async () => {
-    await updateDoc(doc(db, '게시판', `${scheduleData.userNick}-${scheduleData.localName}`),
-    {[nick]: '동행완료'}
-    )
+    const finishedList = [...schData.finishedList, nick]
+    if(finishedList.length == schData.members){
+      await updateDoc(doc(db, '게시판', `${schData.userNick}-${schData.localName}`),
+      {state: '동행완료',
+      finishedList: finishedList}
+      )
+    }else{
+      await updateDoc(doc(db, '게시판', `${schData.userNick}-${schData.localName}`),
+      {finishedList: finishedList}
+      )
+    }
     window.location.replace('/application')
     alert("동행이 완료되었습니다~")
   }
@@ -143,17 +106,12 @@ const PartyDetail = ({ schData, setDetailSchOpen }) => {
           <div className="partydetail-temp">
             <span className='partydetail-temp-text'>동행 온도 |</span>
             <div className='partydetail-temp-icon'>🌡️</div>
-            <div className="partydetail-temp-num">36.5℃</div>
+            <div className="partydetail-temp-num">{userScore}</div>
           </div>
           {/* 카테고리 들어갈 칸 */}
           <div className="partydetail-category">
-            <div className='pdetail-cate-icon'>🚗차</div>
-            <div className='pdetail-cate-icon'>🚌버스</div>
-            <div className='pdetail-cate-icon'>👟뚜벅</div>
-            <div className='pdetail-cate-icon'>🏖️휴양</div>
-            <div className='pdetail-cate-icon'>🏃외부</div>
-            <div className='pdetail-cate-icon'>🏛️관광</div>
-            <div className='pdetail-cate-icon'>🚶‍♂️걷기</div>
+          {tagsList.map((data) => {
+          return (<div className='list-category-icon'>{data}</div>)})}
           </div>
         </div>
 
@@ -220,18 +178,50 @@ const PartyDetail = ({ schData, setDetailSchOpen }) => {
         })}
       </div>
       <div>
-        {finishBtn ?
+        {schData.userNick === nick ?
+          <div></div>
+          :
           <>
-            {appBtn ?
-              <button className='partydetail-appl-btn b' onClick={applicationMate}>동행신청</button>
+            {schData.state === '등록완료' ?
+              <>
+                {schData.applicantList.indexOf(nick) != -1 ?
+                  <div className='partydetail-apll-completed'>신청이 완료된 동행입니다.</div>
+                  :
+                  <button className='partydetail-appl-btn b' onClick={getApplicant}>동행신청</button>
+                }
+              </>
               :
-              <div>
-                <div className='partydetail-apll-completed'>신청이 완료된 동행입니다.</div>
-                <button className='partydetail-appl-btn b' onClick={finishedMate}>동행완료</button>
-              </div>
+              <>
+                {schData.state === '매칭완료' ?
+                  <>
+                    {schData.matchedList.indexOf(nick) != -1 ?
+                      <>
+                        {schData.finishedList.indexOf(nick) != -1 ?
+                          <div className='partydetail-apll-completed'>다른 파티원의 동행 완료를 기다리는 중입니다!</div>
+                          :
+                          <div>
+                            <div className='partydetail-apll-completed'>매칭이 완료된 동행입니다.</div>
+                            <button className='partydetail-appl-btn b' onClick={finishedMate}>동행완료</button>
+                          </div>
+                        }
+                      </>
+                      :
+                      <div className='partydetail-apll-completed'>파티원 구성이 완료된 일정입니다.</div>
+                    }
+                  </>
+                  :
+                  <>
+                    {schData.state === '동행완료' ?
+                      <div className='partydetail-apll-completed'>종료된 동행입니다.</div>
+                      :
+                      <div className='partydetail-apll-completed'>종료된 동행입니다.</div>
+                    }
+                  </>
+                }
+              </>
             }
           </>
-          : <div></div>}
+        }
       </div>
     </div>
   )

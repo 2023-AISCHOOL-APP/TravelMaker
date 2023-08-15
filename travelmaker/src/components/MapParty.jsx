@@ -168,7 +168,7 @@ const MapParty = ({ setMapOpen, id, title, content, writer }) => {
           </div>
           {/* 창 크기 줄었을 때 안보임 */}
           <div className='map-palce-select-area'>
-            <div className="map-all-btn" onClick={() => { setLocalName("전체보기") }}>전체보기</div>
+            <div className="map-all-btn" onClick={() => { setLocalName("전체") }}>전체보기</div>
             {mapList.map((id) => {
               return (
                 <div className='map-place-info-box'>

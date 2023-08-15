@@ -12,8 +12,9 @@ const SideContent = () => {
   const userID = sessionStorage.getItem('userId')
   const matchNum = sessionStorage.getItem('matchNum')
 
-  // 데이터 베이스에서 유저 닉네임 데이터 불러오기
+  // 데이터 베이스에서 유저 닉네임, 동행온도 데이터 불러오기
   const [userNickname, setUserNickname] = useState([]);
+  const [userScore, setUserScore] = useState(`${36}℃`);
   const getUser = async () => {
     const docRef = doc(db, "users", String(userID));
     const docSnap = await getDoc(docRef);
@@ -21,6 +22,11 @@ const SideContent = () => {
     if (docSnap.exists()) {
       console.log("Document data:", docSnap.data().nickname);
       setUserNickname(docSnap.data().nickname);
+      if(docSnap.data().score === undefined){
+        setUserScore(`${36}℃`);
+      }else{
+        setUserScore(`${36+(docSnap.data().score)}℃`);
+      }
       sessionStorage.setItem('nick', docSnap.data().nickname)
     } else {
       console.log("No such document!");
@@ -82,7 +88,7 @@ const SideContent = () => {
         <div className='temp-box'>
           <span className='temp-text'>동행 온도 |</span>
           <div className='temp-icon'>🌡️</div>
-          <div className="temp-num">36.5℃</div>
+          <div className="temp-num">{userScore}</div>
         </div>
       </div>
       <div className='side-list-box'>

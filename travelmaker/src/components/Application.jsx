@@ -34,16 +34,15 @@ const Application = () => {
     let appDataList = [];
     let finishedDataList = [];
     for (let i = 0; i < data.length; i++) {
-      const selectedApp = Object.keys(data[i]).filter((key) => {
-        return data[i][key] === '신청완료';
-      });
-      const selectedFinished = Object.keys(data[i]).filter((key) => {
-        return data[i][key] === '동행완료';
-      });
-      if (selectedApp.indexOf(nick) != -1 && data[i].userNick != nick) {
+      if(data[i].applicantList === undefined){
+        data[i].applicantList = []
+      }else if(data[i].finishedList === undefined){
+        data[i].finishedList = []
+      }
+      if (data[i].userNick != nick && data[i].applicantList.indexOf(nick) != -1 && data[i].finishedList.indexOf(nick) === -1) {
         appDataList.push(data[i])
       }
-      if(selectedFinished.indexOf(nick) != -1 && data[i].userNick != nick){
+      if((data[i].state === '동행완료' || data[i].state === '리뷰완료') && data[i].userNick != nick && data[i].finishedList.indexOf(nick) != -1){
         finishedDataList.push(data[i])
       }
     }
