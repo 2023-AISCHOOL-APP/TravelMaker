@@ -13,11 +13,13 @@
   align-items: center;
   justify-content: flex-start;
   padding: 5px;
+  cursor: default;
 }
 
 .side-id-text {
   font-size: 2.5rem;
   margin-left: 10px;
+  cursor: default;
 }
 
 .temp-box {
@@ -27,6 +29,7 @@
   justify-content: left;
   align-items: center;
   margin-top: 10px;
+  cursor: default;
 }
 
 .temp-icon {
@@ -42,6 +45,7 @@
   position: absolute;
   top: 25px;
   left: 220px;
+  cursor: pointer;
 }
 
 .side-leader-box, .side-crew-box {
@@ -50,6 +54,7 @@
   flex-direction: column;
   align-items: flex-start;
   list-style: none;
+  cursor: default;
 }
 
 .side-content-container li {

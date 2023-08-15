@@ -38,7 +38,7 @@ function PartyMemberList({schData}) {
   return (
       <div>
           <div className='my-schedule-list'>
-              <div className='detail-list-title'>{schData.title}</div>
+              <div className='apply-list-title'>{schData.title}</div>
               {schData.state === '매칭완료' ?
                   <div className='apply-list'>매칭된 사람 ▼</div>
                   :

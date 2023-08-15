@@ -114,6 +114,11 @@
 .date-box p {
   width: 5rem;
   font-size: 1.5rem;
+  cursor: default;
+}
+
+.date-box input{
+  cursor: pointer;
 }
 
 .local-select {
@@ -123,6 +128,7 @@
   justify-content: left;
   align-items: center;
   margin-left: 10px;
+  cursor: pointer;
 }
 
 .schedule-box {
@@ -158,6 +164,7 @@
 .sch-local-select {
   margin-left: 10px;
   font-size: 1.5rem;
+  cursor: default;
 }
 
 .sch-local-name {
@@ -168,8 +175,8 @@
   height: 25px;
   margin-left: 5px;
   font-size: 1.5rem;
-  background-color: aqua;
-  border: 1px solid aqua;
+  background-color: #ffe54c;
+  border: 1px solid #ffe54c;
   border-radius: 20px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
@@ -201,6 +208,7 @@
   border: 2px solid gray;
   border-radius: 100%;
   color: gray;
+  cursor: pointer;
 }
 
 .search-icon-box:hover {
@@ -220,7 +228,7 @@
 }
 
 .place-info-area::-webkit-scrollbar-thumb{
-  background: #49505e;
+  background: #2da2c5;
   border-radius: 6px;
 }
 .place-info-area::-webkit-scrollbar-track{
@@ -243,7 +251,7 @@
 }
 
 .schedule-form::-webkit-scrollbar-thumb{
-  background: #49505e;
+  background: #2da2c5;
   border-radius: 6px;
 }
 .schedule-form::-webkit-scrollbar-track{
@@ -267,6 +275,7 @@
   background-color: black;
   color: aliceblue;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  cursor: pointer;
 }
 
 .go-next {
@@ -278,6 +287,7 @@
   color: aliceblue;
   margin-left: 20px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  cursor: pointer;
 }
 
 /* LocalDate CSS */
@@ -288,20 +298,21 @@
   border-radius: 10px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   width: 17.5vw;
-  height: 200px
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
 }
 
 .localDHover:hover {
   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
-
-.place-info-box p {
-  margin-left: 10px;
-}
-
+  
 .place-info-box img {
   border-radius: 10px;
-  width: 100%;
-  height: 74%;
+  width: 90%;
+  height: 65%;
 }
 /* LocalDate CSS - END*/

@@ -48,6 +48,7 @@
   border-radius: 50px;
   margin: 5px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  cursor: pointer;
 }
 
 .kanban-reset-btn {
@@ -61,12 +62,14 @@
   border-radius: 50px;
   margin: 5px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  cursor: pointer;
 }
 
 .kanban-add-date{
   margin-left: 25px;
   margin-right: 25px;
   color: #49505e;
+  cursor: default;
 }
 
 .drag-n-drop {
@@ -113,6 +116,7 @@
 
 .remove-dnd-item {
   flex-basis: 10%;
+  cursor: pointer;
 }
 
 .dnd-item:not(:last-of-type) {
@@ -122,6 +126,7 @@
 .group-title {
   text-align: left;
   font-size: 1.5rem;
+  cursor: default;
 }
 
 .current {
@@ -144,6 +149,11 @@
 
 .add-dnd-item{
   margin-left: -5px;
+  cursor: pointer;
+}
+
+.remove-grp-btn {
+  cursor: pointer;
 }
 
 .dndHover:hover {

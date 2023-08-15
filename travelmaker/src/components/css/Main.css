@@ -36,15 +36,15 @@
     }
 
     .main-title {
-        bottom: 37%;
+        bottom: 50%;
     }
 
     .main-text {
-        bottom: 25%;
+        bottom: 40%
     }
 
     .main_btn {
-        bottom: 8%;
+        bottom: 15%;
     }
 }
 
@@ -107,24 +107,64 @@
     }
 }
 
-.main_btn {
-    text-decoration: none;
-    text-align: center;
-    width: 13vw;
-    height: 3vh;
-    font-size: 1.6rem;
-    padding: 7px;
-    color: white;
-    background-color: black;
-    border: 1px solid black;
-    border-radius: 10px;
-}
-
 /* 메인 페이지 폰트 사이즈 */
 .main-title {
     font-size: 4.7rem;
+    cursor: default;
 }
 
 .main-contant-box p {
     font-size: 2rem;
+    cursor: default;
 }
+
+
+/* 메인 버튼 디자인 */
+.main_btn {
+    font-size: 2rem;
+    font-weight: 200;
+    letter-spacing: 1px;
+    padding: 13px 20px 13px;
+    outline: 0;
+    border: 1px solid black;
+    cursor: pointer;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    /* color: white; */
+}
+
+.main_btn:after {
+    content: "";
+    background-color: #ffe54c;
+    /* background-color: #3DD1E7; */
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+    transition: 0.35s;
+    cursor: pointer;
+}
+
+.main_btn:hover {
+    /* color: black; */
+    border: none;
+}
+
+.main_btn:hover:after {
+    width: 30%;
+    top: 0px;
+    left: 35%;
+    border-radius: 100%;
+}
+
+@media (min-width: 768px) {
+    .main_btn {
+        padding: 13px 50px 13px;
+    }
+}
+/* 메인 버튼 디자인 끝 */

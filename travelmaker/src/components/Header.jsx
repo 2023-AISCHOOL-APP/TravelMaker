@@ -18,8 +18,6 @@ const Header = () => {
         <div className='header-container'>
           <div className='nav-container'>
             <Link to='/'>
-              {/* 로고 이미지 변경 */}
-              {/* <img src='images/logo99999.png' height='50px' width='150px' /> */}
               <img src='images/travel.png' height='75px' />
             </Link>
           </div>

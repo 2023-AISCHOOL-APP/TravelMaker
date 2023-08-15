@@ -76,6 +76,7 @@
     display: flex;
     justify-content: left;
     align-items: center;
+    cursor: pointer;
 }
 
 .pm-local-box {
@@ -90,6 +91,7 @@
 .pm-local-select {
     margin-left: 10px;
     font-size: 1.5rem;
+    cursor: default;
 }
 
 .pm-local-name {
@@ -101,9 +103,11 @@
     margin-left: 5px;
     font-size: 1.5rem;
     /* background-color: #89B0CD; */
-    background-color: aqua;
-    border: 1px solid aliceblue;
+    background-color: #ffe54c;
+    border: 1px solid #ffe54c;
     border-radius: 20px;
+    cursor: default;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .detail-form {
@@ -150,12 +154,20 @@
     background-color: snow;
     box-shadow: 0 0 10px rgba(26, 162, 204, 0.15);
     padding: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .detail-list-title {
     margin: 5px 10px 0;
-    font-size: 2.3rem;
+    font-size: 2rem;
     height: 60px;
+}
+
+.apply-list-title {
+    margin: 5px 10px 0;
+    font-size: 2rem;
+    height: 60px;
+    cursor: default;
 }
 
 .de-li-info-box {
@@ -169,6 +181,7 @@
     border-radius: 15px;
     font-size: 1.4rem;
     height: 60px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .in-list-info-box {
@@ -249,6 +262,7 @@
     margin-left: 10px;
     margin-right: 10px;
     justify-content: center;
+    cursor: pointer;
 }
 
 

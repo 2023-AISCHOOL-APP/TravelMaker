@@ -47,13 +47,13 @@ function FinishedSch({schData}) {
 
   return (
     <div className='done-trip-list'>
-      <div className='detail-list-title'>{schData.title}</div>
+      <div className='apply-list-title'>{schData.title}</div>
       <div className="de-li-info-box">
-        <div className='detail-list-author'>파티장 | {schData.userNick}</div>
-        <div className='detail-list-location'>여행지역 | {schData.localName}</div>
+        <div className='detail-list-author cursorDE'>파티장 | {schData.userNick}</div>
+        <div className='detail-list-location cursorDE'>여행지역 | {schData.localName}</div>
         <div className='detail-list-date-box'>
-          <div className="detail-list-date-text">여행기간 |</div>
-          <div className="detail-list-date">{schData.startDate} ~ {schData.endDate}</div>
+          <div className="detail-list-date-text cursorDE">여행기간 |</div>
+          <div className="detail-list-date cursorDE">{schData.startDate} ~ {schData.endDate}</div>
         </div>
       </div>
       {selectedReviewed.indexOf(nick) != -1 ?

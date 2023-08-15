@@ -18,7 +18,7 @@
 
 .membership_img{
     position: absolute;
-    top: 35px;
+    top: 15px;
     width: 350px;
 }
 
@@ -53,23 +53,29 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
-    
 }
 
 /* 라벨의 스타일 적용 시작 */
 
 .gender_select{
-    font-size: 24px;
-    width: 40px;
-    height: 15px;
-    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.2rem;
+    width: 35px;
+    height: 35px;
+    border: 1px solid black;
+    border-radius: 50px;
+    text-align: center;
+    margin-left: 5px;
+    color: white;
+    background-color: black;
 }
 /* 성별 호버 */
-  .a:hover {
-    color: #23d0e7;
+  .c:hover {
+    background-color: white;
+    color: black;
   }
-
 
 /* 성별 호버 */
 
@@ -85,11 +91,12 @@
 }
 
 .login-input-text-name{
-    margin: 10px;
-    margin-right:45px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right:5px;
     font-size: 15px;
     height: 30px;
-    width: 105px;
+    width: 135px;
     border-radius: 10px;
 }
 
@@ -98,12 +105,11 @@
     margin: 10px;
     height: 45px;
     width:230px;
-    border-radius: 10px;
+    border-radius: 50px;
     font-size: 18px;
     color: whitesmoke;
     background-color: black;
     border: 1px solid black;
-    border-radius: 10px;
 }
 
 .guideText{

@@ -172,11 +172,11 @@ const Membership = () => {
             <div className='guideText'>{name}</div> */}
            {/* 젠더박스 위치 변경 */}
             <div className='gender_box'>
-            <input className='login-input-text-name' placeholder='이름(ex : 홍길동)' onChange={(e) => { setRegisterName(e.target.value) }}></input>
+              <input className='login-input-text-name' placeholder='이름(ex : 홍길동)' onChange={(e) => { setRegisterName(e.target.value) }}></input>
               <input id='male' type="radio" name="gender" value="Male" onChange={(e) => { setRegisterGender(e.target.value) }}/>
-              <label className='gender_select a' for='male'>남</label>
+              <label className='gender_select c' for='male'>남</label>
               <input id='female' type="radio" name="gender" value="Female" onChange={(e) => { setRegisterGender(e.target.value) }}/>
-              <label className='gender_select a' for='female'>여</label>
+              <label className='gender_select c' for='female'>여</label>
             </div>
             {/* 젠더박스 위치 변경 */}
             {/* <div className='guideText'>{gen}</div> */}
