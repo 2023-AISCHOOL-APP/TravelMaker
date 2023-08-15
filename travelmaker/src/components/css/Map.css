@@ -86,6 +86,7 @@
   margin-top: 5px;
   margin-left: 10px;
   font-size: 1.5rem;
+  cursor: default;
 }
 
 .map-select-box {
@@ -96,11 +97,12 @@
   height: 30px;
   margin-left: 10px;
   font-size: 1.5rem;
-  background-color: aliceblue;
-  border: 1px solid aliceblue;
+  background-color: #ffe54c;
+  border: 1px solid #ffe54c;
   color: black;
   border-radius: 20px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  cursor: default;
 }
 
 .map-all-btn{
@@ -115,6 +117,7 @@
   background-color: aliceblue;
   border-radius: 10px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  cursor: pointer;
 }
 
 .map-all-btn:hover {
@@ -169,6 +172,7 @@
 
 .map-place-title {
   margin: 5px;
+  cursor: default;
 }
 
 .map-place{

@@ -90,6 +90,7 @@
     width: 170px;
     font-size: 2rem;
     color: #144272;
+    cursor: pointer;
 }
 
 .btn-b {
@@ -123,6 +124,7 @@
 .apply-list {
     font-size: 1.6rem;
     margin: 8px 10px 2px;
+    cursor: default;
 }
 
 .apllicant-box {

@@ -110,3 +110,7 @@ input[type='radio']:checked+label {
 }
 
 /* radio 버튼 css 끝 */
+
+.cursorDE {
+    cursor: default;
+}

@@ -24,6 +24,7 @@
     right: 10px;
     top: 10px;
     color: gray;
+    cursor: pointer;
 }
 
 .review-container-exit:hover {
@@ -41,6 +42,7 @@
     height: 100%;
     font-size: 5rem;
     margin: 20px;
+    cursor: default;
 }
 
 
@@ -65,8 +67,6 @@ width: 12px;
 .review-contents::-webkit-scrollbar-track {
     border-radius: 6px;
 }
-
-
 
 .review-contens-textarea{
     height: 90%;
@@ -95,4 +95,5 @@ width: 12px;
     border-radius: 50px;
     background-color: black;
     color: aliceblue;
+    cursor: pointer;
 }

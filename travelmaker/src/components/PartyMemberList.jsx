@@ -8,7 +8,7 @@ function PartyMemberList({schData}) {
   return (
       <div>
           <div className='my-schedule-list'>
-              <div className='detail-list-title'>{schData.title}</div>
+              <div className='apply-list-title'>{schData.title}</div>
               <div className='apply-list'>신청한 사람 ▼</div>
               <div className="apllicant-box">
                   {selectedApp.map((id) => {
