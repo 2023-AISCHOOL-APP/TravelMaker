@@ -52,7 +52,6 @@ const Tag = () => {
     }
   };
 
-
   return (
     <div className='tag-container'>
       <div className='tagInput'>
