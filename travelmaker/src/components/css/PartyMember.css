@@ -83,13 +83,13 @@
     display: flex;
     justify-content: left;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-left: 30px;
     width: 100%;
 }
 
 .pm-local-select {
-    margin-left: 10px;
+    margin-left: 15px;
     font-size: 1.5rem;
     cursor: default;
 }
@@ -100,9 +100,8 @@
     align-items: center;
     width: 90px;
     height: 25px;
-    margin-left: 5px;
+    margin-left: 10px;
     font-size: 1.5rem;
-    /* background-color: #89B0CD; */
     background-color: #ffe54c;
     border: 1px solid #ffe54c;
     border-radius: 20px;

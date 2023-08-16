@@ -94,27 +94,11 @@ function PartyMember() {
             <label className='my_text b' for='my_s'>추천보기</label>
           </div>
         </div>
-
-        <div className='detail-application'>
-          <div className='detail-select'>
-            <div className="member-local-select b" onClick={showMap}>지역선택</div>
-            {mapOpen && <MapParty setMapOpen={setMapOpen} />}
-            <div className='date-container'>
-              <div className="date-box">
-                <p className="date-select">출발일</p>
-                <input type='date'></input>
-              </div>
-              <div className="date-box">
-                <p className="date-select">도착일</p>
-                <input type='date'></input>
-              </div>
-            </div>
-          </div>
-        </div>
         <div className="pm-local-box">
           <div className='pm-local-select'>선택 지역 |</div>
           <div className="pm-local-name-box">
-            <span className="pm-local-name">{localName}</span>
+            <span className="pm-local-name b" onClick={showMap}>{localName}</span>
+            {mapOpen && <MapParty setMapOpen={setMapOpen} />}
           </div>
         </div>
         <div className='detail-form'>
