@@ -111,7 +111,7 @@ const PartyDetail = ({ schData, setDetailSchOpen, userScore, tagsList }) => {
           {/* 카테고리 들어갈 칸 */}
           <div className="partydetail-category">
           {tagsList.map((data) => {
-          return (<div className='list-category-icon'>{data}</div>)})}
+          return (<div className='pdetail-cate-icon'>{data}</div>)})}
           </div>
         </div>
 
