@@ -210,3 +210,13 @@
     font-size: 2rem;
     transform: translate(50%, -1%);
 }
+
+.waiting-message {
+    position: absolute;
+    bottom: 1%;
+    right: 45%;
+    width: 500px;
+    height: 40px;
+    font-size: 2rem;
+    transform: translate(55%, -1%);
+}

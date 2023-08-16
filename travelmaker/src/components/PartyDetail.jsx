@@ -207,7 +207,7 @@ const PartyDetail = ({ schData, setDetailSchOpen, userScore, tagsList }) => {
                     {schData.matchedList.indexOf(nick) != -1 ?
                       <>
                         {schData.finishedList.indexOf(nick) != -1 ?
-                          <div className='partydetail-apll-completed'>다른 파티원의 동행 완료를 기다리는 중입니다!</div>
+                          <div className='waiting-message'>다른 파티원의 동행 완료를 기다리는 중입니다!</div>
                           :
                           <div>
                             <div className='partydetail-apll-completed'>매칭이 완료된 동행입니다.</div>
