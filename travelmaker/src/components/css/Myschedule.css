@@ -101,11 +101,8 @@
 /* 신청자 목록 CSS */
 
 .my-schedule-form {
-    /* display: flex;
-    flex-wrap: wrap; */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
     gap: 2px;
     margin: 10px;
     height: 97vh;
