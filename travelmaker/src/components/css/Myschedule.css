@@ -23,7 +23,7 @@
     }
 
     .my-schedule-list {
-        width: 21vw;
+        width: 19vw;
     }
 }
 
@@ -101,8 +101,11 @@
 /* 신청자 목록 CSS */
 
 .my-schedule-form {
+    /* display: flex;
+    flex-wrap: wrap; */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     gap: 2px;
     margin: 10px;
     height: 97vh;
@@ -156,11 +159,12 @@
     border-radius: 50px;
     background-color: black;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 }
 
 .applicant-btn {
     cursor: pointer;
+    font-size: 1.8rem;
 }
 
 .applicant-message {

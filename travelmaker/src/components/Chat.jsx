@@ -179,11 +179,12 @@ function Chat({ setChatOpen, leaderNick, memberNick }) {
           })}
           <div ref={messageEndRef}></div>
         </div>
-        <hr className='chat-hr'/>
+        <hr className='chat-hr' />
         <div className='chat-send-box'>
           <input
             className="chat-input"
-            type='text' value={blank}
+            type='text'
+            value={blank}
             onChange={(e) => { setMyMsg(e.target.value); setBlank(e.target.value); }}
             onKeyDown={handleKeyDown}>
           </input>

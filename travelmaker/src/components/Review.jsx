@@ -67,14 +67,16 @@ const Review = ({ setReviewOpen, schData, leaderEmail }) => {
   // 리뷰작성 완료 함수
   const finishedReview = async () => {
     const reviewedList = [...schData.reviewedList, nick]
-    if(reviewedList.length == schData.members){
+    if (reviewedList.length == schData.members) {
       await updateDoc(doc(db, '게시판', `${schData.userNick}-${schData.localName}`),
-      {state: '리뷰완료',
-      reviewedList: reviewedList}
+        {
+          state: '리뷰완료',
+          reviewedList: reviewedList
+        }
       )
-    }else{
+    } else {
       await updateDoc(doc(db, '게시판', `${schData.userNick}-${schData.localName}`),
-      {reviewedList: reviewedList}
+        { reviewedList: reviewedList }
       )
     }
     window.location.replace('/application')
@@ -88,14 +90,16 @@ const Review = ({ setReviewOpen, schData, leaderEmail }) => {
         <div className='review-title'>Review</div>
       </div>
       <div className='review-contents'>
-        <textarea className='review-contens-textarea' placeholder={schData.userNick+"님에 대한 \n솔직한 후기를 남겨주세요!"} 
-        rows={1} 
-        onChange={handleReviewHeiht} 
-        ref={textarea} 
-        value={inputValue}>          
+        <textarea
+          className='review-contens-textarea'
+          placeholder={schData.userNick + "님에 대한 \n솔직한 후기를 남겨주세요!"}
+          rows={1}
+          onChange={handleReviewHeiht}
+          ref={textarea}
+          value={inputValue}>
         </textarea>
       </div>
-      <button className='review-btn b' onClick={()=>{handleSubmit();}}>등록하기</button>
+      <button className='review-btn b' onClick={() => { handleSubmit(); }}>등록하기</button>
     </div>
   )
 }
