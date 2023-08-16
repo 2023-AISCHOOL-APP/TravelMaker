@@ -32,7 +32,7 @@
 
 .partydetail-title{
     width: 95%;
-    height: 10vh;
+    height: 70px;
     margin-top: 40px;
     margin-left: 40px;
     font-size: 25px;
@@ -55,7 +55,7 @@
 .partydetail-leader{
     
     width: 28%;
-    height: 7vh;
+    height: 49px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -69,7 +69,7 @@
     
     border-radius: 10px;
     width: 95%;
-    height: 12vh;
+    height: 85px;
     margin-left: 40px;
     margin-top: 10px;
     background-color: snow;
@@ -81,7 +81,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 7vh;
+    height: 49px;
     margin-left: 10px;
     border-radius: 10px;
     background-color: snow;
@@ -91,7 +91,7 @@
 .partydetail-category {
     font-size: 1.1rem;
     width: 42%;
-    height: 7vh;
+    height: 49px;
     margin-left: 10px;
     display: flex;
     flex-wrap: wrap;
