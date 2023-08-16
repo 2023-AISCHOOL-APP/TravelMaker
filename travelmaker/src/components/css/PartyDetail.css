@@ -93,9 +93,11 @@
     width: 42%;
     height: 7vh;
     margin-left: 10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr; */
     border-radius: 10px;
     background-color: snow;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
@@ -105,7 +107,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
+    width: 46px;
     height: 17px;
     border: 1px solid black;
     border-radius: 50px;
