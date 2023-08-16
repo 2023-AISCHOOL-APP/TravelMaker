@@ -23,8 +23,7 @@
     }
 
     .my-schedule-list {
-        width: 19vw;
-        height: 195px;
+        width: 21vw;
     }
 }
 
@@ -44,7 +43,7 @@
     border-radius: 10px;
     background-color: snow;
     box-shadow: 0 0 10px rgba(26, 162, 204, 0.15);
-    height: 210px;
+    height: 240px;
     padding: 10px;
 }
 
@@ -144,18 +143,28 @@
 
 .applicant {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     font-size: 1.4rem;
     margin: 0;
 }
 
-.applicant-btn {
+.applicant-btn, .applicant-message {
     width: 97%;
+    height: 40px;
     margin-left: 5px;
-    border-radius: 10px;
+    border-radius: 50px;
     background-color: black;
     color: white;
+    font-size: 1.5rem;
+}
+
+.applicant-btn {
+    cursor: pointer;
+}
+
+.applicant-message {
+    cursor: default;
 }
 
 .my-schedule-none-box{
@@ -178,3 +187,19 @@
     border-radius: 20px;
 }
 
+.applicant-nic {
+    cursor: default;
+}
+
+.applicant-end {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: 1.4rem;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.applicant-end:hover {
+    color: #2da2c5;
+}

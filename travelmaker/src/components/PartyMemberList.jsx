@@ -75,7 +75,7 @@ function PartyMemberList({schData}) {
           {schData.state === '매칭완료' || schData.state === '동행완료' || schData.state === '리뷰완료' ?
             <>
               {selectedMatched.map((id) => {
-                return (<div className='applicant' onClick={()=>{showChat(id);}}>{id}</div>)
+                return (<div className='applicant-end' onClick={()=>{showChat(id);}}>{id}</div>)
               })}
                     {chatOpen && <Chat setChatOpen={setChatOpen} memberNick={memberNick}/>}
             </>
@@ -94,13 +94,13 @@ function PartyMemberList({schData}) {
                       }
                     }}>
                     <input type='checkbox' className='applicant-check' value={id}></input>
-                    <div>{id}</div></div>)
+                    <div className='applicant-nic'>{id}</div></div>)
               })}
             </>
           }
         </div>
         {schData.state === '매칭완료' || schData.state === '동행완료' || schData.state === '리뷰완료' ?
-          <button className='applicant-btn'>매칭완료! &nbsp;&nbsp; 닉네임을 클릭해 채팅을 진행해보세요!</button>
+          <button className='applicant-message'>매칭완료!&nbsp; 닉네임을 클릭해 채팅을 진행해보세요!</button>
           :
           <button className='applicant-btn b' onClick={matching}>신청수락</button>
         }
