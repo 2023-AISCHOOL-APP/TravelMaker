@@ -39,7 +39,7 @@ const Application = () => {
       }else if(data[i].finishedList === undefined){
         data[i].finishedList = []
       }
-      if (data[i].userNick != nick && data[i].applicantList.indexOf(nick) != -1 && data[i].finishedList.indexOf(nick) === -1) {
+      if (data[i].userNick != nick && data[i].applicantList.indexOf(nick) != -1 && (data[i].state === '등록완료' || data[i].state === '매칭완료')) {
         appDataList.push(data[i])
       }
       if((data[i].state === '동행완료' || data[i].state === '리뷰완료') && data[i].userNick != nick && data[i].finishedList.indexOf(nick) != -1){
