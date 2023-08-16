@@ -41,6 +41,29 @@ function PartyMember() {
     getSchData();
   }, [])
 
+
+  // 게시판 정보 받아오기
+  const [userScore, setUserScore] = useState([])
+  const getScore = async (e) => {
+    const usersCollectionRef = collection(db, 'users');
+    const userSnap = await getDocs(usersCollectionRef);
+    const data = userSnap.docs.map(doc => ({
+      ...doc.data(),
+      id: doc.id
+    }));
+    // 파티장 온도 데이터 가져오기
+    let scores = {};
+    for(let i = 0; i<data.length; i++){
+      if(data[i].score != undefined){
+        scores[data[i].nickname] = data[i].score
+      }else{
+        scores[data[i].nickname] = 0
+      }
+    }
+    console.log(scores);
+    setUserScore(scores)
+  }
+
   // 추천보기 데이터 골라내기
   const [schData, setSchData] = useState([]);
   const searchSchedule = ()=>{
@@ -48,7 +71,7 @@ function PartyMember() {
     try{
     for(let i=0; i<scheduleData.length; i++){
       for(let j=0; j<matchUsers.length; j++){
-        if(scheduleData[i].userNick === matchUsers[j]){
+        if(scheduleData[i].userNick === matchUsers[j] && userScore[scheduleData[i].userNick]>-4){
           dataList.push(scheduleData[i])
         }
       }
@@ -61,6 +84,7 @@ function PartyMember() {
   }
 
   useEffect(()=>{
+    getScore();
     searchSchedule();
     console.log(schData);
   },[scheduleData])

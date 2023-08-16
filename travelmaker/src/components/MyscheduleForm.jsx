@@ -42,7 +42,6 @@ const MyscheduleForm = ({schData}) => {
     }
   }
 
-  console.log(schData.score);
   const [tagsList,setTagsList] = useState([])
 
   useEffect(()=>{
@@ -54,7 +53,6 @@ const MyscheduleForm = ({schData}) => {
     }
   },[])
 
-  console.log(tagsList);
   return (
     <div>
       <Link onClick={showDetailSch} className='detail-list-box'>
