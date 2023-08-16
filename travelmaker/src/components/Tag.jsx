@@ -8,7 +8,7 @@ const Tag = ({setTagData}) => {
   const [tags, setTags] = useState([]);
 
   const addTag = (e) => {
-    if (e.key === 'Enter' && tagValue && tags.length < 10) {
+    if (e.key === 'Enter' && tagValue && tags.length < 8) {
       setTags([...tags, tagValue]);
       setTagValue('');
       
@@ -76,7 +76,7 @@ const Tag = ({setTagData}) => {
         <input
           className='typing-tag'
           type="text"
-          placeholder={tags.length < 10 ? '여행 태그를 최대 10개까지 입력하세요.' : ''}
+          placeholder={tags.length < 8 ? '여행 태그를 최대 8개까지 입력하세요.' : ''}
           value={tagValue}
           onChange={inputImoji}
           onKeyDown={(e) => {
