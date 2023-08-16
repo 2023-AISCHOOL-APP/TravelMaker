@@ -83,6 +83,7 @@ const Registration = () => {
       formData
     )
     alert("등록이 완료되었습니다~!")
+    sessionStorage.setItem('select_my', 'my')
     nav('/myschedule')
   }
 

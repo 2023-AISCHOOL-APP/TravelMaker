@@ -5,10 +5,20 @@ import { db } from '../firebase-config';
 import { getDoc, doc, collection, getDocs, setDoc, updateDoc, deleteField } from 'firebase/firestore'
 import { useNavigate } from 'react-router-dom';
 import { BiXCircle } from 'react-icons/bi';
+import Chat from './Chat';
 
 const PartyDetail = ({ schData, setDetailSchOpen, userScore, tagsList }) => {
   const nick = sessionStorage.getItem('nick')
   const nav = useNavigate();
+
+  // 채팅 모달 띄우기
+  const [chatOpen, setChatOpen] = useState(false); // 맵 모달창 노출 여부 state
+
+  // 모달창 노출
+  const showChat = () => {
+    setChatOpen(true);
+  }
+  // 채팅 모달 끝
 
   // 모달 끄기 
   const closeDetailSch = () => {
@@ -201,7 +211,9 @@ const PartyDetail = ({ schData, setDetailSchOpen, userScore, tagsList }) => {
                           :
                           <div>
                             <div className='partydetail-apll-completed'>매칭이 완료된 동행입니다.</div>
+                            <button className='partydetail-chat-btn b' onClick={showChat}>채팅하기</button>
                             <button className='partydetail-appl-btn b' onClick={finishedMate}>동행완료</button>
+                            {chatOpen && <Chat setChatOpen={setChatOpen} leaderNick={schData.userNick}/>}
                           </div>
                         }
                       </>

@@ -15,6 +15,7 @@ import './components/css/Map.css';
 import './components/css/Registration.css';
 import './components/css/PartyDetail.css'
 import './components/css/Review.css'
+import './components/css/Chat.css'
 
 // 컴포넌트 불러오기
 import Header from './components/Header';

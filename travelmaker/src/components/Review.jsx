@@ -50,7 +50,7 @@ const Review = ({ setReviewOpen, schData, leaderEmail }) => {
   const Email = leaderEmail[0];
   const handleSubmit = async () => {
     try {
-      const response = await fetch('http://192.168.1.4:5000/reviewData', {
+      const response = await fetch('http://192.168.70.212:5000/reviewData', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

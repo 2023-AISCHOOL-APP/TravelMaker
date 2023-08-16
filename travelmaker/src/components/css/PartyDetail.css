@@ -170,10 +170,24 @@
     padding-left: 10px;
 }
 
+.partydetail-chat-btn{
+    position: absolute;
+    bottom: 11px;
+    right: 200px;
+    width: 125px;
+    height: 40px;
+    font-size: 15px;
+    /* margin: 20px; */
+    border: none;
+    border-radius: 50px;
+    background-color: black;
+    color: aliceblue;
+}
+
 .partydetail-appl-btn{
     position: absolute;
     bottom: 11px;
-    right: 37px;
+    right: 57px;
     width: 125px;
     height: 40px;
     font-size: 15px;

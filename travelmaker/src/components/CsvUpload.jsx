@@ -2,14 +2,12 @@ import React, { useEffect, useState } from 'react'
 import ReactFileReader from "react-file-reader";
 import Papa from 'papaparse';
 import { db } from '../firebase-config';
-import { getDoc, doc, collection, getDocs, setDoc } from 'firebase/firestore'
+import { getDoc, doc, collection, getDocs, setDoc, updateDoc } from 'firebase/firestore'
 
 function CsvUpload() {
 
     const [locationdata, setLocationdata] = useState({});
     const [localName, setLocalName] = useState("");
-
-
     const uploadFile = (files) => {
       setLocalName((files[0].name).split('.')[0]);
       // Using papaparse to parse the CSV file
@@ -21,10 +19,7 @@ function CsvUpload() {
         }
       });
     };
-
-
-    
-    console.log('전송 완료!');
+    // console.log('전송 완료!');
     // 지역데이터 정보 데이터베이스로 보내기
   const sendData = async () => {
     // try {
@@ -44,16 +39,7 @@ function CsvUpload() {
     // } catch (error) {
     //   window.location.replace('/csvupload')
     // }
-
   }
-
-  useEffect(()=>{
-    let test = [1,2,3,4,5,6]
-    console.log(test.indexOf(6))
-  },[])
-
-
-
 
   return (
     <div align='center'>
